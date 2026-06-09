@@ -1,0 +1,638 @@
+[
+    {
+        "long": "Application Migration Service",
+        "description": "Application Migration Service minimizes time-intensive, error-prone manual processes by automatically converting your source servers from physical, virtual, and cloud infrastructure to run natively on AWS. It further simplifies your migration by allowing you to use the same automated process for a wide range of applications."
+    },
+    {
+        "long": "API Gateway",
+        "description": "API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the front door for applications to access data, business logic, or functionality from your backend services."
+    },
+    {
+        "long": "AppFlow",
+        "description": "AppFlow offers significant cost-savings advantage compared to building connectors in-house or using other application integration services. There are no upfront charges or fees to use AppFlow, and customers only pay for the number of flows they run and the volume of data processed."
+    },
+    {
+        "long": "Athena",
+        "description": "Athena is a serverless, interactive analytics service built on open-source frameworks. Athena provides a simplified, flexible way to analyze petabytes of data where it lives. With Athena, you pay only for what you use. There are no upfront fees and no long-term commitments."
+    },
+    {
+        "long": "Augmented AI",
+        "description": "Augmented AI (A2I) allows humans and machine learning models to work together to increase the speed and accuracy of machine learning (ML) models. When human review is needed, A2I guides a human reviewer step-by-step in a process called a workflow."
+    },
+    {
+        "long": "Aurora MySQL-Compatible",
+        "description": "Aurora MySQL Compatible relational database is built for the cloud, that combines performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases."
+    },
+    {
+        "long": "Aurora PostgreSQL-Compatible DB",
+        "description": "Aurora is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases."
+    },
+    {
+        "long": "Bedrock",
+        "description": "Bedrock is a comprehensive, secure, and flexible platform for building generative AI applications and agents. Bedrock connects you to leading foundation models (FMs), services to deploy and operate agents, and tools for fine-tuning, safeguarding, and optimizing models along with knowledge bases to connect applications to your latest data so that you have everything you need to quickly move from experimentation to real-world deployment."
+    },
+    {
+        "long": "Bedrock AgentCore",
+        "description": "Bedrock AgentCore offers flexible, consumption-based pricing with no upfront commitments or minimum fees."
+    },
+    {
+        "long": "CloudFront",
+        "description": "CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.There are currently pay as you go options and fixed rate options available"
+    },
+    {
+        "long": "CloudWatch",
+        "description": "CloudWatch is a monitoring and management service that provides data and actionable insights for AWS, hybrid, and on-premises applications and infrastructure resources."
+    },
+    {
+        "long": "CodeGuru Reviewer",
+        "description": "CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java code."
+    },
+    {
+        "long": "Cognito",
+        "description": "Cognito lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Cognito scales to millions of users and supports sign-in with social identity providers, such as Facebook, Google, and Amazon, and enterprise identity providers via SAML 2.0."
+    },
+    {
+        "long": "Comprehend",
+        "description": "With Comprehend, you only pay for what you use. You are charged based on the amount of text processed on a monthly basis. Comprehend provides natural language processing, topic modeling, and Custom Classification capabilities, enabling a broad range of applications that can analyze text."
+    },
+    {
+        "long": "Comprehend Medical",
+        "description": "Comprehend Medical is a HIPAA-eligible natural language processing (NLP) service that uses machine learning to extract health data from medical text–no machine learning experience is required."
+    },
+    {
+        "long": "Data Firehose",
+        "description": "With Data firehose, you pay for the volume of data you ingest into the service. There are no set up fees or upfront commitments. You are billed for the volume of data ingested into Data Firehose, and if applicable, for data format conversion to Apache Parquet or ORC."
+    },
+    {
+        "long": "Detective",
+        "description": "Detective makes it easy to analyze, investigate, and quickly identify the root cause of potential security issues or suspicious activities. Detective automatically collects log data from your resources and uses machine learning, statistical analysis, and graph theory to build a linked set of data that enables you to easily conduct faster and more efficient security investigations."
+    },
+    {
+        "long": "DocumentDB (with MongoDB compatibility)",
+        "description": "DocumentDB (with MongoDB compatibility) is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads."
+    },
+    {
+        "long": "DynamoDB",
+        "description": "DynamoDB is a key-value and document database that delivers single-digit millisecond performance at any scale. It's a fully managed, multiregion, multimaster, durable database with built-in security, backup and restore, and in-memory caching for internet-scale applications."
+    },
+    {
+        "long": "Elastic Compute Cloud",
+        "description": "EC2 provides a wide selection of instance types optimized to fit different use cases. Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications."
+    },
+    {
+        "long": "Elastic Kubernetes Service",
+        "description": "Elastic Kubernetes Service (EKS) is a fully managed Kubernetes service. Customers such as Intel, Snap, Intuit, GoDaddy, and Autodesk trust EKS to run their most sensitive and mission critical applications because of its security, reliability, and scalability.."
+    },
+    {
+        "long": "Elastic Block Store",
+        "description": "Elastic Block Storage (EBS) allows you to create persistent block storage volumes and attach them to EC2 instances."
+    },
+    {
+        "long": "Elastic Container Registry",
+        "description": "Elastic Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images. ECR eliminates the need to operate your own container repositories or worry about scaling the underlying infrastructure. With ECR, there are no upfront fees or commitments. You pay only for the amount of data you store in your repositories and data transferred to the Internet."
+    },
+    {
+        "long": "Elastic File System",
+        "description": "Elastic File System (EFS) provides a simple, serverless, set-and-forget elastic file system for use with Cloud services and on-premises resources."
+    },
+    {
+        "long": "Elastic Graphics",
+        "description": "Elastic Graphics allows you to easily attach low-cost graphics acceleration to a wide range of EC2 instances over the network."
+    },
+    {
+        "long": "Elastic VMware Service",
+        "description": "Elastic VMware Service (EVS) allows you to run VMware Cloud Foundation (VCF) directly within your Virtual Private Cloud (VPC). Leverage the scale, resilience, and performance of together with familiar VCF software and tools. EVS simplifies deployment of a ready-to-use VCF environment. Choose from self-managed or managed options for control and customization of your VMware architecture. Embrace native and managed services to drive business agility, innovation, and transformation."
+    },
+    {
+        "long": "ElastiCache",
+        "description": "ElastiCache offers fully managed Redis OSS and Memcached. Seamlessly deploy, run, and scale popular open source compatible in-memory data stores. Build data-intensive apps or improve the performance of your existing apps by retrieving data from high throughput and low latency in-memory data stores."
+    },
+    {
+        "long": "Elastic MapReduce",
+        "description": "EMR is the industry-leading cloud big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto. EMR makes it easy to set up, operate, and scale your big data environments by automating time-consuming tasks like provisioning capacity and tuning clusters. With EMR you can run petabyte-scale analysis at less than half of the cost of traditional on-premises solutions and over 3x faster than standard Apache Spark. You can run workloads on EC2 instances, on Elastic Kubernetes Service (EKS) clusters, or on-premises using EMR on Outposts."
+    },
+    {
+        "long": "EventBridge",
+        "description": "EventBridge is a serverless event bus that makes it easier to build event-driven applications at scale using events generated from your applications, integrated Software-as-a-Service (SaaS) applications, and services."
+    },
+    {
+        "long": "File Cache",
+        "description": "File Cache provides a high-speed cache on that makes it easier to process file data, regardless of where the data is stored."
+    },
+    {
+        "long": "FinSpace Dataset Browser",
+        "description": "FinSpace Dataset Browser provides a notebook for (FSI) customers such as hedge funds, asset management firms, insurance companies, and investment banks to store, catalog, prepare, and analyze data at petabyte scale. The calculator does not yet support the new FinSpace with Managed kdb Insights."
+    },
+    {
+        "long": "Forecast",
+        "description": "Forecast uses machine learning (ML) to generate more accurate demand forecasts with just a few clicks, without requiring any prior ML experience. Forecast includes algorithms that are based on over twenty years of forecasting experience and developed expertise used by Amazon.com bringing the same technology used at to developers as a fully managed service, removing the need to manage resources. Forecast uses ML to learn not only the best algorithm for each item, but the best ensemble of algorithms for each item, automatically creating the best model for your data."
+    },
+    {
+        "long": "Fraud Detector",
+        "description": "Fraud Detector, a fully managed service built on over 20 years of insights from Amazon, helps customers identify potentially fraudulent activities and catch more online fraud faster. With Fraud Detector, you pay only for what you use, and there are no minimum fees or upfront commitments. You are charged based on the compute hours used to train and host your models, the amount of storage you use, and the quantity of fraud predictions you make."
+    },
+    {
+        "long": "FSx for Lustre",
+        "description": "FSx for Lustre provides a simple, high-performance file system integrated with S3 for fast processing of workloads such as machine learning, high performance computing (HPC), video processing, financial modeling, and electronic design automation (EDA)."
+    },
+    {
+        "long": "FSx for NetApp ONTAP",
+        "description": "FSx for NetApp ONTAP provides fully managed shared storage in the Cloud with the popular data access and management capabilities of ONTAP."
+    },
+    {
+        "long": "FSx for OpenZFS",
+        "description": "FSx for OpenZFS provides fully managed shared file storage built on the OpenZFS file system and accessible through the NFS protocol (v3, v4, v4.1, and v4.2)."
+    },
+    {
+        "long": "FSx for Windows File Server",
+        "description": "FSx for Windows provides a simple, fully managed native Microsoft Windows file system so you can easily move your Windows based applications that require file storage to AWS."
+    },
+    {
+        "long": "GameLift Servers",
+        "description": "GameLift is a dedicated game server hosting solution that deploys, operates, and scales cloud servers for multiplayer games. Whether you’re looking for a fully managed solution, or just the feature you need, GameLift leverages the power of to deliver the best latency possible, low player wait times, and maximum cost savings."
+    },
+    {
+        "long": "GameLift Streams",
+        "description": "GameLift Streams helps you stream games at up to 1080p resolution and 60 frames per second to any device with a browser. Using the global footprint and GPU instances, you can deploy and stream your game content in minutes, without modifications, and players can start gaming in seconds without having to wait for installs."
+    },
+    {
+        "long": "GuardDuty",
+        "description": "GuardDuty is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your accounts, workloads, and data stored in S3."
+    },
+    {
+        "long": "HealthLake",
+        "description": "HealthLake is a HIPAA-eligible service offering healthcare and life sciences companies a complete view of individual or patient population health data for query and analytics at scale."
+    },
+    {
+        "long": "Inspector",
+        "description": "Inspector is an automated and continual vulnerability scanning service that assesses Elastic Compute Cloud (EC2) instances and container images to improve the security and compliance of infrastructure workloads."
+    },
+    {
+        "long": "Kendra",
+        "description": "Kendra is an intelligent search service powered by machine learning. Kendra reimagines enterprise search for your websites and applications so your employees and customers can easily find the content they are looking for, even when it’s scattered across multiple locations and content repositories within your organization."
+    },
+    {
+        "long": "Keyspaces",
+        "description": "Keyspaces (for Apache Cassandra) is a scalable, highly available, and managed Apache Cassandra–compatible database service. With Keyspaces, you can run your Cassandra workloads of any scale on using the same Cassandra application code and developer tools that you use today."
+    },
+    {
+        "long": "Kinesis Data Streams",
+        "description": "Kinesis Data Streams (KDS) is a massively scalable and durable real-time data streaming service."
+    },
+    {
+        "long": "Kinesis Video Streams",
+        "description": "Kinesis Video Streams makes it easy to securely stream video from connected devices to for analytics, machine learning (ML), playback, and other processing. Kinesis Video Streams automatically provisions and elastically scales all the infrastructure needed to ingest streaming video data from millions of devices."
+    },
+    {
+        "long": "Lightsail",
+        "description": "Lightsail is an easy-to-use virtual private server (VPS) that offers you everything needed to build an application or website, plus a cost-effective, monthly plan. Lightsail is ideal for simpler workloads, quick deployments, and getting started on AWS. It’s designed to help you start small, and then scale as you grow."
+    },
+    {
+        "long": "Location Service",
+        "description": "Location Service provides affordable data, tracking and geofencing capabilities, and native integrations with services, so you can create sophisticated location-enabled applications quickly, without the high cost of custom development."
+    },
+    {
+        "long": "Lookout for Metrics",
+        "description": "Lookout for Metrics uses machine learning (ML) to automatically detect and diagnose anomalies (i.e. outliers from the norm) in business and operational data, such as a sudden dip in sales revenue or customer acquisition rates. In a couple of clicks, you can connect Lookout for Metrics to popular data stores like S3, Redshift, and Relational Database Service (RDS), as well as third-party SaaS applications, such as Salesforce, Servicenow, Zendesk, and Marketo, and start monitoring metrics that are important to your business. Lookout for Metrics automatically inspects and prepares the data from these sources to detect anomalies with greater speed and accuracy than traditional methods used for anomaly detection. You can also provide feedback on detected anomalies to tune the results and improve accuracy over time. Lookout for Metrics makes it easy to diagnose detected anomalies by grouping together anomalies that are related to the same event and sending an alert that includes a summary of the potential root cause. It also ranks anomalies in order of severity so that you can prioritize your attention to what matters the most to your business."
+    },
+    {
+        "long": "Lookout for Vision",
+        "description": "Lookout for Vision is a machine learning (ML) service that spots defects and anomalies in visual representations using computer vision (CV). With Lookout for Vision, manufacturing companies can increase quality and reduce operational costs by quickly identifying differences in images of objects at scale."
+    },
+    {
+        "long": "Macie",
+        "description": "Macie is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in AWS. With Macie, you are charged based on the number of S3 buckets evaluated for bucket-level security and access controls and the quantity of data processed for sensitive data discovery."
+    },
+    {
+        "long": "Managed Grafana",
+        "description": "Managed Grafana is a fully managed service for Grafana, a popular open-source analytics platform that enables you to query, visualize, and alert on your metrics, logs, and traces. There are no upfront fees, no required minimum commitments, and no long-term contracts. All user licenses are per workspace, per month. You pay only for what you use, based on an active user license per workspace. You will be charged at the end of the month for your usage. An active user is defined as a unique user who has accessed a Managed Grafana workspace in a calendar month. Each workspace requires a minimum of one Editor license in order to manage and log into the workspace, even if no users log in."
+    },
+    {
+        "long": "Managed Service for Apache Flink",
+        "description": "Managed Service for Apache Flink is the easiest way to analyze streaming data, gain actionable insights, and respond to your business and customer needs in real time."
+    },
+    {
+        "long": "Managed Service for Prometheus",
+        "description": "Managed Service for Prometheus is a Prometheus-compatible monitoring service that makes it easy to monitor containerized applications at scale. The Cloud Native Computing Foundation’s Prometheus project is a popular open source monitoring and alerting solution optimized for container environments. With Managed Service for Prometheus, you can use the open source Prometheus query language (PromQL) to monitor the performance of containerized workloads, without having to manage the underlying infrastructure."
+    },
+    {
+        "long": "Managed Streaming for Apache Kafka",
+        "description": "MSK is a fully managed service that makes it easy for you to build and run applications that use Apache Kafka to process streaming data. With MSK, you can use native Apache Kafka APIs to populate data lakes, stream changes to and from databases, and power machine learning and analytics applications."
+    },
+    {
+        "long": "Managed Workflows for Apache Airflow",
+        "description": "Managed Workflows for Apache Airflow (MWAA) is a managed orchestration service for Apache Airflow1 that makes it easier to set up and operate end-to-end data pipelines in the cloud at scale. Apache Airflow is an open-source tool used to programmatically author, schedule, and monitor sequences of processes and tasks referred to as “workflows.” With Managed Workflows, you can use Airflow and Python to create workflows without having to manage the underlying infrastructure for scalability, availability, and security."
+    },
+    {
+        "long": "MemoryDB",
+        "description": "MemoryDB is a Redis OSS compatible, durable, in-memory database that delivers ultra-fast performance and Multi-AZ durability."
+    },
+    {
+        "long": "Managed Message Broker Service",
+        "description": "MQ is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud."
+    },
+    {
+        "long": "Neptune",
+        "description": "Neptune is a fast, reliable, fully managed graph database service that makes it easy to build and run applications that work with highly connected datasets."
+    },
+    {
+        "long": "OpenSearch Service",
+        "description": "OpenSearch Service is a fully managed service that makes it easy for you to deploy, secure, and operate OpenSearch clusters at scale."
+    },
+    {
+        "long": "Personalize",
+        "description": "Personalize enables developers to build applications with the same machine learning (ML) technology used by Amazon.com for real-time personalized recommendations – no ML expertise required."
+    },
+    {
+        "long": "Pinpoint",
+        "description": "Pinpoint is a flexible and scalable outbound and inbound marketing communications service. You can connect with customers over channels like email, SMS, push, or voice. Pinpoint is easy to set up, easy to use, and is flexible for all marketing communication scenarios."
+    },
+    {
+        "long": "Polly",
+        "description": "Polly is a service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products."
+    },
+    {
+        "long": "Quantum Ledger Database",
+        "description": "Quantum Ledger Database (QLDB) is a fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log."
+    },
+    {
+        "long": "QuickSight",
+        "description": "QuickSight is a fast, cloud-powered business intelligence service that makes it easy to deliver insights to everyone in your organization. QuickSight dashboards can be embedded in applications, require no infrastructure setup or management, and can automatically scale to tens of thousands of users."
+    },
+    {
+        "long": "RDS Custom for Oracle",
+        "description": "Relational Database Service (RDS) Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying OS and DB environment. RDS Custom automates setup, operation, and scaling of databases in the cloud while granting access to the database and underlying operating system to configure settings, install patches, and enable native features to meet the dependent application's requirements."
+    },
+    {
+        "long": "RDS Custom for SQL Server",
+        "description": "Relational Database Service (RDS) Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying OS and DB environment. RDS Custom automates setup, operation, and scaling of databases in the cloud while granting access to the database and underlying operating system to configure settings, install patches, and enable native features to meet the dependent application's requirements."
+    },
+    {
+        "long": "RDS for Db2",
+        "description": "RDS makes it easy to set up, operate, and scale db2 deployments in the cloud. With RDS, you can deploy scalable db2 deployments in minutes with cost-efficient and resizable hardware capacity."
+    },
+    {
+        "long": "RDS for MariaDB",
+        "description": "RDS makes it easy to set up, operate, and scale MariaDB database deployments in the cloud."
+    },
+    {
+        "long": "RDS for MySQL",
+        "description": "MySQL is the world's most popular open source relational database. RDS makes it easy to set up, operate, and scale MySQL deployments in the cloud."
+    },
+    {
+        "long": "RDS for Oracle",
+        "description": "Oracle® Database is a relational database management system developed by Oracle. RDS makes it easy to set up, operate, and scale Oracle Database deployments in the cloud. With RDS, you can deploy multiple editions of Oracle Database in minutes with cost-efficient and re-sizable hardware capacity."
+    },
+    {
+        "long": "RDS for PostgreSQL",
+        "description": "RDS makes it easy to set up, operate, and scale PostgreSQL deployments in the cloud. With RDS, you can deploy scalable PostgreSQL deployments in minutes with cost-efficient and resizable hardware capacity."
+    },
+    {
+        "long": "RDS for SQL server",
+        "description": "SQL Server is a relational database management system developed by Microsoft. RDS for SQL Server makes it easy to set up, operate, and scale SQL Server deployments in the cloud."
+    },
+    {
+        "long": "RDS on Outposts",
+        "description": "Relational Database Service (RDS) on Outposts allows you to deploy fully managed database instances in your on-premises environments. Outposts is a fully managed service that extends infrastructure, services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. You can deploy RDS on Outposts to set up, operate, and scale Oracle, Microsoft SQL Server, MySQL and PostgreSQL relational databases on premises, just as you would in the cloud. RDS on Outposts provides cost-efficient and resizable capacity for on-premises databases, while automating time-consuming administration tasks including infrastructure provisioning, database setup, patching, and backups, freeing you to focus on your applications."
+    },
+    {
+        "long": "Redshift",
+        "description": "Redshift is a fully managed, petabyte-scale data warehouse service in the cloud. Redshift also extends data warehouse queries to your data lake, with no loading required. You can run analytic queries against petabytes of data stored locally in Redshift, and directly against exabytes of data stored in S3."
+    },
+    {
+        "long": "Rekognition",
+        "description": "Rekognition makes it easy to add image and video analysis to your applications using proven, highly scalable, deep learning technology that requires no machine learning expertise to use. With Rekognition, you can identify objects, people, text, scenes, and activities in images and videos, as well as detect any inappropriate content."
+    },
+    {
+        "long": "Route 53",
+        "description": "Route 53 is a cloud Domain Name System (DNS) web service."
+    },
+    {
+        "long": "SageMaker",
+        "description": "With SageMaker, you pay only for what you use. Building, training, and deploying ML models is billed by the second, with no minimum fees and no upfront commitments. Pricing within SageMaker is broken down by on-demand ML instances, ML storage, and fees for data processing in hosting instances."
+    },
+    {
+        "long": "SageMaker Ground Truth",
+        "description": "SageMaker Ground Truth helps you build training datasets for machine learning. Ground Truth will label your content (images, audio, text, etc) by guiding a human labeler step-by-step in a process called a workflow."
+    },
+    {
+        "long": "Security Lake",
+        "description": "Security Lake automatically centralizes security data from cloud, on-premises, and custom sources into a purpose-built data lake stored in your account. With Security Lake, you can get a more complete understanding of your security data across your entire organization."
+    },
+    {
+        "long": "Simple Email Service",
+        "description": "Simple Email Service (SES) is a cloud-based email sending service designed to help digital marketers and application developers send marketing, notification, and transactional emails."
+    },
+    {
+        "long": "Simple Notification Service",
+        "description": "Simple Notification Service (SNS) is a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications."
+    },
+    {
+        "long": "Simple Queue Service",
+        "description": "Simple Queue Service (SQS) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications."
+    },
+    {
+        "long": "Simple Storage Service",
+        "description": "Simple Storage Service (S3) is storage for the internet. You can use S3 to store and retrieve any amount of data at any time, from anywhere on the web."
+    },
+    {
+        "long": "Simple Workflow Service",
+        "description": "SWF helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of SWF as a fully-managed state tracker and task coordinator in the Cloud."
+    },
+    {
+        "long": "Textract",
+        "description": "Textract is a fully managed machine learning service that automatically extracts printed text, handwriting, and other data from scanned documents that goes beyond simple optical character recognition (OCR) to identify, understand, and extract data from forms and tables."
+    },
+    {
+        "long": "Timestream",
+        "description": "Timestream is a fast, scalable, and serverless time series database service for IoT and operational applications that makes it easy to store and analyze trillions of events per day up to 1,000 times faster and at as little as 1/10th the cost of relational databases. Timestream saves you time and cost in managing the lifecycle of time series data by keeping recent data in memory and moving historical data to a cost optimized storage tier based upon user defined policies. Timestream’s purpose-built query engine lets you access and analyze recent and historical data together, without needing to specify explicitly in the query whether the data resides in the in-memory or cost-optimized tier. Timestream has built-in time series analytics functions, helping you identify trends and patterns in your data in near real-time. Timestream is serverless and automatically scales up or down to adjust capacity and performance, so you don’t need to manage the underlying infrastructure, freeing you to focus on building your applications."
+    },
+    {
+        "long": "Transcribe",
+        "description": "Transcribe is a fully-managed automatic speech recognition (ASR) service that makes it easy for developers to add speech-to-text capabilities to voice applications. Powered by deep learning, the service supports transcription through its batch file (asynchronous) and streaming (real-time) APIs. Transcribe offers accurate transcription across more than 30 global languages and accents."
+    },
+    {
+        "long": "Transcribe Medical",
+        "description": "Transcribe Medical is a HIPAA-eligible automatic speech recognition (ASR) service that makes it easy for developers to add speech-to-text capabilities to their healthcare and life science applications."
+    },
+    {
+        "long": "Translate",
+        "description": "Translate is a neural machine translation service that delivers fast, high-quality, and affordable language translation. Neural machine translation is a form of language translation automation that uses deep learning models to deliver more accurate and more natural sounding translation than traditional statistical and rule-based translation algorithms."
+    },
+    {
+        "long": "Verified Permissions",
+        "description": "Verified Permissions is a scalable, fine-grained permissions management and authorization service for custom applications. The service centralizes fine-grained permissions for custom applications and helps developers authorize user actions within applications. Verified Permissions uses the Cedar policy language to define fine-grained permissions for application users."
+    },
+    {
+        "long": "Virtual Private Cloud",
+        "description": "Virtual Private Cloud (VPC) lets you provision a logically isolated section of the Cloud where you can launch resources in a virtual network that you define."
+    },
+    {
+        "long": "WorkSpaces",
+        "description": "WorkSpaces is a managed, secure cloud desktop service. You can use WorkSpaces to provision either Windows or Linux desktops in just a few minutes and quickly scale to provide thousands of desktops to workers across the globe."
+    },
+    {
+        "long": "WorkSpaces Applications",
+        "description": "WorkSpaces Applications is a fully managed service that provides secure, reliable, and scalable access to applications and non-persistent desktops from any location."
+    },
+    {
+        "long": "Amplify",
+        "description": "Amplify is a set of tools and services that can be used together or on their own, to help front-end web and mobile developers build scalable full stack applications, powered by AWS. With Amplify, you can create an app backend for web and mobile, and then connect your Git branch to deploy and host a web app in a few clicks."
+    },
+    {
+        "long": "App Runner",
+        "description": "App Runner is a fully managed service that makes it easy for developers to quickly deploy containerized web applications and APIs, at scale and with no prior infrastructure experience required. Start with your source code or a container image. App Runner builds and deploys the web application automatically, load balances traffic with encryption, scales to meet your traffic needs, and makes it easy for your services to communicate with other services and applications that run in a private VPC. With App Runner, rather than thinking about servers or scaling, you have more time to focus on your applications."
+    },
+    {
+        "long": "AppSync",
+        "description": "AppSync is a fully managed service that makes it easy to develop GraphQL APIs and Event APIs."
+    },
+    {
+        "long": "Audit Manager",
+        "description": "Audit Manager helps you continuously audit your usage to simplify how you assess risk and compliance. When you define and launch an assessment based on an assessment framework, Audit Manager will execute a resource assessment for each individual resource, such as your EC2 instances, RDS instances, S3 buckets, or VPC subnets."
+    },
+    {
+        "long": "B2B Data Interchange",
+        "description": "B2B Data Interchange automates the transformation of EDI-based business-critical transactions at scale, with elasticity and pay-as-you-go pricing. B2B Data Interchange reduces the time, complexity, and costs incurred to build and manage EDI with your trading partners, letting you focus on using the transacted data to gain insights."
+    },
+    {
+        "long": "Backup",
+        "description": "Backup is a centralized and fully-managed service with an end-to-end solution for business and regulatory compliance requirements. Using this service, you can automate data protection across services, in the cloud, and on premises. With a few clicks in the Backup console, you can automate your data protection policies and schedules without creating custom scripts and manual processes."
+    },
+    {
+        "long": "Certificate Manager",
+        "description": "Certificate Manager (ACM) makes it easy for you to centrally manage your SSL/TLS certificates from the Management Console, CLI, or ACM APIs. You can also audit the use of each certificate by reviewing your CloudTrail logs."
+    },
+    {
+        "long": "Cloud Map",
+        "description": "Cloud Map is a cloud resource discovery service. With Cloud Map, you can define custom names for your application resources, and it maintains the updated location of these dynamically changing resources. This increases your application availability because your web service always discovers the most up-to-date locations of its resources."
+    },
+    {
+        "long": "CloudFormation",
+        "description": "CloudFormation provides a common language for you to model and provision and third party application extensions in your cloud environment."
+    },
+    {
+        "long": "CloudHSM",
+        "description": "CloudHSM is a cloud-based hardware security module (HSM) that enables you to easily generate and use your own encryption keys on the Cloud. With CloudHSM, you can manage your own encryption keys using FIPS 140-2 Level 3 validated HSMs."
+    },
+    {
+        "long": "CloudTrail",
+        "description": "CloudTrail is a service that enables governance, compliance, operational auditing, and risk auditing of your account. With CloudTrail, you can log, continuously monitor, and retain account activity related to actions across your infrastructure."
+    },
+    {
+        "long": "CodeArtifact",
+        "description": "CodeArtifact is a fully managed artifact repository service that makes it easy for organizations of any size to securely store, publish, and share software packages used in their software development process."
+    },
+    {
+        "long": "CodeBuild",
+        "description": "CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy."
+    },
+    {
+        "long": "CodeDeploy",
+        "description": "CodeDeploy is a fully managed deployment service that automates software deployments to a variety of compute services such as EC2, Fargate, Lambda, and your on-premises servers."
+    },
+    {
+        "long": "CodePipeline",
+        "description": "CodePipeline is a fully managed continuous delivery service that helps you automate your release pipelines for fast and reliable application and infrastructure updates."
+    },
+    {
+        "long": "Config",
+        "description": "Config is a service that enables you to assess, audit, and evaluate the configurations of your resources. Config continuously monitors and records your resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations."
+    },
+    {
+        "long": "Data Transfer",
+        "description": "The cost of transferring data at for services without unique transfer costs."
+    },
+    {
+        "long": "Database Migration Service",
+        "description": "Database Migration Service helps you migrate databases to quickly and securely. There are two options to choose from: On-Demand Instances and Serverless."
+    },
+    {
+        "long": "DataSync",
+        "description": "DataSync is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and Storage services, as well as between Storage services."
+    },
+    {
+        "long": "Deadline Cloud",
+        "description": "Deadline Cloud is a fully managed service that simplifies render management for teams creating computer-generated 2D/3D graphics and visual effects for films, TV shows, commercials, games, and industrial design. With Deadline Cloud, you can set up, deploy, and scale rendering projects in minutes, so you can improve the efficiency of your rendering pipelines and take on more projects."
+    },
+    {
+        "long": "Direct Connect",
+        "description": "Direct Connect is a cloud service solution that makes it easy to establish a dedicated network connection from your premises to AWS."
+    },
+    {
+        "long": "Directory Service",
+        "description": "Directory Service is a managed service offering, providing directories that contain information about your organization, including users, groups, computers, and other resources."
+    },
+    {
+        "long": "Elastic Disaster Recovery",
+        "description": "Elastic Disaster Recovery (DRS) minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications using affordable storage, minimal compute, and point-in-time recovery."
+    },
+    {
+        "long": "Elemental MediaTailor",
+        "description": "Elemental MediaTailor is a channel assembly and personalized ad insertion service for video providers to create linear OTT (internet delivered) channels using existing video content and monetize those channels, or other live streams and VOD content, with personalized advertising."
+    },
+    {
+        "long": "Elemental MediaConnect",
+        "description": "Elemental MediaConnect is a high-quality transport service for live video."
+    },
+    {
+        "long": "Elemental MediaConvert",
+        "description": "Elemental MediaConvert is a file-based video transcoding service with broadcast-grade features. It allows you to easily create video-on-demand (VOD) content for broadcast and multiscreen delivery at scale."
+    },
+    {
+        "long": "Elemental MediaLive",
+        "description": "Elemental MediaLive is a broadcast-grade live video processing service. It lets you create high-quality video streams for delivery to broadcast televisions and internet-connected multiscreen devices, like connected TVs, tablets, smart phones, and set-top boxes."
+    },
+    {
+        "long": "Elemental MediaPackage",
+        "description": "Elemental MediaPackage reliably prepares and protects your video for delivery over the Internet. From a single video input, Elemental MediaPackage creates video streams formatted to play on connected TVs, mobile phones, computers, tablets, and game consoles."
+    },
+    {
+        "long": "Entity Resolution",
+        "description": "Entity Resolution helps you match and link related records without the need to build custom solutions. Use flexible, configurable machine learning (ML) and rule-based techniques to optimize record matching based on your business needs."
+    },
+    {
+        "long": "Fargate",
+        "description": "Fargate is a serverless compute engine for containers that works with both Elastic Container Service (ECS) and Elastic Kubernetes Service (EKS). Fargate makes it easy for you to focus on building your applications. Fargate removes the need to provision and manage servers, lets you specify and pay for resources per application, and improves security through application isolation by design."
+    },
+    {
+        "long": "Fault Injection Service",
+        "description": "Fault Injection Simulator (FIS) is a fully managed service for running fault injection experiments to improve an application’s performance, observability, and resiliency. FIS simplifies the process of setting up and running controlled fault injection experiments across a range of services, so teams can build confidence in their application behavior."
+    },
+    {
+        "long": "Firewall Manager",
+        "description": "Firewall Manager is a security management service that allows you to centrally configure and manage firewall rules across your accounts and applications in Organizations. As new applications are created, Firewall Manager makes it easier to bring new applications and resources into compliance by enforcing a common set of security rules."
+    },
+    {
+        "long": "Glue",
+        "description": "Glue is a serverless data preparation service that makes it easy for data engineers, extract, transform, and load (ETL) developers, data analysts, and data scientists to extract, clean, enrich, normalize, and load data. Glue reduces the time it takes to start analyzing your data from months to minutes."
+    },
+    {
+        "long": "IAM Access Analyzer",
+        "description": "IAM Access Analyzer guides you towards least privilege by providing tools to set, verify, and refine permissions. IAM Access Analyzer provides access analysis, policy checks, and policy generation."
+    },
+    {
+        "long": "IoT Analytics",
+        "description": "IoT Analytics is a fully-managed IoT analytics service that collects, pre-processes, enriches, stores, and analyzes IoT device data at scale."
+    },
+    {
+        "long": "IoT Core",
+        "description": "IoT Core is a managed cloud service that lets connected devices easily and securely interact with cloud applications and other devices."
+    },
+    {
+        "long": "IoT Device Defender",
+        "description": "IoT Device Defender is a fully managed service that helps you secure your fleet of IoT devices."
+    },
+    {
+        "long": "IoT Device Management",
+        "description": "IoT Device Management makes it easy for you to manage your fleets of connected devices at any scale."
+    },
+    {
+        "long": "IoT Events",
+        "description": "IoT Events makes it easy to detect and respond to changes indicated by IoT sensors and applications – such as malfunctioning machinery, a stuck conveyor belt, or a slowdown in production output – and automatically trigger actions or alerts in response."
+    },
+    {
+        "long": "IoT Greengrass",
+        "description": "IoT Greengrass is an Internet of Things (IoT) open source edge runtime and cloud service that helps you build, deploy, and manage device software. Customers use IoT Greengrass for their IoT applications on millions of devices in homes, factories, vehicles, and businesses."
+    },
+    {
+        "long": "IoT SiteWise",
+        "description": "IoT SiteWise is a managed service that makes it easy to collect, store, organize, and monitor data from industrial equipment at scale to help you make better, data-driven decisions. You can use IoT SiteWise to monitor operations across facilities, quickly compute common industrial performance metrics, and create applications that analyze industrial equipment data to prevent costly equipment issues and reduce gaps in production. Disclaimer: Charges for IoT SiteWise are estimated based on simplified inputs provided. Monthly charges will be based on actual usage of the service."
+    },
+    {
+        "long": "Key Management Service",
+        "description": "Securely Generate and Manage Encryption Keys"
+    },
+    {
+        "long": "Lake Formation",
+        "description": "Lake Formation provides database, table, column and tag-based access controls, and cross-account sharing at no charge. Governed Tables provide ACID transactions as a fully managed service that enable you to reliably update multiple tables, while maintaining a consistent view for all users. Managing concurrent transactions and being able to travel back to previous version of the table requires storing metadata about each transaction. Lake Formation charges a fee for transaction requests and for metadata storage. In addition, to providing a consistent view of data and enforce row and cell-level security the Lake Formation Storage API scans data in S3 and applies row and cell filters before returning results to applications. There is a fee for this filtering."
+    },
+    {
+        "long": "Lambda",
+        "description": "Lambda lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running."
+    },
+    {
+        "long": "Mainframe Modernization",
+        "description": "Mainframe Modernization (Preview) is a set of managed tools providing infrastructure and software for migrating, modernizing, and executing mainframe applications."
+    },
+    {
+        "long": "Migration Hub Refactor Spaces",
+        "description": "Migration Hub Refactor Spaces is the starting point for incremental application refactoring to microservices. Refactor Spaces eliminates the undifferentiated work of building and operating infrastructure for incremental refactoring. You can use Refactor Spaces to reduce the risk of evolving applications into microservices or extending existing applications with new features written in microservices."
+    },
+    {
+        "long": "Network Firewall",
+        "description": "Network Firewall is a managed service that makes it easy to deploy essential network protections for all of your Virtual Private Clouds (VPCs). The service can be setup with just a few clicks and scales automatically with your network traffic, so you don't have to worry about deploying and managing any infrastructure."
+    },
+    {
+        "long": "Payment Cryptography",
+        "description": "Create and host payment processing applications using cloud-native payments cryptography and key exchange."
+    },
+    {
+        "long": "PCS",
+        "description": "Parallel Computing Service (PCS) is a managed service that makes it easier for you to run and scale your high performance computing (HPC) workloads, and build scientific and engineering models on using Slurm. You can use PCS to build complete, elastic environments that integrate compute, storage, networking, and visualization tools. PCS simplifies cluster operations with managed updates and built-in observability features, helping to remove the burden of maintenance. You can work in a familiar environment, focusing on your research and innovation instead of worrying about infrastructure."
+    },
+    {
+        "long": "Private Certificate Authority",
+        "description": "Private Certificate Authority is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with services and your internal connected resources."
+    },
+    {
+        "long": "Resilience Hub",
+        "description": "Prepare and protect your applications from disruptions. With Resilience Hub, you pay only for what you use. There are no upfront costs or minimum fees. You are charged based on the number of applications you described in Resilience Hub."
+    },
+    {
+        "long": "Secrets Manager",
+        "description": "Secrets Manager enables you to rotate, manage, and retrieve secrets throughout their lifecycle, making it easier to maintain a secure environment that meets your security and compliance needs. With Secrets Manager, you pay based on the number of secrets stored and API calls made."
+    },
+    {
+        "long": "Security Hub",
+        "description": "Security Hub performs security best practice checks and ingests security findings from security services and partners."
+    },
+    {
+        "long": "Service Catalog",
+        "description": "Service Catalog lets you centrally manage deployed IT services, applications, resources, and metadata to achieve consistent governance of your infrastructure as code (IaC) templates. With Service Catalog, you can meet your compliance requirements while making sure your customers can quickly deploy the approved IT services they need."
+    },
+    {
+        "long": "Shield",
+        "description": "Shield Advanced is a paid service that provides additional protections for internet-facing applications running on Elastic Compute Cloud (EC2), Elastic Load Balancing (ELB), CloudFront, Global Accelerator, and Route 53. Shield Advanced is available to all customers; however, to contact the Shield Response Team customers will need the Enterprise or Business Support levels of Premium Support."
+    },
+    {
+        "long": "SimSpace Weaver",
+        "description": "SimSpace Weaver is a fully managed compute service that helps customers build, operate, and oversee large-scale spatial simulations. SimSpace Weaver helps developers expand their spatial simulation capabilities to new levels of scale and complexity—resulting in deeper insights and larger virtual worlds with millions of independent and interacting entities."
+    },
+    {
+        "long": "Snowball",
+        "description": "Snowball, a part of the Snow Family, is an edge computing, data migration, and edge storage device that comes in two options. Snowball Edge Storage Optimized devices provide both block storage and S3-compatible object storage, and 40 vCPUs. They are well suited for local storage and large scale-data transfer. Snowball Edge Compute Optimized devices provide up to 104 vCPUs, block and object storage, and an optional GPU for use cases like advanced machine learning and full motion video analysis in disconnected environments."
+    },
+    {
+        "long": "Step Functions",
+        "description": "Step Functions is a serverless function orchestrator that makes it easy to sequence Lambda functions and multiple services into business-critical applications."
+    },
+    {
+        "long": "Storage Gateway",
+        "description": "Storage Gateway is a hybrid storage service that enables your on-premises applications to seamlessly use cloud storage. You can use the service for backup and archiving, disaster recovery, cloud data processing, storage tiering, and migration."
+    },
+    {
+        "long": "Systems Manager",
+        "description": "Systems Manager gives you visibility and control of your infrastructure on AWS. Systems Manager provides a unified user interface so you can view operational data from multiple services and allows you to automate operational tasks across your resources."
+    },
+    {
+        "long": "Transfer Family",
+        "description": "Transfer Family is a fully managed SFTP, FTPS, FTP, Web apps and AS2 service."
+    },
+    {
+        "long": "Web Application Firewall",
+        "description": "WAF is a web application firewall that helps protect your web applications or APIs against common web exploits that may affect availability, compromise security, or consume excessive resources."
+    },
+    {
+        "long": "X-Ray",
+        "description": "X-Ray makes it easy for developers to analyze the behavior of their production, distributed applications with end-to-end tracing capabilities. You can use X-Ray to identify performance bottlenecks, edge case errors, and other hard to detect issues."
+    },
+    {
+        "long": "Elastic Load Balancing",
+        "description": "Elastic Load Balancing automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, IP addresses, and Lambda functions."
+    },
+    {
+        "long": "Windows Server and SQL Server on Elastic Compute Cloud",
+        "description": "The Windows Server and SQL Server on Elastic Compute Cloud calculator provides a pricing estimate for specific workloads. It recommends suitable cloud deployment options and cost-saving pricing models based on licensing and infrastructure inputs."
+    }
+]

@@ -1,0 +1,656 @@
+[
+  {
+    "long": "Application Migration Service",
+    "translation": "Interstellar Relocation Engine"
+  },
+  {
+    "long": "API Gateway",
+    "translation": "Hyperspace Jump Gate"
+  },
+  {
+    "long": "AppFlow",
+    "translation": "Nebula Streamlines"
+  },
+  {
+    "long": "Athena",
+    "translation": "Cosmic Ray Telescope"
+  },
+  {
+    "short": "A2I",
+    "long": "Augmented AI",
+    "translation": "Android Co-Pilot"
+  },
+  {
+    "long": "Aurora MySQL-Compatible",
+    "translation": "Polaris Data Matrix (Alpha)"
+  },
+  {
+    "long": "Aurora PostgreSQL-Compatible DB",
+    "translation": "Polaris Data Matrix (Beta)"
+  },
+  {
+    "long": "Bedrock",
+    "translation": "Planetary Crust"
+  },
+  {
+    "long": "Bedrock AgentCore",
+    "translation": "Synthetic Crew Overseer"
+  },
+  {
+    "long": "CloudFront",
+    "translation": "Tachyon Distribution Grid"
+  },
+  {
+    "long": "CloudWatch",
+    "translation": "Orbiting Sentinel"
+  },
+  {
+    "long": "CodeGuru Reviewer",
+    "translation": "Holographic Chief Engineer"
+  },
+  {
+    "long": "Cognito",
+    "translation": "Biometric Airlock Controller"
+  },
+  {
+    "long": "Comprehend",
+    "translation": "Universal Translator Matrix"
+  },
+  {
+    "long": "Comprehend Medical",
+    "translation": "Bio-Scanner Diagnostics"
+  },
+  {
+    "long": "Data Firehose",
+    "translation": "Meteor Shower Streamer"
+  },
+  {
+    "long": "Detective",
+    "translation": "Black Hole Investigator"
+  },
+  {
+    "long": "DocumentDB (with MongoDB compatibility)",
+    "translation": "Star-Log Archives"
+  },
+  {
+    "long": "DynamoDB",
+    "translation": "Singularity Vault"
+  },
+  {
+    "short": "EC2",
+    "long": "Elastic Compute Cloud",
+    "translation": "Modular Starship Hull"
+  },
+  {
+    "short": "EKS",
+    "long": "Elastic Kubernetes Service",
+    "translation": "Fleet Command Matrix"
+  },
+  {
+    "short": "EBS",
+    "long": "Elastic Block Store",
+    "translation": "Solid-State Warp Fuel Core"
+  },
+  {
+    "short": "ECR",
+    "long": "Elastic Container Registry",
+    "translation": "Escape Pod Bay"
+  },
+  {
+    "short": "EFS",
+    "long": "Elastic File System",
+    "translation": "Shared Shuttle Locker"
+  },
+  {
+    "long": "Elastic Graphics",
+    "translation": "Hologram Deck Accelerator"
+  },
+  {
+    "long": "Elastic VMware Service",
+    "translation": "Alien Atmosphere Simulator"
+  },
+  {
+    "long": "ElastiCache",
+    "translation": "Tachyon Short-Term Buffer"
+  },
+  {
+    "short": "EMR",
+    "long": "Elastic MapReduce",
+    "translation": "Cosmic Background Radiation Analyzer"
+  },
+  {
+    "long": "EventBridge",
+    "translation": "Chronos Quantum Relay"
+  },
+  {
+    "long": "File Cache",
+    "translation": "Sub-Orbital Cache"
+  },
+  {
+    "long": "FinSpace Dataset Browser",
+    "translation": "Galactic Credit Ledger Tracker"
+  },
+  {
+    "long": "Forecast",
+    "translation": "Supernova Predictor"
+  },
+  {
+    "long": "Fraud Detector",
+    "translation": "Shape-Shifter Infiltrator Alarm"
+  },
+  {
+    "long": "FSx for Lustre",
+    "translation": "Light-Speed Data Thruster"
+  },
+  {
+    "long": "FSx for NetApp ONTAP",
+    "translation": "Federation Array (Omega)"
+  },
+  {
+    "long": "FSx for OpenZFS",
+    "translation": "Federation Array (Zeta)"
+  },
+  {
+    "long": "FSx for Windows File Server",
+    "translation": "Old Earth Command Archive"
+  },
+  {
+    "long": "GameLift Servers",
+    "translation": "Simulation Deck Thrusters"
+  },
+  {
+    "long": "GameLift Streams",
+    "translation": "Subspace Holo-Feeds"
+  },
+  {
+    "long": "GuardDuty",
+    "translation": "Deflector Shield Monitor"
+  },
+  {
+    "long": "HealthLake",
+    "translation": "Cryo-Pod Bio-Data Pool"
+  },
+  {
+    "long": "Inspector",
+    "translation": "Hull Breach Surveyor"
+  },
+  {
+    "long": "Kendra",
+    "translation": "Galactic Library Terminal"
+  },
+  {
+    "long": "Keyspaces",
+    "translation": "Cosmic Coordinate Registry"
+  },
+  {
+    "long": "Kinesis Data Streams",
+    "translation": "Photon Particle Stream"
+  },
+  {
+    "long": "Kinesis Video Streams",
+    "translation": "Deep Space Telemetry Feeds"
+  },
+  {
+    "long": "Lightsail",
+    "translation": "Solar Sail Skiff"
+  },
+  {
+    "long": "Location Service",
+    "translation": "Star Map Cartographer"
+  },
+  {
+    "long": "Lookout for Metrics",
+    "translation": "Gravitational Anomaly Sensor"
+  },
+  {
+    "long": "Lookout for Vision",
+    "translation": "Asteroid Proximity Scanner"
+  },
+  {
+    "long": "Macie",
+    "translation": "Deep Space Cargo Manifest Inspector"
+  },
+  {
+    "long": "Managed Grafana",
+    "translation": "Starship Bridge Displays"
+  },
+  {
+    "long": "Managed Service for Apache Flink",
+    "translation": "Warp-Speed Data Processor"
+  },
+  {
+    "long": "Managed Service for Prometheus",
+    "translation": "Telemetry Probe Overseer"
+  },
+  {
+    "short": "MSK",
+    "long": "Managed Streaming for Apache Kafka",
+    "translation": "Inter-Starfleet Comms Bus"
+  },
+  {
+    "long": "Managed Workflows for Apache Airflow",
+    "translation": "Flight Plan Automator"
+  },
+  {
+    "long": "MemoryDB",
+    "translation": "Instant Matter Replicator Memory"
+  },
+  {
+    "short": "MQ",
+    "long": "Managed Message Broker Service",
+    "translation": "Subspace Sub-Light Courier"
+  },
+  {
+    "long": "Neptune",
+    "translation": "Poseidon Gas Giant Graph"
+  },
+  {
+    "long": "OpenSearch Service",
+    "translation": "Cosmic Dust Scanner"
+  },
+  {
+    "long": "Personalize",
+    "translation": "Mind-Reader Rations Dispenser"
+  },
+  {
+    "long": "Pinpoint",
+    "translation": "Targeting Laser Matrix"
+  },
+  {
+    "long": "Polly",
+    "translation": "Synthesized Ship AI Voice"
+  },
+  {
+    "short": "QLDB",
+    "long": "Quantum Ledger Database",
+    "translation": "Unalterable Captain's Log"
+  },
+  {
+    "long": "QuickSight",
+    "translation": "Astrogation HUD"
+  },
+  {
+    "long": "RDS Custom for Oracle",
+    "translation": "Modified Ancient Monolith (Alpha)"
+  },
+  {
+    "long": "RDS Custom for SQL Server",
+    "translation": "Modified Ancient Monolith (Beta)"
+  },
+  {
+    "long": "RDS for Db2",
+    "translation": "Deep Space Station Registry"
+  },
+  {
+    "long": "RDS for MariaDB",
+    "translation": "Asteroid Belt Colony Database"
+  },
+  {
+    "long": "RDS for MySQL",
+    "translation": "Standard Star System Directory"
+  },
+  {
+    "long": "RDS for Oracle",
+    "translation": "Pre-Warp Civilization Core"
+  },
+  {
+    "long": "RDS for PostgreSQL",
+    "translation": "Advanced Federation Data Core"
+  },
+  {
+    "long": "RDS for SQL server",
+    "translation": "Terran Command Database"
+  },
+  {
+    "long": "RDS on Outposts",
+    "translation": "Exoplanet Field Array"
+  },
+  {
+    "long": "Redshift",
+    "translation": "Expanding Universe Data Warehouse"
+  },
+  {
+    "long": "Rekognition",
+    "translation": "Alien Species Identifier"
+  },
+  {
+    "long": "Route 53",
+    "translation": "Subspace Beacon Routing"
+  },
+  {
+    "long": "SageMaker",
+    "translation": "Synthesizer of Synthetic Intelligence"
+  },
+  {
+    "long": "SageMaker Ground Truth",
+    "translation": "Android Training Academy"
+  },
+  {
+    "long": "Security Lake",
+    "translation": "Defensive Perimeter Log Ocean"
+  },
+  {
+    "short": "SES",
+    "long": "Simple Email Service",
+    "translation": "Hyper-Mail Rocketry"
+  },
+  {
+    "short": "SNS",
+    "long": "Simple Notification Service",
+    "translation": "Red Alert Broadcaster"
+  },
+  {
+    "short": "SQS",
+    "long": "Simple Queue Service",
+    "translation": "Pneumatic Docking Tubes"
+  },
+  {
+    "short": "S3",
+    "long": "Simple Storage Service",
+    "translation": "Galactic Cargo Hold"
+  },
+  {
+    "short": "SWF",
+    "long": "Simple Workflow Service",
+    "translation": "Robotic Assembly Protocol"
+  },
+  {
+    "long": "Textract",
+    "translation": "Ancient Xenoglyph Decipherer"
+  },
+  {
+    "long": "Timestream",
+    "translation": "Temporal Vortex Ledger"
+  },
+  {
+    "long": "Transcribe",
+    "translation": "Subspace Radio Audio Logger"
+  },
+  {
+    "long": "Transcribe Medical",
+    "translation": "Sickbay Voice Recorder"
+  },
+  {
+    "long": "Translate",
+    "translation": "Babel Fish Matrix"
+  },
+  {
+    "long": "Verified Permissions",
+    "translation": "Security Clearance Matrix"
+  },
+  {
+    "short": "VPC",
+    "long": "Virtual Private Cloud",
+    "translation": "Cloaked Star Sector"
+  },
+  {
+    "long": "WorkSpaces",
+    "translation": "Holo-Desks"
+  },
+  {
+    "long": "WorkSpaces Applications",
+    "translation": "Holo-Desk Modules"
+  },
+  {
+    "long": "Amplify",
+    "translation": "Thruster Booster Signal"
+  },
+  {
+    "long": "App Runner",
+    "translation": "Escape Pod Launcher"
+  },
+  {
+    "long": "AppSync",
+    "translation": "Quantum Comms Synchronization"
+  },
+  {
+    "long": "Audit Manager",
+    "translation": "Federation Inspector General"
+  },
+  {
+    "long": "B2B Data Interchange",
+    "translation": "Inter-Species Trade Hub"
+  },
+  {
+    "long": "Backup",
+    "translation": "Escape Shuttle Blueprint Stash"
+  },
+  {
+    "long": "Certificate Manager",
+    "translation": "Encryption Key Cryptex"
+  },
+  {
+    "long": "Cloud Map",
+    "translation": "Constellation Mapping Grid"
+  },
+  {
+    "long": "CloudFormation",
+    "translation": "Terraforming Blueprint Machine"
+  },
+  {
+    "long": "CloudHSM",
+    "translation": "Titanium Quantum Safe"
+  },
+  {
+    "long": "CloudTrail",
+    "translation": "Exhaust Flare Tracker"
+  },
+  {
+    "long": "CodeArtifact",
+    "translation": "Starship Schematic Vault"
+  },
+  {
+    "long": "CodeBuild",
+    "translation": "Orbital Drydock Assembler"
+  },
+  {
+    "long": "CodeDeploy",
+    "translation": "Drop Pod Deployer"
+  },
+  {
+    "long": "CodePipeline",
+    "translation": "Starship Assembly Line"
+  },
+  {
+    "long": "Config",
+    "translation": "Ship Component Inventory"
+  },
+  {
+    "long": "Data Transfer",
+    "translation": "Tachyon Beam Relay"
+  },
+  {
+    "long": "Database Migration Service",
+    "translation": "Wormhole Relocation Conveyor"
+  },
+  {
+    "long": "DataSync",
+    "translation": "Telemetry Beam Synchronization"
+  },
+  {
+    "long": "Deadline Cloud",
+    "translation": "Orbital Rendering Hub"
+  },
+  {
+    "long": "Direct Connect",
+    "translation": "Tethered Quantum Umbilical"
+  },
+  {
+    "long": "Directory Service",
+    "translation": "Crew Manifest Registry"
+  },
+  {
+    "long": "Elastic Disaster Recovery",
+    "translation": "Emergency Warp Core Eject & Rebuild"
+  },
+  {
+    "long": "Elemental MediaTailor",
+    "translation": "Subspace Holo-Ad Injector"
+  },
+  {
+    "long": "Elemental MediaConnect",
+    "translation": "Interstellar Holo-Broadcaster Link"
+  },
+  {
+    "long": "Elemental MediaConvert",
+    "translation": "Holo-Signal Format Transmuter"
+  },
+  {
+    "long": "Elemental MediaLive",
+    "translation": "Live Galactic Broadcast Core"
+  },
+  {
+    "long": "Elemental MediaPackage",
+    "translation": "Holo-Feed Cargo Prep"
+  },
+  {
+    "long": "Entity Resolution",
+    "translation": "Clone De-Duplicator"
+  },
+  {
+    "long": "Fargate",
+    "translation": "Pilotless Auto-Cruiser"
+  },
+  {
+    "short": "FIS",
+    "long": "Fault Injection Service",
+    "translation": "Solar Flare Simulation Matrix"
+  },
+  {
+    "long": "Firewall Manager",
+    "translation": "Armada Shield Controller"
+  },
+  {
+    "long": "Glue",
+    "translation": "Stardust Matrix Binder"
+  },
+  {
+    "long": "IAM Access Analyzer",
+    "translation": "Airlock Security Breacher Audit"
+  },
+  {
+    "long": "IoT Analytics",
+    "translation": "Space Probe Telemetry Scanner"
+  },
+  {
+    "long": "IoT Core",
+    "translation": "Probes Hive Mind Hub"
+  },
+  {
+    "long": "IoT Device Defender",
+    "translation": "Probe Firewall Sentinel"
+  },
+  {
+    "long": "IoT Device Management",
+    "translation": "Probe Constellation Controller"
+  },
+  {
+    "long": "IoT Events",
+    "translation": "Cosmic Incident Monitor"
+  },
+  {
+    "long": "IoT Greengrass",
+    "translation": "Deep Space Satellite Outpost Software"
+  },
+  {
+    "long": "IoT SiteWise",
+    "translation": "Asteroid Mining Facility Telemetry"
+  },
+  {
+    "long": "Key Management Service",
+    "translation": "Warp Core Master Keyring"
+  },
+  {
+    "long": "Lake Formation",
+    "translation": "Nebula Ice Harvester"
+  },
+  {
+    "long": "Lambda",
+    "translation": "Quantum Particle Flash Sparks"
+  },
+  {
+    "long": "Mainframe Modernization",
+    "translation": "Retrofitting Generational Starships"
+  },
+  {
+    "long": "Migration Hub Refactor Spaces",
+    "translation": "Fleet Retrofit Drydock Sectors"
+  },
+  {
+    "long": "Network Firewall",
+    "translation": "Deflector Shield Perimeter"
+  },
+  {
+    "long": "Payment Cryptography",
+    "translation": "Galactic Credit Cipher Core"
+  },
+  {
+    "long": "PCS",
+    "translation": "Supernova Supercomputer Clusters"
+  },
+  {
+    "long": "Private Certificate Authority",
+    "translation": "Imperial Seal Generator"
+  },
+  {
+    "long": "Resilience Hub",
+    "translation": "Meteor Impact Survival Center"
+  },
+  {
+    "long": "Secrets Manager",
+    "translation": "Contraband Safe"
+  },
+  {
+    "long": "Security Hub",
+    "translation": "Starbase Tactical Command"
+  },
+  {
+    "long": "Service Catalog",
+    "translation": "Starfleet Replicator Blueprints Menus"
+  },
+  {
+    "long": "Shield",
+    "translation": "Magnetic Ion Canopy"
+  },
+  {
+    "long": "SimSpace Weaver",
+    "translation": "Multiverse Galaxy Simulator"
+  },
+  {
+    "long": "Snowball",
+    "translation": "Armored Cargo Drop-Pod"
+  },
+  {
+    "long": "Step Functions",
+    "translation": "Orchestrated Launch Sequences"
+  },
+  {
+    "long": "Storage Gateway",
+    "translation": "Exoplanet Cargo Transporter Portal"
+  },
+  {
+    "long": "Systems Manager",
+    "translation": "Starship Operations Dashboard"
+  },
+  {
+    "long": "Transfer Family",
+    "translation": "Subspace File Beam Pack"
+  },
+  {
+    "short": "WAF",
+    "long": "Web Application Firewall",
+    "translation": "Asteroid Belt Defense Grid"
+  },
+  {
+    "long": "X-Ray",
+    "translation": "Gamma-Ray Hull Scanner"
+  },
+  {
+    "long": "Elastic Load Balancing",
+    "translation": "Tachyon Traffic Dissipator Grid"
+  },
+  {
+    "long": "Windows Server and SQL Server on Elastic Compute Cloud",
+    "translation": "Vintage Terran Control Module on Modern Starship Hull"
+  }
+]

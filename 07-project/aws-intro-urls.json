@@ -1,0 +1,656 @@
+[
+  {
+    "long": "Application Migration Service",
+    "intro_url": "https://docs.aws.amazon.com/mgn/latest/ug/what-is-mgn.html"
+  },
+  {
+    "long": "API Gateway",
+    "intro_url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
+  },
+  {
+    "long": "AppFlow",
+    "intro_url": "https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html"
+  },
+  {
+    "long": "Athena",
+    "intro_url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
+  },
+  {
+    "short": "A2I",
+    "long": "Augmented AI",
+    "intro_url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
+  },
+  {
+    "long": "Aurora MySQL-Compatible",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"
+  },
+  {
+    "long": "Aurora PostgreSQL-Compatible DB",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraPostgreSQL.Intro.html"
+  },
+  {
+    "long": "Bedrock",
+    "intro_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+  },
+  {
+    "long": "Bedrock AgentCore",
+    "intro_url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
+  },
+  {
+    "long": "CloudFront",
+    "intro_url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
+  },
+  {
+    "long": "CloudWatch",
+    "intro_url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
+  },
+  {
+    "long": "CodeGuru Reviewer",
+    "intro_url": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html"
+  },
+  {
+    "long": "Cognito",
+    "intro_url": "https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html"
+  },
+  {
+    "long": "Comprehend",
+    "intro_url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html"
+  },
+  {
+    "long": "Comprehend Medical",
+    "intro_url": "https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-welcome.html"
+  },
+  {
+    "long": "Data Firehose",
+    "intro_url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
+  },
+  {
+    "long": "Detective",
+    "intro_url": "https://docs.aws.amazon.com/detective/latest/userguide/detective-welcome.html"
+  },
+  {
+    "long": "DocumentDB (with MongoDB compatibility)",
+    "intro_url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html"
+  },
+  {
+    "long": "DynamoDB",
+    "intro_url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
+  },
+  {
+    "short": "EC2",
+    "long": "Elastic Compute Cloud",
+    "intro_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
+  },
+  {
+    "short": "EKS",
+    "long": "Elastic Kubernetes Service",
+    "intro_url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html"
+  },
+  {
+    "short": "EBS",
+    "long": "Elastic Block Store",
+    "intro_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html"
+  },
+  {
+    "short": "ECR",
+    "long": "Elastic Container Registry",
+    "intro_url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/WhatIsECR.html"
+  },
+  {
+    "short": "EFS",
+    "long": "Elastic File System",
+    "intro_url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
+  },
+  {
+    "long": "Elastic Graphics",
+    "intro_url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-graphics.html"
+  },
+  {
+    "long": "Elastic VMware Service",
+    "intro_url": "https://docs.aws.amazon.com/vmware-service/latest/userguide/welcome.html"
+  },
+  {
+    "long": "ElastiCache",
+    "intro_url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/WhatIs.html"
+  },
+  {
+    "short": "EMR",
+    "long": "Elastic MapReduce",
+    "intro_url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
+  },
+  {
+    "long": "EventBridge",
+    "intro_url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
+  },
+  {
+    "long": "File Cache",
+    "intro_url": "https://docs.aws.amazon.com/filecache/latest/adminguide/what-is-filecache.html"
+  },
+  {
+    "long": "FinSpace Dataset Browser",
+    "intro_url": "https://docs.aws.amazon.com/finspace/latest/userguide/finspace-what-is.html"
+  },
+  {
+    "long": "Forecast",
+    "intro_url": "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html"
+  },
+  {
+    "long": "Fraud Detector",
+    "intro_url": "https://docs.aws.amazon.com/frauddetector/latest/ug/what-is-frauddetector.html"
+  },
+  {
+    "long": "FSx for Lustre",
+    "intro_url": "https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html"
+  },
+  {
+    "long": "FSx for NetApp ONTAP",
+    "intro_url": "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html"
+  },
+  {
+    "long": "FSx for OpenZFS",
+    "intro_url": "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/what-is-fsx-openzfs.html"
+  },
+  {
+    "long": "FSx for Windows File Server",
+    "intro_url": "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html"
+  },
+  {
+    "long": "GameLift Servers",
+    "intro_url": "https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-intro.html"
+  },
+  {
+    "long": "GameLift Streams",
+    "intro_url": "https://docs.aws.amazon.com/gamelift/latest/streamsguide/streams-intro.html"
+  },
+  {
+    "long": "GuardDuty",
+    "intro_url": "https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_intro.html"
+  },
+  {
+    "long": "HealthLake",
+    "intro_url": "https://docs.aws.amazon.com/healthlake/latest/devguide/what-is-healthlake.html"
+  },
+  {
+    "long": "Inspector",
+    "intro_url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"
+  },
+  {
+    "long": "Kendra",
+    "intro_url": "https://docs.aws.amazon.com/kendra/latest/dg/what-is-kendra.html"
+  },
+  {
+    "long": "Keyspaces",
+    "intro_url": "https://docs.aws.amazon.com/keyspaces/latest/devguide/what-is-keyspaces.html"
+  },
+  {
+    "long": "Kinesis Data Streams",
+    "intro_url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
+  },
+  {
+    "long": "Kinesis Video Streams",
+    "intro_url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html"
+  },
+  {
+    "long": "Lightsail",
+    "intro_url": "https://docs.aws.amazon.com/lightsail/latest/userguide/what-is-amazon-lightsail.html"
+  },
+  {
+    "long": "Location Service",
+    "intro_url": "https://docs.aws.amazon.com/location/latest/developerguide/what-is-amazon-location-service.html"
+  },
+  {
+    "long": "Lookout for Metrics",
+    "intro_url": "https://docs.aws.amazon.com/lookoutmetrics/latest/dev/LookoutMetrics-welcome.html"
+  },
+  {
+    "long": "Lookout for Vision",
+    "intro_url": "https://docs.aws.amazon.com/lookoutforvision/latest/developer-guide/what-is.html"
+  },
+  {
+    "long": "Macie",
+    "intro_url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
+  },
+  {
+    "long": "Managed Grafana",
+    "intro_url": "https://docs.aws.amazon.com/grafana/latest/userguide/what-is-Amazon-Managed-Grafana.html"
+  },
+  {
+    "long": "Managed Service for Apache Flink",
+    "intro_url": "https://docs.aws.amazon.com/managed-flink/latest/dev/what-is.html"
+  },
+  {
+    "long": "Managed Service for Prometheus",
+    "intro_url": "https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html"
+  },
+  {
+    "short": "MSK",
+    "long": "Managed Streaming for Apache Kafka",
+    "intro_url": "https://docs.aws.amazon.com/msk/latest/developerguide/what-is-msk.html"
+  },
+  {
+    "long": "Managed Workflows for Apache Airflow",
+    "intro_url": "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html"
+  },
+  {
+    "long": "MemoryDB",
+    "intro_url": "https://docs.aws.amazon.com/memorydb/latest/devguide/WhatIs.html"
+  },
+  {
+    "short": "MQ",
+    "long": "Managed Message Broker Service",
+    "intro_url": "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/welcome.html"
+  },
+  {
+    "long": "Neptune",
+    "intro_url": "https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"
+  },
+  {
+    "long": "OpenSearch Service",
+    "intro_url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is-amazon-opensearch-service.html"
+  },
+  {
+    "long": "Personalize",
+    "intro_url": "https://docs.aws.amazon.com/personalize/latest/dg/what-is-personalize.html"
+  },
+  {
+    "long": "Pinpoint",
+    "intro_url": "https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html"
+  },
+  {
+    "long": "Polly",
+    "intro_url": "https://docs.aws.amazon.com/polly/latest/dg/what-is.html"
+  },
+  {
+    "short": "QLDB",
+    "long": "Quantum Ledger Database",
+    "intro_url": "https://docs.aws.amazon.com/qldb/latest/developerguide/what-is-qldb.html"
+  },
+  {
+    "long": "QuickSight",
+    "intro_url": "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html"
+  },
+  {
+    "long": "RDS Custom for Oracle",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-custom.html"
+  },
+  {
+    "long": "RDS Custom for SQL Server",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-custom.html"
+  },
+  {
+    "long": "RDS for Db2",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Db2.html"
+  },
+  {
+    "long": "RDS for MariaDB",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MariaDB.html"
+  },
+  {
+    "long": "RDS for MySQL",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html"
+  },
+  {
+    "long": "RDS for Oracle",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Oracle.html"
+  },
+  {
+    "long": "RDS for PostgreSQL",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html"
+  },
+  {
+    "long": "RDS for SQL server",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html"
+  },
+  {
+    "long": "RDS on Outposts",
+    "intro_url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html"
+  },
+  {
+    "long": "Redshift",
+    "intro_url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"
+  },
+  {
+    "long": "Rekognition",
+    "intro_url": "https://docs.aws.amazon.com/rekognition/latest/dg/what-is-rekognition.html"
+  },
+  {
+    "long": "Route 53",
+    "intro_url": "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/Welcome.html"
+  },
+  {
+    "long": "SageMaker",
+    "intro_url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
+  },
+  {
+    "long": "SageMaker Ground Truth",
+    "intro_url": "https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html"
+  },
+  {
+    "long": "Security Lake",
+    "intro_url": "https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html"
+  },
+  {
+    "short": "SES",
+    "long": "Simple Email Service",
+    "intro_url": "https://docs.aws.amazon.com/ses/latest/dg/Welcome.html"
+  },
+  {
+    "short": "SNS",
+    "long": "Simple Notification Service",
+    "intro_url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html"
+  },
+  {
+    "short": "SQS",
+    "long": "Simple Queue Service",
+    "intro_url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
+  },
+  {
+    "short": "S3",
+    "long": "Simple Storage Service",
+    "intro_url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+  },
+  {
+    "short": "SWF",
+    "long": "Simple Workflow Service",
+    "intro_url": "https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-intro.html"
+  },
+  {
+    "long": "Textract",
+    "intro_url": "https://docs.aws.amazon.com/textract/latest/dg/what-is.html"
+  },
+  {
+    "long": "Timestream",
+    "intro_url": "https://docs.aws.amazon.com/timestream/latest/developerguide/what-is-timestream.html"
+  },
+  {
+    "long": "Transcribe",
+    "intro_url": "https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html"
+  },
+  {
+    "long": "Transcribe Medical",
+    "intro_url": "https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-medical.html"
+  },
+  {
+    "long": "Translate",
+    "intro_url": "https://docs.aws.amazon.com/translate/latest/dg/what-is.html"
+  },
+  {
+    "long": "Verified Permissions",
+    "intro_url": "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/what-is-verifiedpermissions.html"
+  },
+  {
+    "short": "VPC",
+    "long": "Virtual Private Cloud",
+    "intro_url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
+  },
+  {
+    "long": "WorkSpaces",
+    "intro_url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces.html"
+  },
+  {
+    "long": "WorkSpaces Applications",
+    "intro_url": "https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-application-manager.html"
+  },
+  {
+    "long": "Amplify",
+    "intro_url": "https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html"
+  },
+  {
+    "long": "App Runner",
+    "intro_url": "https://docs.aws.amazon.com/apprunner/latest/dg/what-is-apprunner.html"
+  },
+  {
+    "long": "AppSync",
+    "intro_url": "https://docs.aws.amazon.com/appsync/latest/devguide/welcome.html"
+  },
+  {
+    "long": "Audit Manager",
+    "intro_url": "https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html"
+  },
+  {
+    "long": "B2B Data Interchange",
+    "intro_url": "https://docs.aws.amazon.com/b2b-data-interchange/latest/userguide/what-is-b2b-data-interchange.html"
+  },
+  {
+    "long": "Backup",
+    "intro_url": "https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html"
+  },
+  {
+    "long": "Certificate Manager",
+    "intro_url": "https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html"
+  },
+  {
+    "long": "Cloud Map",
+    "intro_url": "https://docs.aws.amazon.com/cloud-map/latest/dg/what-is-cloud-map.html"
+  },
+  {
+    "long": "CloudFormation",
+    "intro_url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html"
+  },
+  {
+    "long": "CloudHSM",
+    "intro_url": "https://docs.aws.amazon.com/cloudhsm/latest/userguide/introduction.html"
+  },
+  {
+    "long": "CloudTrail",
+    "intro_url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
+  },
+  {
+    "long": "CodeArtifact",
+    "intro_url": "https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html"
+  },
+  {
+    "long": "CodeBuild",
+    "intro_url": "https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html"
+  },
+  {
+    "long": "CodeDeploy",
+    "intro_url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html"
+  },
+  {
+    "long": "CodePipeline",
+    "intro_url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html"
+  },
+  {
+    "long": "Config",
+    "intro_url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"
+  },
+  {
+    "long": "Data Transfer",
+    "intro_url": "https://docs.aws.amazon.com/whitepapers/latest/aws-data-transfer-costs-models/aws-data-transfer-costs-models.html"
+  },
+  {
+    "long": "Database Migration Service",
+    "intro_url": "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html"
+  },
+  {
+    "long": "DataSync",
+    "intro_url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
+  },
+  {
+    "long": "Deadline Cloud",
+    "intro_url": "https://docs.aws.amazon.com/deadline-cloud/latest/developerguide/what-is-deadline-cloud.html"
+  },
+  {
+    "long": "Direct Connect",
+    "intro_url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
+  },
+  {
+    "long": "Directory Service",
+    "intro_url": "https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html"
+  },
+  {
+    "long": "Elastic Disaster Recovery",
+    "intro_url": "https://docs.aws.amazon.com/drs/latest/userguide/what-is-drs.html"
+  },
+  {
+    "long": "Elemental MediaTailor",
+    "intro_url": "https://docs.aws.amazon.com/mediatailor/latest/ug/what-is.html"
+  },
+  {
+    "long": "Elemental MediaConnect",
+    "intro_url": "https://docs.aws.amazon.com/mediaconnect/latest/ug/what-is.html"
+  },
+  {
+    "long": "Elemental MediaConvert",
+    "intro_url": "https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html"
+  },
+  {
+    "long": "Elemental MediaLive",
+    "intro_url": "https://docs.aws.amazon.com/medialive/latest/ug/what-is.html"
+  },
+  {
+    "long": "Elemental MediaPackage",
+    "intro_url": "https://docs.aws.amazon.com/mediapackage/latest/ug/what-is.html"
+  },
+  {
+    "long": "Entity Resolution",
+    "intro_url": "https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-entity-resolution.html"
+  },
+  {
+    "long": "Fargate",
+    "intro_url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html"
+  },
+  {
+    "short": "FIS",
+    "long": "Fault Injection Service",
+    "intro_url": "https://docs.aws.amazon.com/fis/latest/userguide/what-is-fis.html"
+  },
+  {
+    "long": "Firewall Manager",
+    "intro_url": "https://docs.aws.amazon.com/filewall-manager/latest/developerguide/what-is-fwm.html"
+  },
+  {
+    "long": "Glue",
+    "intro_url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
+  },
+  {
+    "long": "IAM Access Analyzer",
+    "intro_url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html"
+  },
+  {
+    "long": "IoT Analytics",
+    "intro_url": "https://docs.aws.amazon.com/iotanalytics/latest/userguide/welcome.html"
+  },
+  {
+    "long": "IoT Core",
+    "intro_url": "https://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html"
+  },
+  {
+    "long": "IoT Device Defender",
+    "intro_url": "https://docs.aws.amazon.com/iot-device-defender/latest/developerguide/device-defender-what-is.html"
+  },
+  {
+    "long": "IoT Device Management",
+    "intro_url": "https://docs.aws.amazon.com/iot-device-management/latest/developerguide/what-is-iot-device-management.html"
+  },
+  {
+    "long": "IoT Events",
+    "intro_url": "https://docs.aws.amazon.com/iotevents/latest/developerguide/what-is-iotevents.html"
+  },
+  {
+    "long": "IoT Greengrass",
+    "intro_url": "https://docs.aws.amazon.com/greengrass/v2/developerguide/what-is-iot-greengrass.html"
+  },
+  {
+    "long": "IoT SiteWise",
+    "intro_url": "https://docs.aws.amazon.com/sitewise/latest/userguide/what-is-sitewise.html"
+  },
+  {
+    "long": "Key Management Service",
+    "intro_url": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
+  },
+  {
+    "long": "Lake Formation",
+    "intro_url": "https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html"
+  },
+  {
+    "long": "Lambda",
+    "intro_url": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
+  },
+  {
+    "long": "Mainframe Modernization",
+    "intro_url": "https://docs.aws.amazon.com/mainframe-modernization/latest/userguide/what-is-mainframe-modernization.html"
+  },
+  {
+    "long": "Migration Hub Refactor Spaces",
+    "intro_url": "https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/what-is-refactor-spaces.html"
+  },
+  {
+    "long": "Network Firewall",
+    "intro_url": "https://docs.aws.amazon.com/network-firewall/latest/developerguide/what-is-network-firewall.html"
+  },
+  {
+    "long": "Payment Cryptography",
+    "intro_url": "https://docs.aws.amazon.com/payment-cryptography/latest/userguide/what-is.html"
+  },
+  {
+    "long": "PCS",
+    "intro_url": "https://docs.aws.amazon.com/pcs/latest/userguide/what-is-service.html"
+  },
+  {
+    "long": "Private Certificate Authority",
+    "intro_url": "https://docs.aws.amazon.com/privateca/latest/userguide/PcaWelcome.html"
+  },
+  {
+    "long": "Resilience Hub",
+    "intro_url": "https://docs.aws.amazon.com/resilience-hub/latest/userguide/what-is-resilience-hub.html"
+  },
+  {
+    "long": "Secrets Manager",
+    "intro_url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
+  },
+  {
+    "long": "Security Hub",
+    "intro_url": "https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html"
+  },
+  {
+    "long": "Service Catalog",
+    "intro_url": "https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html"
+  },
+  {
+    "long": "Shield",
+    "intro_url": "https://docs.aws.amazon.com/waf/latest/developerguide/shield-chapter.html"
+  },
+  {
+    "long": "SimSpace Weaver",
+    "intro_url": "https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is-simspaceweaver.html"
+  },
+  {
+    "long": "Snowball",
+    "intro_url": "https://docs.aws.amazon.com/snowball/latest/developer-guide/whatisedge.html"
+  },
+  {
+    "long": "Step Functions",
+    "intro_url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
+  },
+  {
+    "long": "Storage Gateway",
+    "intro_url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html"
+  },
+  {
+    "long": "Systems Manager",
+    "intro_url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html"
+  },
+  {
+    "long": "Transfer Family",
+    "intro_url": "https://docs.aws.amazon.com/transfer/latest/userguide/what-is-aws-transfer-family.html"
+  },
+  {
+    "short": "WAF",
+    "long": "Web Application Firewall",
+    "intro_url": "https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html"
+  },
+  {
+    "long": "X-Ray",
+    "intro_url": "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"
+  },
+  {
+    "long": "Elastic Load Balancing",
+    "intro_url": "https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html"
+  },
+  {
+    "long": "Windows Server and SQL Server on Elastic Compute Cloud",
+    "intro_url": "https://docs.aws.amazon.com/sql-server-ec2/latest/userguide/sql-server-on-ec2-overview.html"
+  }
+]
