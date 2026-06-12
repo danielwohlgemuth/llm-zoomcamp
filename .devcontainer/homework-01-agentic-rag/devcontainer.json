@@ -1,0 +1,15 @@
+{
+    "name": "homework-01-agentic-rag",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/homework/01-agentic-rag",
+    "onCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+    "postCreateCommand": "export PATH=\"$HOME/.local/bin:$PATH\" && cd ${containerWorkspaceFolder} && uv sync",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    }
+}
