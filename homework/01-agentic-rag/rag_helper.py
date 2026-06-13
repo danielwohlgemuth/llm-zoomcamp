@@ -24,7 +24,8 @@ class RAGBase:
         instructions=INSTRUCTIONS,
         prompt_template=PROMPT_TEMPLATE,
         course='llm-zoomcamp',
-        model='gpt-5.4-mini'
+        model='claude-haiku-4-5',
+        max_tokens=1024
     ):
         self.index = index
         self.llm_client = llm_client
@@ -32,25 +33,24 @@ class RAGBase:
         self.course = course
         self.prompt_template = prompt_template
         self.model = model
+        self.max_tokens = max_tokens
 
     def search(self, query, num_results=5):
-        boost_dict = {'question': 3.0, 'section': 0.5}
-        filter_dict = {'course': self.course}
+        boost_dict = {'content': 3.0, 'filename': 0.5}
 
         return self.index.search(
             query,
             num_results=num_results,
             boost_dict=boost_dict,
-            filter_dict=filter_dict
+            filter_dict={}
         )
 
     def build_context(self, search_results):
         lines = []
 
         for doc in search_results:
-            lines.append(doc['section'])
-            lines.append('Q: ' + doc['question'])
-            lines.append('A: ' + doc['answer'])
+            lines.append('Filename: ' + doc['filename'])
+            lines.append(doc['content'])
             lines.append('')
 
         return '\n'.join(lines).strip()
@@ -63,19 +63,25 @@ class RAGBase:
 
     def llm(self, prompt):
         input_messages = [
-            {'role': 'developer', 'content': self.instructions},
             {'role': 'user', 'content': prompt}
         ]
 
-        response = self.llm_client.responses.create(
+        response = self.llm_client.messages.create(
+            max_tokens=self.max_tokens,
             model=self.model,
-            input=input_messages
+            system=self.instructions,
+            messages=input_messages
         )
 
-        return response.output_text
+        return response
 
     def rag(self, query):
         search_results = self.search(query)
         prompt = self.build_prompt(query, search_results)
-        answer = self.llm(prompt)
-        return answer
+        message = self.llm(prompt)
+        return {
+            "answer": message.content[0].text,
+            "stop_reason": message.stop_reason,
+            "input_tokens": message.usage.input_tokens,
+            "output_tokens": message.usage.output_tokens
+        }
