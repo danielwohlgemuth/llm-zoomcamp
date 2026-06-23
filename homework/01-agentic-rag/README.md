@@ -1,6 +1,6 @@
 # Agentic RAG Homework
 
-[Instruction](homework.md)
+[Instructions](homework.md)
 
 [Results](notebook.ipynb)
 
