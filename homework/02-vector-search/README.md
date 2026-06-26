@@ -2,6 +2,8 @@
 
 [Instructions](homework.md)
 
+[Results](notebook.ipynb)
+
 ## Prerequisites
 
 - [uv](https://docs.astral.sh/uv/)
