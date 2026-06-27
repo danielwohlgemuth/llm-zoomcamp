@@ -1,0 +1,15 @@
+{
+    "name": "07-project-translation",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/07-project",
+    "onCreateCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+    "postCreateCommand": "export PATH=\"$HOME/.local/bin:$PATH\" && cd ${containerWorkspaceFolder} && uv sync",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    }
+}
