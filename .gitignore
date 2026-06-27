@@ -3,3 +3,4 @@
 __pycache__
 llm-calls-log.jsonl
 models/
+.DS_Store

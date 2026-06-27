@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="dotGlow" cx="50%" cy="50%" r="80%">
+      <stop offset="0%" stop-color="#2a4494"/>
+      <stop offset="30%" stop-color="#1a2d6b"/>
+      <stop offset="60%" stop-color="#0d1530" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glowBlur" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+  </defs>
+
+  <rect width="400" height="400" fill="#00000000"/>
+  <circle
+    cx="200"
+    cy="200"
+    r="200"
+    fill="#000000"
+  />
+
+  <!-- Midnight blue glow halos -->
+  <g filter="url(#glowBlur)">
+    <circle cx="142" cy="258" r="58" fill="url(#dotGlow)"/>
+    <circle cx="200" cy="200" r="58" fill="url(#dotGlow)"/>
+    <circle cx="258" cy="142" r="58" fill="url(#dotGlow)"/>
+  </g>
+
+  <!-- Outer dashed circle with rounded dash caps -->
+  <circle
+    cx="200"
+    cy="200"
+    r="165"
+    fill="none"
+    stroke="#FFFFFF"
+    stroke-width="10"
+    stroke-dasharray="35 60"
+    stroke-linecap="round"
+  />
+
+  <!-- Diagonal line through the three dots -->
+  <line
+    x1="142"
+    y1="258"
+    x2="258"
+    y2="142"
+    stroke="#FFFFFF"
+    stroke-width="10"
+    stroke-linecap="round"
+  />
+
+  <!-- Three dots -->
+  <circle cx="142" cy="258" r="17" fill="#FFFFFF"/>
+  <circle cx="200" cy="200" r="17" fill="#FFFFFF"/>
+  <circle cx="258" cy="142" r="17" fill="#FFFFFF"/>
+</svg>
