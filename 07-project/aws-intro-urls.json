@@ -626,7 +626,7 @@
   },
   {
     "long": "Storage Gateway",
-    "intro_url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html"
+    "intro_url": "https://docs.aws.amazon.com/filegateway/latest/files3/what-is-file-s3.html"
   },
   {
     "long": "Systems Manager",
