@@ -1,5 +1,7 @@
-download:
-	uv run download.py
+.PHONY: download_documents translate, translate_description fmt black isort
+
+download_documents:
+	uv run download_documents.py
 
 translate:
 	uv run translate.py
