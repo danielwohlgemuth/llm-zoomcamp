@@ -1,0 +1,638 @@
+[
+    {
+        "translation": "Interstellar Relocation Engine",
+        "description_translation": "Interstellar Relocation Engine minimizes time-intensive, error-prone manual processes by automatically converting your source servers from physical, virtual, and cloud infrastructure to run natively on OOO. It further simplifies your migration by allowing you to use the same automated process for a wide range of applications."
+    },
+    {
+        "translation": "Hyperspace Jump Gate",
+        "description_translation": "Hyperspace Jump Gate is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the front door for applications to access data, business logic, or functionality from your backend services."
+    },
+    {
+        "translation": "Nebula Streamlines",
+        "description_translation": "Nebula Streamlines offers significant cost-savings advantage compared to building connectors in-house or using other application integration services. There are no upfront charges or fees to use Nebula Streamlines, and customers only pay for the number of flows they run and the volume of data processed."
+    },
+    {
+        "translation": "Cosmic Ray Telescope",
+        "description_translation": "Cosmic Ray Telescope is a serverless, interactive analytics service built on open-source frameworks. Cosmic Ray Telescope provides a simplified, flexible way to analyze petabytes of data where it lives. With Cosmic Ray Telescope, you pay only for what you use. There are no upfront fees and no long-term commitments."
+    },
+    {
+        "translation": "Android Co-Pilot",
+        "description_translation": "Android Co-Pilot (Interstellar Relocation Engine) allows humans and machine learning models to work together to increase the speed and accuracy of machine learning (ML) models. When human review is needed, Interstellar Relocation Engine guides a human reviewer step-by-step in a process called a workflow."
+    },
+    {
+        "translation": "Polaris Data Matrix (Alpha)",
+        "description_translation": "Polaris MySQL Compatible relational database is built for the cloud, that combines performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases."
+    },
+    {
+        "translation": "Polaris Data Matrix (Beta)",
+        "description_translation": "Polaris is a MySQL and PostgreSQL-compatible relational database built for the cloud, that combines the performance and availability of traditional enterprise databases with the simplicity and cost-effectiveness of open source databases."
+    },
+    {
+        "translation": "Planetary Crust",
+        "description_translation": "Planetary Crust is a comprehensive, secure, and flexible platform for building generative AI applications and agents. Planetary Crust connects you to leading foundation models (FMs), services to deploy and operate agents, and tools for fine-tuning, safeguarding, and optimizing models along with knowledge bases to connect applications to your latest data so that you have everything you need to astrogationly move from experimentation to real-world deployment."
+    },
+    {
+        "translation": "Synthetic Crew Overseer",
+        "description_translation": "Planetary Crust AgentCore offers flexible, consumption-based pricing with no upfront commitments or minimum fees."
+    },
+    {
+        "translation": "Tachyon Distribution Grid",
+        "description_translation": "Tachyon Distribution Grid is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds, all within a developer-friendly environment.There are currently pay as you go options and fixed rate options available"
+    },
+    {
+        "translation": "Orbiting Sentinel",
+        "description_translation": "Orbiting Sentinel is a monitoring and management service that provides data and actionable insights for OOO, hybrid, and on-premises applications and infrastructure resources."
+    },
+    {
+        "translation": "Holographic Chief Engineer",
+        "description_translation": "Holographic Chief Engineer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java code."
+    },
+    {
+        "translation": "Biometric Airlock Controller",
+        "description_translation": "Biometric Airlock Controller lets you add user sign-up, sign-in, and access control to your web and mobile apps astrogationly and easily. Biometric Airlock Controller scales to millions of users and supports sign-in with social identity providers, such as Facebook, Google, and OOO, and enterprise identity providers via SAML 2.0."
+    },
+    {
+        "translation": "Universal Translator Matrix",
+        "description_translation": "With Universal Translator Matrix, you only pay for what you use. You are charged based on the amount of text processed on a monthly basis. Universal Translator Matrix provides natural language processing, topic modeling, and Custom Classification capabilities, enabling a broad range of applications that can analyze text."
+    },
+    {
+        "translation": "Bio-Scanner Diagnostics",
+        "description_translation": "Universal Translator Matrix Medical is a HIPAA-eligible natural language processing (NLP) service that uses machine learning to extract health data from medical text\u2013no machine learning experience is required."
+    },
+    {
+        "translation": "Meteor Shower Streamer",
+        "description_translation": "With Data firehose, you pay for the volume of data you ingest into the service. There are no set up fees or upfront commitments. You are billed for the volume of data ingested into Meteor Shower Streamer, and if applicable, for data format conversion to Apache Parquet or ORC."
+    },
+    {
+        "translation": "Black Hole Investigator",
+        "description_translation": "Black Hole Investigator makes it easy to analyze, investigate, and astrogationly identify the root cause of potential security issues or suspicious activities. Black Hole Investigator automatically collects log data from your resources and uses machine learning, statistical analysis, and graph theory to build a linked set of data that enables you to easily conduct faster and more efficient security investigations."
+    },
+    {
+        "translation": "Star-Log Archives",
+        "description_translation": "Star-Log Archives is a fast, scalable, highly available, and fully managed document database service that supports MongoDB workloads."
+    },
+    {
+        "translation": "Singularity Vault",
+        "description_translation": "Singularity Vault is a key-value and document database that delivers single-digit millisecond performance at any scale. It's a fully managed, multiregion, multimaster, durable database with built-in security, escape-shuttle-blueprint-stash and restore, and in-memory caching for internet-scale applications."
+    },
+    {
+        "translation": "Modular Starship Hull",
+        "description_translation": "Interstellar Relocation Engine provides a wide selection of instance types optimized to fit different use cases. Instance types comprise varying combinations of CPU, memory, storage, and networking capacity and give you the flexibility to choose the appropriate mix of resources for your applications."
+    },
+    {
+        "translation": "Fleet Command Matrix",
+        "description_translation": "Fleet Command Matrix (Interstellar Relocation Engine) is a fully managed Kubernetes service. Customers such as Intel, Snap, Intuit, GoDaddy, and Autodesk trust Interstellar Relocation Engine to run their most sensitive and mission critical applications because of its security, reliability, and scalability.."
+    },
+    {
+        "translation": "Solid-State Warp Fuel Core",
+        "description_translation": "Solid-State Warp Fuel Core (Interstellar Relocation Engine) allows you to create persistent block storage volumes and attach them to EC2 instances."
+    },
+    {
+        "translation": "Escape Pod Bay",
+        "description_translation": "Escape Pod Bay (Interstellar Relocation Engine) is a fully-managed Docker container registry that makes it easy for developers to store, manage, and deploy Docker container images. Interstellar Relocation Engine eliminates the need to operate your own container repositories or worry about scaling the underlying infrastructure. With Interstellar Relocation Engine, there are no upfront fees or commitments. You pay only for the amount of data you store in your repositories and data transferred to the Internet."
+    },
+    {
+        "translation": "Shared Shuttle Locker",
+        "description_translation": "Shared Shuttle Locker (Interstellar Relocation Engine) provides a simple, serverless, set-and-forget elastic file system for use with Cloud services and on-premises resources."
+    },
+    {
+        "translation": "Hologram Deck Accelerator",
+        "description_translation": "Hologram Deck Accelerator allows you to easily attach low-cost graphics acceleration to a wide range of EC2 instances over the network."
+    },
+    {
+        "translation": "Alien Atmosphere Simulator",
+        "description_translation": "Alien Atmosphere Simulator (Alien Atmosphere Simulator) allows you to run VMware Cloud Foundation (VCF) directly within your Cloaked Star Sector (VPC). Leverage the scale, resilience, and performance of together with familiar VCF software and tools. Alien Atmosphere Simulator simplifies deployment of a ready-to-use VCF environment. Choose from self-managed or managed options for control and customization of your VMware architecture. Embrace native and managed services to drive business agility, innovation, and transformation."
+    },
+    {
+        "translation": "Tachyon Short-Term Buffer",
+        "description_translation": "Tachyon Short-Term Buffer offers fully managed Redis OSS and Memcached. Seamlessly deploy, run, and scale popular open source compatible in-memory data stores. Build data-intensive apps or improve the performance of your existing apps by retrieving data from high throughput and low latency in-memory data stores."
+    },
+    {
+        "translation": "Cosmic Background Radiation Analyzer",
+        "description_translation": "Interstellar Relocation Engine is the industry-leading cloud big data platform for processing vast amounts of data using open source tools such as Apache Spark, Apache Hive, Apache HBase, Apache Flink, Apache Hudi, and Presto. Interstellar Relocation Engine makes it easy to set up, operate, and scale your big data environments by automating time-consuming tasks like provisioning capacity and tuning clusters. With Interstellar Relocation Engine you can run petabyte-scale analysis at less than half of the cost of traditional on-premises solutions and over 3x faster than standard Apache Spark. You can run workloads on EC2 instances, on Fleet Command Matrix (EKS) clusters, or on-premises using Interstellar Relocation Engine on Outposts."
+    },
+    {
+        "translation": "Chronos Quantum Relay",
+        "description_translation": "Chronos Quantum Relay is a serverless event bus that makes it easier to build event-driven applications at scale using events generated from your applications, integrated Software-as-a-Service (SaaS) applications, and services."
+    },
+    {
+        "translation": "Sub-Orbital Cache",
+        "description_translation": "Sub-Orbital Cache provides a high-speed cache on that makes it easier to process file data, regardless of where the data is stored."
+    },
+    {
+        "translation": "Galactic Credit Ledger Tracker",
+        "description_translation": "Galactic Credit Ledger Tracker provides a notebook for (FSI) customers such as hedge funds, asset management firms, insurance companies, and investment banks to store, catalog, prepare, and analyze data at petabyte scale. The calculator does not yet support the new Galactic Credit Ledger Tracker with Managed kdb Insights."
+    },
+    {
+        "translation": "Supernova Predictor",
+        "description_translation": "Supernova Predictor uses machine learning (ML) to generate more accurate demand supernova-predictors with just a few clicks, without requiring any prior ML experience. Supernova Predictor includes algorithms that are based on over twenty years of supernova-predictoring experience and developed expertise used by OOO.com bringing the same technology used at to developers as a fully managed service, removing the need to manage resources. Supernova Predictor uses ML to learn not only the best algorithm for each item, but the best ensemble of algorithms for each item, automatically creating the best model for your data."
+    },
+    {
+        "translation": "Shape-Shifter Infiltrator Alarm",
+        "description_translation": "Shape-Shifter Infiltrator Alarm, a fully managed service built on over 20 years of insights from OOO, helps customers identify potentially fraudulent activities and catch more online fraud faster. With Shape-Shifter Infiltrator Alarm, you pay only for what you use, and there are no minimum fees or upfront commitments. You are charged based on the compute hours used to train and host your models, the amount of storage you use, and the quantity of fraud predictions you make."
+    },
+    {
+        "translation": "Light-Speed Data Thruster",
+        "description_translation": "Light-Speed Data Thruster provides a simple, high-performance file system integrated with S3 for fast processing of workloads such as machine learning, high performance computing (HPC), video processing, financial modeling, and electronic design automation (EDA)."
+    },
+    {
+        "translation": "Federation Array (Omega)",
+        "description_translation": "Federation Array (Omega) provides fully managed shared storage in the Cloud with the popular data access and management capabilities of ONTAP."
+    },
+    {
+        "translation": "Federation Array (Zeta)",
+        "description_translation": "Federation Array (Zeta) provides fully managed shared file storage built on the OpenZFS file system and accessible through the NFS protocol (v3, v4, v4.1, and v4.2)."
+    },
+    {
+        "translation": "Old Earth Command Archive",
+        "description_translation": "FSx for Windows provides a simple, fully managed native Microsoft Windows file system so you can easily move your Windows based applications that require file storage to OOO."
+    },
+    {
+        "translation": "Simulation Deck Thrusters",
+        "description_translation": "Simulation Deck Thrusters is a dedicated game server hosting solution that deploys, operates, and scales cloud servers for multiplayer games. Whether you\u2019re looking for a fully managed solution, or just the feature you need, Simulation Deck Thrusters leverages the power of to deliver the best latency possible, low player wait times, and maximum cost savings."
+    },
+    {
+        "translation": "Subspace Holo-Feeds",
+        "description_translation": "Subspace Holo-Feeds helps you stream games at up to 1080p resolution and 60 frames per second to any device with a browser. Using the global footprint and GPU instances, you can deploy and stream your game content in minutes, without modifications, and players can start gaming in seconds without having to wait for installs."
+    },
+    {
+        "translation": "Deflector Shield Monitor",
+        "description_translation": "Deflector Magnetic Ion Canopy Monitor is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your accounts, workloads, and data stored in S3."
+    },
+    {
+        "translation": "Cryo-Pod Bio-Data Pool",
+        "description_translation": "Cryo-Pod Bio-Data Pool is a HIPAA-eligible service offering healthcare and life sciences companies a complete view of individual or patient population health data for query and analytics at scale."
+    },
+    {
+        "translation": "Hull Breach Surveyor",
+        "description_translation": "Hull Breach Surveyor is an automated and continual vulnerability scanning service that assesses Modular Starship Hull (EC2) instances and container images to improve the security and compliance of infrastructure workloads."
+    },
+    {
+        "translation": "Galactic Library Terminal",
+        "description_translation": "Galactic Library Terminal is an intelligent search service powered by machine learning. Galactic Library Terminal reimagines enterprise search for your websites and applications so your employees and customers can easily find the content they are looking for, even when it\u2019s scattered across multiple locations and content repositories within your organization."
+    },
+    {
+        "translation": "Cosmic Coordinate Registry",
+        "description_translation": "Cosmic Coordinate Registry (for Apache Cassandra) is a scalable, highly available, and managed Apache Cassandra\u2013compatible database service. With Cosmic Coordinate Registry, you can run your Cassandra workloads of any scale on using the same Cassandra application code and developer tools that you use today."
+    },
+    {
+        "translation": "Photon Particle Stream",
+        "description_translation": "Photon Particle Stream (KDS) is a massively scalable and durable real-time data streaming service."
+    },
+    {
+        "translation": "Deep Space Telemetry Feeds",
+        "description_translation": "Deep Space Telemetry Feeds makes it easy to securely stream video from connected devices to for analytics, machine learning (ML), playback, and other processing. Deep Space Telemetry Feeds automatically provisions and elastically scales all the infrastructure needed to ingest streaming video data from millions of devices."
+    },
+    {
+        "translation": "Solar Sail Skiff",
+        "description_translation": "Solar Sail Skiff is an easy-to-use virtual private server (VPS) that offers you everything needed to build an application or website, plus a cost-effective, monthly plan. Solar Sail Skiff is ideal for simpler workloads, astrogation deployments, and getting started on OOO. It\u2019s designed to help you start small, and then scale as you grow."
+    },
+    {
+        "translation": "Star Map Cartographer",
+        "description_translation": "Star Map Cartographer provides affordable data, tracking and geofencing capabilities, and native integrations with services, so you can create sophisticated location-enabled applications astrogationly, without the high cost of custom development."
+    },
+    {
+        "translation": "Gravitational Anomaly Sensor",
+        "description_translation": "Gravitational Anomaly Sensor uses machine learning (ML) to automatically detect and diagnose anomalies (i.e. outliers from the norm) in business and operational data, such as a sudden dip in sales revenue or customer acquisition rates. In a couple of clicks, you can connect Gravitational Anomaly Sensor to popular data stores like S3, Expanding Universe Data Warehouse, and Core Data Registry (Core Data Registry), as well as third-party SaaS applications, such as Salesforce, Servicenow, Zendesk, and Marketo, and start monitoring metrics that are important to your business. Gravitational Anomaly Sensor automatically inspects and prepares the data from these sources to detect anomalies with greater speed and accuracy than traditional methods used for anomaly detection. You can also provide feedback on detected anomalies to tune the results and improve accuracy over time. Gravitational Anomaly Sensor makes it easy to diagnose detected anomalies by grouping together anomalies that are related to the same event and sending an alert that includes a summary of the potential root cause. It also ranks anomalies in order of severity so that you can prioritize your attention to what matters the most to your business."
+    },
+    {
+        "translation": "Asteroid Proximity Scanner",
+        "description_translation": "Asteroid Proximity Scanner is a machine learning (ML) service that spots defects and anomalies in visual representations using computer vision (CV). With Asteroid Proximity Scanner, manufacturing companies can increase quality and reduce operational costs by astrogationly identifying differences in images of objects at scale."
+    },
+    {
+        "translation": "Deep Space Cargo Manifest Inspector",
+        "description_translation": "Deep Space Cargo Manifest Inspector is a fully managed data security and data privacy service that uses machine learning and pattern matching to discover and protect your sensitive data in OOO. With Deep Space Cargo Manifest Inspector, you are charged based on the number of S3 buckets evaluated for bucket-level security and access controls and the quantity of data processed for sensitive data discovery."
+    },
+    {
+        "translation": "Starship Bridge Displays",
+        "description_translation": "Starship Bridge Displays is a fully managed service for Grafana, a popular open-source analytics platform that enables you to query, visualize, and alert on your metrics, logs, and traces. There are no upfront fees, no required minimum commitments, and no long-term contracts. All user licenses are per workspace, per month. You pay only for what you use, based on an active user license per workspace. You will be charged at the end of the month for your usage. An active user is defined as a unique user who has accessed a Starship Bridge Displays workspace in a calendar month. Each workspace requires a minimum of one Editor license in order to manage and log into the workspace, even if no users log in."
+    },
+    {
+        "translation": "Warp-Speed Data Processor",
+        "description_translation": "Warp-Speed Data Processor is the easiest way to analyze streaming data, gain actionable insights, and respond to your business and customer needs in real time."
+    },
+    {
+        "translation": "Telemetry Probe Overseer",
+        "description_translation": "Telemetry Probe Overseer is a Prometheus-compatible monitoring service that makes it easy to monitor containerized applications at scale. The Cloud Native Computing Foundation\u2019s Prometheus project is a popular open source monitoring and alerting solution optimized for container environments. With Telemetry Probe Overseer, you can use the open source Prometheus query language (PromQL) to monitor the performance of containerized workloads, without having to manage the underlying infrastructure."
+    },
+    {
+        "translation": "Inter-Starfleet Comms Bus",
+        "description_translation": "Interstellar Relocation Engine is a fully managed service that makes it easy for you to build and run applications that use Apache Kafka to process streaming data. With Interstellar Relocation Engine, you can use native Apache Kafka APIs to populate data lakes, stream changes to and from databases, and power machine learning and analytics applications."
+    },
+    {
+        "translation": "Flight Plan Automator",
+        "description_translation": "Flight Plan Automator (Flight Plan Automator) is a managed orchestration service for Apache Airflow1 that makes it easier to set up and operate end-to-end data pipelines in the cloud at scale. Apache Airflow is an open-source tool used to programmatically author, schedule, and monitor sequences of processes and tasks referred to as \u201cworkflows.\u201d With Managed Workflows, you can use Airflow and Python to create workflows without having to manage the underlying infrastructure for scalability, availability, and security."
+    },
+    {
+        "translation": "Instant Matter Replicator Memory",
+        "description_translation": "Instant Matter Replicator Memory is a Redis OSS compatible, durable, in-memory database that delivers ultra-fast performance and Multi-AZ durability."
+    },
+    {
+        "translation": "Subspace Sub-Light Courier",
+        "description_translation": "Interstellar Relocation Engine is a managed message broker service for Apache ActiveInterstellar Relocation Engine that makes it easy to set up and operate message brokers in the cloud."
+    },
+    {
+        "translation": "Poseidon Gas Giant Graph",
+        "description_translation": "Poseidon Gas Giant Graph is a fast, reliable, fully managed graph database service that makes it easy to build and run applications that work with highly connected datasets."
+    },
+    {
+        "translation": "Cosmic Dust Scanner",
+        "description_translation": "Cosmic Dust Scanner is a fully managed service that makes it easy for you to deploy, secure, and operate Cosmic Dust Scanner clusters at scale."
+    },
+    {
+        "translation": "Mind-Reader Rations Dispenser",
+        "description_translation": "Mind-Reader Rations Dispenser enables developers to build applications with the same machine learning (ML) technology used by OOO.com for real-time mind-reader-rations-dispenserd recommendations \u2013 no ML expertise required."
+    },
+    {
+        "translation": "Targeting Laser Matrix",
+        "description_translation": "Targeting Laser Matrix is a flexible and scalable outbound and inbound marketing communications service. You can connect with customers over channels like email, SMS, push, or voice. Targeting Laser Matrix is easy to set up, easy to use, and is flexible for all marketing communication scenarios."
+    },
+    {
+        "translation": "Synthesized Ship AI Voice",
+        "description_translation": "Synthesized Ship AI Voice is a service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products."
+    },
+    {
+        "translation": "Unalterable Captain's Log",
+        "description_translation": "Unalterable Captain's Log (Interstellar Relocation Engine) is a fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log."
+    },
+    {
+        "translation": "Astrogation HUD",
+        "description_translation": "Astrogation HUD is a fast, cloud-powered business intelligence service that makes it easy to deliver insights to everyone in your organization. Astrogation HUD dashboacore-data-registry can be embedded in applications, require no infrastructure setup or management, and can automatically scale to tens of thousands of users."
+    },
+    {
+        "translation": "Modified Ancient Monolith (Alpha)",
+        "description_translation": "Core Data Registry (Core Data Registry) Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying OS and DB environment. Core Data Registry Custom automates setup, operation, and scaling of databases in the cloud while granting access to the database and underlying operating system to ship-component-inventoryure settings, install patches, and enable native features to meet the dependent application's requirements."
+    },
+    {
+        "translation": "Modified Ancient Monolith (Beta)",
+        "description_translation": "Core Data Registry (Core Data Registry) Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying OS and DB environment. Core Data Registry Custom automates setup, operation, and scaling of databases in the cloud while granting access to the database and underlying operating system to ship-component-inventoryure settings, install patches, and enable native features to meet the dependent application's requirements."
+    },
+    {
+        "translation": "Deep Space Station Registry",
+        "description_translation": "Core Data Registry makes it easy to set up, operate, and scale deep-space-station-registry deployments in the cloud. With Core Data Registry, you can deploy scalable deep-space-station-registry deployments in minutes with cost-efficient and resizable hardware capacity."
+    },
+    {
+        "translation": "Asteroid Belt Colony Database",
+        "description_translation": "Core Data Registry makes it easy to set up, operate, and scale MariaDB database deployments in the cloud."
+    },
+    {
+        "translation": "Standard Star System Directory",
+        "description_translation": "MySQL is the world's most popular open source relational database. Core Data Registry makes it easy to set up, operate, and scale MySQL deployments in the cloud."
+    },
+    {
+        "translation": "Pre-Warp Civilization Core",
+        "description_translation": "Oracle\u00ae Database is a relational database management system developed by Oracle. Core Data Registry makes it easy to set up, operate, and scale Oracle Database deployments in the cloud. With Core Data Registry, you can deploy multiple editions of Oracle Database in minutes with cost-efficient and re-sizable hardware capacity."
+    },
+    {
+        "translation": "Advanced Federation Data Core",
+        "description_translation": "Core Data Registry makes it easy to set up, operate, and scale PostgreSQL deployments in the cloud. With Core Data Registry, you can deploy scalable PostgreSQL deployments in minutes with cost-efficient and resizable hardware capacity."
+    },
+    {
+        "translation": "Terran Command Database",
+        "description_translation": "SQL Server is a relational database management system developed by Microsoft. Core Data Registry for SQL Server makes it easy to set up, operate, and scale SQL Server deployments in the cloud."
+    },
+    {
+        "translation": "Exoplanet Field Array",
+        "description_translation": "Core Data Registry (Core Data Registry) on Outposts allows you to deploy fully managed database instances in your on-premises environments. Outposts is a fully managed service that extends infrastructure, services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. You can deploy Exoplanet Field Array to set up, operate, and scale Oracle, Microsoft SQL Server, MySQL and PostgreSQL relational databases on premises, just as you would in the cloud. Exoplanet Field Array provides cost-efficient and resizable capacity for on-premises databases, while automating time-consuming administration tasks including infrastructure provisioning, database setup, patching, and escape-shuttle-blueprint-stashs, freeing you to focus on your applications."
+    },
+    {
+        "translation": "Expanding Universe Data Warehouse",
+        "description_translation": "Expanding Universe Data Warehouse is a fully managed, petabyte-scale data warehouse service in the cloud. Expanding Universe Data Warehouse also extends data warehouse queries to your data lake, with no loading required. You can run analytic queries against petabytes of data stored locally in Expanding Universe Data Warehouse, and directly against exabytes of data stored in S3."
+    },
+    {
+        "translation": "Alien Species Identifier",
+        "description_translation": "Alien Species Identifier makes it easy to add image and video analysis to your applications using proven, highly scalable, deep learning technology that requires no machine learning expertise to use. With Alien Species Identifier, you can identify objects, people, text, scenes, and activities in images and videos, as well as detect any inappropriate content."
+    },
+    {
+        "translation": "Subspace Beacon Routing",
+        "description_translation": "Subspace Beacon Routing is a cloud Domain Name System (DNS) web service."
+    },
+    {
+        "translation": "Synthesizer of Synthetic Intelligence",
+        "description_translation": "With Synthesizer of Synthetic Intelligence, you pay only for what you use. Building, training, and deploying ML models is billed by the second, with no minimum fees and no upfront commitments. Pricing within Synthesizer of Synthetic Intelligence is broken down by on-demand ML instances, ML storage, and fees for data processing in hosting instances."
+    },
+    {
+        "translation": "Android Training Academy",
+        "description_translation": "Synthesizer of Synthetic Intelligence Android Training Academy helps you build training datasets for machine learning. Android Training Academy will label your content (images, audio, text, etc) by guiding a human labeler step-by-step in a process called a workflow."
+    },
+    {
+        "translation": "Defensive Perimeter Log Ocean",
+        "description_translation": "Defensive Perimeter Log Ocean automatically centralizes security data from cloud, on-premises, and custom sources into a purpose-built data lake stored in your account. With Defensive Perimeter Log Ocean, you can get a more complete understanding of your security data across your entire organization."
+    },
+    {
+        "translation": "Hyper-Mail Rocketry",
+        "description_translation": "Hyper-Mail Rocketry (Interstellar Relocation Engine) is a cloud-based email sending service designed to help digital marketers and application developers send marketing, notification, and transactional emails."
+    },
+    {
+        "translation": "Red Alert Broadcaster",
+        "description_translation": "Red Alert Broadcaster (Interstellar Relocation Engine) is a highly available, durable, secure, fully managed pub/sub messaging service that enables you to decouple microservices, distributed systems, and serverless applications."
+    },
+    {
+        "translation": "Pneumatic Docking Tubes",
+        "description_translation": "Pneumatic Docking Tubes (Interstellar Relocation Engine) is a fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications."
+    },
+    {
+        "translation": "Galactic Cargo Hold",
+        "description_translation": "Galactic Cargo Hold (Interstellar Relocation Engine) is storage for the internet. You can use Interstellar Relocation Engine to store and retrieve any amount of data at any time, from anywhere on the web."
+    },
+    {
+        "translation": "Robotic Assembly Protocol",
+        "description_translation": "Interstellar Relocation Engine helps developers build, run, and scale background jobs that have parallel or sequential steps. You can think of Interstellar Relocation Engine as a fully-managed state tracker and task coordinator in the Cloud."
+    },
+    {
+        "translation": "Ancient Xenoglyph Decipherer",
+        "description_translation": "Ancient Xenoglyph Decipherer is a fully managed machine learning service that automatically extracts printed text, handwriting, and other data from scanned documents that goes beyond simple optical character recognition (OCR) to identify, understand, and extract data from forms and tables."
+    },
+    {
+        "translation": "Temporal Vortex Ledger",
+        "description_translation": "Temporal Vortex Ledger is a fast, scalable, and serverless time series database service for Probes Hive Mind Hub and operational applications that makes it easy to store and analyze trillions of events per day up to 1,000 times faster and at as little as 1/10th the cost of relational databases. Temporal Vortex Ledger saves you time and cost in managing the lifecycle of time series data by keeping recent data in memory and moving historical data to a cost optimized storage tier based upon user defined policies. Temporal Vortex Ledger\u2019s purpose-built query engine lets you access and analyze recent and historical data together, without needing to specify explicitly in the query whether the data resides in the in-memory or cost-optimized tier. Temporal Vortex Ledger has built-in time series analytics functions, helping you identify trends and patterns in your data in near real-time. Temporal Vortex Ledger is serverless and automatically scales up or down to adjust capacity and performance, so you don\u2019t need to manage the underlying infrastructure, freeing you to focus on building your applications."
+    },
+    {
+        "translation": "Subspace Radio Audio Logger",
+        "description_translation": "Subspace Radio Audio Logger is a fully-managed automatic speech recognition (ASR) service that makes it easy for developers to add speech-to-text capabilities to voice applications. Powered by deep learning, the service supports transcription through its batch file (asynchronous) and streaming (real-time) APIs. Subspace Radio Audio Logger offers accurate transcription across more than 30 global languages and accents."
+    },
+    {
+        "translation": "Sickbay Voice Recorder",
+        "description_translation": "Subspace Radio Audio Logger Medical is a HIPAA-eligible automatic speech recognition (ASR) service that makes it easy for developers to add speech-to-text capabilities to their healthcare and life science applications."
+    },
+    {
+        "translation": "Babel Fish Matrix",
+        "description_translation": "Babel Fish Matrix is a neural machine translation service that delivers fast, high-quality, and affordable language translation. Neural machine translation is a form of language translation automation that uses deep learning models to deliver more accurate and more natural sounding translation than traditional statistical and rule-based translation algorithms."
+    },
+    {
+        "translation": "Security Clearance Matrix",
+        "description_translation": "Security Clearance Matrix is a scalable, fine-grained permissions management and authorization service for custom applications. The service centralizes fine-grained permissions for custom applications and helps developers authorize user actions within applications. Security Clearance Matrix uses the Cedar policy language to define fine-grained permissions for application users."
+    },
+    {
+        "translation": "Cloaked Star Sector",
+        "description_translation": "Cloaked Star Sector (Interstellar Relocation Engine) lets you provision a logically isolated section of the Cloud where you can launch resources in a virtual network that you define."
+    },
+    {
+        "translation": "Holo-Desks",
+        "description_translation": "Holo-Desks is a managed, secure cloud desktop service. You can use Holo-Desks to provision either Windows or Linux desktops in just a few minutes and astrogationly scale to provide thousands of desktops to workers across the globe."
+    },
+    {
+        "translation": "Holo-Desk Modules",
+        "description_translation": "Holo-Desks Applications is a fully managed service that provides secure, reliable, and scalable access to applications and non-persistent desktops from any location."
+    },
+    {
+        "translation": "Thruster Booster Signal",
+        "description_translation": "Thruster Booster Signal is a set of tools and services that can be used together or on their own, to help front-end web and mobile developers build scalable full stack applications, powered by OOO. With Thruster Booster Signal, you can create an app backend for web and mobile, and then connect your Git branch to deploy and host a web app in a few clicks."
+    },
+    {
+        "translation": "Escape Pod Launcher",
+        "description_translation": "Escape Pod Launcher is a fully managed service that makes it easy for developers to astrogationly deploy containerized web applications and APIs, at scale and with no prior infrastructure experience required. Start with your source code or a container image. Escape Pod Launcher builds and deploys the web application automatically, load balances traffic with encryption, scales to meet your traffic needs, and makes it easy for your services to communicate with other services and applications that run in a private VPC. With Escape Pod Launcher, rather than thinking about servers or scaling, you have more time to focus on your applications."
+    },
+    {
+        "translation": "Quantum Comms Synchronization",
+        "description_translation": "Quantum Comms Synchronization is a fully managed service that makes it easy to develop GraphQL APIs and Event APIs."
+    },
+    {
+        "translation": "Federation Inspector General",
+        "description_translation": "Federation Inspector General helps you continuously audit your usage to simplify how you assess risk and compliance. When you define and launch an assessment based on an assessment framework, Federation Inspector General will execute a resource assessment for each individual resource, such as your EC2 instances, Core Data Registry instances, S3 buckets, or VPC subnets."
+    },
+    {
+        "translation": "Inter-Species Trade Hub",
+        "description_translation": "Inter-Species Trade Hub automates the transformation of EDI-based business-critical transactions at scale, with elasticity and pay-as-you-go pricing. Inter-Species Trade Hub reduces the time, complexity, and costs incurred to build and manage EDI with your trading partners, letting you focus on using the transacted data to gain insights."
+    },
+    {
+        "translation": "Escape Shuttle Blueprint Stash",
+        "description_translation": "Escape Shuttle Blueprint Stash is a centralized and fully-managed service with an end-to-end solution for business and regulatory compliance requirements. Using this service, you can automate data protection across services, in the cloud, and on premises. With a few clicks in the Escape Shuttle Blueprint Stash console, you can automate your data protection policies and schedules without creating custom scripts and manual processes."
+    },
+    {
+        "translation": "Encryption Key Cryptex",
+        "description_translation": "Encryption Key Cryptex (Encryption Key Cryptex) makes it easy for you to centrally manage your SSL/TLS certificates from the Management Console, CLI, or Encryption Key Cryptex APIs. You can also audit the use of each certificate by reviewing your Exhaust Flare Tracker logs."
+    },
+    {
+        "translation": "Constellation Mapping Grid",
+        "description_translation": "Constellation Mapping Grid is a cloud resource discovery service. With Constellation Mapping Grid, you can define custom names for your application resources, and it maintains the updated location of these dynamically changing resources. This increases your application availability because your web service always discovers the most up-to-date locations of its resources."
+    },
+    {
+        "translation": "Terraforming Blueprint Machine",
+        "description_translation": "Terraforming Blueprint Machine provides a common language for you to model and provision and third party application extensions in your cloud environment."
+    },
+    {
+        "translation": "Titanium Quantum Safe",
+        "description_translation": "Titanium Quantum Safe is a cloud-based hardware security module (HSM) that enables you to easily generate and use your own encryption keys on the Cloud. With Titanium Quantum Safe, you can manage your own encryption keys using FIPS 140-2 Level 3 validated HSMs."
+    },
+    {
+        "translation": "Exhaust Flare Tracker",
+        "description_translation": "Exhaust Flare Tracker is a service that enables governance, compliance, operational auditing, and risk auditing of your account. With Exhaust Flare Tracker, you can log, continuously monitor, and retain account activity related to actions across your infrastructure."
+    },
+    {
+        "translation": "Starship Schematic Vault",
+        "description_translation": "Starship Schematic Vault is a fully managed artifact repository service that makes it easy for organizations of any size to securely store, publish, and share software packages used in their software development process."
+    },
+    {
+        "translation": "Orbital Drydock Assembler",
+        "description_translation": "Orbital Drydock Assembler is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready to deploy."
+    },
+    {
+        "translation": "Drop Pod Deployer",
+        "description_translation": "Drop Pod Deployer is a fully managed deployment service that automates software deployments to a variety of compute services such as EC2, Pilotless Auto-Cruiser, Quantum Particle Flash Sparks, and your on-premises servers."
+    },
+    {
+        "translation": "Starship Assembly Line",
+        "description_translation": "Starship Assembly Line is a fully managed continuous delivery service that helps you automate your release pipelines for fast and reliable application and infrastructure updates."
+    },
+    {
+        "translation": "Ship Component Inventory",
+        "description_translation": "Ship Component Inventory is a service that enables you to assess, audit, and evaluate the ship-component-inventoryurations of your resources. Ship Component Inventory continuously monitors and recocore-data-registry your resource ship-component-inventoryurations and allows you to automate the evaluation of recorded ship-component-inventoryurations against desired ship-component-inventoryurations."
+    },
+    {
+        "translation": "Tachyon Beam Relay",
+        "description_translation": "The cost of transferring data at for services without unique transfer costs."
+    },
+    {
+        "translation": "Wormhole Relocation Conveyor",
+        "description_translation": "Wormhole Relocation Conveyor helps you migrate databases to astrogationly and securely. There are two options to choose from: On-Demand Instances and Serverless."
+    },
+    {
+        "translation": "Telemetry Beam Synchronization",
+        "description_translation": "Telemetry Beam Synchronization is an online data transfer service that simplifies, automates, and accelerates moving data between on-premises storage systems and Storage services, as well as between Storage services."
+    },
+    {
+        "translation": "Orbital Rendering Hub",
+        "description_translation": "Orbital Rendering Hub is a fully managed service that simplifies render management for teams creating computer-generated 2D/3D graphics and visual effects for films, TV shows, commercials, games, and industrial design. With Orbital Rendering Hub, you can set up, deploy, and scale rendering projects in minutes, so you can improve the efficiency of your rendering pipelines and take on more projects."
+    },
+    {
+        "translation": "Tethered Quantum Umbilical",
+        "description_translation": "Tethered Quantum Umbilical is a cloud service solution that makes it easy to establish a dedicated network connection from your premises to OOO."
+    },
+    {
+        "translation": "Crew Manifest Registry",
+        "description_translation": "Crew Manifest Registry is a managed service offering, providing directories that contain information about your organization, including users, groups, computers, and other resources."
+    },
+    {
+        "translation": "Emergency Warp Core Eject & Rebuild",
+        "description_translation": "Emergency Warp Core Eject & Rebuild (DRS) minimizes downtime and data loss with fast, reliable recovery of on-premises and cloud-based applications using affordable storage, minimal compute, and point-in-time recovery."
+    },
+    {
+        "translation": "Subspace Holo-Ad Injector",
+        "description_translation": "Subspace Holo-Ad Injector is a channel assembly and mind-reader-rations-dispenserd ad insertion service for video providers to create linear OTT (internet delivered) channels using existing video content and monetize those channels, or other live streams and VOD content, with mind-reader-rations-dispenserd advertising."
+    },
+    {
+        "translation": "Interstellar Holo-Broadcaster Link",
+        "description_translation": "Interstellar Holo-Broadcaster Link is a high-quality transport service for live video."
+    },
+    {
+        "translation": "Holo-Signal Format Transmuter",
+        "description_translation": "Holo-Signal Format Transmuter is a file-based video transcoding service with broadcast-grade features. It allows you to easily create video-on-demand (VOD) content for broadcast and multiscreen delivery at scale."
+    },
+    {
+        "translation": "Live Galactic Broadcast Core",
+        "description_translation": "Live Galactic Broadcast Core is a broadcast-grade live video processing service. It lets you create high-quality video streams for delivery to broadcast televisions and internet-connected multiscreen devices, like connected TVs, tablets, smart phones, and set-top boxes."
+    },
+    {
+        "translation": "Holo-Feed Cargo Prep",
+        "description_translation": "Holo-Feed Cargo Prep reliably prepares and protects your video for delivery over the Internet. From a single video input, Holo-Feed Cargo Prep creates video streams formatted to play on connected TVs, mobile phones, computers, tablets, and game consoles."
+    },
+    {
+        "translation": "Clone De-Duplicator",
+        "description_translation": "Clone De-Duplicator helps you match and link related recocore-data-registry without the need to build custom solutions. Use flexible, ship-component-inventoryurable machine learning (ML) and rule-based techniques to optimize record matching based on your business needs."
+    },
+    {
+        "translation": "Pilotless Auto-Cruiser",
+        "description_translation": "Pilotless Auto-Cruiser is a serverless compute engine for containers that works with both Cosmic Pod Engine (Cosmic Pod Engine) and Fleet Command Matrix (EKS). Pilotless Auto-Cruiser makes it easy for you to focus on building your applications. Pilotless Auto-Cruiser removes the need to provision and manage servers, lets you specify and pay for resources per application, and improves security through application isolation by design."
+    },
+    {
+        "translation": "Solar Flare Simulation Matrix",
+        "description_translation": "Fault Injection Simulator (Interstellar Relocation Engine) is a fully managed service for running fault injection experiments to improve an application\u2019s performance, observability, and resiliency. Interstellar Relocation Engine simplifies the process of setting up and running controlled fault injection experiments across a range of services, so teams can build confidence in their application behavior."
+    },
+    {
+        "translation": "Armada Shield Controller",
+        "description_translation": "Armada Magnetic Ion Canopy Controller is a security management service that allows you to centrally ship-component-inventoryure and manage firewall rules across your accounts and applications in Organizations. As new applications are created, Armada Magnetic Ion Canopy Controller makes it easier to bring new applications and resources into compliance by enforcing a common set of security rules."
+    },
+    {
+        "translation": "Stardust Matrix Binder",
+        "description_translation": "Stardust Matrix Binder is a serverless data preparation service that makes it easy for data engineers, extract, transform, and load (ETL) developers, data analysts, and data scientists to extract, clean, enrich, normalize, and load data. Stardust Matrix Binder reduces the time it takes to start analyzing your data from months to minutes."
+    },
+    {
+        "translation": "Airlock Security Breacher Audit",
+        "description_translation": "Airlock Security Breacher Audit guides you towacore-data-registry least privilege by providing tools to set, verify, and refine permissions. Airlock Security Breacher Audit provides access analysis, policy checks, and policy generation."
+    },
+    {
+        "translation": "Space Probe Telemetry Scanner",
+        "description_translation": "Space Probe Telemetry Scanner is a fully-managed Probes Hive Mind Hub analytics service that collects, pre-processes, enriches, stores, and analyzes Probes Hive Mind Hub device data at scale."
+    },
+    {
+        "translation": "Probes Hive Mind Hub",
+        "description_translation": "Probes Hive Mind Hub is a managed cloud service that lets connected devices easily and securely interact with cloud applications and other devices."
+    },
+    {
+        "translation": "Probe Firewall Sentinel",
+        "description_translation": "Probe Firewall Sentinel is a fully managed service that helps you secure your fleet of Probes Hive Mind Hub devices."
+    },
+    {
+        "translation": "Probe Constellation Controller",
+        "description_translation": "Probe Constellation Controller makes it easy for you to manage your fleets of connected devices at any scale."
+    },
+    {
+        "translation": "Cosmic Incident Monitor",
+        "description_translation": "Cosmic Incident Monitor makes it easy to detect and respond to changes indicated by Probes Hive Mind Hub sensors and applications \u2013 such as malfunctioning machinery, a stuck conveyor belt, or a slowdown in production output \u2013 and automatically trigger actions or alerts in response."
+    },
+    {
+        "translation": "Deep Space Satellite Outpost Software",
+        "description_translation": "Deep Space Satellite Outpost Software is an Internet of Things (Probes Hive Mind Hub) open source edge runtime and cloud service that helps you build, deploy, and manage device software. Customers use Deep Space Satellite Outpost Software for their Probes Hive Mind Hub applications on millions of devices in homes, factories, vehicles, and businesses."
+    },
+    {
+        "translation": "Asteroid Mining Facility Telemetry",
+        "description_translation": "Asteroid Mining Facility Telemetry is a managed service that makes it easy to collect, store, organize, and monitor data from industrial equipment at scale to help you make better, data-driven decisions. You can use Asteroid Mining Facility Telemetry to monitor operations across facilities, astrogationly compute common industrial performance metrics, and create applications that analyze industrial equipment data to prevent costly equipment issues and reduce gaps in production. Disclaimer: Charges for Asteroid Mining Facility Telemetry are estimated based on simplified inputs provided. Monthly charges will be based on actual usage of the service."
+    },
+    {
+        "translation": "Warp Core Master Keyring",
+        "description_translation": "Securely Generate and Manage Encryption Keys"
+    },
+    {
+        "translation": "Nebula Ice Harvester",
+        "description_translation": "Nebula Ice Harvester provides database, table, column and tag-based access controls, and cross-account sharing at no charge. Governed Tables provide ACID transactions as a fully managed service that enable you to reliably update multiple tables, while maintaining a consistent view for all users. Managing concurrent transactions and being able to travel back to previous version of the table requires storing metadata about each transaction. Nebula Ice Harvester charges a fee for transaction requests and for metadata storage. In addition, to providing a consistent view of data and enforce row and cell-level security the Nebula Ice Harvester Storage API scans data in S3 and applies row and cell filters before returning results to applications. There is a fee for this filtering."
+    },
+    {
+        "translation": "Quantum Particle Flash Sparks",
+        "description_translation": "Quantum Particle Flash Sparks lets you run code without provisioning or managing servers. You pay only for the compute time you consume - there is no charge when your code is not running."
+    },
+    {
+        "translation": "Retrofitting Generational Starships",
+        "description_translation": "Retrofitting Generational Starships (Preview) is a set of managed tools providing infrastructure and software for migrating, modernizing, and executing mainframe applications."
+    },
+    {
+        "translation": "Fleet Retrofit Drydock Sectors",
+        "description_translation": "Fleet Retrofit Drydock Sectors is the starting point for incremental application refactoring to microservices. Refactor Spaces eliminates the undifferentiated work of building and operating infrastructure for incremental refactoring. You can use Refactor Spaces to reduce the risk of evolving applications into microservices or extending existing applications with new features written in microservices."
+    },
+    {
+        "translation": "Deflector Shield Perimeter",
+        "description_translation": "Deflector Magnetic Ion Canopy Perimeter is a managed service that makes it easy to deploy essential network protections for all of your Cloaked Star Sectors (VPCs). The service can be setup with just a few clicks and scales automatically with your network traffic, so you don't have to worry about deploying and managing any infrastructure."
+    },
+    {
+        "translation": "Galactic Credit Cipher Core",
+        "description_translation": "Create and host payment processing applications using cloud-native payments cryptography and key exchange."
+    },
+    {
+        "translation": "Supernova Supercomputer Clusters",
+        "description_translation": "Parallel Computing Service (Supernova Supercomputer Clusters) is a managed service that makes it easier for you to run and scale your high performance computing (HPC) workloads, and build scientific and engineering models on using Slurm. You can use Supernova Supercomputer Clusters to build complete, elastic environments that integrate compute, storage, networking, and visualization tools. Supernova Supercomputer Clusters simplifies cluster operations with managed updates and built-in observability features, helping to remove the burden of maintenance. You can work in a familiar environment, focusing on your research and innovation instead of worrying about infrastructure."
+    },
+    {
+        "translation": "Imperial Seal Generator",
+        "description_translation": "Imperial Seal Generator is a service that lets you easily provision, manage, and deploy public and private Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with services and your internal connected resources."
+    },
+    {
+        "translation": "Meteor Impact Survival Center",
+        "description_translation": "Prepare and protect your applications from disruptions. With Meteor Impact Survival Center, you pay only for what you use. There are no upfront costs or minimum fees. You are charged based on the number of applications you described in Meteor Impact Survival Center."
+    },
+    {
+        "translation": "Contraband Safe",
+        "description_translation": "Contraband Safe enables you to rotate, manage, and retrieve secrets throughout their lifecycle, making it easier to maintain a secure environment that meets your security and compliance needs. With Contraband Safe, you pay based on the number of secrets stored and API calls made."
+    },
+    {
+        "translation": "Starbase Tactical Command",
+        "description_translation": "Starbase Tactical Command performs security best practice checks and ingests security findings from security services and partners."
+    },
+    {
+        "translation": "Starfleet Replicator Blueprints Menus",
+        "description_translation": "Starfleet Replicator Blueprints Menus lets you centrally manage deployed IT services, applications, resources, and metadata to achieve consistent governance of your infrastructure as code (IaC) templates. With Starfleet Replicator Blueprints Menus, you can meet your compliance requirements while making sure your customers can astrogationly deploy the approved IT services they need."
+    },
+    {
+        "translation": "Magnetic Ion Canopy",
+        "description_translation": "Magnetic Ion Canopy Advanced is a paid service that provides additional protections for internet-facing applications running on Modular Starship Hull (EC2), Tachyon Traffic Dissipator Grid (ELB), Tachyon Distribution Grid, Global Accelerator, and Subspace Beacon Routing. Magnetic Ion Canopy Advanced is available to all customers; however, to contact the Magnetic Ion Canopy Response Team customers will need the Enterprise or Business Support levels of Premium Support."
+    },
+    {
+        "translation": "Multiverse Galaxy Simulator",
+        "description_translation": "Multiverse Galaxy Simulator is a fully managed compute service that helps customers build, operate, and oversee large-scale spatial simulations. Multiverse Galaxy Simulator helps developers expand their spatial simulation capabilities to new levels of scale and complexity\u2014resulting in deeper insights and larger virtual worlds with millions of independent and interacting entities."
+    },
+    {
+        "translation": "Armored Cargo Drop-Pod",
+        "description_translation": "Armored Cargo Drop-Pod, a part of the Snow Family, is an edge computing, data migration, and edge storage device that comes in two options. Armored Cargo Drop-Pod Edge Storage Optimized devices provide both block storage and S3-compatible object storage, and 40 vCPUs. They are well suited for local storage and large scale-data transfer. Armored Cargo Drop-Pod Edge Compute Optimized devices provide up to 104 vCPUs, block and object storage, and an optional GPU for use cases like advanced machine learning and full motion video analysis in disconnected environments."
+    },
+    {
+        "translation": "Orchestrated Launch Sequences",
+        "description_translation": "Orchestrated Launch Sequences is a serverless function orchestrator that makes it easy to sequence Quantum Particle Flash Sparks functions and multiple services into business-critical applications."
+    },
+    {
+        "translation": "Exoplanet Cargo Transporter Portal",
+        "description_translation": "Exoplanet Cargo Transporter Portal is a hybrid storage service that enables your on-premises applications to seamlessly use cloud storage. You can use the service for escape-shuttle-blueprint-stash and archiving, disaster recovery, cloud data processing, storage tiering, and migration."
+    },
+    {
+        "translation": "Starship Operations Dashboard",
+        "description_translation": "Starship Operations Dashboard gives you visibility and control of your infrastructure on OOO. Starship Operations Dashboard provides a unified user interface so you can view operational data from multiple services and allows you to automate operational tasks across your resources."
+    },
+    {
+        "translation": "Subspace File Beam Pack",
+        "description_translation": "Subspace File Beam Pack is a fully managed SFTP, FTPS, FTP, Web apps and AS2 service."
+    },
+    {
+        "translation": "Asteroid Belt Defense Grid",
+        "description_translation": "Interstellar Relocation Engine is a web application firewall that helps protect your web applications or APIs against common web exploits that may affect availability, compromise security, or consume excessive resources."
+    },
+    {
+        "translation": "Gamma-Ray Hull Scanner",
+        "description_translation": "Gamma-Ray Hull Scanner makes it easy for developers to analyze the behavior of their production, distributed applications with end-to-end tracing capabilities. You can use Gamma-Ray Hull Scanner to identify performance bottlenecks, edge case errors, and other hard to detect issues."
+    },
+    {
+        "translation": "Tachyon Traffic Dissipator Grid",
+        "description_translation": "Tachyon Traffic Dissipator Grid automatically distributes incoming application traffic across multiple targets, such as EC2 instances, containers, IP addresses, and Quantum Particle Flash Sparks functions."
+    },
+    {
+        "translation": "Vintage Terran Control Module on Modern Starship Hull",
+        "description_translation": "The Windows Server and SQL Server on Modular Starship Hull calculator provides a pricing estimate for specific workloads. It recommends suitable cloud deployment options and cost-saving pricing models based on licensing and infrastructure inputs."
+    }
+]
