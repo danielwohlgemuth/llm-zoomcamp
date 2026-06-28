@@ -1,10 +1,9 @@
 import json
 import os
-import requests
 import time
 
+import requests
 from tqdm.auto import tqdm
-
 
 WAIT_SECONDS_BETWEEN_REQUESTS = 1
 
@@ -31,7 +30,9 @@ for item in tqdm(aws_intro_urls):
     if service in SERVICES_TO_SKIP:
         continue
 
-    original_content_path = os.path.join(docs_folder, docs_original_folder, f"{service}.md")
+    original_content_path = os.path.join(
+        docs_folder, docs_original_folder, f"{service}.md"
+    )
     if os.path.exists(original_content_path):
         # print(f"\n{service}.md already exists. Skipping")
         continue
@@ -39,7 +40,9 @@ for item in tqdm(aws_intro_urls):
     response = requests.get(intro_markdown_url, allow_redirects=True)
 
     if response.status_code != 200:
-        print(f"\nUnexpected response status code {response.status_code} for URL {intro_markdown_url} of service {service}")
+        print(
+            f"\nUnexpected response status code {response.status_code} for URL {intro_markdown_url} of service {service}"
+        )
         continue
 
     with open(original_content_path, "wb") as file:
