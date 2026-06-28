@@ -1,0 +1,18 @@
+{
+    "name": "07-project",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/07-project",
+    "postCreateCommand": "cd ${containerWorkspaceFolder} && uv sync",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-toolsai.jupyter"
+            ]
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:4.0.0": {},
+        "ghcr.io/devcontainers-extra/features/uv": {}
+    }
+}
