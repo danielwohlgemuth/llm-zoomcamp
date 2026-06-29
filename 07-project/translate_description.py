@@ -28,7 +28,6 @@ for aws_description in aws_descriptions:
                 description, service_short, aws_translation["translation"]
             )
 
-
     aws_descriptions_translation = {
         "translation": aws_translations_map[service],
         "description_translation": description,
