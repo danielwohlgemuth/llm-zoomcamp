@@ -1,21 +1,24 @@
-.PHONY: download_documents download_model translate, translate_description fmt black isort
+.PHONY: setup download_documents download_model translate, translate_description fmt black isort
 
-download_documents:
+setup:
+	uv sync
+
+download_documents: setup
 	uv run download_documents.py
 
-download_model:
+download_model: setup
 	uv run download_model.py
 
-translate:
+translate: setup
 	uv run translate.py
 
-translate_description:
+translate_description: setup
 	uv run translate_description.py
 
 fmt: black isort
 
-black:
+black: setup
 	uv run black .
 
-isort:
+isort: setup
 	uv run isort .
