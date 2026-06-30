@@ -1,0 +1,9 @@
+{
+    "name": "03-orchestration",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/03-orchestration",
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:4.0.0": {}
+    },
+    "forwardPorts": [8080]
+}
