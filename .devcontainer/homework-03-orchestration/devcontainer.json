@@ -2,7 +2,7 @@
     "name": "homework-03-orchestration",
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/homework/03-orchestration",
-    "postCreateCommand": "export PATH=\"$HOME/.local/bin:$PATH\" && uv sync",
+    "postCreateCommand": "uv sync",
     "customizations": {
         "vscode": {
             "extensions": [
