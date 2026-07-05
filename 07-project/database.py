@@ -11,46 +11,61 @@ load_dotenv()
 
 rrf_k = 60
 
-class Database:
+
+class Document:
     def __init__(self):
         self.model = Embedder()
-        self.conn = psycopg2.connect(
+        self.connection = psycopg2.connect(
             dbname=os.environ["POSTGRES_DB"],
             user=os.environ["POSTGRES_USER"],
             password=os.environ["POSTGRES_PASSWORD"],
             host=os.environ.get("POSTGRES_HOST", "localhost"),
             port=os.environ.get("POSTGRES_PORT", "5432"),
         )
-        self.conn.autocommit = True
-        with self.conn.cursor() as cur:
-            cur.execute("CREATE EXTENSION IF NOT EXISTS vector")
-            register_vector(cur)
-            cur.execute("""
-            CREATE TABLE IF NOT EXISTS documents (
+        self.connection.autocommit = True
+        with self.connection.cursor() as cursor:
+            cursor.execute("CREATE EXTENSION IF NOT EXISTS vector")
+            register_vector(cursor)
+            sql = """
+            CREATE TABLE IF NOT EXISTS document (
                 id bigserial PRIMARY KEY,
+                file_name text,
+                chunk_size int,
+                chunk_index int,
                 content text,
                 embedding vector(384)
             )
-            """)
-            cur.execute("CREATE INDEX IF NOT EXISTS documents_idx ON documents USING GIN (to_tsvector('english', content))")
-    
-    def insert(self, content: str):
+            """
+            cursor.execute(sql)
+            cursor.execute(
+                "CREATE INDEX IF NOT EXISTS document_idx ON document USING GIN (to_tsvector('english', content))"
+            )
+            cursor.execute(
+                "CREATE UNIQUE INDEX IF NOT EXISTS unique_chunk_idx ON document (file_name, chunk_size, chunk_index) NULLS NOT DISTINCT"
+            )
+
+    def insert(
+        self, file_name: str, chunk_size: int, chunk_index: int, content: str
+    ) -> None:
         embedding = self.model.encode(content)
-        with self.conn.cursor() as cur:
-            cur.execute("INSERT INTO documents (content, embedding) VALUES (%s, %s)", (content, embedding))
+        with self.connection.cursor() as cursor:
+            cursor.execute(
+                "INSERT INTO document (file_name, chunk_size, chunk_index, content, embedding) VALUES (%s, %s, %s, %s, %s)",
+                (file_name, chunk_size, chunk_index, content, embedding),
+            )
 
     def search(self, query: str) -> list[str]:
         embedding = self.model.encode(query)
         sql = """
         WITH semantic_search AS (
             SELECT id, RANK () OVER (ORDER BY embedding <=> %(embedding)s) AS rank
-            FROM documents
+            FROM document
             ORDER BY embedding <=> %(embedding)s
             LIMIT 20
         ),
         keyword_search AS (
             SELECT id, RANK () OVER (ORDER BY ts_rank_cd(to_tsvector('english', content), query) DESC)
-            FROM documents, plainto_tsquery('english', %(query)s) query
+            FROM document, plainto_tsquery('english', %(query)s) query
             WHERE to_tsvector('english', content) @@ query
             ORDER BY ts_rank_cd(to_tsvector('english', content), query) DESC
             LIMIT 20
@@ -65,11 +80,53 @@ class Database:
         LIMIT 5
         """
 
-        with self.conn.cursor() as cur:
-            cur.execute(sql, { "embedding": embedding, "query": query, "k": rrf_k })
+        with self.connection.cursor() as cursor:
+            cursor.execute(sql, {"embedding": embedding, "query": query, "k": rrf_k})
 
-            document_ids = [row[0] for row in cur]
-            print('document_ids', document_ids)
+            document_ids = [row[0] for row in cursor]
+            print("document_ids", document_ids)
 
-            cur.execute("SELECT id, content FROM documents WHERE id = ANY(%s) ORDER BY array_position(%s, id)", (document_ids, document_ids))
-            return [row[1] for row in cur]
+            cursor.execute(
+                "SELECT id, content FROM document WHERE id = ANY(%s) ORDER BY array_position(%s, id)",
+                (document_ids, document_ids),
+            )
+            return [row[1] for row in cursor]
+
+
+class Description:
+    def __init__(self):
+        self.connection = psycopg2.connect(
+            dbname=os.environ["POSTGRES_DB"],
+            user=os.environ["POSTGRES_USER"],
+            password=os.environ["POSTGRES_PASSWORD"],
+            host=os.environ.get("POSTGRES_HOST", "localhost"),
+            port=os.environ.get("POSTGRES_PORT", "5432"),
+        )
+        self.connection.autocommit = True
+        with self.connection.cursor() as cursor:
+            sql = """
+            CREATE TABLE IF NOT EXISTS description (
+                id bigserial PRIMARY KEY,
+                name text,
+                content text
+            )
+            """
+            cursor.execute(sql)
+            cursor.execute(
+                "CREATE UNIQUE INDEX IF NOT EXISTS unique_description_idx ON description (name)"
+            )
+
+    def insert(self, name: str, description: str) -> None:
+        with self.connection.cursor() as cursor:
+            cursor.execute(
+                "INSERT INTO description (name, content) VALUES (%s, %s)",
+                (name, description),
+            )
+
+    def search(self, name: str) -> str | None:
+        with self.connection.cursor() as cursor:
+            cursor.execute("SELECT content FROM description WHERE name = %s", (name,))
+            if cursor.rowcount:
+                return cursor.fetchone()[0]
+            else:
+                return None

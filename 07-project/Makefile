@@ -1,4 +1,4 @@
-.PHONY: setup download_documents download_model translate_documents translate_descriptions fmt black isort
+.PHONY: setup download_documents download_model translate_documents translate_descriptions fmt black isort notebook ingest_documents ingest_descriptions
 
 setup:
 	uv sync
@@ -22,3 +22,12 @@ black: setup
 
 isort: setup
 	uv run isort .
+
+notebook:
+	uv run jupyter notebook
+
+ingest_documents:
+	uv run ingest_documents.py
+
+ingest_descriptions:
+	uv run ingest_descriptions.py

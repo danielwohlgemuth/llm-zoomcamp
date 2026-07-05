@@ -14,7 +14,9 @@ Systems:
 
 ## Dev Container Features
 
-Features extend the base image with additional functionality.
+This project uses Dev Container for a more secure development experience by isolating dependencies in a container so malicious packages can do limited damage.
+
+A base image serves as the starting point and features are used to extend the base image with additional functionality.
 - Main features: https://github.com/devcontainers/features/tree/main/src
 - Extra features: https://github.com/devcontainers-extra/features/tree/main/src
 
@@ -36,13 +38,3 @@ https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search/r
 <=> for Cosine distance, range of 0 to 2.
 
 TODO: limit vector results to 0.7 or lower
-
-TODO: build ingestor, consider inser duplicate insert detection
-
-from langchain_text_splitters import MarkdownTextSplitter
-splitter = MarkdownTextSplitter(
-    chunk_overlap=0,
-    chunk_size=512,
-)
-documents = splitter.split_text(readme)
-
