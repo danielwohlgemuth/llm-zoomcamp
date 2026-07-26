@@ -37,4 +37,12 @@ https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search/r
 
 <=> for Cosine distance, range of 0 to 2.
 
-TODO: limit vector results to 0.7 or lower
+## TODO
+
+- Limit vector results to 0.7 or lower
+- Store prompt, response, and cost
+- Create an evaluation dataset
+- Store evaluations
+- Create Graphana dashboard
+- Create user interface for queries
+- Return filename in document search result
