@@ -69,28 +69,27 @@ class Document:
             WHERE to_tsvector('english', content) @@ query
             ORDER BY ts_rank_cd(to_tsvector('english', content), query) DESC
             LIMIT 20
+        ),
+        combined AS (
+            SELECT
+                COALESCE(semantic_search.id, keyword_search.id) AS id,
+                COALESCE(1.0 / (%(k)s + semantic_search.rank), 0.0) +
+                COALESCE(1.0 / (%(k)s + keyword_search.rank), 0.0) AS score
+            FROM semantic_search
+            FULL OUTER JOIN keyword_search ON semantic_search.id = keyword_search.id
         )
         SELECT
-            COALESCE(semantic_search.id, keyword_search.id),
-            COALESCE(1.0 / (%(k)s + semantic_search.rank), 0.0) +
-            COALESCE(1.0 / (%(k)s + keyword_search.rank), 0.0) AS score
-        FROM semantic_search
-        FULL OUTER JOIN keyword_search ON semantic_search.id = keyword_search.id
-        ORDER BY score DESC
+            document.content
+        FROM combined
+        JOIN document ON document.id = combined.id
+        ORDER BY combined.score DESC
         LIMIT 5
         """
 
         with self.connection.cursor() as cursor:
             cursor.execute(sql, {"embedding": embedding, "query": query, "k": rrf_k})
 
-            document_ids = [row[0] for row in cursor]
-            print("document_ids", document_ids)
-
-            cursor.execute(
-                "SELECT id, content FROM document WHERE id = ANY(%s) ORDER BY array_position(%s, id)",
-                (document_ids, document_ids),
-            )
-            return [row[1] for row in cursor]
+            return [row[0] for row in cursor]
 
 
 class Description:
