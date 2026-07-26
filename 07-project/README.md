@@ -45,4 +45,4 @@ https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search/r
 - Store evaluations
 - Create Graphana dashboard
 - Create user interface for queries
-- Return filename in document search result
+- ~~Return file name in document search result~~

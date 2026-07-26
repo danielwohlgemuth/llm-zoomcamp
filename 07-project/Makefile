@@ -1,4 +1,4 @@
-.PHONY: setup download_documents download_model translate_documents translate_descriptions fmt black isort notebook ingest_documents ingest_descriptions
+.PHONY: setup download_documents download_model translate_documents translate_descriptions fmt black isort notebook ingest_documents ingest_descriptions start_docker
 
 setup:
 	uv sync
@@ -31,3 +31,6 @@ ingest_documents:
 
 ingest_descriptions:
 	uv run ingest_descriptions.py
+
+start_docker:
+	docker compose start

@@ -79,7 +79,9 @@ class Document:
             FULL OUTER JOIN keyword_search ON semantic_search.id = keyword_search.id
         )
         SELECT
-            document.content
+            document.file_name,
+            document.content,
+            combined.score
         FROM combined
         JOIN document ON document.id = combined.id
         ORDER BY combined.score DESC
@@ -89,7 +91,7 @@ class Document:
         with self.connection.cursor() as cursor:
             cursor.execute(sql, {"embedding": embedding, "query": query, "k": rrf_k})
 
-            return [row[0] for row in cursor]
+            return [{"file_name": row[0], "content": row[1]} for row in cursor]
 
 
 class Description:
