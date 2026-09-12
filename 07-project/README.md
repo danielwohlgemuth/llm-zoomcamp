@@ -54,3 +54,4 @@ https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search/r
 - Gradio will be used to build the UI.
   Compared to React, Gradio doesn't need separate JavaScript tooling to build as it's based on Python, same as the rest of the project.
   Compared to Streamlit, just from looking through the documentation of Gradio's [chat](https://gradio.app/main/docs/gradio/chatbot) component, it offers more features and configuration options than Steamlit's [chat](https://docs.streamlit.io/develop/api-reference/chat/st.chat_message) component.
+- The ID column of database rows will have UUIDv4 values so that if the IDs are exposed to clients, they don't reveal details such as total rows or new rows per time frame based on the sequence.
