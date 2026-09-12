@@ -1,6 +1,6 @@
 # Project: AWS Services Search
 
-My project idea for this course is a search service that uses the introduction information about different AWS services as the knowledge base.
+The project for this course is a search service that uses the introduction information about different AWS services as the knowledge base.
 Since LLMs will have been trained extensively on AWS material, they are likely to respond directly to questions about AWS instead of using the knowledge base.
 To address that, the AWS names are replaced with space-themed alternatives. For example, AWS becomes OOO (Orion Outer Orbit).
 
@@ -46,3 +46,11 @@ https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search/r
 - Create Graphana dashboard
 - Create user interface for queries
 - ~~Return file name in document search result~~
+
+
+## Architectural Decisions
+
+- AWS will be used as the documentation source as I'm more familiar with it than Google Cloud or Azure.
+- Gradio will be used to build the UI.
+  Compared to React, Gradio doesn't need separate JavaScript tooling to build as it's based on Python, same as the rest of the project.
+  Compared to Streamlit, just from looking through the documentation of Gradio's [chat](https://gradio.app/main/docs/gradio/chatbot) component, it offers more features and configuration options than Steamlit's [chat](https://docs.streamlit.io/develop/api-reference/chat/st.chat_message) component.
