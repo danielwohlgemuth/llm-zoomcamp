@@ -3,6 +3,7 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 from pgvector.psycopg2 import register_vector
+from decimal import Decimal
 
 from embedder import Embedder
 
@@ -10,6 +11,12 @@ load_dotenv()
 
 
 RRF_K = 60
+
+# Index and constraint naming conventions
+# idx_{table}_{column}
+# uniq_{table}_{column}
+# fk_{table}_{column}_{ref_table}
+# chk_{table}_{column}
 
 
 class BaseConnection:
@@ -24,12 +31,12 @@ class BaseConnection:
         self.connection.autocommit = True
 
 class Migration:
-    def run(self):
-        DocumentMigration.run()
-        DescriptionMigration.run()
-        ConversationMigration.run()
-        MessageMigration.run()
-        ModelMigration.run()
+    def run():
+        DocumentMigration().run()
+        DescriptionMigration().run()
+        ConversationMigration().run()
+        MessageMigration().run()
+        ModelMigration().run()
 
 class DocumentMigration(BaseConnection):
     def run(self):
@@ -44,8 +51,8 @@ class DocumentMigration(BaseConnection):
                 embedding vector(384)
             )
             """,
-            "CREATE INDEX IF NOT EXISTS document_idx ON document USING GIN (to_tsvector('english', content))",
-            "CREATE UNIQUE INDEX IF NOT EXISTS unique_chunk_idx ON document (file_name, chunk_size, chunk_index) NULLS NOT DISTINCT",
+            "CREATE INDEX IF NOT EXISTS idx_document_content ON document USING GIN (to_tsvector('english', content))",
+            "CREATE UNIQUE INDEX IF NOT EXISTS uniq_document_file_name_chunk_size_chunk_index ON document (file_name, chunk_size, chunk_index) NULLS NOT DISTINCT",
         ]
 
         with self.connection.cursor() as cursor:
@@ -119,7 +126,7 @@ class DescriptionMigration(BaseConnection):
                 content text
             )
             """,
-            "CREATE UNIQUE INDEX IF NOT EXISTS unique_description_idx ON description (name)"
+            "CREATE UNIQUE INDEX IF NOT EXISTS uniq_description_name ON description (name)"
         ]
 
         with self.connection.cursor() as cursor:
@@ -145,12 +152,13 @@ class Description(BaseConnection):
 class ConversationMigration(BaseConnection):
     def run(self):
         migrations = [
+            "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"",
             """
             CREATE TABLE IF NOT EXISTS conversation (
                 id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
-                description text,
+                description text
             )
-            """
+            """,
         ]
 
         with self.connection.cursor() as cursor:
@@ -182,19 +190,28 @@ class MessageMigration(BaseConnection):
                 output_tokens int
             )
             """,
-            "ALTER TABLE message ADD CONSTRAINT IF NOT EXISTS chk_status CHECK (status IN ('In Progress', 'Completed', 'Failed'))",
-            "ALTER TABLE message ADD COLUMN IF NOT EXISTS conversation_id INT",
-            # "ALTER TABLE message DROP CONSTRAINT IF EXISTS fk_conversation",
-            # "ALTER TABLE message ADD CONSTRAINT fk_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE",
+            "ALTER TABLE message ADD COLUMN IF NOT EXISTS conversation_id uuid",
             """
             DO $$ 
             BEGIN
                 IF NOT EXISTS (
                     SELECT 1 FROM pg_constraint 
-                    WHERE conname = 'constraint_name' 
-                    AND conrelid = 'table_name'::regclass
+                    WHERE conname = 'chk_message_status' 
+                    AND conrelid = 'message'::regclass
                 ) THEN
-                    ALTER TABLE message ADD CONSTRAINT fk_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE;
+                    ALTER TABLE message ADD CONSTRAINT chk_message_status CHECK (status IN ('In Progress', 'Completed', 'Failed'));
+                END IF;
+            END $$;
+            """,
+            """
+            DO $$ 
+            BEGIN
+                IF NOT EXISTS (
+                    SELECT 1 FROM pg_constraint 
+                    WHERE conname = 'fk_conversation_conversation_id_conversation' 
+                    AND conrelid = 'message'::regclass
+                ) THEN
+                    ALTER TABLE message ADD CONSTRAINT fk_conversation_conversation_id_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE;
                 END IF;
             END $$;
             """,
@@ -221,10 +238,10 @@ class ModelMigration(BaseConnection):
             CREATE TABLE IF NOT EXISTS model (
                 id bigserial PRIMARY KEY,
                 name text,
-                price_per_million_tokens double
+                price_per_million_tokens numeric
             )
             """,
-            "CREATE UNIQUE INDEX IF NOT EXISTS unique_model_name_idx ON model (name) NULL NOT DISTINCT",
+            "CREATE UNIQUE INDEX IF NOT EXISTS uniq_model_name ON model (name)",
         ]
 
         with self.connection.cursor() as cursor:
@@ -232,12 +249,12 @@ class ModelMigration(BaseConnection):
                 cursor.execute(migration)
 
 class Model(BaseConnection):
-    def insert(self, name: str, price_per_million_tokens: float) -> str:
+    def insert(self, name: str, price_per_million_tokens: Decimal) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute("INSERT INTO model (name, price_per_million_tokens) VALUES (%s, %s) RETURNING id", (name, price_per_million_tokens))
             return cursor[0]
 
-    def get_price(self, id: str) -> float:
+    def get_price(self, id: str) -> Decimal:
         with self.connection.cursor() as cursor:
             cursor.execute("SELECT price_per_million_tokens FROM model WHERE id = (%s)", (id,))
             return cursor[0]
