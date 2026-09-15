@@ -9,12 +9,11 @@ from embedder import Embedder
 load_dotenv()
 
 
-rrf_k = 60
+RRF_K = 60
 
 
-class Document:
+class BaseConnection:
     def __init__(self):
-        self.model = Embedder()
         self.connection = psycopg2.connect(
             dbname=os.environ["POSTGRES_DB"],
             user=os.environ["POSTGRES_USER"],
@@ -23,10 +22,19 @@ class Document:
             port=os.environ.get("POSTGRES_PORT", "5432"),
         )
         self.connection.autocommit = True
-        with self.connection.cursor() as cursor:
-            cursor.execute("CREATE EXTENSION IF NOT EXISTS vector")
-            register_vector(cursor)
-            sql = """
+
+class Migration:
+    def run(self):
+        DocumentMigration.run()
+        DescriptionMigration.run()
+        ConversationMigration.run()
+        MessageMigration.run()
+        ModelMigration.run()
+
+class DocumentMigration(BaseConnection):
+    def run(self):
+        migrations = [
+            """
             CREATE TABLE IF NOT EXISTS document (
                 id bigserial PRIMARY KEY,
                 file_name text,
@@ -35,14 +43,22 @@ class Document:
                 content text,
                 embedding vector(384)
             )
-            """
-            cursor.execute(sql)
-            cursor.execute(
-                "CREATE INDEX IF NOT EXISTS document_idx ON document USING GIN (to_tsvector('english', content))"
-            )
-            cursor.execute(
-                "CREATE UNIQUE INDEX IF NOT EXISTS unique_chunk_idx ON document (file_name, chunk_size, chunk_index) NULLS NOT DISTINCT"
-            )
+            """,
+            "CREATE INDEX IF NOT EXISTS document_idx ON document USING GIN (to_tsvector('english', content))",
+            "CREATE UNIQUE INDEX IF NOT EXISTS unique_chunk_idx ON document (file_name, chunk_size, chunk_index) NULLS NOT DISTINCT",
+        ]
+
+        with self.connection.cursor() as cursor:
+            cursor.execute("CREATE EXTENSION IF NOT EXISTS vector")
+            register_vector(cursor)
+
+            for migration in migrations:
+                cursor.execute(migration)
+
+class Document(BaseConnection):
+    def __init__(self):
+        super()
+        self.model = Embedder()
 
     def insert(
         self, file_name: str, chunk_size: int, chunk_index: int, content: str
@@ -89,34 +105,28 @@ class Document:
         """
 
         with self.connection.cursor() as cursor:
-            cursor.execute(sql, {"embedding": embedding, "query": query, "k": rrf_k})
+            cursor.execute(sql, {"embedding": embedding, "query": query, "k": RRF_K})
 
             return [{"file_name": row[0], "content": row[1]} for row in cursor]
 
-
-class Description:
-    def __init__(self):
-        self.connection = psycopg2.connect(
-            dbname=os.environ["POSTGRES_DB"],
-            user=os.environ["POSTGRES_USER"],
-            password=os.environ["POSTGRES_PASSWORD"],
-            host=os.environ.get("POSTGRES_HOST", "localhost"),
-            port=os.environ.get("POSTGRES_PORT", "5432"),
-        )
-        self.connection.autocommit = True
-        with self.connection.cursor() as cursor:
-            sql = """
+class DescriptionMigration(BaseConnection):
+    def run(self):
+        migrations = [
+            """
             CREATE TABLE IF NOT EXISTS description (
                 id bigserial PRIMARY KEY,
                 name text,
                 content text
             )
-            """
-            cursor.execute(sql)
-            cursor.execute(
-                "CREATE UNIQUE INDEX IF NOT EXISTS unique_description_idx ON description (name)"
-            )
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS unique_description_idx ON description (name)"
+        ]
 
+        with self.connection.cursor() as cursor:
+            for migration in migrations:
+                cursor.execute(migration)
+
+class Description(BaseConnection):
     def insert(self, name: str, description: str) -> None:
         with self.connection.cursor() as cursor:
             cursor.execute(
@@ -132,25 +142,22 @@ class Description:
             else:
                 return None
 
-class Conversation:
-    def __init__(self):
-        self.connection = psycopg2.connect(
-            dbname=os.environ["POSTGRES_DB"],
-            user=os.environ["POSTGRES_USER"],
-            password=os.environ["POSTGRES_PASSWORD"],
-            host=os.environ.get("POSTGRES_HOST", "localhost"),
-            port=os.environ.get("POSTGRES_PORT", "5432"),
-        )
-        self.connection.autocommit = True
-        with self.connection.cursor() as cursor:
-            sql = """
+class ConversationMigration(BaseConnection):
+    def run(self):
+        migrations = [
+            """
             CREATE TABLE IF NOT EXISTS conversation (
                 id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
                 description text,
             )
             """
-            cursor.execute(sql)
+        ]
 
+        with self.connection.cursor() as cursor:
+            for migration in migrations:
+                cursor.execute(migration)
+
+class Conversation(BaseConnection):
     def insert(self) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute("INSERT INTO conversation returning id")
@@ -160,19 +167,11 @@ class Conversation:
         with self.connection.cursor() as cursor:
             cursor.execute("UPDATE conversation SET description = (%s) WHERE id = (%s)", (description, id))
 
-class Message:
-    def __init__(self):
-        self.connection = psycopg2.connect(
-            dbname=os.environ["POSTGRES_DB"],
-            user=os.environ["POSTGRES_USER"],
-            password=os.environ["POSTGRES_PASSWORD"],
-            host=os.environ.get("POSTGRES_HOST", "localhost"),
-            port=os.environ.get("POSTGRES_PORT", "5432"),
-        )
-        self.connection.autocommit = True
-        with self.connection.cursor() as cursor:
-            cursor.execute("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"")
-            sql = """
+class MessageMigration(BaseConnection):
+    def run(self):
+        migrations = [
+            "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"",
+            """
             CREATE TABLE IF NOT EXISTS message (
                 id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
                 model text,
@@ -182,13 +181,12 @@ class Message:
                 input_tokens int,
                 output_tokens int
             )
+            """,
+            "ALTER TABLE message ADD CONSTRAINT IF NOT EXISTS chk_status CHECK (status IN ('In Progress', 'Completed', 'Failed'))",
+            "ALTER TABLE message ADD COLUMN IF NOT EXISTS conversation_id INT",
+            # "ALTER TABLE message DROP CONSTRAINT IF EXISTS fk_conversation",
+            # "ALTER TABLE message ADD CONSTRAINT fk_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE",
             """
-            cursor.execute(sql)
-            cursor.execute("ALTER TABLE message ADD CONSTRAINT IF NOT EXISTS chk_status CHECK (status IN ('In Progress', 'Completed', 'Failed'))")
-            cursor.execute("ALTER TABLE message ADD COLUMN IF NOT EXISTS conversation_id INT")
-            # cursor.execute("ALTER TABLE message DROP CONSTRAINT IF EXISTS fk_conversation")
-            # cursor.execute("ALTER TABLE message ADD CONSTRAINT fk_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE")
-            cursor.execute("""
             DO $$ 
             BEGIN
                 IF NOT EXISTS (
@@ -199,8 +197,14 @@ class Message:
                     ALTER TABLE message ADD CONSTRAINT fk_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE;
                 END IF;
             END $$;
-            """)
+            """,
+        ]
 
+        with self.connection.cursor() as cursor:
+            for migration in migrations:
+                cursor.execute(migration)
+
+class Message(BaseConnection):
     def add(self, model: str, messages: str) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute("INSERT INTO message (model, request_messages) VALUES (%s, %s) RETURNING id", (model, messages))
@@ -210,27 +214,24 @@ class Message:
         with self.connection.cursor() as cursor:
             cursor.execute("UPDATE message SET response_message = (%s), status = (%s) WHERE id = (%s)", (message, status, id))
 
-class Model:
-    def __init__(self):
-        self.connection = psycopg2.connect(
-            dbname=os.environ["POSTGRES_DB"],
-            user=os.environ["POSTGRES_USER"],
-            password=os.environ["POSTGRES_PASSWORD"],
-            host=os.environ.get("POSTGRES_HOST", "localhost"),
-            port=os.environ.get("POSTGRES_PORT", "5432"),
-        )
-        self.connection.autocommit = True
-        with self.connection.cursor() as cursor:
-            sql = """
+class ModelMigration(BaseConnection):
+    def run(self):
+        migrations = [
+            """
             CREATE TABLE IF NOT EXISTS model (
                 id bigserial PRIMARY KEY,
                 name text,
                 price_per_million_tokens double
             )
-            """
-            cursor.execute(sql)
-            cursor.execute("CREATE UNIQUE INDEX IF NOT EXISTS unique_model_name_idx ON model (name) NULL NOT DISTINCT")
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS unique_model_name_idx ON model (name) NULL NOT DISTINCT",
+        ]
 
+        with self.connection.cursor() as cursor:
+            for migration in migrations:
+                cursor.execute(migration)
+
+class Model(BaseConnection):
     def insert(self, name: str, price_per_million_tokens: float) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute("INSERT INTO model (name, price_per_million_tokens) VALUES (%s, %s) RETURNING id", (name, price_per_million_tokens))
