@@ -131,3 +131,112 @@ class Description:
                 return cursor.fetchone()[0]
             else:
                 return None
+
+class Conversation:
+    def __init__(self):
+        self.connection = psycopg2.connect(
+            dbname=os.environ["POSTGRES_DB"],
+            user=os.environ["POSTGRES_USER"],
+            password=os.environ["POSTGRES_PASSWORD"],
+            host=os.environ.get("POSTGRES_HOST", "localhost"),
+            port=os.environ.get("POSTGRES_PORT", "5432"),
+        )
+        self.connection.autocommit = True
+        with self.connection.cursor() as cursor:
+            sql = """
+            CREATE TABLE IF NOT EXISTS conversation (
+                id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+                description text,
+            )
+            """
+            cursor.execute(sql)
+
+    def insert(self) -> str:
+        with self.connection.cursor() as cursor:
+            cursor.execute("INSERT INTO conversation returning id")
+            return cursor[0]
+
+    def upsert(self, id: str, description: str):
+        with self.connection.cursor() as cursor:
+            cursor.execute("UPDATE conversation SET description = (%s) WHERE id = (%s)", (description, id))
+
+class Message:
+    def __init__(self):
+        self.connection = psycopg2.connect(
+            dbname=os.environ["POSTGRES_DB"],
+            user=os.environ["POSTGRES_USER"],
+            password=os.environ["POSTGRES_PASSWORD"],
+            host=os.environ.get("POSTGRES_HOST", "localhost"),
+            port=os.environ.get("POSTGRES_PORT", "5432"),
+        )
+        self.connection.autocommit = True
+        with self.connection.cursor() as cursor:
+            cursor.execute("CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"")
+            sql = """
+            CREATE TABLE IF NOT EXISTS message (
+                id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+                model text,
+                request_messages jsonb,
+                result_message jsonb,
+                status text,
+                input_tokens int,
+                output_tokens int
+            )
+            """
+            cursor.execute(sql)
+            cursor.execute("ALTER TABLE message ADD CONSTRAINT IF NOT EXISTS chk_status CHECK (status IN ('In Progress', 'Completed', 'Failed'))")
+            cursor.execute("ALTER TABLE message ADD COLUMN IF NOT EXISTS conversation_id INT")
+            # cursor.execute("ALTER TABLE message DROP CONSTRAINT IF EXISTS fk_conversation")
+            # cursor.execute("ALTER TABLE message ADD CONSTRAINT fk_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE")
+            cursor.execute("""
+            DO $$ 
+            BEGIN
+                IF NOT EXISTS (
+                    SELECT 1 FROM pg_constraint 
+                    WHERE conname = 'constraint_name' 
+                    AND conrelid = 'table_name'::regclass
+                ) THEN
+                    ALTER TABLE message ADD CONSTRAINT fk_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE;
+                END IF;
+            END $$;
+            """)
+
+    def add(self, model: str, messages: str) -> str:
+        with self.connection.cursor() as cursor:
+            cursor.execute("INSERT INTO message (model, request_messages) VALUES (%s, %s) RETURNING id", (model, messages))
+            return cursor[0]
+    
+    def update(self, id: str, message: str, status: str) -> str:
+        with self.connection.cursor() as cursor:
+            cursor.execute("UPDATE message SET response_message = (%s), status = (%s) WHERE id = (%s)", (message, status, id))
+
+class Model:
+    def __init__(self):
+        self.connection = psycopg2.connect(
+            dbname=os.environ["POSTGRES_DB"],
+            user=os.environ["POSTGRES_USER"],
+            password=os.environ["POSTGRES_PASSWORD"],
+            host=os.environ.get("POSTGRES_HOST", "localhost"),
+            port=os.environ.get("POSTGRES_PORT", "5432"),
+        )
+        self.connection.autocommit = True
+        with self.connection.cursor() as cursor:
+            sql = """
+            CREATE TABLE IF NOT EXISTS model (
+                id bigserial PRIMARY KEY,
+                name text,
+                price_per_million_tokens double
+            )
+            """
+            cursor.execute(sql)
+            cursor.execute("CREATE UNIQUE INDEX IF NOT EXISTS unique_model_name_idx ON model (name) NULL NOT DISTINCT")
+
+    def insert(self, name: str, price_per_million_tokens: float) -> str:
+        with self.connection.cursor() as cursor:
+            cursor.execute("INSERT INTO model (name, price_per_million_tokens) VALUES (%s, %s) RETURNING id", (name, price_per_million_tokens))
+            return cursor[0]
+
+    def get_price(self, id: str) -> float:
+        with self.connection.cursor() as cursor:
+            cursor.execute("SELECT price_per_million_tokens FROM model WHERE id = (%s)", (id,))
+            return cursor[0]
