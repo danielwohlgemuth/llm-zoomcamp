@@ -33,4 +33,4 @@ ingest_descriptions:
 	uv run ingest_descriptions.py
 
 start_docker:
-	docker compose start
+	docker compose up -d

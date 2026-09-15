@@ -1,6 +1,7 @@
 services:
   postgres:
     image: pgvector/pgvector:0.8.3-pg18-trixie
+    user: "999:999" # use postgres user to avoid using root
     env_file:
       - .env
     ports:
