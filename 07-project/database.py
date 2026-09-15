@@ -67,7 +67,7 @@ class DocumentMigration(BaseConnection):
 
 class Document(BaseConnection):
     def __init__(self):
-        super()
+        super().__init__()
         self.model = Embedder()
 
     def insert(
@@ -77,7 +77,7 @@ class Document(BaseConnection):
         with self.connection.cursor() as cursor:
             cursor.execute(
                 "INSERT INTO document (file_name, chunk_size, chunk_index, content, embedding) VALUES (%s, %s, %s, %s, %s)",
-                (file_name, chunk_size, chunk_index, content, embedding),
+                (file_name, chunk_size, chunk_index, content, embedding.tolist()),
             )
 
     def search(self, query: str) -> list[str]:
