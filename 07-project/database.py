@@ -1,9 +1,9 @@
 import os
+from decimal import Decimal
 
 import psycopg2
 from dotenv import load_dotenv
 from pgvector.psycopg2 import register_vector
-from decimal import Decimal
 
 from embedder import Embedder
 
@@ -30,6 +30,7 @@ class BaseConnection:
         )
         self.connection.autocommit = True
 
+
 class Migration:
     def run():
         DocumentMigration().run()
@@ -37,6 +38,7 @@ class Migration:
         ConversationMigration().run()
         MessageMigration().run()
         ModelMigration().run()
+
 
 class DocumentMigration(BaseConnection):
     def run(self):
@@ -61,6 +63,7 @@ class DocumentMigration(BaseConnection):
 
             for migration in migrations:
                 cursor.execute(migration)
+
 
 class Document(BaseConnection):
     def __init__(self):
@@ -116,6 +119,7 @@ class Document(BaseConnection):
 
             return [{"file_name": row[0], "content": row[1]} for row in cursor]
 
+
 class DescriptionMigration(BaseConnection):
     def run(self):
         migrations = [
@@ -126,12 +130,13 @@ class DescriptionMigration(BaseConnection):
                 content text
             )
             """,
-            "CREATE UNIQUE INDEX IF NOT EXISTS uniq_description_name ON description (name)"
+            "CREATE UNIQUE INDEX IF NOT EXISTS uniq_description_name ON description (name)",
         ]
 
         with self.connection.cursor() as cursor:
             for migration in migrations:
                 cursor.execute(migration)
+
 
 class Description(BaseConnection):
     def insert(self, name: str, description: str) -> None:
@@ -149,10 +154,11 @@ class Description(BaseConnection):
             else:
                 return None
 
+
 class ConversationMigration(BaseConnection):
     def run(self):
         migrations = [
-            "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"",
+            'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"',
             """
             CREATE TABLE IF NOT EXISTS conversation (
                 id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -165,6 +171,7 @@ class ConversationMigration(BaseConnection):
             for migration in migrations:
                 cursor.execute(migration)
 
+
 class Conversation(BaseConnection):
     def insert(self) -> str:
         with self.connection.cursor() as cursor:
@@ -173,12 +180,16 @@ class Conversation(BaseConnection):
 
     def upsert(self, id: str, description: str):
         with self.connection.cursor() as cursor:
-            cursor.execute("UPDATE conversation SET description = (%s) WHERE id = (%s)", (description, id))
+            cursor.execute(
+                "UPDATE conversation SET description = (%s) WHERE id = (%s)",
+                (description, id),
+            )
+
 
 class MessageMigration(BaseConnection):
     def run(self):
         migrations = [
-            "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"",
+            'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"',
             """
             CREATE TABLE IF NOT EXISTS message (
                 id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -221,15 +232,23 @@ class MessageMigration(BaseConnection):
             for migration in migrations:
                 cursor.execute(migration)
 
+
 class Message(BaseConnection):
     def add(self, model: str, messages: str) -> str:
         with self.connection.cursor() as cursor:
-            cursor.execute("INSERT INTO message (model, request_messages) VALUES (%s, %s) RETURNING id", (model, messages))
+            cursor.execute(
+                "INSERT INTO message (model, request_messages) VALUES (%s, %s) RETURNING id",
+                (model, messages),
+            )
             return cursor[0]
-    
+
     def update(self, id: str, message: str, status: str) -> str:
         with self.connection.cursor() as cursor:
-            cursor.execute("UPDATE message SET response_message = (%s), status = (%s) WHERE id = (%s)", (message, status, id))
+            cursor.execute(
+                "UPDATE message SET response_message = (%s), status = (%s) WHERE id = (%s)",
+                (message, status, id),
+            )
+
 
 class ModelMigration(BaseConnection):
     def run(self):
@@ -248,13 +267,19 @@ class ModelMigration(BaseConnection):
             for migration in migrations:
                 cursor.execute(migration)
 
+
 class Model(BaseConnection):
     def insert(self, name: str, price_per_million_tokens: Decimal) -> str:
         with self.connection.cursor() as cursor:
-            cursor.execute("INSERT INTO model (name, price_per_million_tokens) VALUES (%s, %s) RETURNING id", (name, price_per_million_tokens))
+            cursor.execute(
+                "INSERT INTO model (name, price_per_million_tokens) VALUES (%s, %s) RETURNING id",
+                (name, price_per_million_tokens),
+            )
             return cursor[0]
 
     def get_price(self, id: str) -> Decimal:
         with self.connection.cursor() as cursor:
-            cursor.execute("SELECT price_per_million_tokens FROM model WHERE id = (%s)", (id,))
+            cursor.execute(
+                "SELECT price_per_million_tokens FROM model WHERE id = (%s)", (id,)
+            )
             return cursor[0]
