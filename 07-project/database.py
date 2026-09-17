@@ -84,9 +84,9 @@ class Document(BaseConnection):
         embedding = self.model.encode(query)
         sql = """
         WITH semantic_search AS (
-            SELECT id, RANK () OVER (ORDER BY embedding <=> %(embedding)s) AS rank
+            SELECT id, RANK () OVER (ORDER BY embedding <=> %(embedding)s::vector) AS rank
             FROM document
-            ORDER BY embedding <=> %(embedding)s
+            ORDER BY embedding <=> %(embedding)s::vector
             LIMIT 20
         ),
         keyword_search AS (
@@ -115,9 +115,9 @@ class Document(BaseConnection):
         """
 
         with self.connection.cursor() as cursor:
-            cursor.execute(sql, {"embedding": embedding, "query": query, "k": RRF_K})
+            cursor.execute(sql, {"embedding": embedding.tolist(), "query": query, "k": RRF_K})
 
-            return [{"file_name": row[0], "content": row[1]} for row in cursor]
+            return [{"file_name": row[0], "content": row[1], "score": row[2]} for row in cursor]
 
 
 class DescriptionMigration(BaseConnection):
