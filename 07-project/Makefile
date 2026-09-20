@@ -34,3 +34,6 @@ ingest_descriptions:
 
 start_docker:
 	docker compose up -d
+
+start_gradio:
+	gradio app.py

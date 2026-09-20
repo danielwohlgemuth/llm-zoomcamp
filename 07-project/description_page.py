@@ -35,20 +35,40 @@ css = """
 }
 """
 
+
+def filter_descriptions(search: str, descriptions: list[dict]) -> list[dict]:
+    if search:
+        return [
+            description
+            for description in descriptions
+            if search.lower() in description["name"].lower()
+            or search.lower() in description["content"].lower()
+        ]
+
+    return descriptions
+
+
 with gr.Blocks() as app:
     desc = Description()
     descriptions = desc.list()
+    filtered_descriptions = gr.State(descriptions)
 
-    for row_index in range(0, len(descriptions), 3):
-        with gr.Row(elem_classes="card-row", equal_height=True):
-            for description in descriptions[row_index : row_index + 3]:
-                with gr.Column():
-                    gr.HTML(
-                        f"""
-                        <div class="card">
-                            <h2>{description["name"]}</h2>
-                            <p>{description["content"]}</p>
-                        </div>
-                        """,
-                        css_template=css,
-                    )
+    search_box = gr.Textbox(label="Search", placeholder="Type to filter")
+
+    @gr.render(inputs=[search_box])
+    def render_cards(search_text):
+        filtered_descriptions = filter_descriptions(search_text, descriptions)
+
+        for row_index in range(0, len(filtered_descriptions), 3):
+            with gr.Row(elem_classes="card-row", equal_height=True):
+                for description in filtered_descriptions[row_index : row_index + 3]:
+                    with gr.Column():
+                        gr.HTML(
+                            f"""
+                            <div class="card">
+                                <h2>{description["name"]}</h2>
+                                <p>{description["content"]}</p>
+                            </div>
+                            """,
+                            css_template=css,
+                        )
