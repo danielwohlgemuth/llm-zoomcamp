@@ -115,9 +115,14 @@ class Document(BaseConnection):
         """
 
         with self.connection.cursor() as cursor:
-            cursor.execute(sql, {"embedding": embedding.tolist(), "query": query, "k": RRF_K})
+            cursor.execute(
+                sql, {"embedding": embedding.tolist(), "query": query, "k": RRF_K}
+            )
 
-            return [{"file_name": row[0], "content": row[1], "score": row[2]} for row in cursor]
+            return [
+                {"file_name": row[0], "content": row[1], "score": row[2]}
+                for row in cursor
+            ]
 
 
 class DescriptionMigration(BaseConnection):
@@ -145,6 +150,17 @@ class Description(BaseConnection):
                 "INSERT INTO description (name, content) VALUES (%s, %s)",
                 (name, description),
             )
+
+    def list(self, name: str | None = None) -> list[str]:
+        with self.connection.cursor() as cursor:
+            if name:
+                cursor.execute(
+                    "SELECT name, content FROM description WHERE name ILIKE %s ORDER BY name",
+                    ("%" + name + "%",),
+                )
+            else:
+                cursor.execute("SELECT name, content FROM description ORDER BY name")
+            return [{"name": row[0], "content": row[1]} for row in cursor]
 
     def search(self, name: str) -> str | None:
         with self.connection.cursor() as cursor:
