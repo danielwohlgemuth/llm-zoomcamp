@@ -191,15 +191,15 @@ class ConversationMigration(BaseConnection):
 class Conversation(BaseConnection):
     def insert(self) -> str:
         with self.connection.cursor() as cursor:
-            cursor.execute("INSERT INTO conversation returning id")
+            cursor.execute(
+                "INSERT INTO conversation (description) VALUES (%s) RETURNING id"
+            )
             return cursor[0]
 
-    def upsert(self, id: str, description: str):
+    def get_all(self) -> str:
         with self.connection.cursor() as cursor:
-            cursor.execute(
-                "UPDATE conversation SET description = (%s) WHERE id = (%s)",
-                (description, id),
-            )
+            cursor.execute("SELECT id, description FROM conversation")
+            return [{"id": row[0], "description": row[1]} for row in cursor]
 
 
 class MessageMigration(BaseConnection):
@@ -250,19 +250,21 @@ class MessageMigration(BaseConnection):
 
 
 class Message(BaseConnection):
-    def add(self, model: str, messages: str) -> str:
+    def add(self, conversation_id: str, model: str, messages: str) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "INSERT INTO message (model, request_messages) VALUES (%s, %s) RETURNING id",
-                (model, messages),
+                "INSERT INTO message (conversation_id, model, request_messages) VALUES (%s, %s, %s) RETURNING id",
+                (conversation_id, model, messages),
             )
             return cursor[0]
 
-    def update(self, id: str, message: str, status: str) -> str:
+    def update(
+        self, id: str, message: str, status: str, input_tokens: int, output_tokens: int
+    ) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "UPDATE message SET response_message = (%s), status = (%s) WHERE id = (%s)",
-                (message, status, id),
+                "UPDATE message SET response_message = (%s), status = (%s), input_tokens = (%s), output_tokens = (%s) WHERE id = (%s)",
+                (message, status, input_tokens, output_tokens, id),
             )
 
 

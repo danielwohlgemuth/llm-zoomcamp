@@ -8,4 +8,15 @@ with gr.Blocks(title="Chat", analytics_enabled=False) as app:
 with app.route("Services"):
     description_page.app.render()
 
-app.launch()
+css = """
+.conversation {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+    display: block;
+    font-weight: 500;
+}
+"""
+
+app.launch(css=css)
