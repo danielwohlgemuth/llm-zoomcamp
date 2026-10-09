@@ -189,12 +189,13 @@ class ConversationMigration(BaseConnection):
 
 
 class Conversation(BaseConnection):
-    def insert(self) -> str:
+    def insert(self, description: str) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "INSERT INTO conversation (description) VALUES (%s) RETURNING id"
+                "INSERT INTO conversation (description) VALUES (%s) RETURNING id", (description, )
             )
-            return cursor[0]
+            return cursor.fetchone()[0]
+
 
     def get_all(self) -> str:
         with self.connection.cursor() as cursor:
@@ -256,7 +257,7 @@ class Message(BaseConnection):
                 "INSERT INTO message (conversation_id, model, request_messages) VALUES (%s, %s, %s) RETURNING id",
                 (conversation_id, model, messages),
             )
-            return cursor[0]
+            return cursor.fetchone()[0]
 
     def update(
         self, id: str, message: str, status: str, input_tokens: int, output_tokens: int

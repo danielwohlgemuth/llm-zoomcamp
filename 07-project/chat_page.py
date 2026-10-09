@@ -1,4 +1,5 @@
 import gradio as gr
+import json
 
 from database import Conversation, Document, Message
 
@@ -22,7 +23,7 @@ def make_handler():
 
         message_db = Message()
         message_id = message_db.add(
-            conversation_id=conversation_id, model=MODEL, messages=message
+            conversation_id=conversation_id, model=MODEL, messages=json.dumps({"message": message})
         )
 
         # Send message + search_results to claude api
