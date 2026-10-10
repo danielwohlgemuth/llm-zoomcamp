@@ -37,3 +37,6 @@ start_docker:
 
 start_gradio:
 	gradio app.py
+
+connect_db:
+	scripts/connect_db.sh
