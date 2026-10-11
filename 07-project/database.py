@@ -1,5 +1,6 @@
 import os
 from decimal import Decimal
+from enum import Enum
 
 import psycopg2
 from dotenv import load_dotenv
@@ -17,6 +18,12 @@ RRF_K = 60
 # uniq_{table}_{column}
 # fk_{table}_{column}_{ref_table}
 # chk_{table}_{column}
+
+
+class MessageStatus(Enum):
+    InProgress = "In Progress"
+    Completed = "Completed"
+    Failed = "Failed"
 
 
 class BaseConnection:
@@ -192,10 +199,10 @@ class Conversation(BaseConnection):
     def insert(self, description: str) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "INSERT INTO conversation (description) VALUES (%s) RETURNING id", (description, )
+                "INSERT INTO conversation (description) VALUES (%s) RETURNING id",
+                (description,),
             )
             return cursor.fetchone()[0]
-
 
     def get_all(self) -> str:
         with self.connection.cursor() as cursor:
@@ -254,7 +261,7 @@ class Message(BaseConnection):
     def add(self, conversation_id: str, model: str, messages: str) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "INSERT INTO message (conversation_id, model, request_messages) VALUES (%s, %s, %s) RETURNING id",
+                "INSERT INTO message (conversation_id, model, request_messages, status) VALUES (%s, %s, %s, 'In Progress') RETURNING id",
                 (conversation_id, model, messages),
             )
             return cursor.fetchone()[0]
@@ -264,7 +271,7 @@ class Message(BaseConnection):
     ) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "UPDATE message SET response_message = (%s), status = (%s), input_tokens = (%s), output_tokens = (%s) WHERE id = (%s)",
+                "UPDATE message SET result_message = (%s), status = (%s), input_tokens = (%s), output_tokens = (%s) WHERE id = (%s)",
                 (message, status, input_tokens, output_tokens, id),
             )
 

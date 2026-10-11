@@ -1,18 +1,16 @@
-import gradio as gr
 import json
 
-from database import Conversation, Document, Message
+import gradio as gr
 
-MODEL = ""
+from database import Conversation, Document, Message, MessageStatus
+
+MODEL = "claude-3-opus-20240229"
 
 
 def make_handler():
     conversation_id_state = gr.State(value=None)
 
     def handler(message: str, history):
-        document = Document()
-        search_results = document.search(message)
-
         if not conversation_id_state.value:
             conversation = Conversation()
             truncated_message = message if len(message) <= 50 else message[:47] + "..."
@@ -20,35 +18,46 @@ def make_handler():
 
         message_db = Message()
         message_id = message_db.add(
-            conversation_id=conversation_id_state.value, model=MODEL, messages=json.dumps({"message": message})
+            conversation_id=conversation_id_state.value,
+            model=MODEL,
+            messages=json.dumps([{"type": "text", "text": message}]),
         )
 
+        document = Document()
+        search_results = document.search(message)
+        content = search_results[0]["content"] if search_results else ""
+
         # Send message + search_results to claude api
-        llm_response = """{
+
+        response = f"""{{
             "id": "msg_01JHxbjBNcZG9hMDo4sqKHhn",
             "type": "message",
             "role": "assistant",
             "model": "claude-3-opus-20240229",
             "content": [
-                {
+                {{
                     "type": "text",
-                    "text": "Hello! How can I assist you today?"
-                }
+                    "text": {json.dumps(content)}
+                }}
             ],
             "stop_reason": "end_turn",
             "stop_sequence": null,
-            "usage": {
+            "usage": {{
                 "input_tokens": 10,
                 "cache_creation_input_tokens": 0,
                 "cache_read_input_tokens": 0,
                 "output_tokens": 12
-            }
-        }"""
-        # store response in database
+            }}
+        }}"""
+        response_obj = json.loads(response)
+        message_db.update(
+            id=message_id,
+            message=response,
+            status=MessageStatus.Completed.value,
+            input_tokens=response_obj["usage"]["input_tokens"],
+            output_tokens=response_obj["usage"]["output_tokens"],
+        )
 
-        # message_db.update(id=message_id, message=output.message, output.input_tokens, output.output_tokens)
-
-        content = search_results[0]["content"] if search_results else ""
         return content
 
     def assign_conversation_id(conversation_id_state, conversation_id: str | None):
@@ -79,7 +88,6 @@ with gr.Blocks() as app:
                 conversation_button = gr.Button(
                     conversation_detail["description"], elem_classes="conversation"
                 )
-                # print("conversation_detail[id]", conversation_detail["id"])
                 conversation_button.click(
                     fn=handler.new_conversation(conversation_detail["id"])
                 )
