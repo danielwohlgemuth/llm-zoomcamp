@@ -92,11 +92,11 @@ with gr.Blocks() as app:
 
             gr.HTML("Chats")
 
-            @gr.render(inputs=[conversations_state])
-            def render_conversations(conversations):
+            @gr.render(inputs=[conversations_state, conversation_id_state])
+            def render_conversations(conversations, conversation_id):
                 for detail in conversations:
                     button = gr.Button(
-                        detail["description"], elem_classes="conversation"
+                        detail["description"], elem_classes="conversation", variant="primary" if detail["id"] == conversation_id else "secondary"
                     )
                     button.click(
                         fn=lambda cid=detail["id"]: load_conversation(cid),
