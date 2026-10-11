@@ -205,7 +205,7 @@ class Conversation(BaseConnection):
             )
             return cursor.fetchone()[0]
 
-    def get_all(self) -> str:
+    def get_all(self) -> list[dict]:
         with self.connection.cursor() as cursor:
             cursor.execute("SELECT id, description FROM conversation")
             return [{"id": row[0], "description": row[1]} for row in cursor]
