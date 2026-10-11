@@ -2,6 +2,7 @@ import gradio as gr
 
 import chat_page
 import description_page
+from database import Migration
 
 with gr.Blocks(title="Chat", analytics_enabled=False) as app:
     chat_page.app.render()
@@ -18,5 +19,7 @@ css = """
     font-weight: 500;
 }
 """
+
+Migration.run()
 
 app.launch(css=css)
