@@ -188,6 +188,7 @@ class ConversationMigration(BaseConnection):
                 description text
             )
             """,
+            "ALTER TABLE conversation ADD COLUMN IF NOT EXISTS created_at timestamptz DEFAULT now()",
         ]
 
         with self.connection.cursor() as cursor:
@@ -250,6 +251,7 @@ class MessageMigration(BaseConnection):
                 END IF;
             END $$;
             """,
+            "ALTER TABLE message ADD COLUMN IF NOT EXISTS created_at timestamptz DEFAULT now()",
         ]
 
         with self.connection.cursor() as cursor:
@@ -261,7 +263,9 @@ class Message(BaseConnection):
     def add(self, conversation_id: str, model: str, messages: str) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "INSERT INTO message (conversation_id, model, request_messages, status) VALUES (%s, %s, %s, 'In Progress') RETURNING id",
+                "INSERT INTO message (conversation_id, model, request_messages, status) "
+                "VALUES (%s, %s, %s, 'In Progress') "
+                "RETURNING id",
                 (conversation_id, model, messages),
             )
             return cursor.fetchone()[0]
@@ -271,9 +275,20 @@ class Message(BaseConnection):
     ) -> str:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "UPDATE message SET result_message = (%s), status = (%s), input_tokens = (%s), output_tokens = (%s) WHERE id = (%s)",
+                "UPDATE message "
+                "SET result_message = (%s), status = (%s), input_tokens = (%s), output_tokens = (%s) "
+                "WHERE id = (%s)",
                 (message, status, input_tokens, output_tokens, id),
             )
+
+    def get_by_conversation(self, conversation_id: str) -> list[dict]:
+        with self.connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT request_messages, result_message FROM message "
+                "WHERE conversation_id = %s ORDER BY created_at",
+                (conversation_id,),
+            )
+            return [{"request": row[0], "result": row[1]} for row in cursor]
 
 
 class ModelMigration(BaseConnection):

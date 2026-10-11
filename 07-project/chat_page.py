@@ -7,10 +7,24 @@ from database import Conversation, Document, Message, MessageStatus
 MODEL = "claude-3-opus-20240229"
 
 
-def make_handler():
-    conversation_id_state = gr.State(value=None)
+def load_conversation(conversation_id):
+    history = []
+    message = Message()
+    for row in message.get_by_conversation(conversation_id):
+        for request_message in row["request"]:
+            if request_message["type"] == "text":
+                history.append({"role": "user", "content": request_message["text"]})
+        if row["result"]:
+            for result_message in row["result"]["content"]:
+                if result_message["type"] == "text":
+                    history.append({"role": "assistant", "content": result_message["text"]})
 
-    def handler(message: str, history):
+    return conversation_id, history
+
+
+def make_handler():
+
+    def handler(message: str, history, conversation_id_state: gr.State):
         if not conversation_id_state.value:
             conversation = Conversation()
             truncated_message = message if len(message) <= 50 else message[:47] + "..."
@@ -60,19 +74,13 @@ def make_handler():
 
         return content
 
-    def assign_conversation_id(conversation_id_state, conversation_id: str | None):
-        conversation_id_state.value = conversation_id
-
-    def new_conversation(conversation_id: str | None):
-        return lambda: assign_conversation_id(conversation_id_state, conversation_id)
-
-    handler.new_conversation = new_conversation
-    handler.get_conversation_id = lambda: conversation_id_state.value
     return handler
 
 
 with gr.Blocks() as app:
+    conversation_id_state = gr.State(value=None)
     handler = make_handler()
+    chatbot = gr.Chatbot()
 
     conversation = Conversation()
     conversations = conversation.get_all()
@@ -80,7 +88,9 @@ with gr.Blocks() as app:
     with gr.Row():
         with gr.Column(scale=1):
             new_chat_button = gr.Button("New Chat")
-            new_chat_button.click(fn=handler.new_conversation(None))
+            new_chat_button.click(
+                lambda: (None, []), outputs=[conversation_id_state, chatbot]
+            )
 
             gr.HTML("Chats")
 
@@ -89,8 +99,15 @@ with gr.Blocks() as app:
                     conversation_detail["description"], elem_classes="conversation"
                 )
                 conversation_button.click(
-                    fn=handler.new_conversation(conversation_detail["id"])
+                    fn=lambda cid=conversation_detail["id"]: load_conversation(cid),
+                    outputs=[conversation_id_state, chatbot],
                 )
 
         with gr.Column(scale=4):
-            gr.ChatInterface(fn=handler, analytics_enabled=False)
+            gr.ChatInterface(
+                fn=handler,
+                additional_inputs=[conversation_id_state],
+                additional_outputs=[conversation_id_state],
+                chatbot=chatbot,
+                analytics_enabled=False,
+            )
