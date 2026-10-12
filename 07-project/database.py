@@ -18,6 +18,8 @@ RRF_K = 60
 # uniq_{table}_{column}
 # fk_{table}_{column}_{ref_table}
 # chk_{table}_{column}
+# trg_{table}_{timing: [b]efore/[a]fter [i]nsert/[u]pdate/[d]elete}_{purpose}
+# fn_{table}_{timing: [b]efore/[a]fter [i]nsert/[u]pdate/[d]elete}_{purpose}
 
 
 class MessageStatus(Enum):
@@ -189,6 +191,7 @@ class ConversationMigration(BaseConnection):
             )
             """,
             "ALTER TABLE conversation ADD COLUMN IF NOT EXISTS created_at timestamptz DEFAULT now()",
+            "ALTER TABLE conversation ADD COLUMN IF NOT EXISTS updated_at timestamptz DEFAULT now()",
         ]
 
         with self.connection.cursor() as cursor:
@@ -207,7 +210,9 @@ class Conversation(BaseConnection):
 
     def get_all(self) -> list[dict]:
         with self.connection.cursor() as cursor:
-            cursor.execute("SELECT id, description FROM conversation")
+            cursor.execute(
+                "SELECT id, description FROM conversation ORDER BY updated_at DESC"
+            )
             return [{"id": row[0], "description": row[1]} for row in cursor]
 
 
@@ -252,6 +257,22 @@ class MessageMigration(BaseConnection):
             END $$;
             """,
             "ALTER TABLE message ADD COLUMN IF NOT EXISTS created_at timestamptz DEFAULT now()",
+            """
+            CREATE OR REPLACE FUNCTION fn_message_ai_au_touch_conversation() RETURNS trigger AS $$
+            BEGIN
+                UPDATE conversation
+                SET updated_at = now()
+                WHERE id = NEW.conversation_id;
+                RETURN NEW;
+            END;
+            $$ LANGUAGE plpgsql;
+            """,
+            "DROP TRIGGER IF EXISTS tr_message_ai_au_touch_conversation ON message",
+            """
+            CREATE TRIGGER tr_message_ai_au_touch_conversation
+            AFTER INSERT OR UPDATE ON message
+            FOR EACH ROW EXECUTE FUNCTION touch_conversation()
+            """,
         ]
 
         with self.connection.cursor() as cursor:
