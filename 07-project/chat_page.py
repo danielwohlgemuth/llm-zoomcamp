@@ -86,7 +86,6 @@ def handler(message: str, history, conversation_id: str, conversations):
 
 with gr.Blocks() as app:
     conversation_id_state = gr.State(value=None)
-    chatbot = gr.Chatbot()
 
     conversation = Conversation()
     conversations_state = gr.State(value=conversation.get_all())
@@ -94,9 +93,6 @@ with gr.Blocks() as app:
     with gr.Row():
         with gr.Column(scale=1):
             new_chat_button = gr.Button("New Chat")
-            new_chat_button.click(
-                lambda: (None, []), outputs=[conversation_id_state, chatbot]
-            )
 
             gr.HTML("Chats")
 
@@ -114,14 +110,17 @@ with gr.Blocks() as app:
                     )
                     button.click(
                         fn=lambda cid=detail["id"]: load_conversation(cid),
-                        outputs=[conversation_id_state, chatbot],
+                        outputs=[conversation_id_state, chat_interface.chatbot_value],
                     )
 
         with gr.Column(scale=4):
-            gr.ChatInterface(
+            chat_interface = gr.ChatInterface(
                 fn=handler,
                 additional_inputs=[conversation_id_state, conversations_state],
                 additional_outputs=[conversation_id_state, conversations_state],
-                chatbot=chatbot,
                 analytics_enabled=False,
             )
+
+        new_chat_button.click(
+            lambda: (None, []), outputs=[conversation_id_state, chat_interface.chatbot_value]
+        )
