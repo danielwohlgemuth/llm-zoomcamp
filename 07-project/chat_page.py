@@ -16,8 +16,9 @@ def load_conversation(conversation_id: str):
     message = Message()
     for row in message.get_by_conversation(conversation_id):
         for request_message in row["request"]:
-            if request_message.get("content", {}).get("type", "") == "text":
-                history.append(request_message)
+            for content in request_message.get("content", []):
+                if content.get("type", "") == "text":
+                    history.append({"role": "user", "content": content["text"]})
         if row["response"]:
             for response_message in row["response"]["content"]:
                 if response_message.get("type", "") == "text":
@@ -39,18 +40,25 @@ def handler(message: str, history, conversation_id: str, conversations):
     search_results = document.search(message)
     content = search_results[0]["content"] if search_results else ""
 
-    message_params = []
+    message_param_content = []
     for search_result in search_results:
-        message_params.append(
+        message_param_content.append(
             DocumentBlockParam(
-                source=PlainTextSourceParam(data=search_result["content"]),
+                source=PlainTextSourceParam(
+                    data=search_result["content"], type="text", media_type="text/plain"
+                ),
                 citations=CitationsConfigParam(enabled=True),
                 title=search_result["file_name"],
-            )
+                type="document",
+            ),
         )
-    message_params.append(
-        MessageParam(content=TextBlockParam(type="text", text=message), role="user")
-    )
+    message_param_content.append(TextBlockParam(type="text", text=message))
+    message_params = [
+        MessageParam(
+            content=message_param_content,
+            role="user",
+        )
+    ]
     message_db = Message()
     message_id = message_db.add(
         conversation_id=conversation_id,
