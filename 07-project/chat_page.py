@@ -1,10 +1,14 @@
 import json
 
 import gradio as gr
+from anthropic.types import (CitationsConfigParam, DocumentBlockParam,
+                             MessageParam, PlainTextSourceParam,
+                             TextBlockParam)
 
 from database import Conversation, Document, Message, MessageStatus
 
-MODEL = "claude-3-opus-20240229"
+MODEL = "claude-haiku-5-5"
+PROMPT = ""
 
 
 def load_conversation(conversation_id: str):
@@ -12,11 +16,11 @@ def load_conversation(conversation_id: str):
     message = Message()
     for row in message.get_by_conversation(conversation_id):
         for request_message in row["request"]:
-            if request_message["type"] == "text":
-                history.append({"role": "user", "content": request_message["text"]})
+            if request_message.get("content", {}).get("type", "") == "text":
+                history.append(request_message)
         if row["result"]:
             for result_message in row["result"]["content"]:
-                if result_message["type"] == "text":
+                if result_message.get("type", "") == "text":
                     history.append(
                         {"role": "assistant", "content": result_message["text"]}
                     )
@@ -31,16 +35,28 @@ def handler(message: str, history, conversation_id: str, conversations):
         conversation_id = conversation.insert(truncated_message)
         conversations = conversation.get_all()
 
+    document = Document()
+    search_results = document.search(message)
+    content = search_results[0]["content"] if search_results else ""
+
+    message_params = []
+    for search_result in search_results:
+        message_params.append(
+            DocumentBlockParam(
+                source=PlainTextSourceParam(data=search_result["content"]),
+                citations=CitationsConfigParam(enabled=True),
+                title=search_result["file_name"],
+            )
+        )
+    message_params.append(
+        MessageParam(content=TextBlockParam(type="text", text=message), role="user")
+    )
     message_db = Message()
     message_id = message_db.add(
         conversation_id=conversation_id,
         model=MODEL,
-        messages=json.dumps([{"type": "text", "text": message}]),
+        messages=json.dumps(message_params),
     )
-
-    document = Document()
-    search_results = document.search(message)
-    content = search_results[0]["content"] if search_results else ""
 
     # Send message + search_results to claude api
 
@@ -122,5 +138,6 @@ with gr.Blocks() as app:
             )
 
         new_chat_button.click(
-            lambda: (None, []), outputs=[conversation_id_state, chat_interface.chatbot_value]
+            lambda: (None, []),
+            outputs=[conversation_id_state, chat_interface.chatbot_value],
         )
