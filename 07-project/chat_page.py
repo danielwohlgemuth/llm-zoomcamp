@@ -18,11 +18,11 @@ def load_conversation(conversation_id: str):
         for request_message in row["request"]:
             if request_message.get("content", {}).get("type", "") == "text":
                 history.append(request_message)
-        if row["result"]:
-            for result_message in row["result"]["content"]:
-                if result_message.get("type", "") == "text":
+        if row["response"]:
+            for response_message in row["response"]["content"]:
+                if response_message.get("type", "") == "text":
                     history.append(
-                        {"role": "assistant", "content": result_message["text"]}
+                        {"role": "assistant", "content": response_message["text"]}
                     )
 
     return conversation_id, history

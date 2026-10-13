@@ -240,7 +240,9 @@ class MessageMigration(BaseConnection):
                     WHERE conname = 'chk_message_status' 
                     AND conrelid = 'message'::regclass
                 ) THEN
-                    ALTER TABLE message ADD CONSTRAINT chk_message_status CHECK (status IN ('In Progress', 'Completed', 'Failed'));
+                    ALTER TABLE message
+                    ADD CONSTRAINT chk_message_status
+                    CHECK (status IN ('In Progress', 'Completed', 'Failed'));
                 END IF;
             END $$;
             """,
@@ -252,7 +254,11 @@ class MessageMigration(BaseConnection):
                     WHERE conname = 'fk_conversation_conversation_id_conversation' 
                     AND conrelid = 'message'::regclass
                 ) THEN
-                    ALTER TABLE message ADD CONSTRAINT fk_conversation_conversation_id_conversation FOREIGN KEY (conversation_id) REFERENCES conversation (id) ON DELETE CASCADE;
+                    ALTER TABLE message
+                    ADD CONSTRAINT fk_conversation_conversation_id_conversation
+                    FOREIGN KEY (conversation_id)
+                    REFERENCES conversation (id)
+                    ON DELETE CASCADE;
                 END IF;
             END $$;
             """,
@@ -272,6 +278,17 @@ class MessageMigration(BaseConnection):
             CREATE TRIGGER tr_message_ai_au_touch_conversation
             AFTER INSERT OR UPDATE ON message
             FOR EACH ROW EXECUTE FUNCTION touch_conversation()
+            """,
+            """
+            DO $$
+            BEGIN
+                IF EXISTS (
+                    SELECT 1 FROM information_schema.columns
+                    WHERE table_name = 'message' AND column_name = 'result_message'
+                ) THEN
+                    ALTER TABLE message RENAME COLUMN result_message TO response;
+                END IF;
+            END $$;
             """,
         ]
 
@@ -297,7 +314,7 @@ class Message(BaseConnection):
         with self.connection.cursor() as cursor:
             cursor.execute(
                 "UPDATE message "
-                "SET result_message = (%s), status = (%s), input_tokens = (%s), output_tokens = (%s) "
+                "SET response = (%s), status = (%s), input_tokens = (%s), output_tokens = (%s) "
                 "WHERE id = (%s)",
                 (message, status, input_tokens, output_tokens, id),
             )
@@ -305,11 +322,11 @@ class Message(BaseConnection):
     def get_by_conversation(self, conversation_id: str) -> list[dict]:
         with self.connection.cursor() as cursor:
             cursor.execute(
-                "SELECT request_messages, result_message FROM message "
+                "SELECT request_messages, response FROM message "
                 "WHERE conversation_id = %s ORDER BY created_at",
                 (conversation_id,),
             )
-            return [{"request": row[0], "result": row[1]} for row in cursor]
+            return [{"request": row[0], "response": row[1]} for row in cursor]
 
 
 class ModelMigration(BaseConnection):
