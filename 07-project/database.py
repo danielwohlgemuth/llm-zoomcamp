@@ -95,6 +95,7 @@ class Document(BaseConnection):
         WITH semantic_search AS (
             SELECT id, RANK () OVER (ORDER BY embedding <=> %(embedding)s::vector) AS rank
             FROM document
+            WHERE chunk_size = 1024
             ORDER BY embedding <=> %(embedding)s::vector
             LIMIT 20
         ),
@@ -102,6 +103,7 @@ class Document(BaseConnection):
             SELECT id, RANK () OVER (ORDER BY ts_rank_cd(to_tsvector('english', content), query) DESC)
             FROM document, plainto_tsquery('english', %(query)s) query
             WHERE to_tsvector('english', content) @@ query
+            AND chunk_size = 1024
             ORDER BY ts_rank_cd(to_tsvector('english', content), query) DESC
             LIMIT 20
         ),
