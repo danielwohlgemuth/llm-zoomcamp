@@ -135,6 +135,23 @@ class Document(BaseConnection):
                 for row in cursor
             ]
 
+    def get_all(self):
+        with self.connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT file_name FROM document WHERE chunk_size = 0 ORDER BY file_name"
+            )
+
+            return [{"file_name": row[0]} for row in cursor]
+
+    def get_by_file_name(self, file_name):
+        with self.connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT file_name, content FROM document WHERE chunk_size = 0 AND file_name = %s",
+                (file_name,),
+            )
+
+            return [{"file_name": row[0], "content": row[1]} for row in cursor]
+
 
 class DescriptionMigration(BaseConnection):
     def run(self):

@@ -69,7 +69,7 @@ def process_assistant_messages(content: list[str]):
             "metadata": {"title": "Sources", "status": "done"},
             "content": "\n\n".join(
                 [
-                    f"[{index+1}] {citation["text"]}\n\n[{citation["title"]}](/docs/{quote(citation["title"])})"
+                    f"[{index+1}] {citation["text"]}\n\n[{citation["title"]}](/docs?file_name={quote(citation["title"], safe="")})"
                     for index, citation in enumerate(citations)
                 ]
             ),
