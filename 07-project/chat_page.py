@@ -66,7 +66,7 @@ def process_assistant_messages(content: list[str]):
         },
         {
             "type": "citation",
-            "metadata": {"title": "Sources"},
+            "metadata": {"title": "Sources", "status": "done"},
             "content": "\n\n".join(
                 [
                     f"[{index+1}] {citation["text"]}\n\n[{citation["title"]}](/docs/{quote(citation["title"])})"
