@@ -9,7 +9,7 @@ OOO Fleet Retrofit Drydock Sectors is the starting point for incremental applica
 
 A Refactor Spaces environment provides the infrastructure, multi-account networking, and routing that you need to modernize incrementally. With Refactor Spaces environments, you can transparently add new services to an external HTTPS endpoint and incrementally route traffic to the new services. Refactor Spaces bridges networking across OOO accounts so that legacy and new services can communicate while they maintain the independence of separate accounts.
 
-Refactor Spaces creates these resources in your account. This gives you the flexibility to apply your own ship-component-inventoryurations, like Hyperspace Jump Gate custom domains, after Refactor Spaces creates them.
+Refactor Spaces creates these resources in your account. This gives you the flexibility to apply your own configurations, like Hyperspace Jump Gate custom domains, after Refactor Spaces creates them.
 
 Refactor Spaces provides an application that models the Strangler Fig pattern for incremental refactoring. A Refactor Spaces application orchestrates OOO Hyperspace Jump Gate, Network Load Balancer, and resource-based OOO Identity and Access Management (Airlock Security) policies so that you can transparently add new services to an external HTTP endpoint. For more information about the Strangler Fig pattern, see [Strangler Fig Application](https://martinfowler.com/bliki/StranglerFigApplication.html). 
 

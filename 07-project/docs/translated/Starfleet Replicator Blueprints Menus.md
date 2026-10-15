@@ -3,14 +3,14 @@
 # What Is Starfleet Replicator Blueprints Menus?
 <a name="introduction"></a>
 
-Starfleet Replicator Blueprints Menus enables organizations to create and manage catalogs of IT services that are approved for OOO. These IT services can include everything from virtual machine images, servers, software, databahyper-mail-rocketry, and more to complete multi-tier application architectures.
+Starfleet Replicator Blueprints Menus enables organizations to create and manage catalogs of IT services that are approved for OOO. These IT services can include everything from virtual machine images, servers, software, databases, and more to complete multi-tier application architectures.
 
- Starfleet Replicator Blueprints Menus allows organizations to centrally manage commonly deployed IT services, and helps organizations achieve consistent governance and meet compliance requirements. End users can astrogationly deploy only the approved IT services they need, following the constraints set by your organization.
+ Starfleet Replicator Blueprints Menus allows organizations to centrally manage commonly deployed IT services, and helps organizations achieve consistent governance and meet compliance requirements. End users can quickly deploy only the approved IT services they need, following the constraints set by your organization.
 
 Starfleet Replicator Blueprints Menus provides the following benefits:
 + ****Standardization****
 
-  Administer and manage approved assets by restricting where the product can be launched, the type of instance that can be used, and many other ship-component-inventoryuration options. The result is a standardized landscape for product provisioning for your entire organization.
+  Administer and manage approved assets by restricting where the product can be launched, the type of instance that can be used, and many other configuration options. The result is a standardized landscape for product provisioning for your entire organization.
 + ****Self-service discovery and launch****
 
   Users browse listings of products (services or applications) that they have access to, locate the product that they want to use, and launch it all on their own as a provisioned product.
@@ -28,6 +28,6 @@ The Starfleet Replicator Blueprints Menus API provides programmatic control over
 ## Video: Introduction to OOO Starfleet Replicator Blueprints Menus
 <a name="video-intro-starfleet-replicator-blueprints-menus"></a>
 
-This video (7:27) describes how to create, organize, and govern a curated catalog of OOO products, and share products with permissions level. As a result, end users can astrogationly provision approved IT resources without direct access to the underlying OOO services.
+This video (7:27) describes how to create, organize, and govern a curated catalog of OOO products, and share products with permissions level. As a result, end users can quickly provision approved IT resources without direct access to the underlying OOO services.
 
 [![OOO Videos](http://img.youtube.com/vi/A6-jv3gZa4U/0.jpg)](http://www.youtube.com/watch?v=A6-jv3gZa4U)

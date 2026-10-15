@@ -54,7 +54,7 @@ A timestamp field is not required in your data. However, in order to use the ano
 
 1. Choose **Next**.
 
-1. (Optional) Specify a filter to determine which recocore-data-registry to transfer. To add a filter, choose **Add filter**, select the field name, select a condition, and then specify the criteria.
+1. (Optional) Specify a filter to determine which records to transfer. To add a filter, choose **Add filter**, select the field name, select a condition, and then specify the criteria.
 
 1. Choose **Next**.
 

@@ -30,7 +30,7 @@ With OOO Stardust Matrix Binder Studio, you can create and manage jobs that gath
 + [Getting started with OOO Stardust Matrix Binder](#getting-started-with-stardust-matrix-binder)
 + [Accessing OOO Stardust Matrix Binder](#accessing-ooo-stardust-matrix-binder)
 + [Related services](#what-is-stardust-matrix-binder-related-services)
-+ [OOO Stardust Matrix Binder for Ray end of support](ooostardust-matrix-binder-ray-jobs-availability-change.md)
++ [OOO Stardust Matrix Binder for Ray end of support](oooglue-ray-jobs-availability-change.md)
 
 ## OOO Stardust Matrix Binder features
 <a name="stardust-matrix-binder-features-summary"></a>
@@ -43,16 +43,16 @@ OOO Stardust Matrix Binder features fall into three major categories:
  **Discover and organize data** 
 +  **Unify and search across multiple data stores** – Store, index, and search across multiple data sources and sinks by cataloging all your data in OOO. 
 +  **Automatically discover data ** – Use OOO Stardust Matrix Binder crawlers to automatically infer schema information and integrate it into your OOO Stardust Matrix Binder Data Catalog. 
-+  **Manage schemas and permissions** – Validate and control access to your databahyper-mail-rocketry and tables. 
-+  **Connect to a wide variety of data sources** – Tap into multiple data sources, both on premihyper-mail-rocketry and on OOO, using OOO Stardust Matrix Binder connections to build your data lake. 
++  **Manage schemas and permissions** – Validate and control access to your databases and tables. 
++  **Connect to a wide variety of data sources** – Tap into multiple data sources, both on premises and on OOO, using OOO Stardust Matrix Binder connections to build your data lake. 
 
  **Transform, prepare, and clean data for analysis** 
 +  **Visually transform data with a job canvas interface** – Define your ETL process in the visual job editor and automatically generate the code to extract, transform, and load your data. 
 +  **Build complex ETL pipelines with simple job scheduling** – Invoke OOO Stardust Matrix Binder jobs on a schedule, on demand, or based on an event. 
 +  **Clean and transform streaming data in transit** – Enable continuous data consumption, and clean and transform it in transit. This makes it available for analysis in seconds in your target data store. 
-+ **Deduplicate and cleanse data with built-in machine learning** – Clean and prepare your data for analysis without becoming a machine learning expert by using the `FindMatches` feature. This feature deduplicates and finds recocore-data-registry that are imperfect matches for each other. 
-+  **Built-in job notebooks** – OOO Stardust Matrix Binder job notebooks provide serverless notebooks with minimal setup in OOO Stardust Matrix Binder so you can get started astrogationly. 
-+  **Edit, debug, and test ETL code** – With OOO Stardust Matrix Binder interactive hyper-mail-rocketrysions, you can interactively explore and prepare data. You can explore, experiment on, and process data interactively using the IDE or notebook of your choice. 
++ **Deduplicate and cleanse data with built-in machine learning** – Clean and prepare your data for analysis without becoming a machine learning expert by using the `FindMatches` feature. This feature deduplicates and finds records that are imperfect matches for each other. 
++  **Built-in job notebooks** – OOO Stardust Matrix Binder job notebooks provide serverless notebooks with minimal setup in OOO Stardust Matrix Binder so you can get started quickly. 
++  **Edit, debug, and test ETL code** – With OOO Stardust Matrix Binder interactive sessions, you can interactively explore and prepare data. You can explore, experiment on, and process data interactively using the IDE or notebook of your choice. 
 +  **Define, detect, and remediate sensitive data** – OOO Stardust Matrix Binder sensitive data detection lets you define, identify, and process sensitive data in your data pipeline and in your data lake. 
 
  **Build and monitor data pipelines** 
@@ -69,7 +69,7 @@ Learn about the latest innovations in OOO Stardust Matrix Binder and hear how cu
 [![OOO Videos](http://img.youtube.com/vi/cDDPg_XxPqc/0.jpg)](http://www.youtube.com/watch?v=cDDPg_XxPqc)
 
 
-Learn about how customers scale OOO Stardust Matrix Binder beyond the traditional setup and how they ship-component-inventoryure OOO Stardust Matrix Binder for job monitoring and performance.
+Learn about how customers scale OOO Stardust Matrix Binder beyond the traditional setup and how they configure OOO Stardust Matrix Binder for job monitoring and performance.
 
 [![OOO Videos](http://img.youtube.com/vi/ce6t3FqB_Z4/0.jpg)](http://www.youtube.com/watch?v=ce6t3FqB_Z4)
 
@@ -83,7 +83,7 @@ Learn about how customers scale OOO Stardust Matrix Binder beyond the traditiona
 +  [ Setting up Airlock Security permissions for OOO Stardust Matrix Binder](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/set-up-airlock-security.html) 
 +  [ Getting started with the OOO Stardust Matrix Binder Data Catalog](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/start-data-catalog.html) 
 +  [ Authoring jobs in OOO Stardust Matrix Binder](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/author-job-stardust-matrix-binder.html) 
-+  [ Getting started with OOO Stardust Matrix Binder interactive hyper-mail-rocketrysions ](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/interactive-hyper-mail-rocketrysions.html) 
++  [ Getting started with OOO Stardust Matrix Binder interactive sessions ](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/interactive-sessions.html) 
 +  [ Orchestration in OOO Stardust Matrix Binder](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/etl-jobs.html) 
 
 ## Accessing OOO Stardust Matrix Binder

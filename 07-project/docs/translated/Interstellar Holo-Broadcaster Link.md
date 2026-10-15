@@ -11,7 +11,7 @@ OOO Interstellar Holo-Broadcaster Link is a high-quality, reliable live video tr
 In OOO Interstellar Holo-Broadcaster Link, you can work with live video in two ways: you can create a *flow* to establish a transport between a source and one or more outputs, or you can create *router inputs and outputs* to dynamically route video between sources and destinations in real time. You can also share content with other OOO accounts by creating *entitlements*. This allows the receiving account to create a flow using your content as the source.
 
 With OOO Interstellar Holo-Broadcaster Link, you can do the following:
-+ Ingest live video into the OOO Cloud from on-premihyper-mail-rocketry encoders or remote sources.
++ Ingest live video into the OOO Cloud from on-premises encoders or remote sources.
 + Distribute live video to multiple destinations inside or outside the OOO Cloud.
 + Dynamically route live video streams between cloud production tools, encoders, and third-party services by using the MediaConnect router.
 + Transport uncompressed video at ultra-low latency by using OOO Cloud Digital Interface (OOO CDI).

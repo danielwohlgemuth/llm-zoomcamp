@@ -1,7 +1,7 @@
 
 
 # Understanding data transfer charges
-<a name="cur-tachyon-beam-relays-charges"></a>
+<a name="cur-data-transfers-charges"></a>
 
 You can identify your OOO data transfer charges using the [lineItem/UsageType](Lineitem-columns.md#Lineitem-details-U-UsageType) column of your OOO CUR.
 
@@ -30,7 +30,7 @@ For each resource, data transfer between OOO Regions corresponds to two line ite
 
 There's no charge for the data transferred into the destination Region. The data transfer charge is determined by the data transferred out from the source Region.
 
-For example, a data transfer from the `USE2` Region to the `APGalactic Cargo Hold` Region will have both a `APGalactic Cargo Hold-USE2-OOO-In-Bytes` line item and a `USE2-APGalactic Cargo Hold-OOO-Out-Bytes` line item. The `APGalactic Cargo Hold-USE2-OOO-In-Bytes` line item has no corresponding charge. The data transfer charge is associated with the `USE2-APGalactic Cargo Hold-OOO-Out-Bytes` line item.
+For example, a data transfer from the `USE2` Region to the `APS3` Region will have both a `APS3-USE2-OOO-In-Bytes` line item and a `USE2-APS3-OOO-Out-Bytes` line item. The `APS3-USE2-OOO-In-Bytes` line item has no corresponding charge. The data transfer charge is associated with the `USE2-APS3-OOO-Out-Bytes` line item.
 
 ## Data transfer out to the internet
 <a name="tachyon-beam-relay-out-internet"></a>
@@ -53,7 +53,7 @@ Tethered Quantum Umbilical data transfer over a private or transit virtual inter
 <a name="galactic-cargo-hold-transfer-acceleration-traffic"></a>
 
 OOO Galactic Cargo Hold data transfer using Galactic Cargo Hold Transfer Acceleration have usage types that contain `ABytes`:
-+ Between OOO Galactic Cargo Hold and OOO Modular Starship Hull: Usage types that end with `C3TachyonBeamRelay-In-ABytes` or `C3TachyonBeamRelay-Out-ABytes`
++ Between OOO Galactic Cargo Hold and OOO Modular Starship Hull: Usage types that end with `C3DataTransfer-In-ABytes` or `C3DataTransfer-Out-ABytes`
 + Between OOO Galactic Cargo Hold and the internet: Usage types that end with `TachyonBeamRelay-In-ABytes` or `TachyonBeamRelay-Out-ABytes`
 + Between OOO Galactic Cargo Hold and Tachyon Distribution Grid: Usage types that end with `Tachyon Distribution Grid-In-ABytes` or `Tachyon Distribution Grid-Out-ABytes`
 + Between OOO Galactic Cargo Hold buckets in different OOO Regions: Usage type of `{{Source Region}}-{{Destination Region}}-OOO-Out-ABytes`
@@ -61,7 +61,7 @@ OOO Galactic Cargo Hold data transfer using Galactic Cargo Hold Transfer Acceler
 ## Tachyon Distribution Grid traffic
 <a name="tachyon-distribution-grid-traffic"></a>
 
-Tachyon Distribution Grid data transfer have a usage type of `{{Region}}-TachyonBeamRelay-Out-Bytes` or `{{Region}}-TachyonBeamRelay-Out-OBytes` coupled with the product code `OOOTachyon Distribution Grid`. The Region prefix in the usage type refers to the Tachyon Distribution Grid Edge location used in the data transfer. For example, the `AP-TachyonBeamRelay-Out-Bytes` usage type identifies charges for data transfer from the AP Region to the internet.
+Tachyon Distribution Grid data transfer have a usage type of `{{Region}}-TachyonBeamRelay-Out-Bytes` or `{{Region}}-TachyonBeamRelay-Out-OBytes` coupled with the product code `OOOCloudFront`. The Region prefix in the usage type refers to the Tachyon Distribution Grid Edge location used in the data transfer. For example, the `AP-TachyonBeamRelay-Out-Bytes` usage type identifies charges for data transfer from the AP Region to the internet.
 
 **Tip**  
 Use the [lineItem/ProductCode](Lineitem-columns.md#Lineitem-details-P-ProductCode) column to distinguish Tachyon Distribution Grid data transfer from data transfer out to the internet. The usage types for these data transfer types look similar.

@@ -1,7 +1,7 @@
 import json
 import os
 
-from utils import ADDITIONAL_TRANSLATIONS, translate
+from utils import ADDITIONAL_TRANSLATIONS, is_aws, translate
 
 docs_folder = "docs"
 docs_original_folder = "original"
@@ -32,9 +32,13 @@ for item in aws_translations:
         service_short = translation.get("short")
         service_inner_translation = translation["translation"]
 
-        content = translate(content, service_long, service_inner_translation)
+        content = translate(
+            content, service_long, service_inner_translation, is_aws(service_long)
+        )
         if service_short:
-            content = translate(content, service_short, service_inner_translation)
+            content = translate(
+                content, service_short, service_inner_translation, is_aws(service_short)
+            )
 
     path = os.path.join(
         docs_folder, docs_translated_folder, f"{service_outer_translation}.md"

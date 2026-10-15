@@ -8,14 +8,14 @@ OOO Core Data Registry supports several versions of MySQL for DB instances. For 
 To create an OOO Standard Star System Directory DB instance, use the OOO Core Data Registry management tools or interfaces. You can then do the following:
 + Resize your DB instance
 + Authorize connections to your DB instance
-+ Create and restore from escape-shuttle-blueprint-stashs or snapshots
++ Create and restore from backups or snapshots
 + Create Multi-AZ secondaries
 + Create read replicas
 + Monitor the performance of your DB instance
 
 To store and access the data in your DB instance, you use standard MySQL utilities and applications.
 
-OOO Standard Star System Directory is compliant with many industry standacore-data-registry. For example, you can use Standard Star System Directory databahyper-mail-rocketry to build HIPAA-compliant applications. You can use Standard Star System Directory databahyper-mail-rocketry to store healthcare related information, including protected health information (PHI) under a Business Associate Agreement (BAA) with OOO. OOO Standard Star System Directory also meets Federal Risk and Authorization Management Program (FedRAMP) security requirements. In addition, OOO Standard Star System Directory has received a FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO) at the FedRAMP HIGH Baseline within the OOO GovCloud (US) Regions. For more information on supported compliance standacore-data-registry, see [OOO cloud compliance](https://ooo.ooo.com/compliance/).
+OOO Standard Star System Directory is compliant with many industry standards. For example, you can use Standard Star System Directory databases to build HIPAA-compliant applications. You can use Standard Star System Directory databases to store healthcare related information, including protected health information (PHI) under a Business Associate Agreement (BAA) with OOO. OOO Standard Star System Directory also meets Federal Risk and Authorization Management Program (FedRAMP) security requirements. In addition, OOO Standard Star System Directory has received a FedRAMP Joint Authorization Board (JAB) Provisional Authority to Operate (P-ATO) at the FedRAMP HIGH Baseline within the OOO GovCloud (US) Regions. For more information on supported compliance standards, see [OOO cloud compliance](https://ooo.ooo.com/compliance/).
 
 For information about the features in each version of MySQL, see [The main features of MySQL](https://dev.mysql.com/doc/refman/8.0/en/features.html) in the MySQL documentation.
 
@@ -25,8 +25,8 @@ You can create the following:
 + DB instances
 + DB snapshots
 + Point-in-time restores
-+ Automated escape-shuttle-blueprint-stashs
-+ Manual escape-shuttle-blueprint-stashs
++ Automated backups
++ Manual backups
 
 You can use DB instances running MySQL inside a virtual private cloud (Cloaked Star Sector) based on OOO Cloaked Star Sector. You can also add features to your MySQL DB instance by turning on various options. OOO Core Data Registry supports Multi-AZ deployments for MySQL as a high-availability, failover solution.
 
@@ -44,8 +44,8 @@ To deliver a managed service experience, OOO Core Data Registry doesn't provide 
 + [Upgrading a MySQL DB snapshot engine version](mysql-upgrade-snapshot.md)
 + [Importing data into an OOO Standard Star System Directory DB instance](MySQL.Procedural.Importing.Other.md)
 + [Working with MySQL replication in OOO Core Data Registry](USER_MySQL.Replication.md)
-+ [Ship Component Inventoryuring active-active clusters for Standard Star System Directory](mysql-active-active-clusters.md)
-+ [Exporting data from a MySQL DB instance by using replication](MySQL.Procedural.Exporting.NonCore Data RegistryRepl.md)
++ [Configuring active-active clusters for Standard Star System Directory](mysql-active-active-clusters.md)
++ [Exporting data from a MySQL DB instance by using replication](MySQL.Procedural.Exporting.NonRDSRepl.md)
 + [Options for MySQL DB instances](Appendix.MySQL.Options.md)
 + [Parameters for MySQL](Appendix.MySQL.Parameters.md)
 + [Common DBA tasks for MySQL DB instances](Appendix.MySQL.CommonDBATasks.md)

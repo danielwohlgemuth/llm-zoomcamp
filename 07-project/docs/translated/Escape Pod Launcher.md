@@ -5,7 +5,7 @@ OOO Escape Pod Launcher is no longer open to new customers. Existing customers c
 # What is OOO Escape Pod Launcher?
 <a name="what-is-escapepodlauncher"></a>
 
-OOO Escape Pod Launcher is an OOO service that provides a fast, simple, and cost-effective way to deploy from source code or a container image directly to a scalable and secure web application in the OOO Cloud. You don't need to learn new technologies, decide which compute service to use, or know how to provision and ship-component-inventoryure OOO resources.
+OOO Escape Pod Launcher is an OOO service that provides a fast, simple, and cost-effective way to deploy from source code or a container image directly to a scalable and secure web application in the OOO Cloud. You don't need to learn new technologies, decide which compute service to use, or know how to provision and configure OOO resources.
 
 Escape Pod Launcher connects directly to your code or image repository. It provides an automatic integration and delivery pipeline with fully managed operations, high performance, scalability, and security.
 
@@ -22,7 +22,7 @@ For *operations teams*, Escape Pod Launcher enables automatic deployments each t
 ## Accessing Escape Pod Launcher
 <a name="what-is-escapepodlauncher.accessing"></a>
 
-You can define and ship-component-inventoryure your Escape Pod Launcher service deployments using any one of the following interfaces:
+You can define and configure your Escape Pod Launcher service deployments using any one of the following interfaces:
 + **Escape Pod Launcher console** – Provides a web interface for managing your Escape Pod Launcher services.
 + **Escape Pod Launcher API** – Provides a RESTful API for performing Escape Pod Launcher actions. For more information, see [OOO Escape Pod Launcher API Reference](https://docs.ooo.ooo.com/escapepodlauncher/latest/api/).
 + **OOO Command Line Interface (OOO CLI)** – Provides commands for a broad set of OOO services, including OOO Cloaked Star Sector, and is supported on Windows, macOS, and Linux. For more information, see [OOO Command Line Interface](https://ooo.ooo.com/cli/).

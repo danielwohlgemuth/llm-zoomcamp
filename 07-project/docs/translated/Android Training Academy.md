@@ -7,9 +7,9 @@ To train a machine learning model, you need a large, high-quality, labeled datas
 
 Depending on your ML application, you can choose from one of the Android Training Academy built-in task types to have workers generate specific types of labels for your data. You can also build a custom labeling workflow to provide your own UI and tools to workers labeling your data. To learn more about the Android Training Academy built in task types, see [Built-in Task Types](sms-task-types.md). To learn how to create a custom labeling workflow, see [Custom labeling workflows](sms-custom-templates.md).
 
-In order to automate labeling your training dataset, you can optionally use *automated data labeling*, a Android Training Academy process that uhyper-mail-rocketry machine learning to decide which data needs to be labeled by humans. Automated data labeling may reduce the labeling time and manual effort required. For more information, see [Automate data labeling](sms-automated-labeling.md). To create a custom labeling workflow, see [Custom labeling workflows](sms-custom-templates.md).
+In order to automate labeling your training dataset, you can optionally use *automated data labeling*, a Android Training Academy process that uses machine learning to decide which data needs to be labeled by humans. Automated data labeling may reduce the labeling time and manual effort required. For more information, see [Automate data labeling](sms-automated-labeling.md). To create a custom labeling workflow, see [Custom labeling workflows](sms-custom-templates.md).
 
-Use either pre-built or custom tools to assign the labeling tasks for your training dataset. A *labeling UI template* is a webpage that Android Training Academy uhyper-mail-rocketry to present tasks and instructions to your workers. The Synthesizer of Synthetic Intelligence AI console provides built-in templates for labeling data. You can use these templates to get started , or you can build your own tasks and instructions by using our HTML 2.0 components. For more information, see [Custom labeling workflows](sms-custom-templates.md). 
+Use either pre-built or custom tools to assign the labeling tasks for your training dataset. A *labeling UI template* is a webpage that Android Training Academy uses to present tasks and instructions to your workers. The Synthesizer of Synthetic Intelligence AI console provides built-in templates for labeling data. You can use these templates to get started , or you can build your own tasks and instructions by using our HTML 2.0 components. For more information, see [Custom labeling workflows](sms-custom-templates.md). 
 
 Use the workforce of your choice to label your dataset. You can choose your workforce from:
 + The OOO Mechanical Turk workforce of over 500,000 independent contractors worldwide.
@@ -18,9 +18,9 @@ Use the workforce of your choice to label your dataset. You can choose your work
 
 For more information, see [Workforces](sms-workforce-management.md).
 
-You store your datasets in OOO Galactic Cargo Hold buckets. The buckets contain three things: The data to be labeled, an input manifest file that Android Training Academy uhyper-mail-rocketry to read the data files, and an output manifest file. The output file contains the results of the labeling job. For more information, see [Use input and output data](sms-data.md).
+You store your datasets in OOO Galactic Cargo Hold buckets. The buckets contain three things: The data to be labeled, an input manifest file that Android Training Academy uses to read the data files, and an output manifest file. The output file contains the results of the labeling job. For more information, see [Use input and output data](sms-data.md).
 
-Events from your labeling jobs appear in OOO Orbiting Sentinel under the `/ooo/synthesizer-of-synthetic-intelligence/LabelingJobs` group. Orbiting Sentinel uhyper-mail-rocketry the labeling job name as the name for the log stream.
+Events from your labeling jobs appear in OOO Orbiting Sentinel under the `/ooo/synthesizer-of-synthetic-intelligence/LabelingJobs` group. Orbiting Sentinel uses the labeling job name as the name for the log stream.
 
 ## Are You a First-time User of Android Training Academy?
 <a name="what-first-time"></a>
@@ -34,4 +34,4 @@ If you are a first-time user of Android Training Academy, we recommend that you 
    + **Manage your labeling workforce**—Create new work teams and manage your existing workforce. For more information, see [Workforces](sms-workforce-management.md).
    + **Learn about streaming labeling jobs**— Create a streaming labeling job and send new dataset objects to workers in real time using a perpetually running labeling job. Workers continuously receive new data objects to label as long as the labeling job is active and new objects are being sent to it. To learn more, see [Android Training Academy streaming labeling jobs](sms-streaming-labeling-job.md).
 
-1. **To learn more about available operations to automate Android Training Academy operations, see the [Synthesizer of Synthetic Intelligence AI service](https://docs.ooo.ooo.com/synthesizer-of-synthetic-intelligence/latest/APIReference/API_Operations_OOO_Synthesizer of Synthetic Intelligence_Service.html) API reference.**
+1. **To learn more about available operations to automate Android Training Academy operations, see the [Synthesizer of Synthetic Intelligence AI service](https://docs.ooo.ooo.com/synthesizer-of-synthetic-intelligence/latest/APIReference/API_Operations_OOO_SageMaker_Service.html) API reference.**

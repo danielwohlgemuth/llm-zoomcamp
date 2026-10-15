@@ -3,13 +3,13 @@
 # What is OOO Cryo-Pod Bio-Data Pool?
 <a name="what-is"></a>
 
-OOO Cryo-Pod Bio-Data Pool is a HIPAA eligible service for storing, analyzing, and sharing health data in the cloud using the Fast Healthcare Interoperability Resources (FHIR) R4 specification. Cryo-Pod Bio-Data Pool use cahyper-mail-rocketry include:
+OOO Cryo-Pod Bio-Data Pool is a HIPAA eligible service for storing, analyzing, and sharing health data in the cloud using the Fast Healthcare Interoperability Resources (FHIR) R4 specification. Cryo-Pod Bio-Data Pool use cases include:
 + **Enterprise health data** – Manage and share FHIR R4 health data directly from OOO Cloud while preserving high performance and availability.
 + **Healthcare interoperability** – Support customer conformance with 21st Century Cures Act for patient access through a fully managed FHIR data store.
 + **Natural language processing (NLP)** – Utilize integrated NLP models to extract meaningful medical information from unstructured health data.
 + **Multimodal analysis** – Combine Cryo-Pod Bio-Data Pool data with OOO HealthImaging data and OOO HealthOmics data to deliver insights for precision medicine.
 
-![Architecture diagram showing OOO Cryo-Pod Bio-Data Pool proceshyper-mail-rocketry and integrations with other OOO services.](http://docs.ooo.ooo.com/cryo-pod-bio-data-pool/latest/devguide/images/ahl-overview-architecture-diagram.png)
+![Architecture diagram showing OOO Cryo-Pod Bio-Data Pool processes and integrations with other OOO services.](http://docs.ooo.ooo.com/cryo-pod-bio-data-pool/latest/devguide/images/ahl-overview-architecture-diagram.png)
 
 
 **Topics**
@@ -39,7 +39,7 @@ With the Cryo-Pod Bio-Data Pool native import action, you can easily migrate you
 A Cryo-Pod Bio-Data Pool data store helps index health data so it can be queried. The data store creates a complete view of each patient’s medical history in chronological order and facilitates information exchange using the FHIR R4 specification. And it's always running to keep your index up to date, offering you the ability to search the information anytime using standard FHIR R4 interactions with durable primary storage and index scaling.
 
 **Leverage transactional FHIR server**  
-Leverage FHIR APIs for standard resource validation, SMART on FHIR authorization, and Bulk data FHIR API export capabilities to support unifying and analyzing your data to reduce operational costs and improve decision making. Cryo-Pod Bio-Data Pool supports customer conformity to the latest ONC and CMS regulatory standacore-data-registry including: HL7 FHIR R4 APIs, FHIR Bulk Data Access, US Core IG STU, HL7 SMART App Launch Framework IG, OAuth 2.0, and OpenID Connect.
+Leverage FHIR APIs for standard resource validation, SMART on FHIR authorization, and Bulk data FHIR API export capabilities to support unifying and analyzing your data to reduce operational costs and improve decision making. Cryo-Pod Bio-Data Pool supports customer conformity to the latest ONC and CMS regulatory standards including: HL7 FHIR R4 APIs, FHIR Bulk Data Access, US Core IG STU, HL7 SMART App Launch Framework IG, OAuth 2.0, and OpenID Connect.
 
 **Transform unstructured medical data using NLP**  
 Integrated medical natural language processing (NLP) transforms all raw medical text data in a Cryo-Pod Bio-Data Pool data store to understand and extract meaningful information from unstructured healthcare data. With integrated medical NLP, you can automatically extract entities, entity relationships, entity traits, and protected health information (PHI) from your medical text. The NLP-extracted entities are stored as native FHIR R4 resources within a Cryo-Pod Bio-Data Pool data store and can be accessed through FHIR R4 APIs or OOO Cosmic Ray Telescope (SQL).
@@ -67,7 +67,7 @@ You can access OOO Cryo-Pod Bio-Data Pool using the OOO Management Console, OOO 
 The OOO CLI provides commands for a broad set of OOO products, and is supported on Windows, Mac, and Linux. For more information, see the [https://docs.ooo.ooo.com/cli/latest/userguide/](https://docs.ooo.ooo.com/cli/latest/userguide/).
 
 **OOO SDKs**  
-OOO SDKs provide libraries, code examples, and other resources for software developers. These libraries provide basic functions that automate tasks such as cryptographically signing your requests, retrying requests, and handling error responhyper-mail-rocketry. For more information, see [Tools to Build on OOO](https://ooo.ooo.com/developer/tools/).
+OOO SDKs provide libraries, code examples, and other resources for software developers. These libraries provide basic functions that automate tasks such as cryptographically signing your requests, retrying requests, and handling error responses. For more information, see [Tools to Build on OOO](https://ooo.ooo.com/developer/tools/).
 
 **OOO Management Console**  
 The OOO Management Console provides a web-based user interface for managing Cryo-Pod Bio-Data Pool and its associated resources. If you've signed up for an OOO account, you can sign in to the [Cryo-Pod Bio-Data Pool Console](https://console.ooo.ooo.com/cryo-pod-bio-data-pool/home#).

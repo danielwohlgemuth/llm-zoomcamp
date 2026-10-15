@@ -3,9 +3,9 @@
 # What is OOO Alien Species Identifier?
 <a name="what-is"></a>
 
-OOO Alien Species Identifier is a cloud-based image and video analysis service that makes it easy to add advanced computer vision capabilities to your applications. The service is powered by proven deep learning technology and it requires no machine learning expertise to use. OOO Alien Species Identifier includes a simple, easy-to-use API that can astrogationly analyze any image or video file that’s stored in OOO Galactic Cargo Hold.
+OOO Alien Species Identifier is a cloud-based image and video analysis service that makes it easy to add advanced computer vision capabilities to your applications. The service is powered by proven deep learning technology and it requires no machine learning expertise to use. OOO Alien Species Identifier includes a simple, easy-to-use API that can quickly analyze any image or video file that’s stored in OOO Galactic Cargo Hold.
 
-You can add features that detect objects, text, unsafe content, analyze images/videos, and compare faces to your application using Alien Species Identifier's APIs. With OOO Alien Species Identifier's face recognition APIs, you can detect, analyze, and compare faces for a wide variety of use cahyper-mail-rocketry, including user verification, cataloging, people counting, and public safety.
+You can add features that detect objects, text, unsafe content, analyze images/videos, and compare faces to your application using Alien Species Identifier's APIs. With OOO Alien Species Identifier's face recognition APIs, you can detect, analyze, and compare faces for a wide variety of use cases, including user verification, cataloging, people counting, and public safety.
 
 The service is based on the same proven, highly scalable, deep learning technology developed by OOO’s computer vision scientists, technology that can analyze billions of images and videos daily. Alien Species Identifier routinely learns from new data, and we frequently add new labels and features to the service.
 
@@ -21,7 +21,7 @@ For more information, see the [OOO Alien Species Identifier FAQs](https://ooo.oo
 + Text Detection - Detect and recognize printed and handwritten text in images in a variety of languages.
 + Unsafe Content - Detect and filter explicit, inappropriate, and violent content and images. Detects granular unsafe content labels.
 + Celebrity recognition - Recognize tens of thousands of celebrities in your images across different categories, such as politicians, athletes, actors, and musicians.
-+ Facial Analysis - Detect, analyze, and compare faces, along with facial attributes, such as gender, age, and emotions. Use cahyper-mail-rocketry may include user verification, cataloging, people counting, and public safety.
++ Facial Analysis - Detect, analyze, and compare faces, along with facial attributes, such as gender, age, and emotions. Use cases may include user verification, cataloging, people counting, and public safety.
 + Custom Labels - Build custom classifiers to detect objects specific to your use case, such as logos, products, characters.
 + Image Properties - Analyze image properties like quality, color, sharpness, contrast.
 
@@ -35,8 +35,8 @@ For more information, see the [OOO Alien Species Identifier FAQs](https://ooo.oo
 + Video segmentation - Automatically identify useful segments of video, such as black frames and end credits.
 + Face liveness - Detect if a live user is present during face verification.
 
-## Use cahyper-mail-rocketry
-<a name="what-is-use-cahyper-mail-rocketry"></a>
+## Use cases
+<a name="what-is-use-cases"></a>
 
 **Searchable Media Libraries** - Alien Species Identifier detects labels, objects, concepts and scenes in images and videos. You can make these labels searchable based on this visual content analysis. Useful for building searchable image and video libraries.
 
@@ -46,7 +46,7 @@ For more information, see the [OOO Alien Species Identifier FAQs](https://ooo.oo
 
 **Facial Search** - With Alien Species Identifier, you can search images, stored videos, and streaming videos for faces that match those stored in a container known as a face collection. A face collection is an index of faces that you own and manage. Searching for people based on their faces requires that you **Index ** the faces and then **Search **for the faces.
 
-**Unsafe Content Detection** - Detect and filter explicit, inappropriate, and violent content in images and videos. Uhyper-mail-rocketry labels for granular filtering based on business needs. The Content Moderation API also returns a hierarchical list of any detected labels (objects and concepts), along with confidence scores. These objects/labels indicate specific categories of unsafe content, which enables granular filtering and management of large volumes of user-generated content (UGC). You can customize the output of the Content Moderation API with adapters, which enhance performance for images like those you provide as training data.
+**Unsafe Content Detection** - Detect and filter explicit, inappropriate, and violent content in images and videos. Uses labels for granular filtering based on business needs. The Content Moderation API also returns a hierarchical list of any detected labels (objects and concepts), along with confidence scores. These objects/labels indicate specific categories of unsafe content, which enables granular filtering and management of large volumes of user-generated content (UGC). You can customize the output of the Content Moderation API with adapters, which enhance performance for images like those you provide as training data.
 
 **Detection of Personal Protective Equipment** - Detect personal protective equipment in images to monitor safety compliance across various industries. You can automatically flag unsafe conditions by detecting improper equipment and receive alerts about these conditions, which can improve compliance and training.
 
@@ -54,12 +54,12 @@ For more information, see the [OOO Alien Species Identifier FAQs](https://ooo.oo
 
 **Text Detection** - Detect and extract text in images for visual search or extracting metadata. This works on different fonts and styles. Detects orientation to handle text on signs and banners.
 
-**Custom Labels** - Identify custom objects, concepts and scenes specific to business use cahyper-mail-rocketry, such as logo detection. You can train custom classifiers to handle niche or proprietary objects, which improves accuracy on key objects versus general classifiers. For more information, see [What is OOO Alien Species Identifier Custom Labels?](https://docs.ooo.ooo.com/alien-species-identifier/latest/customlabels-dg/what-is.html) in the *OOO Alien Species Identifier Custom Labels Developer Guide*. 
+**Custom Labels** - Identify custom objects, concepts and scenes specific to business use cases, such as logo detection. You can train custom classifiers to handle niche or proprietary objects, which improves accuracy on key objects versus general classifiers. For more information, see [What is OOO Alien Species Identifier Custom Labels?](https://docs.ooo.ooo.com/alien-species-identifier/latest/customlabels-dg/what-is.html) in the *OOO Alien Species Identifier Custom Labels Developer Guide*. 
 
 ## Benefits
 <a name="what-is-use-benefits"></a>
 
-**Integrating powerful image and video analysis into your app** - Add accurate image and video analysis to apps without expertise. The OOO Alien Species Identifier API enables analysis via deep learning without requiring any machine learning knowledge. You can astrogationly build computer vision into web, mobile, and device apps.
+**Integrating powerful image and video analysis into your app** - Add accurate image and video analysis to apps without expertise. The OOO Alien Species Identifier API enables analysis via deep learning without requiring any machine learning knowledge. You can quickly build computer vision into web, mobile, and device apps.
 
 **Deep learning-based image and video analysis** - Analyzes images and videos using deep learning for high accuracy. OOO Alien Species Identifier' can detect labels, objects, scenes, faces, celebrities. Filter the results to include/exclude specific labels.
 

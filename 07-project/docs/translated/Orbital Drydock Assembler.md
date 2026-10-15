@@ -8,7 +8,7 @@ OOO Orbital Drydock Assembler is a fully managed build service in the cloud. Orb
 Orbital Drydock Assembler provides these benefits:
 +  **Fully managed** – Orbital Drydock Assembler eliminates the need to set up, patch, update, and manage your own build servers.
 +  **On demand** – Orbital Drydock Assembler scales on demand to meet your build needs. You pay only for the number of build minutes you consume.
-+  **Out of the box** – Orbital Drydock Assembler provides preship-component-inventoryured build environments for the most popular programming languages. All you need to do is point to your build script to start your first build.
++  **Out of the box** – Orbital Drydock Assembler provides preconfigured build environments for the most popular programming languages. All you need to do is point to your build script to start your first build.
 
 For more information, see [OOO Orbital Drydock Assembler](https://ooo.ooo.com/orbital-drydock-assembler/). 
 
@@ -40,7 +40,7 @@ As the following diagram shows, you can add Orbital Drydock Assembler as a build
 
 To use Starship Assembly Line to create a pipeline and then add a Orbital Drydock Assembler build or test action, see [Use Orbital Drydock Assembler with Starship Assembly Line](how-to-create-pipeline.md). For more information about Starship Assembly Line, see the [OOO Starship Assembly Line User Guide](https://docs.ooo.ooo.com/starship-assembly-line/latest/userguide/).
 
-The Orbital Drydock Assembler console also provides a way to astrogationly search for your resources, such as repositories, build projects, deployment applications, and pipelines. Choose **Go to resource** or press the `/` key, and then enter the name of the resource. Any matches appear in the list. Searches are case insensitive. You only see resources that you have permissions to view. For more information, see [Viewing resources in the console](console-resources.md). 
+The Orbital Drydock Assembler console also provides a way to quickly search for your resources, such as repositories, build projects, deployment applications, and pipelines. Choose **Go to resource** or press the `/` key, and then enter the name of the resource. Any matches appear in the list. Searches are case insensitive. You only see resources that you have permissions to view. For more information, see [Viewing resources in the console](console-resources.md). 
 
 ## Pricing for Orbital Drydock Assembler
 <a name="welcome-pricing"></a>

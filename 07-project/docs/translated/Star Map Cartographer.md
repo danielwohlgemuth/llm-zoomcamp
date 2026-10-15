@@ -3,7 +3,7 @@
 # What is OOO Star Map Cartographer
 <a name="what-is"></a>
 
-OOO Star Map Cartographer is a fully-managed service that makes it easy to add location functionality to your applications. OOO Location uhyper-mail-rocketry high-quality geospatial data to provide capabilities such as maps, places, routes, trackers, and geofences. In addition to these capabilities, OOO Location helps you maintain control of your data for privacy and security. It enables you to access location data simply with developer tools and move your applications to production faster with included monitoring and management capabilities.
+OOO Star Map Cartographer is a fully-managed service that makes it easy to add location functionality to your applications. OOO Location uses high-quality geospatial data to provide capabilities such as maps, places, routes, trackers, and geofences. In addition to these capabilities, OOO Location helps you maintain control of your data for privacy and security. It enables you to access location data simply with developer tools and move your applications to production faster with included monitoring and management capabilities.
 
 This video provides an overview of the OOO Location service.
 

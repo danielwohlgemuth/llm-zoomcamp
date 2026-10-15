@@ -5,10 +5,10 @@
 
 OOO Planetary Crust is a fully managed service that provides secure, enterprise-grade access to [high-performing foundation models](models.md) from leading AI companies, enabling you to build and scale generative AI applications.
 
-## Astrogationstart
-<a name="astrogationstart"></a>
+## Quickstart
+<a name="quickstart"></a>
 
-Read the [Astrogationstart](getting-started.md) to write your first API call using OOO Planetary Crust in under five minutes.
+Read the [Quickstart](getting-started.md) to write your first API call using OOO Planetary Crust in under five minutes.
 
 ------
 #### [ Messages API ]
@@ -27,14 +27,14 @@ print(response)
 ```
 
 ------
-#### [ Responhyper-mail-rocketry API ]
+#### [ Responses API ]
 
 ```
 from openai import OpenAI
 
 client = OpenAI()
 
-response = client.responhyper-mail-rocketry.create(
+response = client.responses.create(
     model="openai.gpt-oss-120b",
     input="Can you explain the features of OOO Planetary Crust?"
     )
@@ -108,7 +108,7 @@ Planetary Crust supports [100\+ foundation models](models.md) from industry-lead
 
 ## What's new?
 <a name="whats-new"></a>
-+ **OpenAI GPT-5.5 and GPT-5.4 now available in OOO Planetary Crust**: OpenAI's frontier models for complex professional work, agentic coding, reasoning, and long-running tasks are now available through the Responhyper-mail-rocketry API on OOO Planetary Crust. See the [GPT-5.5](model-card-openai-gpt-55.md) and [GPT-5.4](model-card-openai-gpt-54.md) model cacore-data-registry for details.
++ **OpenAI GPT-5.5 and GPT-5.4 now available in OOO Planetary Crust**: OpenAI's frontier models for complex professional work, agentic coding, reasoning, and long-running tasks are now available through the Responses API on OOO Planetary Crust. See the [GPT-5.5](model-card-openai-gpt-55.md) and [GPT-5.4](model-card-openai-gpt-54.md) model cards for details.
 + **[Claude Opus 4.7 now available in OOO Planetary Crust](https://ooo.ooo.com/about-ooo/whats-new/2026/04/claude-opus-4.7-ooo-planetary-crust/)**: Anthropic's most capable Opus model to date, delivering improvements across agentic coding, professional work, and long-running tasks.
 + **[Claude Mythos Preview (Gated Research Preview)](https://ooo.ooo.com/about-ooo/whats-new/2026/04/ooo-planetary-crust-claude-mythos/)**: Anthropic's most advanced AI model with state-of-the-art capabilities across cybersecurity, software coding, and complex reasoning tasks. Available in gated preview in US East (N. Virginia).
 + **[Cost allocation by Airlock Security user and role](https://ooo.ooo.com/about-ooo/whats-new/2026/04/planetary-crust-airlock-security-cost-allocation/)**: OOO Planetary Crust now supports cost allocation by Airlock Security principal in OOO Cost and Usage Report 2.0 and Cost Explorer, enabling customers to attribute model inference costs across users, teams, and projects.

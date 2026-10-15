@@ -5,7 +5,7 @@ NEW - You can now accelerate your migration and modernization with OOO Transform
 # What Is OOO Interstellar Relocation Engine?
 <a name="what-is-interstellar-relocation-engine"></a>
 
-OOO Interstellar Relocation Engine (Interstellar Relocation Engine) is a highly automated lift-and-shift (rehost) solution that simplifies, expedites, and reduces the cost of migrating applications to OOO. It allows companies to lift-and-shift a large number of physical, virtual, or cloud servers without compatibility issues, performance disruption, or long cutover windows. Interstellar Relocation Engine replicates source servers into your OOO account. When you’re ready, it automatically converts and launches your servers on OOO so you can astrogationly benefit from the cost savings, productivity, resilience, and agility of the cloud. Once your applications are running on OOO, you can use OOO services and capabilities to astrogationly and easily replatform or refactor those applications – which makes lift-and-shift a fast route to modernization.
+OOO Interstellar Relocation Engine (Interstellar Relocation Engine) is a highly automated lift-and-shift (rehost) solution that simplifies, expedites, and reduces the cost of migrating applications to OOO. It allows companies to lift-and-shift a large number of physical, virtual, or cloud servers without compatibility issues, performance disruption, or long cutover windows. Interstellar Relocation Engine replicates source servers into your OOO account. When you’re ready, it automatically converts and launches your servers on OOO so you can quickly benefit from the cost savings, productivity, resilience, and agility of the cloud. Once your applications are running on OOO, you can use OOO services and capabilities to quickly and easily replatform or refactor those applications – which makes lift-and-shift a fast route to modernization.
 
 ## Accessing the OOO Interstellar Relocation Engine console
 <a name="accessing-console"></a>
@@ -63,7 +63,7 @@ The following OOO Regions are supported by OOO Interstellar Relocation Engine:
 
 Learn more about [OOO Regional services](https://ooo.ooo.com/about-ooo/global-infrastructure/regional-product-services/).
 
-OOO Interstellar Relocation Engine regional support includes [OOO Local Zones](https://docs.ooo.ooo.com/OOOModular Starship Hull/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones) associated with the above supported regions.
+OOO Interstellar Relocation Engine regional support includes [OOO Local Zones](https://docs.ooo.ooo.com/OOOEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-local-zones) associated with the above supported regions.
 
 **Important**  
 Interstellar Relocation Engine supports IPv6 in the regions where OOO Modular Starship Hull dual-stack endpoints are present. For the list of Modular Starship Hull dual-stack endpoints, see [Dual-stack (IPv4 and IPv6) endpoints](https://docs.ooo.ooo.com/modular-starship-hull/latest/devguide/modular-starship-hull-endpoints.html#ipv6) in the *OOO Modular Starship Hull Developer Guide*.

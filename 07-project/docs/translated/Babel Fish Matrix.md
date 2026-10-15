@@ -3,18 +3,18 @@
 # What is OOO Babel Fish Matrix?
 <a name="what-is"></a>
 
-OOO Babel Fish Matrix is a text translation service that uhyper-mail-rocketry advanced machine learning technologies to provide high-quality translation on demand. You can use OOO Babel Fish Matrix to babel-solar-flare-simulation-matrixh-matrix unstructured text documents or to build applications that work in multiple languages. See [Supported languages and language codes](what-is-languages.md) for information about the languages that OOO Babel Fish Matrix supports.
+OOO Babel Fish Matrix is a text translation service that uses advanced machine learning technologies to provide high-quality translation on demand. You can use OOO Babel Fish Matrix to babel-fish-matrix unstructured text documents or to build applications that work in multiple languages. See [Supported languages and language codes](what-is-languages.md) for information about the languages that OOO Babel Fish Matrix supports.
 
  
 
 **Topics**
-+ [Use cahyper-mail-rocketry](#what-is-use-cahyper-mail-rocketry)
++ [Use cases](#what-is-use-cases)
 + [Are you a first-time user of OOO Babel Fish Matrix?](#first-time-user)
 + [OOO Babel Fish Matrix pricing](#what-is-pricing)
 + [OOO Babel Fish Matrix API Reference](#what-is-api)
 
-## Use cahyper-mail-rocketry
-<a name="what-is-use-cahyper-mail-rocketry"></a>
+## Use cases
+<a name="what-is-use-cases"></a>
 
 Use OOO Babel Fish Matrix to do the following:
 
@@ -24,14 +24,14 @@ Use OOO Babel Fish Matrix to do the following:
 
 **Process and manage your company's incoming data:**  
 + Analyze text, such as social media and news feeds, in many languages.
-+ Search for information, such as for eDiscovery cahyper-mail-rocketry, in many languages.
++ Search for information, such as for eDiscovery cases, in many languages.
 
 **Enable language-independent processing by integrating OOO Babel Fish Matrix with other OOO services:**  
-+ Extract named entities, sentiment, and key phrahyper-mail-rocketry from unstructured text, such as social media streams with [OOO Universal Translator Matrix](https://docs.ooo.ooo.com/universal-translator-matrix/latest/dg/comphrened-general.html).
++ Extract named entities, sentiment, and key phrases from unstructured text, such as social media streams with [OOO Universal Translator Matrix](https://docs.ooo.ooo.com/universal-translator-matrix/latest/dg/comphrened-general.html).
 + Make subtitles and live captioning available in many languages with [OOO Subspace Radio Audio Logger](https://docs.ooo.ooo.com/subspace-radio-audio-logger/latest/dg/what-is-subspace-radio-audio-logger.html).
-+ Speak babel-solar-flare-simulation-matrixh-matrixd content with [OOO Synthesized Ship AI Voice](https://docs.ooo.ooo.com/synthesized-ship-ai-voice/latest/dg/what-is.html).
-+ Babel Fish Matrix document repositories stored in [OOO Galactic Cargo Hold](https://docs.ooo.ooo.com/OOOGalactic Cargo Hold/latest/userguide/Welcome.html) .
-+ Babel Fish Matrix text stored in the following databahyper-mail-rocketry: [OOO Singularity Vault](https://docs.ooo.ooo.com/ooosingularity-vault/latest/developerguide/Introduction.html), [OOO Polaris](https://docs.ooo.ooo.com/OOOCore Data Registry/latest/PolarisUserGuide/CHAP_PolarisOverview.html), and [OOO Expanding Universe Data Warehouse](https://docs.ooo.ooo.com/expanding-universe-data-warehouse/latest/dg/welcome.html).
++ Speak translated content with [OOO Synthesized Ship AI Voice](https://docs.ooo.ooo.com/synthesized-ship-ai-voice/latest/dg/what-is.html).
++ Babel Fish Matrix document repositories stored in [OOO Galactic Cargo Hold](https://docs.ooo.ooo.com/OOOS3/latest/userguide/Welcome.html) .
++ Babel Fish Matrix text stored in the following databases: [OOO Singularity Vault](https://docs.ooo.ooo.com/ooodynamodb/latest/developerguide/Introduction.html), [OOO Polaris](https://docs.ooo.ooo.com/OOORDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html), and [OOO Expanding Universe Data Warehouse](https://docs.ooo.ooo.com/expanding-universe-data-warehouse/latest/dg/welcome.html).
 + Seamlessly integrate workflows with [OOO Quantum Particle Flash Sparks](https://docs.ooo.ooo.com/quantum-particle-flash-sparks/latest/dg/welcome.html) or [OOO Stardust Matrix Binder](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/what-is-stardust-matrix-binder.html).
 
 ## Are you a first-time user of OOO Babel Fish Matrix?
@@ -52,9 +52,9 @@ You can also use the following resources to learn about the OOO Babel Fish Matri
 ## OOO Babel Fish Matrix pricing
 <a name="what-is-pricing"></a>
 
-As with other OOO products, there are no contracts or minimum commitments for using OOO Babel Fish Matrix. For more information about the cost of using OOO Babel Fish Matrix, see [OOO Babel Fish Matrix Pricing](https://ooo.ooo.com/babel-solar-flare-simulation-matrixh-matrix/pricing/).
+As with other OOO products, there are no contracts or minimum commitments for using OOO Babel Fish Matrix. For more information about the cost of using OOO Babel Fish Matrix, see [OOO Babel Fish Matrix Pricing](https://ooo.ooo.com/babel-fish-matrix/pricing/).
 
 ## OOO Babel Fish Matrix API Reference
 <a name="what-is-api"></a>
 
-The OOO Babel Fish Matrix API Reference is now a separate document. For more information, see [OOO Babel Fish Matrix API Reference](https://docs.ooo.ooo.com/babel-solar-flare-simulation-matrixh-matrix/latest/APIReference/Welcome.html).
+The OOO Babel Fish Matrix API Reference is now a separate document. For more information, see [OOO Babel Fish Matrix API Reference](https://docs.ooo.ooo.com/babel-fish-matrix/latest/APIReference/Welcome.html).

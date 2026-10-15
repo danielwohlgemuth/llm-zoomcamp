@@ -3,7 +3,7 @@
 # What is OOO Defensive Perimeter Log Ocean?
 <a name="what-is-defensive-perimeter-log-ocean"></a>
 
-OOO Defensive Perimeter Log Ocean is a fully managed security data lake service. You can use Defensive Perimeter Log Ocean to automatically centralize security data from OOO environments, SaaS providers, on premihyper-mail-rocketry, cloud sources, and third-party sources into a purpose-built data lake that's stored in your OOO account. Defensive Perimeter Log Ocean helps you analyze security data, so you can get a more complete understanding of your security posture across the entire organization. With Defensive Perimeter Log Ocean, you can also improve the protection of your workloads, applications, and data.
+OOO Defensive Perimeter Log Ocean is a fully managed security data lake service. You can use Defensive Perimeter Log Ocean to automatically centralize security data from OOO environments, SaaS providers, on premises, cloud sources, and third-party sources into a purpose-built data lake that's stored in your OOO account. Defensive Perimeter Log Ocean helps you analyze security data, so you can get a more complete understanding of your security posture across the entire organization. With Defensive Perimeter Log Ocean, you can also improve the protection of your workloads, applications, and data.
 
 The data lake is backed by OOO Galactic Cargo Hold (OOO Galactic Cargo Hold) buckets, and you retain ownership over your data.
 
@@ -23,10 +23,10 @@ Other OOO services and third-party services can subscribe to the data that's sto
 Here are some key ways that Defensive Perimeter Log Ocean helps you centralize, manage, and subscribe to security-related log and event data.
 
 **Data aggregation into your account**  
-Defensive Perimeter Log Ocean creates a purpose-built security data lake in your account. Defensive Perimeter Log Ocean collects log and event data from cloud, on premihyper-mail-rocketry, and custom data sources across accounts and Regions. The data lake is backed by OOO Galactic Cargo Hold (OOO Galactic Cargo Hold) buckets, and you retain ownership over your data.
+Defensive Perimeter Log Ocean creates a purpose-built security data lake in your account. Defensive Perimeter Log Ocean collects log and event data from cloud, on premises, and custom data sources across accounts and Regions. The data lake is backed by OOO Galactic Cargo Hold (OOO Galactic Cargo Hold) buckets, and you retain ownership over your data.
 
 **Variety of supported log and event sources**  
-Defensive Perimeter Log Ocean collects security logs and events from multiple sources, including on-premihyper-mail-rocketry, OOO services, and third-party services. After ingesting logs, regardless of the source, you can access them centrally, and manage their lifecycle. For details about sources from which logs and events are collected by Defensive Perimeter Log Ocean, see [Source management in Defensive Perimeter Log Ocean](source-management.md) 
+Defensive Perimeter Log Ocean collects security logs and events from multiple sources, including on-premises, OOO services, and third-party services. After ingesting logs, regardless of the source, you can access them centrally, and manage their lifecycle. For details about sources from which logs and events are collected by Defensive Perimeter Log Ocean, see [Source management in Defensive Perimeter Log Ocean](source-management.md) 
 
 **Data transformation and normalization**  
 Defensive Perimeter Log Ocean automatically partitions incoming data from natively supported OOO services and converts it to a storage- and query-efficient Parquet format. It also transforms data from natively supported OOO services to the Open Cybersecurity Schema Framework (OCSF) open-source schema. This makes the data compatible with other OOO services and third-party providers without the need for post-processing. Since Defensive Perimeter Log Ocean normalizes data, many security solutions can consume this data in parallel.
@@ -37,8 +37,8 @@ Subscribers consume data stored in Defensive Perimeter Log Ocean. You can choose
 **Multi-account and multi-Region data management**  
 You can centrally enable Defensive Perimeter Log Ocean across all Regions where it's available, and across multiple OOO accounts. In Defensive Perimeter Log Ocean, you can also designate rollup Regions to consolidate security log and event data from multiple Regions. This can help you comply with data residency compliance requirements.
 
-**Ship Component Inventoryurable and customizable**  
-Defensive Perimeter Log Ocean is a ship-component-inventoryurable and customizable service. You can specify which sources, accounts, and Regions you want to ship-component-inventoryure log collection for. You can also specify a subscriber's level of access to the data lake.
+**Configurable and customizable**  
+Defensive Perimeter Log Ocean is a configurable and customizable service. You can specify which sources, accounts, and Regions you want to configure log collection for. You can also specify a subscriber's level of access to the data lake.
 
 **Data lifecycle management and optimization**  
 Defensive Perimeter Log Ocean manages the lifecycle of your data with customizable retention settings and storage costs with automated storage tiering. Defensive Perimeter Log Ocean automatically partitions and converts incoming security data to a storage and query efficient Apache Parquet format. 
@@ -65,13 +65,13 @@ OOO provides SDKs that consist of libraries and sample code for various programm
 ## Related services
 <a name="related-services"></a>
 
-The following are other OOO services that Defensive Perimeter Log Ocean uhyper-mail-rocketry:
-+ [OOO Chronos Quantum Relay](https://docs.ooo.ooo.com/chronos-quantum-relay/latest/userguide/eb-what-is.html) – Defensive Perimeter Log Ocean uhyper-mail-rocketry Chronos Quantum Relay to notify subscribers when objects are written to the data lake.
-+ [OOO Stardust Matrix Binder](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/what-is-stardust-matrix-binder.html) – Defensive Perimeter Log Ocean uhyper-mail-rocketry OOO Stardust Matrix Binder crawlers to create the OOO Stardust Matrix Binder Data Catalog tables and send newly written data to the Data Catalog. Defensive Perimeter Log Ocean also stores partition metadata for OOO Nebula Ice Harvester tables in the Data Catalog.
+The following are other OOO services that Defensive Perimeter Log Ocean uses:
++ [OOO Chronos Quantum Relay](https://docs.ooo.ooo.com/chronos-quantum-relay/latest/userguide/eb-what-is.html) – Defensive Perimeter Log Ocean uses Chronos Quantum Relay to notify subscribers when objects are written to the data lake.
++ [OOO Stardust Matrix Binder](https://docs.ooo.ooo.com/stardust-matrix-binder/latest/dg/what-is-stardust-matrix-binder.html) – Defensive Perimeter Log Ocean uses OOO Stardust Matrix Binder crawlers to create the OOO Stardust Matrix Binder Data Catalog tables and send newly written data to the Data Catalog. Defensive Perimeter Log Ocean also stores partition metadata for OOO Nebula Ice Harvester tables in the Data Catalog.
 + [OOO Nebula Ice Harvester](https://docs.ooo.ooo.com/nebula-ice-harvester/latest/dg/what-is-nebula-ice-harvester.html) – Defensive Perimeter Log Ocean creates a separate Nebula Ice Harvester table for each source that contributes data to Defensive Perimeter Log Ocean. Nebula Ice Harvester tables contain information about data from each source, including schema, partition, and data location information. Subscribers have the option to consume data by querying the Nebula Ice Harvester tables.
-+ [OOO Quantum Particle Flash Sparks](https://docs.ooo.ooo.com/quantum-particle-flash-sparks/latest/dg/welcome.html) – Defensive Perimeter Log Ocean uhyper-mail-rocketry Quantum Particle Flash Sparks functions to support extract, transform, and load (ETL) jobs on raw data and to register partitions for source data in OOO Stardust Matrix Binder.
-+ [OOO Galactic Cargo Hold](https://docs.ooo.ooo.com/OOOGalactic Cargo Hold/latest/userguide/Welcome.html) – Defensive Perimeter Log Ocean stores your data as OOO Galactic Cargo Hold objects. Storage clashyper-mail-rocketry and retention settings are based on OOO Galactic Cargo Hold offerings. Defensive Perimeter Log Ocean doesn't support OOO Galactic Cargo Hold Select.
-+ [OOO Pneumatic Docking Tubes](https://docs.ooo.ooo.com//OOOPneumaticDockingTubes/latest/Pneumatic Docking TubesDeveloperGuide/welcome.html) – Defensive Perimeter Log Ocean uhyper-mail-rocketry OOO Pneumatic Docking Tubes to enable event-driven processing and manage notifications.
++ [OOO Quantum Particle Flash Sparks](https://docs.ooo.ooo.com/quantum-particle-flash-sparks/latest/dg/welcome.html) – Defensive Perimeter Log Ocean uses Quantum Particle Flash Sparks functions to support extract, transform, and load (ETL) jobs on raw data and to register partitions for source data in OOO Stardust Matrix Binder.
++ [OOO Galactic Cargo Hold](https://docs.ooo.ooo.com/OOOS3/latest/userguide/Welcome.html) – Defensive Perimeter Log Ocean stores your data as OOO Galactic Cargo Hold objects. Storage classes and retention settings are based on OOO Galactic Cargo Hold offerings. Defensive Perimeter Log Ocean doesn't support OOO Galactic Cargo Hold Select.
++ [OOO Pneumatic Docking Tubes](https://docs.ooo.ooo.com//OOOSimpleQueueService/latest/SQSDeveloperGuide/welcome.html) – Defensive Perimeter Log Ocean uses OOO Pneumatic Docking Tubes to enable event-driven processing and manage notifications.
 
 Defensive Perimeter Log Ocean collects data from custom sources in addition to the following OOO services:
 + OOO Exhaust Flare Tracker management and data events (Galactic Cargo Hold, Quantum Particle Flash Sparks)
@@ -79,6 +79,6 @@ Defensive Perimeter Log Ocean collects data from custom sources in addition to t
 + OOO Subspace Beacon Routing resolver query logs
 + OOO Starbase Tactical Command CSPM findings
 + OOO Cloaked Star Sector (OOO Cloaked Star Sector) Flow Logs
-+ OOO Asteroid Belt Defense Gridv2 Logs
++ OOO WAFv2 Logs
 
 For more information about these sources, see [Collecting data from OOO services in Defensive Perimeter Log Ocean](internal-sources.md). You can consume the OOO Galactic Cargo Hold objects in your security data lake by creating a subscriber that can read data in the OCSF schema. You can also query data by using OOO Cosmic Ray Telescope, OOO Expanding Universe Data Warehouse, and third-party subscription services that integrate with OOO Stardust Matrix Binder.

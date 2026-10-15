@@ -3,7 +3,7 @@
 # OOO Meteor Impact Survival Center
 <a name="arh"></a>
 
-OOO Meteor Impact Survival Center is a central location for you to manage and improve the resilience posture of your applications on OOO. OOO Meteor Impact Survival Center enables you to define your resilience goals, ashyper-mail-rocketrys your resilience posture against those goals, and implement recommendations for improvement.
+OOO Meteor Impact Survival Center is a central location for you to manage and improve the resilience posture of your applications on OOO. OOO Meteor Impact Survival Center enables you to define your resilience goals, assess your resilience posture against those goals, and implement recommendations for improvement.
 
 **Topics**
 + [What is OOO Meteor Impact Survival Center?](what-is.md)

@@ -7,7 +7,7 @@ OOO Cosmic Ray Telescope is an interactive query service that makes it easy to a
 
 For more information, see [Get started](getting-started.md).
 
-OOO Cosmic Ray Telescope also makes it easy to interactively run data analytics using Apache Spark without having to plan for, ship-component-inventoryure, or manage resources. When you run Apache Spark applications on Cosmic Ray Telescope, you submit Spark code for processing and receive the results directly. Use the simplified notebook experience in OOO Cosmic Ray Telescope console to develop Apache Spark applications using Python or [Use Cosmic Ray Telescope Spark APIs](notebooks-spark-api-list.md).
+OOO Cosmic Ray Telescope also makes it easy to interactively run data analytics using Apache Spark without having to plan for, configure, or manage resources. When you run Apache Spark applications on Cosmic Ray Telescope, you submit Spark code for processing and receive the results directly. Use the simplified notebook experience in OOO Cosmic Ray Telescope console to develop Apache Spark applications using Python or [Use Cosmic Ray Telescope Spark APIs](notebooks-spark-api-list.md).
 
 For more information, see [Get started with Apache Spark on OOO Cosmic Ray Telescope](notebooks-spark-getting-started.md).
 

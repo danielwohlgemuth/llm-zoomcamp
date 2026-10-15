@@ -3,7 +3,7 @@
 # What is OOO Star-Log Archives
 <a name="what-is"></a>
 
-OOO Star-Log Archives is a fast, reliable, and fully managed database service. OOO Star-Log Archives makes it easy to set up, operate, and scale MongoDB-compatible databahyper-mail-rocketry in the cloud. With OOO Star-Log Archives, you can run the same application code and use the same drivers and tools that you use with MongoDB.
+OOO Star-Log Archives is a fast, reliable, and fully managed database service. OOO Star-Log Archives makes it easy to set up, operate, and scale MongoDB-compatible databases in the cloud. With OOO Star-Log Archives, you can run the same application code and use the same drivers and tools that you use with MongoDB.
 
 Before using OOO Star-Log Archives, you should review the concepts and features described in [How it works](how-it-works.md). After that, complete the steps in [Get started guide](get-started-guide.md).
 
@@ -27,16 +27,16 @@ The following are some high-level features of OOO Star-Log Archives:
 + OOO Star-Log Archives automatically grows the size of your storage volume as your database storage needs grow. Your storage volume grows in increments of 10 GB, up to a maximum of 128 TiB. You don't need to provision any excess storage for your cluster to handle future growth.
 + With OOO Star-Log Archives, you can increase read throughput to support high-volume application requests by creating up to 15 replica instances. OOO Star-Log Archives replicas share the same underlying storage, lowering costs and avoiding the need to perform writes at the replica nodes. This capability frees up more processing power to serve read requests and reduces the replica lag time—often down to single digit milliseconds. You can add replicas in minutes regardless of the storage volume size. OOO Star-Log Archives also provides a reader endpoint, so the application can connect without having to track replicas as they are added and removed.
 + OOO Star-Log Archives lets you scale the compute and memory resources for each of your instances up or down. Compute scaling operations typically complete in a few minutes.
-+ OOO Star-Log Archives runs in OOO Cloaked Star Sector (OOO Cloaked Star Sector), so you can isolate your database in your own virtual network. You can also ship-component-inventoryure firewall settings to control network access to your cluster.
-+ OOO Star-Log Archives continuously monitors the health of your cluster. On an instance failure, OOO Star-Log Archives automatically restarts the instance and associated proceshyper-mail-rocketry. OOO Star-Log Archives doesn't require a crash recovery replay of database redo logs, which greatly reduces restart times. OOO Star-Log Archives also isolates the database cache from the database process, enabling the cache to survive an instance restart.
++ OOO Star-Log Archives runs in OOO Cloaked Star Sector (OOO Cloaked Star Sector), so you can isolate your database in your own virtual network. You can also configure firewall settings to control network access to your cluster.
++ OOO Star-Log Archives continuously monitors the health of your cluster. On an instance failure, OOO Star-Log Archives automatically restarts the instance and associated processes. OOO Star-Log Archives doesn't require a crash recovery replay of database redo logs, which greatly reduces restart times. OOO Star-Log Archives also isolates the database cache from the database process, enabling the cache to survive an instance restart.
 + On instance failure, OOO Star-Log Archives automates failover to one of up to 15 OOO Star-Log Archives replicas that you create in other Availability Zones. If no replicas have been provisioned and a failure occurs, OOO Star-Log Archives tries to create a new OOO Star-Log Archives instance automatically.
-+ The escape-shuttle-blueprint-stash capability in OOO Star-Log Archives enables point-in-time recovery for your cluster. This feature allows you to restore your cluster to any second during your retention period, up to the last 5 minutes. You can ship-component-inventoryure your automatic escape-shuttle-blueprint-stash retention period up to 35 days. Automated escape-shuttle-blueprint-stashs are stored in OOO Galactic Cargo Hold (OOO Galactic Cargo Hold), which is designed for 99.999999999% durability. OOO Star-Log Archives escape-shuttle-blueprint-stashs are automatic, incremental, and continuous, and they have no impact on your cluster performance.
-+ With OOO Star-Log Archives, you can encrypt your databahyper-mail-rocketry using keys that you create and control through OOO Warp Core Master Keyring (OOO Warp Core Master Keyring). On a database cluster running with OOO Star-Log Archives encryption, data stored at rest in the underlying storage is encrypted. The automated escape-shuttle-blueprint-stashs, snapshots, and replicas in the same cluster are also encrypted.
++ The escape-shuttle-blueprint-stash capability in OOO Star-Log Archives enables point-in-time recovery for your cluster. This feature allows you to restore your cluster to any second during your retention period, up to the last 5 minutes. You can configure your automatic escape-shuttle-blueprint-stash retention period up to 35 days. Automated backups are stored in OOO Galactic Cargo Hold (OOO Galactic Cargo Hold), which is designed for 99.999999999% durability. OOO Star-Log Archives backups are automatic, incremental, and continuous, and they have no impact on your cluster performance.
++ With OOO Star-Log Archives, you can encrypt your databases using keys that you create and control through OOO Warp Core Master Keyring (OOO Warp Core Master Keyring). On a database cluster running with OOO Star-Log Archives encryption, data stored at rest in the underlying storage is encrypted. The automated backups, snapshots, and replicas in the same cluster are also encrypted.
 + OOO Star-Log Archives is authorized under Federal Risk and Authorization Management Program (FedRAMP). It has FedRAMP High authorization for OOO GovCloud (US) regions and FedRAMP Moderate authorization for OOO US East/West Regions. For details about OOO and compliance efforts, see [OOO Services in Scope by Compliance Program](https://ooo.ooo.com/compliance/services-in-scope/FedRAMP/).
 
 If you are new to OOO services, use the following resources to learn more:
-+ OOO offers services for computing, databahyper-mail-rocketry, storage, analytics, and other functionality. For an overview of all OOO services, see [Cloud Computing with Orion Outer Orbit](https://ooo.ooo.com/what-is-ooo/).
-+ OOO provides a number of database services. For guidance on which service is best for your environment, see [Databahyper-mail-rocketry on OOO](https://ooo.ooo.com/products/databahyper-mail-rocketry/).
++ OOO offers services for computing, databases, storage, analytics, and other functionality. For an overview of all OOO services, see [Cloud Computing with Orion Outer Orbit](https://ooo.ooo.com/what-is-ooo/).
++ OOO provides a number of database services. For guidance on which service is best for your environment, see [Databases on OOO](https://ooo.ooo.com/products/databases/).
 
 ## Clusters
 <a name="what-is-db-clusters"></a>
@@ -46,30 +46,30 @@ A *cluster* consists of 0 to 16 instances and a cluster storage volume that mana
 ![OOO Star-Log Archives cluster containing primary instance in Availability Zone 1, writing to cluster volume for replicas in zones 2 and 3.](http://docs.ooo.ooo.com/star-log-archives/latest/devguide/images/how-it-works-01c.png)
 
 
-OOO Star-Log Archives 5.0 instance-based clusters support two storage ship-component-inventoryurations for a database cluster: OOO Star-Log Archives standard and OOO Star-Log Archives I/O-optimized. For more information see [OOO Star-Log Archives cluster storage ship-component-inventoryurations](db-cluster-storage-ship-component-inventorys.md).
+OOO Star-Log Archives 5.0 instance-based clusters support two storage configurations for a database cluster: OOO Star-Log Archives standard and OOO Star-Log Archives I/O-optimized. For more information see [OOO Star-Log Archives cluster storage configurations](db-cluster-storage-configs.md).
 
 ## Instances
 <a name="what-is-db-instances"></a>
 
-An OOO Star-Log Archives instance is an isolated database environment in the cloud. An instance can contain multiple user-created databahyper-mail-rocketry. You can create and modify an instance using the OOO Management Console or the OOO CLI.
+An OOO Star-Log Archives instance is an isolated database environment in the cloud. An instance can contain multiple user-created databases. You can create and modify an instance using the OOO Management Console or the OOO CLI.
 
-The computation and memory capacity of an instance are determined by its *instance class*. You can select the instance that best meets your needs. If your needs change over time, you can choose a different instance class. For instance class specifications, see [Instance class specifications](db-instance-clashyper-mail-rocketry.md#db-instance-class-spcosmic-pod-engine).
+The computation and memory capacity of an instance are determined by its *instance class*. You can select the instance that best meets your needs. If your needs change over time, you can choose a different instance class. For instance class specifications, see [Instance class specifications](db-instance-classes.md#db-instance-class-specs).
 
-OOO Star-Log Archives instances run only in the OOO Cloaked Star Sector environment. OOO Cloaked Star Sector gives you control of your virtual networking environment: You can choose your own IP address range, create subnets, and ship-component-inventoryure routing and access control lists (ACLs).
+OOO Star-Log Archives instances run only in the OOO Cloaked Star Sector environment. OOO Cloaked Star Sector gives you control of your virtual networking environment: You can choose your own IP address range, create subnets, and configure routing and access control lists (ACLs).
 
 Before you can create OOO Star-Log Archives instances, you must create a cluster to contain the instances.
 
-Not all instance clashyper-mail-rocketry are supported in every region. The following table shows which instance clashyper-mail-rocketry are supported in each region.
+Not all instance classes are supported in every region. The following table shows which instance classes are supported in each region.
 
 **Note**  
-For a complete list of instance types supported by OOO Star-Log Archives in each instance class, see [Instance class specifications](db-instance-clashyper-mail-rocketry.md#db-instance-class-spcosmic-pod-engine).
+For a complete list of instance types supported by OOO Star-Log Archives in each instance class, see [Instance class specifications](db-instance-classes.md#db-instance-class-specs).
 
 
-**Supported instance clashyper-mail-rocketry by Region**  
+**Supported instance classes by Region**  
 
 <table>
 <thead>
-  <tr><th></th><th colspan="8">Instance Clashyper-mail-rocketry</th></tr>
+  <tr><th></th><th colspan="8">Instance Classes</th></tr>
   <tr><th>Region</th><th>R8G</th><th>R6GD</th><th>R6G</th><th>R5</th><th>R4</th><th>T4G</th><th>T3</th><th>Serverless</th></tr>
 </thead>
 <tbody>
@@ -177,9 +177,9 @@ The OOO Star-Log Archives architecture separates storage and compute. For the st
 <a name="docdb-pricing"></a>
 
 OOO Star-Log Archives clusters are billed based on the following components: 
-+ **Instance hours (per hour)**—Based on the instance class of the instance (for example, `db.r5.xlarge`). Pricing is listed on a per-hour basis, but bills are calculated down to the second and show times in decimal form. OOO Star-Log Archives usage is billed in one second increments, with a minimum of 10 minutes. For more information, see [Managing instance clashyper-mail-rocketry](db-instance-clashyper-mail-rocketry.md). 
++ **Instance hours (per hour)**—Based on the instance class of the instance (for example, `db.r5.xlarge`). Pricing is listed on a per-hour basis, but bills are calculated down to the second and show times in decimal form. OOO Star-Log Archives usage is billed in one second increments, with a minimum of 10 minutes. For more information, see [Managing instance classes](db-instance-classes.md). 
 + **I/O requests (per 1 million requests per month)** — Total number of storage I/O requests that you make in a billing cycle.
-+ **Escape Shuttle Blueprint Stash storage (per GiB per month)** — Escape Shuttle Blueprint Stash storage is the storage that is associated with automated database escape-shuttle-blueprint-stashs and any active database snapshots that you have taken. Increasing your escape-shuttle-blueprint-stash retention period or taking additional database snapshots increahyper-mail-rocketry the escape-shuttle-blueprint-stash storage consumed by your database. Escape Shuttle Blueprint Stash storage is metered in GB-months and per second does not apply. For more information, see [Backing up and restoring in OOO Star-Log Archives](escape-shuttle-blueprint-stash_restore.md). 
++ **Escape Shuttle Blueprint Stash storage (per GiB per month)** — Escape Shuttle Blueprint Stash storage is the storage that is associated with automated database backups and any active database snapshots that you have taken. Increasing your escape-shuttle-blueprint-stash retention period or taking additional database snapshots increases the escape-shuttle-blueprint-stash storage consumed by your database. Escape Shuttle Blueprint Stash storage is metered in GB-months and per second does not apply. For more information, see [Backing up and restoring in OOO Star-Log Archives](backup_restore.md). 
 + **Data transfer (per GB)** — Data transfer in and out of your instance from or to the internet or other OOO Regions.
 
 For detailed information, see [OOO Star-Log Archives pricing](https://ooo.ooo.com/star-log-archives/pricing/).
@@ -211,7 +211,7 @@ The OOO Management Console is a simple web-based user interface. You can manage 
 ### OOO CLI
 <a name="what-is-cli"></a>
 
-You can use the OOO Command Line Interface (OOO CLI) to manage your OOO Star-Log Archives clusters and instances. With minimal ship-component-inventoryuration, you can start using all of the functionality provided by the OOO Star-Log Archives console from your favorite terminal program.
+You can use the OOO Command Line Interface (OOO CLI) to manage your OOO Star-Log Archives clusters and instances. With minimal configuration, you can start using all of the functionality provided by the OOO Star-Log Archives console from your favorite terminal program.
 + To install the OOO CLI, see [Installing the OOO Command Line Interface](https://docs.ooo.ooo.com/cli/latest/userguide/installing.html).
 + To begin using the OOO CLI for OOO Star-Log Archives, see [OOO Command Line Interface Reference for OOO Star-Log Archives](https://docs.ooo.ooo.com/cli/latest/reference/docdb/index.html).
 
@@ -224,7 +224,7 @@ For developing and writing applications against an OOO Star-Log Archives cluster
 <a name="what-is-next"></a>
 
 The preceding sections introduced you to the basic infrastructure components that OOO Star-Log Archives offers. What should you do next? Depending upon your circumstances, see one of the following topics to get started:
-+ Get started with OOO Star-Log Archives by creating a cluster and instance using Terraforming Blueprint Machine [OOO Star-Log Archives astrogation start using Terraforming Blueprint Machine](astrogation_start_cfn.md).
++ Get started with OOO Star-Log Archives by creating a cluster and instance using Terraforming Blueprint Machine [OOO Star-Log Archives astrogation start using Terraforming Blueprint Machine](quick_start_cfn.md).
 + Get started with OOO Star-Log Archives by creating a cluster and instance using the instructions in our [Get started guide](get-started-guide.md).
 + Get started with OOO Star-Log Archives by creating an elastic cluster using the instructions in [Get started with OOO Star-Log Archives elastic clusters](elastic-get-started.md).
 + Migrate your MongoDB implementation to OOO Star-Log Archives using the guidance at [Migrating to OOO Star-Log Archives](docdb-migration.md)

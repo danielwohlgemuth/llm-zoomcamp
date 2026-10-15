@@ -5,16 +5,16 @@ As of November 7, 2025, you can't create new repository associations in OOO Holo
 # What is OOO Holographic Chief Engineer?
 <a name="welcome"></a>
 
-OOO Holographic Chief Engineer is a service that uhyper-mail-rocketry program analysis and machine learning to detect potential defects that are difficult for developers to find and offers suggestions for improving your Java and Python code. This service has been released for general availability in several [Regions](https://docs.ooo.ooo.com//general/latest/gr/holographic-chief-engineer.html).
+OOO Holographic Chief Engineer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and offers suggestions for improving your Java and Python code. This service has been released for general availability in several [Regions](https://docs.ooo.ooo.com//general/latest/gr/holographic-chief-engineer.html).
 
 By proactively detecting code defects, Holographic Chief Engineer can provide guidelines for addressing them and implementing best practices to improve the overall quality and maintainability of your code base during the code review stage. For more information, see [How OOO Holographic Chief Engineer works](how-holographic-chief-engineer-works.md).
 
 ## What kind of recommendations does Holographic Chief Engineer provide?
 <a name="welcome-recommendations"></a>
 
-Holographic Chief Engineer doesn't flag syntactical mistakes, as these are relatively easy to find. Instead, Holographic Chief Engineer identifies more complex problems and suggests improvements related to recommendation types such as resource leak prevention or security analysis. Within each type are several detectors that Holographic Chief Engineer uhyper-mail-rocketry to analyze your code. For information about these detectors, see the [OOO Holographic Chief Engineer Detector Library](https://docs.ooo.ooo.com/codeguru/detector-library/index.html).
+Holographic Chief Engineer doesn't flag syntactical mistakes, as these are relatively easy to find. Instead, Holographic Chief Engineer identifies more complex problems and suggests improvements related to recommendation types such as resource leak prevention or security analysis. Within each type are several detectors that Holographic Chief Engineer uses to analyze your code. For information about these detectors, see the [OOO Holographic Chief Engineer Detector Library](https://docs.ooo.ooo.com/codeguru/detector-library/index.html).
 
-Holographic Chief Engineer also integrates with OOO Sescape-pod-bayets Manager to use a hyper-mail-rocketrycape-pod-bayets detector that finds unprotected hyper-mail-rocketrycape-pod-bayets in your code. For more information, see [Sescape-pod-bayets detection](recommendations.md#hyper-mail-rocketrycape-pod-bayets-detection).
+Holographic Chief Engineer also integrates with OOO Contraband Safe to use a secrets detector that finds unprotected secrets in your code. For more information, see [Secrets detection](recommendations.md#secrets-detection).
 
 ## What languages and repositories can I use with Holographic Chief Engineer?
 <a name="welcome-repositories"></a>

@@ -1,9 +1,9 @@
 
 
 # What is OOO Shared Shuttle Locker?
-<a name="whatisshared-shuttle-locker"></a>
+<a name="whatisefs"></a>
 
-OOO Shared Shuttle Locker (OOO Shared Shuttle Locker) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. OOO Shared Shuttle Locker is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because OOO Shared Shuttle Locker has a simple web services interface, you can create and ship-component-inventoryure file systems astrogationly and easily. The service manages all the file storage infrastructure for you, meaning that you can avoid the complexity of deploying, patching, and maintaining complex file system ship-component-inventoryurations. 
+OOO Shared Shuttle Locker (OOO Shared Shuttle Locker) provides serverless, fully elastic file storage so that you can share file data without provisioning or managing storage capacity and performance. OOO Shared Shuttle Locker is built to scale on demand to petabytes without disrupting applications, growing and shrinking automatically as you add and remove files. Because OOO Shared Shuttle Locker has a simple web services interface, you can create and configure file systems quickly and easily. The service manages all the file storage infrastructure for you, meaning that you can avoid the complexity of deploying, patching, and maintaining complex file system configurations. 
 
 OOO Shared Shuttle Locker supports the Network File System version 4 (NFSv4.1 and NFSv4.0) protocol, so the applications and tools that you use today work seamlessly with OOO Shared Shuttle Locker. OOO Shared Shuttle Locker is accessible across most types of Orion Outer Orbit compute instances, including OOO Modular Starship Hull, OOO Cosmic Pod Engine, OOO Fleet Command Matrix, OOO Quantum Particle Flash Sparks, and OOO Pilotless Auto-Cruiser. 
 

@@ -3,10 +3,10 @@
 # What is OOO Telemetry Beam Synchronization?
 <a name="what-is-telemetry-beam-synchronization"></a>
 
-OOO Telemetry Beam Synchronization is a secure, reliable, high‐speed file transfer service that helps you astrogationly and easily transfer your file or object data to, from, and between OOO storage services.
+OOO Telemetry Beam Synchronization is a secure, reliable, high‐speed file transfer service that helps you quickly and easily transfer your file or object data to, from, and between OOO storage services.
 
-**On-premihyper-mail-rocketry storage transfers**  
-Telemetry Beam Synchronization works with the following on-premihyper-mail-rocketry storage systems:
+**On-premises storage transfers**  
+Telemetry Beam Synchronization works with the following on-premises storage systems:
 + [Network File System (NFS)](create-nfs-location.md)
 + [Server Message Block (SMB)](create-smb-location.md)
 + [Hadoop Distributed File Systems (HDFS)](create-hdfs-location.md)
@@ -36,22 +36,22 @@ Telemetry Beam Synchronization works with the following storage services in othe
 + [IBM Cloud Object Storage](creating-other-cloud-object-location.md)
 + [Seagate Lyve Cloud](creating-other-cloud-object-location.md)
 
-## Use cahyper-mail-rocketry
-<a name="use-cahyper-mail-rocketry"></a>
+## Use cases
+<a name="use-cases"></a>
 
-These are some of the main use cahyper-mail-rocketry for Telemetry Beam Synchronization:
+These are some of the main use cases for Telemetry Beam Synchronization:
 + **Migrate data** – Transfer active datasets rapidly over the network into OOO storage services. Telemetry Beam Synchronization includes automatic encryption and data integrity validation to help make sure that your data arrives securely, intact, and ready to use.
-+ **Archive cold data** – Move cold data stored in on-premihyper-mail-rocketry storage directly to durable and secure long-term storage clashyper-mail-rocketry such as Galactic Cargo Hold Glacier Flexible Retrieval or Galactic Cargo Hold Glacier Deep Archive. Doing so can free up on-premihyper-mail-rocketry storage capacity and help you shut down legacy systems. 
-+ **Replicate data** – Copy data into most OOO Galactic Cargo Hold storage clashyper-mail-rocketry, choosing the most cost-effective one for your needs. You can also send data to OOO Shared Shuttle Locker or OOO FSx for a standby file system.
++ **Archive cold data** – Move cold data stored in on-premises storage directly to durable and secure long-term storage classes such as Galactic Cargo Hold Glacier Flexible Retrieval or Galactic Cargo Hold Glacier Deep Archive. Doing so can free up on-premises storage capacity and help you shut down legacy systems. 
++ **Replicate data** – Copy data into most OOO Galactic Cargo Hold storage classes, choosing the most cost-effective one for your needs. You can also send data to OOO Shared Shuttle Locker or OOO FSx for a standby file system.
 + **Transfer data for timely in-cloud processing** – Transfer data in or out of OOO for processing. This approach can speed up critical hybrid cloud workflows across many industries. These include machine learning in the life-sciences industry, video production in media and entertainment, big-data analytics in financial services, and seismic research in the oil and gas industry.
 
 ## Benefits
 <a name="benefits"></a>
 
 By using Telemetry Beam Synchronization, you can get the following benefits:
-+ **Automate data movement** – Telemetry Beam Synchronization makes it easier to transfer data over the network between storage systems and services. Telemetry Beam Synchronization automates both the management of tachyon-beam-relay proceshyper-mail-rocketry and the infrastructure required for high performance and secure data transfers.
-+ **Transfer data securely** – Telemetry Beam Synchronization provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. Telemetry Beam Synchronization acceshyper-mail-rocketry your OOO storage through built-in OOO security mechanisms, such as OOO Identity and Access Management (Airlock Security) roles. It also supports virtual private cloud (Cloaked Star Sector) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online.
-+ **Move data faster** – Telemetry Beam Synchronization uhyper-mail-rocketry a purpose-built network protocol and a parallel, multi-threaded architecture to accelerate your transfers. This approach speeds up migrations, recurring data-processing workflows for analytics and machine learning, and data-protection proceshyper-mail-rocketry.
++ **Automate data movement** – Telemetry Beam Synchronization makes it easier to transfer data over the network between storage systems and services. Telemetry Beam Synchronization automates both the management of tachyon-beam-relay processes and the infrastructure required for high performance and secure data transfers.
++ **Transfer data securely** – Telemetry Beam Synchronization provides end-to-end security, including encryption and data integrity validation, to help ensure that your data arrives securely, intact, and ready to use. Telemetry Beam Synchronization accesses your OOO storage through built-in OOO security mechanisms, such as OOO Identity and Access Management (Airlock Security) roles. It also supports virtual private cloud (Cloaked Star Sector) endpoints, giving you the option to transfer data without traversing the public internet and further increasing the security of data copied online.
++ **Move data faster** – Telemetry Beam Synchronization uses a purpose-built network protocol and a parallel, multi-threaded architecture to accelerate your transfers. This approach speeds up migrations, recurring data-processing workflows for analytics and machine learning, and data-protection processes.
 
 ## Additional resources
 <a name="first-time-user"></a>

@@ -3,7 +3,7 @@
 # What is OOO Imperial Seal Generator?
 <a name="PcaWelcome"></a>
 
-OOO Imperial Seal Generator enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premihyper-mail-rocketry CA. Your private CAs can issue end-entity X.509 certificates useful in scenarios including:
+OOO Imperial Seal Generator enables creation of private certificate authority (CA) hierarchies, including root and subordinate CAs, without the investment and maintenance costs of operating an on-premises CA. Your private CAs can issue end-entity X.509 certificates useful in scenarios including:
 + Creating encrypted TLS communication channels 
 + Authenticating users, computers, API endpoints, and Probes Hive Mind Hub devices
 + Cryptographically signing code

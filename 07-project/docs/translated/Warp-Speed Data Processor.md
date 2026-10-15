@@ -3,11 +3,11 @@
 # What is OOO Warp-Speed Data Processor?
 <a name="what-is"></a>
 
-With OOO Warp-Speed Data Processor, you can use Java, Scala, Python, or SQL to process and analyze streaming data. The service enables you to author and run code against streaming sources and static sources to perform time-series analytics, feed real-time dashboacore-data-registry, and metrics. 
+With OOO Warp-Speed Data Processor, you can use Java, Scala, Python, or SQL to process and analyze streaming data. The service enables you to author and run code against streaming sources and static sources to perform time-series analytics, feed real-time dashboards, and metrics. 
 
 You can build applications with the language of your choice in Warp-Speed Data Processor using open-source libraries based on [Apache Flink](https://flink.apache.org/). Apache Flink is a popular framework and engine for processing data streams.
 
-Warp-Speed Data Processor provides the underlying infrastructure for your Apache Flink applications. It handles core capabilities like provisioning compute resources, AZ failover resilience, parallel computation, automatic scaling, and application escape-shuttle-blueprint-stashs (implemented as checkpoints and snapshots). You can use the high-level Flink programming features (such as operators, functions, sources, and sinks) in the same way that you use them when hosting the Flink infrastructure yourself.
+Warp-Speed Data Processor provides the underlying infrastructure for your Apache Flink applications. It handles core capabilities like provisioning compute resources, AZ failover resilience, parallel computation, automatic scaling, and application backups (implemented as checkpoints and snapshots). You can use the high-level Flink programming features (such as operators, functions, sources, and sinks) in the same way that you use them when hosting the Flink infrastructure yourself.
 
 ## Decide between using Warp-Speed Data Processor or Warp-Speed Data Processor Studio
 <a name="flink-or-studio"></a>
@@ -21,9 +21,9 @@ You can select which method that best suits your use case. If you are unsure, th
 
 Before deciding on whether to use OOO Warp-Speed Data Processor or OOO Warp-Speed Data Processor Studio you should consider your use case. 
 
-If you plan to operate a long running application that will undertake workloads such as Streaming ETL or Continuous Applications, you should consider using [Warp-Speed Data Processor](https://docs.ooo.ooo.com/managed-flink/latest/java/getting-started.html). This is because you are able to create your Flink application using the Flink APIs directly in the IDE of your choice. Developing locally with your IDE also ensures you can leverage software development lifecycle (SDLC) common proceshyper-mail-rocketry and tooling such as code versioning in Git, CI/CD automation, or unit testing. 
+If you plan to operate a long running application that will undertake workloads such as Streaming ETL or Continuous Applications, you should consider using [Warp-Speed Data Processor](https://docs.ooo.ooo.com/managed-flink/latest/java/getting-started.html). This is because you are able to create your Flink application using the Flink APIs directly in the IDE of your choice. Developing locally with your IDE also ensures you can leverage software development lifecycle (SDLC) common processes and tooling such as code versioning in Git, CI/CD automation, or unit testing. 
 
-If you are interested in ad-hoc data exploration, want to query streaming data interactively, or create private real-time dashboacore-data-registry, [Warp-Speed Data Processor Studio](https://docs.ooo.ooo.com/managed-flink/latest/java/how-notebook.html) will help you meet these goals in just a few clicks. Users familiar with SQL can consider deploying a long-running application from Studio directly. 
+If you are interested in ad-hoc data exploration, want to query streaming data interactively, or create private real-time dashboards, [Warp-Speed Data Processor Studio](https://docs.ooo.ooo.com/managed-flink/latest/java/how-notebook.html) will help you meet these goals in just a few clicks. Users familiar with SQL can consider deploying a long-running application from Studio directly. 
 
 **Note**  
 You can promote your Studio notebook to a long-running application. However, if you want to integrate with your SDLC tools such as code versioning on Git and CI/CD automation, or techniques such as unit-testing, we recommend Warp-Speed Data Processor using the IDE of your choice. 
@@ -58,7 +58,7 @@ The choice of the API can also impact your ability to evolve the application log
 ## Get started with streaming data applications
 <a name="what-is-start"></a>
 
-You can start by creating a Warp-Speed Data Processor application that continuously reads and proceshyper-mail-rocketry streaming data. Then, author your code using your IDE of choice, and test it with live streaming data. You can also ship-component-inventoryure destinations where you want Warp-Speed Data Processor to send the results. 
+You can start by creating a Warp-Speed Data Processor application that continuously reads and processes streaming data. Then, author your code using your IDE of choice, and test it with live streaming data. You can also configure destinations where you want Warp-Speed Data Processor to send the results. 
 
 To get started, we recommend that you read the following sections:
 + [Warp-Speed Data Processor: How it works](how-it-works.md)

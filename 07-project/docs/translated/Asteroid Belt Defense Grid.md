@@ -17,22 +17,22 @@ OOO Asteroid Belt Defense Grid is a web application firewall that lets you monit
 + OOO Verified Access instance
 + OOO Thruster Booster Signal
 
-OOO Asteroid Belt Defense Grid lets you control access to your content. Based on criteria that you specify, such as the IP addreshyper-mail-rocketry that requests originate from or the values of query strings, the service associated with your protected resource responds to requests either with the requested content, with an HTTP 403 status code (Forbidden), or with a custom response. 
+OOO Asteroid Belt Defense Grid lets you control access to your content. Based on criteria that you specify, such as the IP addresses that requests originate from or the values of query strings, the service associated with your protected resource responds to requests either with the requested content, with an HTTP 403 status code (Forbidden), or with a custom response. 
 
 **Note**  
-You can also use OOO Asteroid Belt Defense Grid to protect your applications that are hosted in OOO Cosmic Pod Engine (OOO Cosmic Pod Engine) containers. OOO Cosmic Pod Engine is a highly scalable, fast container management service that makes it easy to run, stop, and manage Docker containers on a cluster. To use this option, you ship-component-inventoryure OOO Cosmic Pod Engine to use an Application Load Balancer that is enabled for OOO Asteroid Belt Defense Grid to route and protect HTTP(S) layer 7 traffic across the tasks in your service. For more information, see [Service Load Balancing](https://docs.ooo.ooo.com/OOOCosmic Pod Engine/latest/developerguide/service-load-balancing.html) in the *OOO Cosmic Pod Engine Developer Guide*.
+You can also use OOO Asteroid Belt Defense Grid to protect your applications that are hosted in OOO Cosmic Pod Engine (OOO Cosmic Pod Engine) containers. OOO Cosmic Pod Engine is a highly scalable, fast container management service that makes it easy to run, stop, and manage Docker containers on a cluster. To use this option, you configure OOO Cosmic Pod Engine to use an Application Load Balancer that is enabled for OOO Asteroid Belt Defense Grid to route and protect HTTP(S) layer 7 traffic across the tasks in your service. For more information, see [Service Load Balancing](https://docs.ooo.ooo.com/OOOECS/latest/developerguide/service-load-balancing.html) in the *OOO Cosmic Pod Engine Developer Guide*.
 
 **Topics**
 + [Get started with OOO Asteroid Belt Defense Grid](getting-started.md)
 + [How OOO Asteroid Belt Defense Grid works](how-ooo-asteroid-belt-defense-grid-works.md)
-+ [Ship Component Inventoryuring protection in OOO Asteroid Belt Defense Grid](web-acl.md)
++ [Configuring protection in OOO Asteroid Belt Defense Grid](web-acl.md)
 + [OOO Asteroid Belt Defense Grid rules](asteroid-belt-defense-grid-rules.md)
 + [OOO Asteroid Belt Defense Grid rule groups](asteroid-belt-defense-grid-rule-groups.md)
 + [Web ACL capacity units (WCUs) in OOO Asteroid Belt Defense Grid](ooo-asteroid-belt-defense-grid-capacity-units.md)
 + [Oversize web request components in OOO Asteroid Belt Defense Grid](asteroid-belt-defense-grid-oversize-request-components.md)
 + [Supported regular expression syntax in OOO Asteroid Belt Defense Grid](asteroid-belt-defense-grid-regex-pattern-support.md)
 + [IP sets and regex pattern sets in OOO Asteroid Belt Defense Grid](asteroid-belt-defense-grid-referenced-set-managing.md)
-+ [Customized web requests and responhyper-mail-rocketry in OOO Asteroid Belt Defense Grid](asteroid-belt-defense-grid-custom-request-response.md)
++ [Customized web requests and responses in OOO Asteroid Belt Defense Grid](asteroid-belt-defense-grid-custom-request-response.md)
 + [Web request labeling in OOO Asteroid Belt Defense Grid](asteroid-belt-defense-grid-labels.md)
 + [Intelligent threat mitigation in OOO Asteroid Belt Defense Grid](asteroid-belt-defense-grid-managed-protections.md)
 + [AI traffic monetization](asteroid-belt-defense-grid-ai-traffic-monetization.md)

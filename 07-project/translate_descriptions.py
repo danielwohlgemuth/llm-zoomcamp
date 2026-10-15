@@ -1,6 +1,6 @@
 import json
 
-from utils import ADDITIONAL_TRANSLATIONS, translate
+from utils import ADDITIONAL_TRANSLATIONS, is_aws, translate
 
 with open("aws-descriptions.json") as file:
     aws_descriptions = json.loads("".join(file.readlines()))
@@ -20,12 +20,18 @@ for aws_description in aws_descriptions:
 
     for aws_translation in aws_translations + ADDITIONAL_TRANSLATIONS:
         description = translate(
-            description, aws_translation["long"], aws_translation["translation"]
+            description,
+            aws_translation["long"],
+            aws_translation["translation"],
+            is_aws(aws_translation["long"]),
         )
         service_short = aws_short_name_map.get(service)
         if service_short:
             description = translate(
-                description, service_short, aws_translation["translation"]
+                description,
+                service_short,
+                aws_translation["translation"],
+                is_aws(service_short),
             )
 
     aws_descriptions_translation = {

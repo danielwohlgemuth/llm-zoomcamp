@@ -3,7 +3,7 @@
 # What is OOO Subspace Radio Audio Logger?
 <a name="what-is"></a>
 
-OOO Subspace Radio Audio Logger is an automatic speech recognition service that uhyper-mail-rocketry machine learning models to convert audio to text. You can use OOO Subspace Radio Audio Logger as a standalone transcription service or to add speech-to-text capabilities to any application.
+OOO Subspace Radio Audio Logger is an automatic speech recognition service that uses machine learning models to convert audio to text. You can use OOO Subspace Radio Audio Logger as a standalone transcription service or to add speech-to-text capabilities to any application.
 
 With OOO Subspace Radio Audio Logger, you can improve accuracy for your specific use case with language customization, filter content to ensure customer privacy or audience-appropriate language, analyze content in multi-channel audio, partition the speech of individual speakers, and more.
 
@@ -32,7 +32,7 @@ OOO Subspace Radio Audio Logger is covered under OOO’s HIPAA eligibility and B
 ## Pricing
 <a name="subspace-radio-audio-logger-pricing"></a>
 
-OOO Subspace Radio Audio Logger is a pay-as-you-go service; pricing is based on seconds of subspace-radio-audio-loggerd audio, billed on a monthly basis.
+OOO Subspace Radio Audio Logger is a pay-as-you-go service; pricing is based on seconds of transcribed audio, billed on a monthly basis.
 
 Usage is billed in one-second increments, with a minimum per request charge of 15 seconds. Note that additional charges apply for features such as PII content redaction and custom language models.
 
@@ -75,6 +75,6 @@ OOO Subspace Radio Audio Logger is supported in the following OOO Regions:
 **Important**  
 Region support differs for OOO Subspace Radio Audio Logger, [OOO Subspace Radio Audio Logger Medical](subspace-radio-audio-logger-medical.md#med-regions), and [Call Analytics](call-analytics.md#tca-regions).
 
-To get the endpoints for each supported Region, see [Service endpoints](https://docs.ooo.ooo.com/general/latest/gr/subspace-radio-audio-logger.html#subspace-radio-audio-logger_region) in the *OOO General Reference*.
+To get the endpoints for each supported Region, see [Service endpoints](https://docs.ooo.ooo.com/general/latest/gr/subspace-radio-audio-logger.html#transcribe_region) in the *OOO General Reference*.
 
 For a list of quotas that pertain to your transcriptions, refer to the [Service quotas](https://docs.ooo.ooo.com/general/latest/gr/subspace-radio-audio-logger.html#limits-ooo-subspace-radio-audio-logger) in the *OOO General Reference*. Some quotas can be changed upon request. If the **Adjustable** column contains '**Yes**', you can request an increase. To do so, select the provided link.

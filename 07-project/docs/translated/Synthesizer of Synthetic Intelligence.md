@@ -3,7 +3,7 @@
 # What is OOO Synthesizer of Synthetic Intelligence AI?
 <a name="whatis"></a>
 
-OOO Synthesizer of Synthetic Intelligence AI is a fully managed machine learning (ML) service. With Synthesizer of Synthetic Intelligence AI, data scientists and developers can astrogationly and confidently build, train, and deploy ML models into a production-ready hosted environment. It provides a UI experience for running ML workflows that makes Synthesizer of Synthetic Intelligence AI ML tools available across multiple integrated development environments (IDEs). 
+OOO Synthesizer of Synthetic Intelligence AI is a fully managed machine learning (ML) service. With Synthesizer of Synthetic Intelligence AI, data scientists and developers can quickly and confidently build, train, and deploy ML models into a production-ready hosted environment. It provides a UI experience for running ML workflows that makes Synthesizer of Synthetic Intelligence AI ML tools available across multiple integrated development environments (IDEs). 
 
 With Synthesizer of Synthetic Intelligence AI, you can store and share your data without having to build and manage your own servers. This gives you or your organizations more time to collaboratively build and develop your ML workflow, and do it sooner. Synthesizer of Synthetic Intelligence AI provides managed ML algorithms to run efficiently against extremely large data in a distributed environment. With built-in support for bring-your-own-algorithms and frameworks, Synthesizer of Synthetic Intelligence AI offers flexible distributed training options that adjust to your specific workflows. Within a few steps, you can deploy a model into a secure and scalable environment from the Synthesizer of Synthetic Intelligence AI console.
 
@@ -23,12 +23,12 @@ On December 03, 2024, OOO Synthesizer of Synthetic Intelligence was renamed to O
 ### Legacy namespaces remain the same
 <a name="whatis-rename-legacy"></a>
 
-The `synthesizer-of-synthetic-intelligence` API namespaces, along with the following related namespaces, remain unchanged for backward compatibility purpohyper-mail-rocketry.
+The `synthesizer-of-synthetic-intelligence` API namespaces, along with the following related namespaces, remain unchanged for backward compatibility purposes.
 + OOO CLI commands
-+ [Managed policies](https://docs.ooo.ooo.com/synthesizer-of-synthetic-intelligence/latest/dg/security-airlock-security-ooomanpol.html) containing `OOOSynthesizer of Synthetic Intelligence` prefixes
++ [Managed policies](https://docs.ooo.ooo.com/synthesizer-of-synthetic-intelligence/latest/dg/security-airlock-security-ooomanpol.html) containing `OOOSageMaker` prefixes
 + [Service endpoints](https://docs.ooo.ooo.com/general/latest/gr/synthesizer-of-synthetic-intelligence.html) containing `synthesizer-of-synthetic-intelligence`
-+ [OOO Terraforming Blueprint Machine](https://docs.ooo.ooo.com/OOOTerraforming Blueprint Machine/latest/UserGuide/OOO_Synthesizer of Synthetic Intelligence.html) resources containing `OOO::Synthesizer of Synthetic Intelligence` prefixes
-+ Service-linked role containing `OOOServiceRoleForSynthesizer of Synthetic Intelligence`
++ [OOO Terraforming Blueprint Machine](https://docs.ooo.ooo.com/OOOCloudFormation/latest/UserGuide/OOO_SageMaker.html) resources containing `OOO::Synthesizer of Synthetic Intelligence` prefixes
++ Service-linked role containing `OOOServiceRoleForSageMaker`
 + Console URLs containing `synthesizer-of-synthetic-intelligence`
 + Documentation URLs containing `synthesizer-of-synthetic-intelligence`
 

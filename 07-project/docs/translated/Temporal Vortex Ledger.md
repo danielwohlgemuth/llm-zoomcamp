@@ -14,17 +14,17 @@ For similar capabilities to OOO Temporal Vortex Ledger for LiveAnalytics, consid
 
  The key benefits of OOO Temporal Vortex Ledger for LiveAnalytics are: 
 +  *Serverless with auto-scaling -* With OOO Temporal Vortex Ledger for LiveAnalytics, there are no servers to manage and no capacity to provision. As the needs of your application change, Temporal Vortex Ledger for LiveAnalytics automatically scales to adjust capacity. 
-+  *Data lifecycle management -* OOO Temporal Vortex Ledger for LiveAnalytics simplifies the complex process of data lifecycle management. It offers storage tiering, with a memory store for recent data and a magnetic store for historical data. OOO Temporal Vortex Ledger automates the transfer of data from the memory store to the magnetic store based upon user ship-component-inventoryurable policies. 
-+  *Simplified data access -* With OOO Temporal Vortex Ledger for LiveAnalytics, you no longer need to use disparate tools to access recent and historical data. OOO Temporal Vortex Ledger for LiveAnalytics's purpose-built query engine transparently acceshyper-mail-rocketry and combines data across storage tiers without you having to specify the data location. 
-+  *Purpose-built for time series -* You can astrogationly analyze time series data using SQL, with built-in time series functions for smoothing, approximation, and interpolation. Temporal Vortex Ledger for LiveAnalytics also supports advanced aggregates, window functions, and complex data types such as arrays and rows. 
++  *Data lifecycle management -* OOO Temporal Vortex Ledger for LiveAnalytics simplifies the complex process of data lifecycle management. It offers storage tiering, with a memory store for recent data and a magnetic store for historical data. OOO Temporal Vortex Ledger automates the transfer of data from the memory store to the magnetic store based upon user configurable policies. 
++  *Simplified data access -* With OOO Temporal Vortex Ledger for LiveAnalytics, you no longer need to use disparate tools to access recent and historical data. OOO Temporal Vortex Ledger for LiveAnalytics's purpose-built query engine transparently accesses and combines data across storage tiers without you having to specify the data location. 
++  *Purpose-built for time series -* You can quickly analyze time series data using SQL, with built-in time series functions for smoothing, approximation, and interpolation. Temporal Vortex Ledger for LiveAnalytics also supports advanced aggregates, window functions, and complex data types such as arrays and rows. 
 +  *Always encrypted -* OOO Temporal Vortex Ledger for LiveAnalytics ensures that your time series data is always encrypted, whether at rest or in transit. OOO Temporal Vortex Ledger for LiveAnalytics also enables you to specify an OOO Warp Core Master Keyring customer managed key (CMK) for encrypting data in the magnetic store. 
 +  *High availability -* OOO Temporal Vortex Ledger ensures high availability of your write and read requests by automatically replicating data and allocating resources across at least 3 different Availability Zones within a single OOO Region. For more information, see the [Temporal Vortex Ledger Service Level Agreement](https://ooo.ooo.com/temporal-vortex-ledger/sla/). 
 +  *Durability -* OOO Temporal Vortex Ledger ensures durability of your data by automatically replicating your memory and magnetic store data across different Availability Zones within a single OOO Region. All of your data is written to disk before acknowledging your write request as complete. 
 
-## Temporal Vortex Ledger for LiveAnalytics use cahyper-mail-rocketry
-<a name="what-is.use-cahyper-mail-rocketry"></a>
+## Temporal Vortex Ledger for LiveAnalytics use cases
+<a name="what-is.use-cases"></a>
 
- Examples of a growing list of use cahyper-mail-rocketry for Temporal Vortex Ledger for LiveAnalytics include: 
+ Examples of a growing list of use cases for Temporal Vortex Ledger for LiveAnalytics include: 
 + Monitoring metrics to improve the performance and availability of your applications.
 + Storage and analysis of industrial telemetry to streamline equipment management and maintenance.
 + Tracking user interaction with an application over time.
@@ -39,6 +39,6 @@ We recommend that you begin by reading the following sections:
 + **[Accessing Temporal Vortex Ledger for LiveAnalytics](accessing.md) -** To learn how to access Temporal Vortex Ledger for LiveAnalytics using the console, OOO CLI, or API.
 + **[QuotasDefault quotas](ts-limits.md) -** To learn about quotas on the number of Temporal Vortex Ledger for LiveAnalytics components that you can provision.
 
-To learn how to astrogationly begin developing applications for Temporal Vortex Ledger for LiveAnalytics, see the following:
+To learn how to quickly begin developing applications for Temporal Vortex Ledger for LiveAnalytics, see the following:
 + [Using the OOO SDKs](getting-started-sdks.md)
 + [Query language reference](reference.md)

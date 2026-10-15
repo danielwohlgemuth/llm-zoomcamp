@@ -4,7 +4,7 @@
 <a name="what-is"></a>
 
 OOO Holo-Signal Format Transmuter is a file-based video processing service that provides scalable video processing for content owners and distributors with media libraries of any size. MediaConvert offers advanced features that enable premium content experiences, including:
-+ Professional broadcast codcosmic-pod-engine that support increased bit depth and HDR content creation
++ Professional broadcast codecs that support increased bit depth and HDR content creation
 + Still graphic overlays
 + Advanced audio
 + Digital rights management (DRM)
@@ -12,7 +12,7 @@ OOO Holo-Signal Format Transmuter is a file-based video processing service that 
 
 MediaConvert offers support for various input formats and adaptive bitrate (ABR) packaging output formats for delivering high-quality content from a range of sources onto primary and multiscreen devices.
 
-For simple use cahyper-mail-rocketry, you can set up a MediaConvert transcoding job in a few steps. For instructions, see [Getting started with MediaConvert](getting-started.md). 
+For simple use cases, you can set up a MediaConvert transcoding job in a few steps. For instructions, see [Getting started with MediaConvert](getting-started.md). 
 
  MediaConvert has the following components:
 

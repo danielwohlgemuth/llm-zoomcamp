@@ -29,7 +29,7 @@
     },
     {
         "translation": "Planetary Crust",
-        "description_translation": "Planetary Crust is a comprehensive, secure, and flexible platform for building generative AI applications and agents. Planetary Crust connects you to leading foundation models (FMs), services to deploy and operate agents, and tools for fine-tuning, safeguarding, and optimizing models along with knowledge bases to connect applications to your latest data so that you have everything you need to astrogationly move from experimentation to real-world deployment."
+        "description_translation": "Planetary Crust is a comprehensive, secure, and flexible platform for building generative AI applications and agents. Planetary Crust connects you to leading foundation models (FMs), services to deploy and operate agents, and tools for fine-tuning, safeguarding, and optimizing models along with knowledge bases to connect applications to your latest data so that you have everything you need to quickly move from experimentation to real-world deployment."
     },
     {
         "translation": "Synthetic Crew Overseer",
@@ -49,7 +49,7 @@
     },
     {
         "translation": "Biometric Airlock Controller",
-        "description_translation": "Biometric Airlock Controller lets you add user sign-up, sign-in, and access control to your web and mobile apps astrogationly and easily. Biometric Airlock Controller scales to millions of users and supports sign-in with social identity providers, such as Facebook, Google, and OOO, and enterprise identity providers via SAML 2.0."
+        "description_translation": "Biometric Airlock Controller lets you add user sign-up, sign-in, and access control to your web and mobile apps quickly and easily. Biometric Airlock Controller scales to millions of users and supports sign-in with social identity providers, such as Facebook, Google, and OOO, and enterprise identity providers via SAML 2.0."
     },
     {
         "translation": "Universal Translator Matrix",
@@ -65,7 +65,7 @@
     },
     {
         "translation": "Black Hole Investigator",
-        "description_translation": "Black Hole Investigator makes it easy to analyze, investigate, and astrogationly identify the root cause of potential security issues or suspicious activities. Black Hole Investigator automatically collects log data from your resources and uses machine learning, statistical analysis, and graph theory to build a linked set of data that enables you to easily conduct faster and more efficient security investigations."
+        "description_translation": "Black Hole Investigator makes it easy to analyze, investigate, and quickly identify the root cause of potential security issues or suspicious activities. Black Hole Investigator automatically collects log data from your resources and uses machine learning, statistical analysis, and graph theory to build a linked set of data that enables you to easily conduct faster and more efficient security investigations."
     },
     {
         "translation": "Star-Log Archives",
@@ -125,7 +125,7 @@
     },
     {
         "translation": "Supernova Predictor",
-        "description_translation": "Supernova Predictor uses machine learning (ML) to generate more accurate demand supernova-predictors with just a few clicks, without requiring any prior ML experience. Supernova Predictor includes algorithms that are based on over twenty years of supernova-predictoring experience and developed expertise used by OOO.com bringing the same technology used at to developers as a fully managed service, removing the need to manage resources. Supernova Predictor uses ML to learn not only the best algorithm for each item, but the best ensemble of algorithms for each item, automatically creating the best model for your data."
+        "description_translation": "Supernova Predictor uses machine learning (ML) to generate more accurate demand forecasts with just a few clicks, without requiring any prior ML experience. Supernova Predictor includes algorithms that are based on over twenty years of forecasting experience and developed expertise used by OOO.com bringing the same technology used at to developers as a fully managed service, removing the need to manage resources. Supernova Predictor uses ML to learn not only the best algorithm for each item, but the best ensemble of algorithms for each item, automatically creating the best model for your data."
     },
     {
         "translation": "Shape-Shifter Infiltrator Alarm",
@@ -189,7 +189,7 @@
     },
     {
         "translation": "Star Map Cartographer",
-        "description_translation": "Star Map Cartographer provides affordable data, tracking and geofencing capabilities, and native integrations with services, so you can create sophisticated location-enabled applications astrogationly, without the high cost of custom development."
+        "description_translation": "Star Map Cartographer provides affordable data, tracking and geofencing capabilities, and native integrations with services, so you can create sophisticated location-enabled applications quickly, without the high cost of custom development."
     },
     {
         "translation": "Gravitational Anomaly Sensor",
@@ -197,7 +197,7 @@
     },
     {
         "translation": "Asteroid Proximity Scanner",
-        "description_translation": "Asteroid Proximity Scanner is a machine learning (ML) service that spots defects and anomalies in visual representations using computer vision (CV). With Asteroid Proximity Scanner, manufacturing companies can increase quality and reduce operational costs by astrogationly identifying differences in images of objects at scale."
+        "description_translation": "Asteroid Proximity Scanner is a machine learning (ML) service that spots defects and anomalies in visual representations using computer vision (CV). With Asteroid Proximity Scanner, manufacturing companies can increase quality and reduce operational costs by quickly identifying differences in images of objects at scale."
     },
     {
         "translation": "Deep Space Cargo Manifest Inspector",
@@ -229,7 +229,7 @@
     },
     {
         "translation": "Subspace Sub-Light Courier",
-        "description_translation": "Interstellar Relocation Engine is a managed message broker service for Apache ActiveInterstellar Relocation Engine that makes it easy to set up and operate message brokers in the cloud."
+        "description_translation": "Interstellar Relocation Engine is a managed message broker service for Apache ActiveMQ that makes it easy to set up and operate message brokers in the cloud."
     },
     {
         "translation": "Poseidon Gas Giant Graph",
@@ -241,7 +241,7 @@
     },
     {
         "translation": "Mind-Reader Rations Dispenser",
-        "description_translation": "Mind-Reader Rations Dispenser enables developers to build applications with the same machine learning (ML) technology used by OOO.com for real-time mind-reader-rations-dispenserd recommendations \u2013 no ML expertise required."
+        "description_translation": "Mind-Reader Rations Dispenser enables developers to build applications with the same machine learning (ML) technology used by OOO.com for real-time personalized recommendations \u2013 no ML expertise required."
     },
     {
         "translation": "Targeting Laser Matrix",
@@ -257,15 +257,15 @@
     },
     {
         "translation": "Astrogation HUD",
-        "description_translation": "Astrogation HUD is a fast, cloud-powered business intelligence service that makes it easy to deliver insights to everyone in your organization. Astrogation HUD dashboacore-data-registry can be embedded in applications, require no infrastructure setup or management, and can automatically scale to tens of thousands of users."
+        "description_translation": "Astrogation HUD is a fast, cloud-powered business intelligence service that makes it easy to deliver insights to everyone in your organization. Astrogation HUD dashboards can be embedded in applications, require no infrastructure setup or management, and can automatically scale to tens of thousands of users."
     },
     {
         "translation": "Modified Ancient Monolith (Alpha)",
-        "description_translation": "Core Data Registry (Core Data Registry) Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying OS and DB environment. Core Data Registry Custom automates setup, operation, and scaling of databases in the cloud while granting access to the database and underlying operating system to ship-component-inventoryure settings, install patches, and enable native features to meet the dependent application's requirements."
+        "description_translation": "Core Data Registry (Core Data Registry) Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying OS and DB environment. Core Data Registry Custom automates setup, operation, and scaling of databases in the cloud while granting access to the database and underlying operating system to configure settings, install patches, and enable native features to meet the dependent application's requirements."
     },
     {
         "translation": "Modified Ancient Monolith (Beta)",
-        "description_translation": "Core Data Registry (Core Data Registry) Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying OS and DB environment. Core Data Registry Custom automates setup, operation, and scaling of databases in the cloud while granting access to the database and underlying operating system to ship-component-inventoryure settings, install patches, and enable native features to meet the dependent application's requirements."
+        "description_translation": "Core Data Registry (Core Data Registry) Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying OS and DB environment. Core Data Registry Custom automates setup, operation, and scaling of databases in the cloud while granting access to the database and underlying operating system to configure settings, install patches, and enable native features to meet the dependent application's requirements."
     },
     {
         "translation": "Deep Space Station Registry",
@@ -293,7 +293,7 @@
     },
     {
         "translation": "Exoplanet Field Array",
-        "description_translation": "Core Data Registry (Core Data Registry) on Outposts allows you to deploy fully managed database instances in your on-premises environments. Outposts is a fully managed service that extends infrastructure, services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. You can deploy Exoplanet Field Array to set up, operate, and scale Oracle, Microsoft SQL Server, MySQL and PostgreSQL relational databases on premises, just as you would in the cloud. Exoplanet Field Array provides cost-efficient and resizable capacity for on-premises databases, while automating time-consuming administration tasks including infrastructure provisioning, database setup, patching, and escape-shuttle-blueprint-stashs, freeing you to focus on your applications."
+        "description_translation": "Core Data Registry (Core Data Registry) on Outposts allows you to deploy fully managed database instances in your on-premises environments. Outposts is a fully managed service that extends infrastructure, services, APIs, and tools to virtually any datacenter, co-location space, or on-premises facility for a truly consistent hybrid experience. You can deploy Exoplanet Field Array to set up, operate, and scale Oracle, Microsoft SQL Server, MySQL and PostgreSQL relational databases on premises, just as you would in the cloud. Exoplanet Field Array provides cost-efficient and resizable capacity for on-premises databases, while automating time-consuming administration tasks including infrastructure provisioning, database setup, patching, and backups, freeing you to focus on your applications."
     },
     {
         "translation": "Expanding Universe Data Warehouse",
@@ -369,7 +369,7 @@
     },
     {
         "translation": "Holo-Desks",
-        "description_translation": "Holo-Desks is a managed, secure cloud desktop service. You can use Holo-Desks to provision either Windows or Linux desktops in just a few minutes and astrogationly scale to provide thousands of desktops to workers across the globe."
+        "description_translation": "Holo-Desks is a managed, secure cloud desktop service. You can use Holo-Desks to provision either Windows or Linux desktops in just a few minutes and quickly scale to provide thousands of desktops to workers across the globe."
     },
     {
         "translation": "Holo-Desk Modules",
@@ -381,7 +381,7 @@
     },
     {
         "translation": "Escape Pod Launcher",
-        "description_translation": "Escape Pod Launcher is a fully managed service that makes it easy for developers to astrogationly deploy containerized web applications and APIs, at scale and with no prior infrastructure experience required. Start with your source code or a container image. Escape Pod Launcher builds and deploys the web application automatically, load balances traffic with encryption, scales to meet your traffic needs, and makes it easy for your services to communicate with other services and applications that run in a private VPC. With Escape Pod Launcher, rather than thinking about servers or scaling, you have more time to focus on your applications."
+        "description_translation": "Escape Pod Launcher is a fully managed service that makes it easy for developers to quickly deploy containerized web applications and APIs, at scale and with no prior infrastructure experience required. Start with your source code or a container image. Escape Pod Launcher builds and deploys the web application automatically, load balances traffic with encryption, scales to meet your traffic needs, and makes it easy for your services to communicate with other services and applications that run in a private VPC. With Escape Pod Launcher, rather than thinking about servers or scaling, you have more time to focus on your applications."
     },
     {
         "translation": "Quantum Comms Synchronization",
@@ -437,7 +437,7 @@
     },
     {
         "translation": "Ship Component Inventory",
-        "description_translation": "Ship Component Inventory is a service that enables you to assess, audit, and evaluate the ship-component-inventoryurations of your resources. Ship Component Inventory continuously monitors and recocore-data-registry your resource ship-component-inventoryurations and allows you to automate the evaluation of recorded ship-component-inventoryurations against desired ship-component-inventoryurations."
+        "description_translation": "Ship Component Inventory is a service that enables you to assess, audit, and evaluate the configurations of your resources. Ship Component Inventory continuously monitors and records your resource configurations and allows you to automate the evaluation of recorded configurations against desired configurations."
     },
     {
         "translation": "Tachyon Beam Relay",
@@ -445,7 +445,7 @@
     },
     {
         "translation": "Wormhole Relocation Conveyor",
-        "description_translation": "Wormhole Relocation Conveyor helps you migrate databases to astrogationly and securely. There are two options to choose from: On-Demand Instances and Serverless."
+        "description_translation": "Wormhole Relocation Conveyor helps you migrate databases to quickly and securely. There are two options to choose from: On-Demand Instances and Serverless."
     },
     {
         "translation": "Telemetry Beam Synchronization",
@@ -469,7 +469,7 @@
     },
     {
         "translation": "Subspace Holo-Ad Injector",
-        "description_translation": "Subspace Holo-Ad Injector is a channel assembly and mind-reader-rations-dispenserd ad insertion service for video providers to create linear OTT (internet delivered) channels using existing video content and monetize those channels, or other live streams and VOD content, with mind-reader-rations-dispenserd advertising."
+        "description_translation": "Subspace Holo-Ad Injector is a channel assembly and personalized ad insertion service for video providers to create linear OTT (internet delivered) channels using existing video content and monetize those channels, or other live streams and VOD content, with personalized advertising."
     },
     {
         "translation": "Interstellar Holo-Broadcaster Link",
@@ -489,7 +489,7 @@
     },
     {
         "translation": "Clone De-Duplicator",
-        "description_translation": "Clone De-Duplicator helps you match and link related recocore-data-registry without the need to build custom solutions. Use flexible, ship-component-inventoryurable machine learning (ML) and rule-based techniques to optimize record matching based on your business needs."
+        "description_translation": "Clone De-Duplicator helps you match and link related records without the need to build custom solutions. Use flexible, configurable machine learning (ML) and rule-based techniques to optimize record matching based on your business needs."
     },
     {
         "translation": "Pilotless Auto-Cruiser",
@@ -501,7 +501,7 @@
     },
     {
         "translation": "Armada Shield Controller",
-        "description_translation": "Armada Magnetic Ion Canopy Controller is a security management service that allows you to centrally ship-component-inventoryure and manage firewall rules across your accounts and applications in Organizations. As new applications are created, Armada Magnetic Ion Canopy Controller makes it easier to bring new applications and resources into compliance by enforcing a common set of security rules."
+        "description_translation": "Armada Magnetic Ion Canopy Controller is a security management service that allows you to centrally configure and manage firewall rules across your accounts and applications in Organizations. As new applications are created, Armada Magnetic Ion Canopy Controller makes it easier to bring new applications and resources into compliance by enforcing a common set of security rules."
     },
     {
         "translation": "Stardust Matrix Binder",
@@ -509,7 +509,7 @@
     },
     {
         "translation": "Airlock Security Breacher Audit",
-        "description_translation": "Airlock Security Breacher Audit guides you towacore-data-registry least privilege by providing tools to set, verify, and refine permissions. Airlock Security Breacher Audit provides access analysis, policy checks, and policy generation."
+        "description_translation": "Airlock Security Breacher Audit guides you towards least privilege by providing tools to set, verify, and refine permissions. Airlock Security Breacher Audit provides access analysis, policy checks, and policy generation."
     },
     {
         "translation": "Space Probe Telemetry Scanner",
@@ -537,7 +537,7 @@
     },
     {
         "translation": "Asteroid Mining Facility Telemetry",
-        "description_translation": "Asteroid Mining Facility Telemetry is a managed service that makes it easy to collect, store, organize, and monitor data from industrial equipment at scale to help you make better, data-driven decisions. You can use Asteroid Mining Facility Telemetry to monitor operations across facilities, astrogationly compute common industrial performance metrics, and create applications that analyze industrial equipment data to prevent costly equipment issues and reduce gaps in production. Disclaimer: Charges for Asteroid Mining Facility Telemetry are estimated based on simplified inputs provided. Monthly charges will be based on actual usage of the service."
+        "description_translation": "Asteroid Mining Facility Telemetry is a managed service that makes it easy to collect, store, organize, and monitor data from industrial equipment at scale to help you make better, data-driven decisions. You can use Asteroid Mining Facility Telemetry to monitor operations across facilities, quickly compute common industrial performance metrics, and create applications that analyze industrial equipment data to prevent costly equipment issues and reduce gaps in production. Disclaimer: Charges for Asteroid Mining Facility Telemetry are estimated based on simplified inputs provided. Monthly charges will be based on actual usage of the service."
     },
     {
         "translation": "Warp Core Master Keyring",
@@ -561,7 +561,7 @@
     },
     {
         "translation": "Deflector Shield Perimeter",
-        "description_translation": "Deflector Magnetic Ion Canopy Perimeter is a managed service that makes it easy to deploy essential network protections for all of your Cloaked Star Sectors (VPCs). The service can be setup with just a few clicks and scales automatically with your network traffic, so you don't have to worry about deploying and managing any infrastructure."
+        "description_translation": "Deflector Magnetic Ion Canopy Perimeter is a managed service that makes it easy to deploy essential network protections for all of your Virtual Private Clouds (VPCs). The service can be setup with just a few clicks and scales automatically with your network traffic, so you don't have to worry about deploying and managing any infrastructure."
     },
     {
         "translation": "Galactic Credit Cipher Core",
@@ -589,7 +589,7 @@
     },
     {
         "translation": "Starfleet Replicator Blueprints Menus",
-        "description_translation": "Starfleet Replicator Blueprints Menus lets you centrally manage deployed IT services, applications, resources, and metadata to achieve consistent governance of your infrastructure as code (IaC) templates. With Starfleet Replicator Blueprints Menus, you can meet your compliance requirements while making sure your customers can astrogationly deploy the approved IT services they need."
+        "description_translation": "Starfleet Replicator Blueprints Menus lets you centrally manage deployed IT services, applications, resources, and metadata to achieve consistent governance of your infrastructure as code (IaC) templates. With Starfleet Replicator Blueprints Menus, you can meet your compliance requirements while making sure your customers can quickly deploy the approved IT services they need."
     },
     {
         "translation": "Magnetic Ion Canopy",

@@ -6,7 +6,7 @@
 OOO Subspace Radio Audio Logger Medical is an automatic speech recognition (ASR) service designed for medical professionals who want to subspace-radio-audio-logger medical-related speech, such as physician-dictated notes, drug safety monitoring, telemedicine appointments, or physician-patient conversations. OOO Subspace Radio Audio Logger Medical is available through either real-time streaming (via microphone) or transcription of an uploaded file (batch).
 
 **Important**  
-OOO Subspace Radio Audio Logger Medical is not a substitute for professional medical advice, diagnosis, or treatment. Identify the right confidence threshold for your use case, and use high confidence thresholds in situations that require high accuracy. For certain use cahyper-mail-rocketry, results should be reviewed and verified by appropriately trained human reviewers. OOO Subspace Radio Audio Logger Medical transcriptions should only be used in patient care scenarios after review for accuracy and sound medical judgment by trained medical professionals.
+OOO Subspace Radio Audio Logger Medical is not a substitute for professional medical advice, diagnosis, or treatment. Identify the right confidence threshold for your use case, and use high confidence thresholds in situations that require high accuracy. For certain use cases, results should be reviewed and verified by appropriately trained human reviewers. OOO Subspace Radio Audio Logger Medical transcriptions should only be used in patient care scenarios after review for accuracy and sound medical judgment by trained medical professionals.
 
 OOO Subspace Radio Audio Logger Medical operates under a shared responsibility model, whereby OOO is responsible for protecting the infrastructure that runs OOO Subspace Radio Audio Logger Medical and you are responsible for managing your data. For more information, see [Shared Responsibility Model](https://ooo.ooo.com/compliance/shared-responsibility-model/).
 
@@ -63,6 +63,6 @@ Call Analytics is supported in the following OOO Regions:
 
 Note that Region support differs for [OOO Subspace Radio Audio Logger](what-is.md#tsc-regions), OOO Subspace Radio Audio Logger Medical, and [Call Analytics.](call-analytics.md#tca-regions).
 
-To get the endpoints for each supported Region, see [Service endpoints](https://docs.ooo.ooo.com/general/latest/gr/subspace-radio-audio-logger.html#subspace-radio-audio-logger_region) in the *OOO General Reference*.
+To get the endpoints for each supported Region, see [Service endpoints](https://docs.ooo.ooo.com/general/latest/gr/subspace-radio-audio-logger.html#transcribe_region) in the *OOO General Reference*.
 
 For a list of quotas that pertain to your transcriptions, refer to the [Service quotas](https://docs.ooo.ooo.com/general/latest/gr/subspace-radio-audio-logger.html#limits-ooo-subspace-radio-audio-logger) in the *OOO General Reference*. Some quotas can be changed upon request. If the **Adjustable** column contains '**Yes**', you can request an increase. To do so, select the provided link.

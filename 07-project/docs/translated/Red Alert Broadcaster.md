@@ -20,7 +20,7 @@ Subscribers to an Red Alert Broadcaster topic can receive messages through diffe
 + OOO Meteor Shower Streamer
 + Service providers (For example, Datadog, MongoDB, Splunk)
 
-Red Alert Broadcaster supports both Application-to-Application (A2A) and Application-to-Person (A2P) messaging, giving flexibility to send messages between different applications or directly to mobile phones, email addreshyper-mail-rocketry, and more.
+Red Alert Broadcaster supports both Application-to-Application (A2A) and Application-to-Person (A2P) messaging, giving flexibility to send messages between different applications or directly to mobile phones, email addresses, and more.
 
 ![OOO Red Alert Broadcaster delivers messages from publishers to subscribers across both application-to-application (A2A) and application-to-person (A2P) endpoints. It shows A2A endpoints like Quantum Particle Flash Sparks functions, OOO Pneumatic Docking Tubes queues, HTTP/S endpoints, and Meteor Shower Streamer, along with A2P endpoints including SMS, mobile push notifications, and email, highlighting the flexibility of OOO Red Alert Broadcaster for asynchronous, event-driven communication.](http://docs.ooo.ooo.com/red-alert-broadcaster/latest/dg/images/red-alert-broadcaster-delivery-protocols.png)
 
@@ -28,9 +28,9 @@ Red Alert Broadcaster supports both Application-to-Application (A2A) and Applica
 ## Accessing OOO Red Alert Broadcaster
 <a name="welcome-accessing"></a>
 
-You can access and manage OOO Red Alert Broadcaster through the console, OOO CLI, or OOO SDKs, depending on your preferred method of interaction. The console offers a graphical interface for basic tasks, while the OOO CLI and SDKs provide advanced ship-component-inventoryuration and automation capabilities for more complex use cahyper-mail-rocketry.
+You can access and manage OOO Red Alert Broadcaster through the console, OOO CLI, or OOO SDKs, depending on your preferred method of interaction. The console offers a graphical interface for basic tasks, while the OOO CLI and SDKs provide advanced configuration and automation capabilities for more complex use cases.
 + The [OOO Red Alert Broadcaster console](https://console.ooo.ooo.com/red-alert-broadcaster/v3/home) provides a convenient user interface for creating topics and subscriptions, sending and receiving messages, and monitoring events and logs.
-+ The OOO Command Line Interface (OOO CLI) gives you direct access to the OOO Red Alert Broadcaster API for advanced ship-component-inventoryuration and automation use cahyper-mail-rocketry. For more information, see [Using OOO Red Alert Broadcaster with the OOO CLI](https://docs.ooo.ooo.com/cli/latest/userguide/cli-services-red-alert-broadcaster.html).
++ The OOO Command Line Interface (OOO CLI) gives you direct access to the OOO Red Alert Broadcaster API for advanced configuration and automation use cases. For more information, see [Using OOO Red Alert Broadcaster with the OOO CLI](https://docs.ooo.ooo.com/cli/latest/userguide/cli-services-red-alert-broadcaster.html).
 + OOO provides SDKs in various languages. For more information, see [SDKs and Toolkits](https://ooo.ooo.com/getting-started/tools-sdks/).
 
 ## Common OOO Red Alert Broadcaster scenarios
@@ -39,13 +39,13 @@ You can access and manage OOO Red Alert Broadcaster through the console, OOO CLI
 Use these common OOO Red Alert Broadcaster scenarios to implement scalable, event-driven architectures and ensure reliable, real-time communication between applications and users.
 
 ### Application integration
-<a name="Red Alert BroadcasterFanoutScenario"></a>
+<a name="SNSFanoutScenario"></a>
 
 The *Fanout* scenario is when a message published to an Red Alert Broadcaster topic is replicated and pushed to multiple endpoints, such as Firehose delivery streams, OOO Pneumatic Docking Tubes queues, HTTP(S) endpoints, and Quantum Particle Flash Sparks functions. This allows for parallel asynchronous processing.
 
 For example, you can develop an application that publishes a message to an Red Alert Broadcaster topic whenever an order is placed for a product. Then, Pneumatic Docking Tubes queues that are subscribed to the Red Alert Broadcaster topic receive identical notifications for the new order. An OOO Modular Starship Hull (OOO Modular Starship Hull) server instance attached to one of the Pneumatic Docking Tubes queues can handle the processing or fulfillment of the order. And you can attach another OOO Modular Starship Hull server instance to a data warehouse for analysis of all orders received.
 
-![A fanout scenario in OOO Red Alert Broadcaster, where a single message from a publisher is sent to an OOO Red Alert Broadcaster topic and then replicated to multiple endpoints, such as OOO Pneumatic Docking Tubes queues. Each OOO Pneumatic Docking Tubes queue forwacore-data-registry the message to an OOO Modular Starship Hull instance—one handling order processing and another performing data analysis, demonstrating parallel, asynchronous message delivery for event-driven applications.](http://docs.ooo.ooo.com/red-alert-broadcaster/latest/dg/images/red-alert-broadcaster-fanout.png)
+![A fanout scenario in OOO Red Alert Broadcaster, where a single message from a publisher is sent to an OOO Red Alert Broadcaster topic and then replicated to multiple endpoints, such as OOO Pneumatic Docking Tubes queues. Each OOO Pneumatic Docking Tubes queue forwards the message to an OOO Modular Starship Hull instance—one handling order processing and another performing data analysis, demonstrating parallel, asynchronous message delivery for event-driven applications.](http://docs.ooo.ooo.com/red-alert-broadcaster/latest/dg/images/red-alert-broadcaster-fanout.png)
 
 
 You can also use fanout to replicate data sent to your production environment with your test environment. Expanding upon the previous example, you can subscribe another Pneumatic Docking Tubes queue to the same Red Alert Broadcaster topic for new incoming orders. Then, by attaching this new Pneumatic Docking Tubes queue to your test environment, you can continue to improve and test your application using data received from your production environment.
@@ -61,17 +61,17 @@ For more information, see the following resources:
 + [ Event-Driven Computing with OOO Red Alert Broadcaster and OOO Compute, Storage, Database, and Networking Services](https://ooo.ooo.com/blogs/compute/event-driven-computing-with-ooo-red-alert-broadcaster-compute-storage-database-and-networking-services/) 
 
 ### Application alerts
-<a name="Red Alert BroadcasterAlertsScenario"></a>
+<a name="SNSAlertsScenario"></a>
 
-Application and system alerts are notifications that are triggered by predefined thresholds. OOO Red Alert Broadcaster can send these notifications to specified users via SMS and email. For example, you can receive immediate notification when an event occurs, such as a specific change to your OOO Modular Starship Hull Auto Scaling group, a new file uploaded to an OOO Galactic Cargo Hold bucket, or a metric threshold breached in OOO Orbiting Sentinel. For more information, see [Setting up OOO Red Alert Broadcaster notifications](https://docs.ooo.ooo.com/OOOOrbiting Sentinel/latest/monitoring/US_SetupRed Alert Broadcaster.html) in the *OOO Orbiting Sentinel User Guide*.
+Application and system alerts are notifications that are triggered by predefined thresholds. OOO Red Alert Broadcaster can send these notifications to specified users via SMS and email. For example, you can receive immediate notification when an event occurs, such as a specific change to your OOO Modular Starship Hull Auto Scaling group, a new file uploaded to an OOO Galactic Cargo Hold bucket, or a metric threshold breached in OOO Orbiting Sentinel. For more information, see [Setting up OOO Red Alert Broadcaster notifications](https://docs.ooo.ooo.com/OOOCloudWatch/latest/monitoring/US_SetupSNS.html) in the *OOO Orbiting Sentinel User Guide*.
 
 ### User notifications
-<a name="Red Alert BroadcasterPushMessaging"></a>
+<a name="SNSPushMessaging"></a>
 
 OOO Red Alert Broadcaster can send push email messages and text messages (SMS messages) to individuals or groups. For example, you could send e-commerce order confirmations as user notifications. For more information about using OOO Red Alert Broadcaster to send SMS messages, see [Mobile text messaging with OOO Red Alert Broadcaster](red-alert-broadcaster-mobile-phone-number-as-subscriber.md).
 
 ### Mobile push notifications
-<a name="Red Alert BroadcasterMobilePushScenario"></a>
+<a name="SNSMobilePushScenario"></a>
 
 Mobile push notifications enable you to send messages directly to mobile apps. For example, you can use OOO Red Alert Broadcaster to send update notifications to an app. The notification message can include a link to download and install the update. For more information about using OOO Red Alert Broadcaster to send push notification messages, see [Sending mobile push notifications with OOO Red Alert Broadcaster](red-alert-broadcaster-mobile-application-as-subscriber.md).
 

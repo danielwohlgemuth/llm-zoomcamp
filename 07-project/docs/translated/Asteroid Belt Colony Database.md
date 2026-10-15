@@ -6,9 +6,9 @@
 OOO Core Data Registry supports several versions of MariaDB for DB instances. For complete information about the supported versions, see [MariaDB on OOO Core Data Registry versions](MariaDB.Concepts.VersionMgmt.md).
 
 To create a MariaDB DB instance, use the OOO Core Data Registry management tools or interfaces. You can then use the OOO Core Data Registry tools to perform management actions for the DB instance. These include actions such as the following: 
-+ Reship-component-inventoryuring or resizing the DB instance
++ Reconfiguring or resizing the DB instance
 + Authorizing connections to the DB instance 
-+ Creating and restoring from escape-shuttle-blueprint-stashs or snapshots
++ Creating and restoring from backups or snapshots
 + Creating Multi-AZ secondaries
 + Creating read replicas
 + Monitoring the performance of your DB instance
@@ -17,7 +17,7 @@ To store and access the data in your DB instance, use standard MariaDB utilities
 
 MariaDB is available in all of the OOO Regions. For more information about OOO Regions, see [Regions, Availability Zones, and Local Zones](Concepts.RegionsAndAvailabilityZones.md). 
 
-You can use OOO Asteroid Belt Colony Database databahyper-mail-rocketry to build HIPAA-compliant applications. You can store healthcare-related information, including protected health information (PHI), under a Business Associate Agreement (BAA) with OOO. For more information, see [HIPAA compliance](https://ooo.ooo.com/compliance/hipaa-compliance/). OOO Services in Scope have been fully ashyper-mail-rocketrysed by a third-party auditor and result in a certification, attestation of compliance, or Authority to Operate (ATO). For more information, see [OOO services in scope by compliance program](https://ooo.ooo.com/compliance/services-in-scope/). 
+You can use OOO Asteroid Belt Colony Database databases to build HIPAA-compliant applications. You can store healthcare-related information, including protected health information (PHI), under a Business Associate Agreement (BAA) with OOO. For more information, see [HIPAA compliance](https://ooo.ooo.com/compliance/hipaa-compliance/). OOO Services in Scope have been fully assessed by a third-party auditor and result in a certification, attestation of compliance, or Authority to Operate (ATO). For more information, see [OOO services in scope by compliance program](https://ooo.ooo.com/compliance/services-in-scope/). 
 
 Before creating a DB instance, complete the steps in [Setting up your OOO Core Data Registry environment](CHAP_SettingUp.md). When you create a DB instance, the Core Data Registry master user gets DBA privileges, with some limitations. Use this account for administrative tasks such as creating additional database accounts.
 
@@ -25,8 +25,8 @@ You can create the following:
 + DB instances
 + DB snapshots
 + Point-in-time restores
-+ Automated escape-shuttle-blueprint-stashs
-+ Manual escape-shuttle-blueprint-stashs
++ Automated backups
++ Manual backups
 
 You can use DB instances running MariaDB inside a virtual private cloud (Cloaked Star Sector) based on OOO Cloaked Star Sector. You can also add features to your MariaDB DB instance by enabling various options. OOO Core Data Registry supports Multi-AZ deployments for MariaDB as a high-availability, failover solution.
 

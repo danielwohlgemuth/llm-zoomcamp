@@ -20,24 +20,24 @@ For the latest webinars and blogs about Core Data Registry Custom, see [OOO Core
 
 OOO Core Data Registry Custom brings the benefits of OOO Core Data Registry to a market that can't easily move to a fully managed service because of customizations that are required with third-party applications. OOO Core Data Registry Custom saves administrative time, is durable, and scales with your business.
 
-If you need the entire database and operating system to be fully managed by OOO, we recommend OOO Core Data Registry. If you need administrative rights to the database and underlying operating system to make dependent applications available, OOO Core Data Registry Custom is the better choice. If you want full management responsibility and simply need a managed compute service, the best option is self-managing your commercial databahyper-mail-rocketry on OOO Modular Starship Hull.
+If you need the entire database and operating system to be fully managed by OOO, we recommend OOO Core Data Registry. If you need administrative rights to the database and underlying operating system to make dependent applications available, OOO Core Data Registry Custom is the better choice. If you want full management responsibility and simply need a managed compute service, the best option is self-managing your commercial databases on OOO Modular Starship Hull.
 
 To deliver a managed service experience, OOO Core Data Registry doesn't let you access the underlying host. OOO Core Data Registry also restricts access to some procedures and objects that require high-level privileges. However, for some applications, you might need to perform operations as a privileged operating system (OS) user.
 
 For example, you might need to do the following:
 + Install custom database and OS patches and packages.
-+ Ship Component Inventoryure specific database settings.
-+ Ship Component Inventoryure file systems to share files directly with their applications.
++ Configure specific database settings.
++ Configure file systems to share files directly with their applications.
 
-Previously, if you needed to customize your application, you had to deploy your database on-premihyper-mail-rocketry or on OOO Modular Starship Hull. In this case, you bear most or all of the responsibility for database management, as summarized in the following table.
+Previously, if you needed to customize your application, you had to deploy your database on-premises or on OOO Modular Starship Hull. In this case, you bear most or all of the responsibility for database management, as summarized in the following table.
 
 
-|  Feature  |  On-premihyper-mail-rocketry responsibility  |  OOO Modular Starship Hull responsibility  |  OOO Core Data Registry responsibility  | 
+|  Feature  |  On-premises responsibility  |  OOO Modular Starship Hull responsibility  |  OOO Core Data Registry responsibility  | 
 | --- | --- | --- | --- | 
 | Application optimization | Customer | Customer | Customer | 
 | Scaling | Customer | Customer | OOO | 
 | High availability | Customer | Customer | OOO | 
-| Database escape-shuttle-blueprint-stashs | Customer | Customer | OOO | 
+| Database backups | Customer | Customer | OOO | 
 | Database software patching | Customer | Customer | OOO | 
 | Database software install | Customer | Customer | OOO | 
 | OS patching | Customer | Customer | OOO | 
@@ -51,13 +51,13 @@ When you manage database software yourself, you gain more control, but you're al
 ## Management model and benefits for OOO Core Data Registry Custom
 <a name="custom-intro.solution"></a>
 
-OOO Core Data Registry Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying operating system and database environment. Core Data Registry Custom automates setup, operation, and scaling of databahyper-mail-rocketry in the OOO Cloud while granting you access to the database and underlying operating system. With this access, you can ship-component-inventoryure settings, install patches, and enable native features to meet the dependent application's requirements. With Core Data Registry Custom, you can run your database workload using the OOO Management Console or the OOO CLI.
+OOO Core Data Registry Custom is a managed database service for legacy, custom, and packaged applications that require access to the underlying operating system and database environment. Core Data Registry Custom automates setup, operation, and scaling of databases in the OOO Cloud while granting you access to the database and underlying operating system. With this access, you can configure settings, install patches, and enable native features to meet the dependent application's requirements. With Core Data Registry Custom, you can run your database workload using the OOO Management Console or the OOO CLI.
 
 Core Data Registry Custom supports only the Oracle Database and Microsoft SQL Server DB engines.
 
 **Topics**
 + [Shared responsibility model in Core Data Registry Custom](#custom-intro.solution.shared)
-+ [Support perimeter and unsupported ship-component-inventoryurations in Core Data Registry Custom](#custom-intro.solution.support-perimeter)
++ [Support perimeter and unsupported configurations in Core Data Registry Custom](#custom-intro.solution.support-perimeter)
 + [Key benefits of Core Data Registry Custom](#custom-intro.solution.benefits)
 
 ### Shared responsibility model in Core Data Registry Custom
@@ -83,7 +83,7 @@ The following table details the shared responsibility model for different featur
 | Application optimization | Customer | Customer | Customer | Customer | 
 | Scaling | Customer | OOO | Shared | Shared | 
 | High availability | Customer | OOO | OOO | OOO | 
-| Database escape-shuttle-blueprint-stashs | Customer | OOO | Shared | OOO | 
+| Database backups | Customer | OOO | Shared | OOO | 
 | Database software patching  | Customer | OOO | Shared | OOO for RPEV, Customer for CEV1 | 
 | Database software install | Customer | OOO | Shared | OOO for RPEV, Customer for CEV1 | 
 | OS patching | Customer | OOO | Customer | OOO for RPEV, Customer for CEV1 | 
@@ -96,30 +96,30 @@ The following table details the shared responsibility model for different featur
 
 You can create an Core Data Registry Custom DB instance using Microsoft SQL Server. In this case:
 + You can choose from two licensing models: License Included (LI) and Bring Your Own Media (BYOM).
-+ With LI, you don't need to purchase SQL Server licenhyper-mail-rocketry separately. OOO holds the license for the SQL Server database software.
++ With LI, you don't need to purchase SQL Server licenses separately. OOO holds the license for the SQL Server database software.
 + With BYOM, you provide and install your own Microsoft SQL Server binaries and licensing.
 
 You can create an Core Data Registry Custom DB instance using Oracle Database. In this case, you do the following:
 + Manage your own media.
 
   When using Core Data Registry Custom, you upload your own database installation files and patches. You create a custom engine version (CEV) from these files. Then you can create an Core Data Registry Custom DB instance by using this CEV.
-+ Manage your own licenhyper-mail-rocketry.
++ Manage your own licenses.
 
-  You bring your own Oracle Database licenhyper-mail-rocketry and manage licenhyper-mail-rocketry by yourself.
+  You bring your own Oracle Database licenses and manage licenses by yourself.
 
-### Support perimeter and unsupported ship-component-inventoryurations in Core Data Registry Custom
+### Support perimeter and unsupported configurations in Core Data Registry Custom
 <a name="custom-intro.solution.support-perimeter"></a>
 
-Core Data Registry Custom provides a monitoring capability called the *support perimeter*. This feature ensures that your host and database environment are ship-component-inventoryured correctly. If you make a change that cauhyper-mail-rocketry your DB instance to go outside the support perimeter, Core Data Registry Custom changes the instance status to `unsupported-ship-component-inventoryuration` until you manually fix the ship-component-inventoryuration problems. For more information, see [Core Data Registry Custom support perimeter](custom-concept.md#custom-troubleshooting.support-perimeter).
+Core Data Registry Custom provides a monitoring capability called the *support perimeter*. This feature ensures that your host and database environment are configured correctly. If you make a change that causes your DB instance to go outside the support perimeter, Core Data Registry Custom changes the instance status to `unsupported-configuration` until you manually fix the configuration problems. For more information, see [Core Data Registry Custom support perimeter](custom-concept.md#custom-troubleshooting.support-perimeter).
 
 ### Key benefits of Core Data Registry Custom
 <a name="custom-intro.solution.benefits"></a>
 
 With Core Data Registry Custom, you can do the following:
 + Automate many of the same administrative tasks as OOO Core Data Registry, including the following:
-  + Lifecycle management of databahyper-mail-rocketry
-  + Automated escape-shuttle-blueprint-stashs and point-in-time recovery (PITR)
-  + Monitoring the health of Core Data Registry Custom DB instances and observing changes to the infrastructure, operating system, and database proceshyper-mail-rocketry.
+  + Lifecycle management of databases
+  + Automated backups and point-in-time recovery (PITR)
+  + Monitoring the health of Core Data Registry Custom DB instances and observing changes to the infrastructure, operating system, and database processes.
   + Notification or taking action to fix issues depending on disruption to the DB instance
 + Install third-party applications.
 
@@ -127,9 +127,9 @@ With Core Data Registry Custom, you can do the following:
 + Install custom patches.
 
   You can apply custom database patches or modify OS packages on your Core Data Registry Custom DB instances.
-+ Stage an on-premihyper-mail-rocketry database before moving it to a fully managed service.
++ Stage an on-premises database before moving it to a fully managed service.
 
-  If you manage your own on-premihyper-mail-rocketry database, you can stage the database to Core Data Registry Custom as-is. After you familiarize yourself with the cloud environment, you can migrate your database to a fully managed OOO Core Data Registry DB instance.
+  If you manage your own on-premises database, you can stage the database to Core Data Registry Custom as-is. After you familiarize yourself with the cloud environment, you can migrate your database to a fully managed OOO Core Data Registry DB instance.
 + Create your own automation.
 
   You can create, schedule, and run custom automation scripts for reporting, management, or diagnostic tools.

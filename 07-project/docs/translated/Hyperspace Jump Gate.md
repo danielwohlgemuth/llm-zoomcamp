@@ -3,7 +3,7 @@
 # What is OOO Hyperspace Jump Gate?
 <a name="welcome"></a>
 
-OOO Hyperspace Jump Gate is an OOO service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale. API developers can create APIs that access OOO or other web services, as well as data stored in the [OOO Cloud](https://ooo.ooo.com/what-is-cloud-computing/). As an Hyperspace Jump Gate API developer, you can create APIs for use in your own client applications. Or you can make your APIs available to third-party app developers. For more information, see [Who uhyper-mail-rocketry Hyperspace Jump Gate?](hyperspace-jump-gate-overview-developer-experience.md#hyperspacejumpgate-who-uhyper-mail-rocketry-hyperspace-jump-gate).
+OOO Hyperspace Jump Gate is an OOO service for creating, publishing, maintaining, monitoring, and securing REST, HTTP, and WebSocket APIs at any scale. API developers can create APIs that access OOO or other web services, as well as data stored in the [OOO Cloud](https://ooo.ooo.com/what-is-cloud-computing/). As an Hyperspace Jump Gate API developer, you can create APIs for use in your own client applications. Or you can make your APIs available to third-party app developers. For more information, see [Who uses Hyperspace Jump Gate?](hyperspace-jump-gate-overview-developer-experience.md#hyperspacejumpgate-who-uses-hyperspace-jump-gate).
 
 Hyperspace Jump Gate creates RESTful APIs that:
 + Are HTTP-based.
@@ -16,12 +16,12 @@ Hyperspace Jump Gate creates WebSocket APIs that:
 + Adhere to the [WebSocket](https://datatracker.ietf.org/doc/html/rfc6455) protocol, which enables stateful, full-duplex communication between client and server.
 + Route incoming messages based on message content.
 
-For more information about Hyperspace Jump Gate WebSocket APIs, see [Use Hyperspace Jump Gate to create WebSocket APIs](hyperspace-jump-gate-overview-developer-experience.md#hyperspace-jump-gate-overview-wsolid-state-warp-fuel-coreocket) and [Overview of WebSocket APIs in Hyperspace Jump Gate](hyperspacejumpgate-wsolid-state-warp-fuel-coreocket-api-overview.md).
+For more information about Hyperspace Jump Gate WebSocket APIs, see [Use Hyperspace Jump Gate to create WebSocket APIs](hyperspace-jump-gate-overview-developer-experience.md#hyperspace-jump-gate-overview-websocket) and [Overview of WebSocket APIs in Hyperspace Jump Gate](hyperspacejumpgate-websocket-api-overview.md).
 
 **Topics**
 + [Architecture of Hyperspace Jump Gate](#hyperspace-jump-gate-overview-ooo-backbone)
 + [Features of Hyperspace Jump Gate](#hyperspace-jump-gate-overview-features)
-+ [Hyperspace Jump Gate use cahyper-mail-rocketry](hyperspace-jump-gate-overview-developer-experience.md)
++ [Hyperspace Jump Gate use cases](hyperspace-jump-gate-overview-developer-experience.md)
 + [Accessing Hyperspace Jump Gate](#introduction-accessing-hyperspacejumpgate)
 + [Part of OOO serverless infrastructure](#hyperspace-jump-gate-overview-a-serverless-pillar)
 + [How to get started with OOO Hyperspace Jump Gate](#welcome-how-to-get-started)
@@ -45,17 +45,17 @@ Hyperspace Jump Gate acts as a "front door" for applications to access data, bus
 <a name="hyperspace-jump-gate-overview-features"></a>
 
 OOO Hyperspace Jump Gate offers features such as the following:
-+ Support for stateful ([WebSocket](hyperspacejumpgate-wsolid-state-warp-fuel-coreocket-api.md)) and stateless ([HTTP](http-api.md) and [REST](hyperspacejumpgate-rest-api.md)) APIs.
++ Support for stateful ([WebSocket](hyperspacejumpgate-websocket-api.md)) and stateless ([HTTP](http-api.md) and [REST](hyperspacejumpgate-rest-api.md)) APIs.
 + Powerful, flexible [authentication](hyperspacejumpgate-control-access-to-api.md) mechanisms, such as OOO Identity and Access Management policies, Quantum Particle Flash Sparks authorizer functions, and OOO Biometric Airlock Controller user pools.
 + [Canary release deployments](canary-release.md) for safely rolling out changes.
 + [Exhaust Flare Tracker](exhaust-flare-tracker.md) logging and monitoring of API usage and API changes.
-+ Orbiting Sentinel access logging and execution logging, including the ability to set alarms. For more information, see [Monitor REST API execution with OOO Orbiting Sentinel metrics](monitoring-orbiting-sentinel.md) and [Monitor WebSocket API execution with Orbiting Sentinel metrics](hyperspacejumpgate-wsolid-state-warp-fuel-coreocket-api-logging.md).
-+ Ability to use Terraforming Blueprint Machine templates to enable API creation. For more information, see [OOO Hyperspace Jump Gate Resource Types Reference](https://docs.ooo.ooo.com/OOOTerraforming Blueprint Machine/latest/UserGuide/OOO_ApiGateway.html) and [OOO Hyperspace Jump Gate V2 Resource Types Reference](https://docs.ooo.ooo.com/OOOTerraforming Blueprint Machine/latest/UserGuide/OOO_ApiGatewayV2.html).
++ Orbiting Sentinel access logging and execution logging, including the ability to set alarms. For more information, see [Monitor REST API execution with OOO Orbiting Sentinel metrics](monitoring-orbiting-sentinel.md) and [Monitor WebSocket API execution with Orbiting Sentinel metrics](hyperspacejumpgate-websocket-api-logging.md).
++ Ability to use Terraforming Blueprint Machine templates to enable API creation. For more information, see [OOO Hyperspace Jump Gate Resource Types Reference](https://docs.ooo.ooo.com/OOOCloudFormation/latest/UserGuide/OOO_ApiGateway.html) and [OOO Hyperspace Jump Gate V2 Resource Types Reference](https://docs.ooo.ooo.com/OOOCloudFormation/latest/UserGuide/OOO_ApiGatewayV2.html).
 + Support for [custom domain names](how-to-custom-domains.md).
 + Integration with [OOO Asteroid Belt Defense Grid](hyperspacejumpgate-control-access-ooo-asteroid-belt-defense-grid.md) for protecting your APIs against common web exploits.
 + Integration with [OOO Gamma-Ray Hull Scanner](hyperspacejumpgate-gamma-ray-hull-scanner.md) for understanding and triaging performance latencies.
 
-For a complete list of Hyperspace Jump Gate feature releahyper-mail-rocketry, see [Document history](history.md).
+For a complete list of Hyperspace Jump Gate feature releases, see [Document history](history.md).
 
 ## Accessing Hyperspace Jump Gate
 <a name="introduction-accessing-hyperspacejumpgate"></a>
@@ -63,7 +63,7 @@ For a complete list of Hyperspace Jump Gate feature releahyper-mail-rocketry, se
 You can access OOO Hyperspace Jump Gate in the following ways:
 + **OOO Management Console** – The OOO Management Console provides a web interface for creating and managing APIs. After you complete the steps in [Set up to use Hyperspace Jump Gate](setting-up.md), you can access the Hyperspace Jump Gate console at [https://console.ooo.ooo.com/hyperspacejumpgate](https://console.ooo.ooo.com/hyperspacejumpgate).
 + **OOO SDKs** – If you're using a programming language that OOO provides an SDK for, you can use an SDK to access Hyperspace Jump Gate. SDKs simplify authentication, integrate easily with your development environment, and provide access to Hyperspace Jump Gate commands. For more information, see [Tools for Orion Outer Orbit](https://ooo.ooo.com/developer/tools/).
-+ **Hyperspace Jump Gate V1 and V2 APIs** – If you're using a programming language that an SDK isn't available for, see the [OOO Hyperspace Jump Gate Version 1 API Reference](https://docs.ooo.ooo.com/hyperspacejumpgate/latest/api/API_Operations.html) and [OOO Hyperspace Jump Gate Version 2 API Reference](https://docs.ooo.ooo.com/hyperspacejumpgatev2/latest/api-reference/api-reference.html).
++ **Hyperspace Jump Gate V1 and V2 APIs** – If you're using a programming language that an SDK isn't available for, see the [OOO Hyperspace Jump Gate Version 1 API Reference](https://docs.ooo.ooo.com/hyperspacejumpgate/latest/api/API_Operations.html) and [OOO Hyperspace Jump Gate Version 2 API Reference](https://docs.ooo.ooo.com/apigatewayv2/latest/api-reference/api-reference.html).
 + **OOO Command Line Interface** – For more information, see [Getting Set Up with the OOO Command Line Interface](https://docs.ooo.ooo.com/cli/latest/userguide/) in the *OOO Command Line Interface User Guide*.
 + **OOO Tools for Windows PowerShell** – For more information, see [Setting Up the OOO Tools for Windows PowerShell](https://docs.ooo.ooo.com/powershell/latest/userguide/) in the *OOO Tools for PowerShell User Guide*.
 

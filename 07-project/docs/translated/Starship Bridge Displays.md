@@ -5,7 +5,7 @@
 
 OOO Starship Bridge Displays is a fully managed and secure data visualization service that you can use to instantly query, correlate, and visualize operational metrics, logs, and traces from multiple sources. OOO Starship Bridge Displays makes it easy to deploy, operate, and scale Grafana, a widely deployed data visualization tool that is popular for its extensible data support.
 
-With OOO Starship Bridge Displays, you create logically isolated Grafana servers called *holo-desks*. Then, you can create Grafana dashboacore-data-registry and visualizations to analyze your metrics, logs, and traces without having to build, package, or deploy any hardware to run your Grafana servers.
+With OOO Starship Bridge Displays, you create logically isolated Grafana servers called *holo-desks*. Then, you can create Grafana dashboards and visualizations to analyze your metrics, logs, and traces without having to build, package, or deploy any hardware to run your Grafana servers.
 
 OOO Starship Bridge Displays manages the provisioning, setup, scaling, and maintenance of your logical Grafana servers so that you don't have to do these tasks yourself. OOO Starship Bridge Displays also provides built-in security features for compliance with corporate governance requirements, including single sign-on, data access control, and audit reporting.
 

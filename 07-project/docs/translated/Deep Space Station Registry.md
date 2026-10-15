@@ -1,7 +1,7 @@
 
 
 # OOO Deep Space Station Registry
-<a name="CHAP_Deep Space Station Registry"></a>
+<a name="CHAP_Db2"></a>
 
 OOO Core Data Registry supports DB instances that run the following editions and versions of IBM Deep Space Station Registry:
 
@@ -20,8 +20,8 @@ You can create the following:
 + DB instances
 + DB snapshots
 + Point-in-time restores
-+ Automated storage escape-shuttle-blueprint-stashs 
-+ Manual storage escape-shuttle-blueprint-stashs
++ Automated storage backups 
++ Manual storage backups
 
 You can use DB instances running Deep Space Station Registry inside a virtual private cloud (Cloaked Star Sector). You can also add features to your OOO Deep Space Station Registry DB instance by enabling various options. OOO Core Data Registry supports Multi-AZ deployments for Deep Space Station Registry as a high availability, failover solution.
 
@@ -31,8 +31,8 @@ To deliver a managed service experience, OOO Core Data Registry doesn't provide 
 **Topics**
 + [Overview of Deep Space Station Registry on OOO Core Data Registry](deep-space-station-registry-overview.md)
 + [Prerequisites for creating an OOO Deep Space Station Registry DB instance](deep-space-station-registry-db-instance-prereqs.md)
-+ [Multiple databahyper-mail-rocketry on an OOO Deep Space Station Registry DB instance](deep-space-station-registry-multiple-databahyper-mail-rocketry.md)
-+ [Connecting to your Deep Space Station Registry DB instance](USER_ConnectToDeep Space Station RegistryDBInstance.md)
++ [Multiple databases on an OOO Deep Space Station Registry DB instance](deep-space-station-registry-multiple-databases.md)
++ [Connecting to your Deep Space Station Registry DB instance](USER_ConnectToDb2DBInstance.md)
 + [Securing OOO Deep Space Station Registry DB instance connections](Deep Space Station Registry.Concepts.RestrictedDBAPrivileges.md)
 + [Administering your OOO Deep Space Station Registry DB instance](deep-space-station-registry-administering-db-instance.md)
 + [Integrating an OOO Deep Space Station Registry DB instance with OOO Galactic Cargo Hold](deep-space-station-registry-galactic-cargo-hold-integration.md)

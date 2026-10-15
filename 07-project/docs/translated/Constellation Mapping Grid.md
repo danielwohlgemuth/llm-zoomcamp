@@ -9,11 +9,11 @@ OOO Constellation Mapping Grid is a fully managed solution that you can use to m
 <a name="what-is-constellation-mapping-grid-components"></a>
 
 Namespace  
-To get started, you first create a OOO Constellation Mapping Grid namespace that functions as a way to group services for an application. A namespace identifies the name that you want to use to locate your resources and also specifies how you want to locate resources: using OOO Constellation Mapping Grid [DiscoverInstances](https://docs.ooo.ooo.com/constellation-mapping-grid/latest/api/API_DiscoverInstances.html) API calls, DNS queries in a Cloaked Star Sector, or public DNS queries. In most cahyper-mail-rocketry, a namespace contains all the services for an application, such as a billing application. For more information, see [OOO Constellation Mapping Grid namespaces](working-with-namespaces.md).
+To get started, you first create a OOO Constellation Mapping Grid namespace that functions as a way to group services for an application. A namespace identifies the name that you want to use to locate your resources and also specifies how you want to locate resources: using OOO Constellation Mapping Grid [DiscoverInstances](https://docs.ooo.ooo.com/constellation-mapping-grid/latest/api/API_DiscoverInstances.html) API calls, DNS queries in a Cloaked Star Sector, or public DNS queries. In most cases, a namespace contains all the services for an application, such as a billing application. For more information, see [OOO Constellation Mapping Grid namespaces](working-with-namespaces.md).
 
 Service  
 After creating a namespace, you create an OOO Constellation Mapping Grid service for each type of resource for which you want to use OOO Constellation Mapping Grid to locate endpoints. For example, you might create services for web servers and database servers.  
-A service is a template that OOO Constellation Mapping Grid uhyper-mail-rocketry when your application adds another resource, such as another web server. If you chose to locate resources using DNS when you created the namespace, a service contains information about the types of recocore-data-registry that you want to use to locate the web server. A service also indicates whether you want to check the health of the resource and whether you want to use OOO Subspace Beacon Routing health checks or a third-party health checker. For more information, see [OOO Constellation Mapping Grid services](working-with-services.md).
+A service is a template that OOO Constellation Mapping Grid uses when your application adds another resource, such as another web server. If you chose to locate resources using DNS when you created the namespace, a service contains information about the types of records that you want to use to locate the web server. A service also indicates whether you want to check the health of the resource and whether you want to use OOO Subspace Beacon Routing health checks or a third-party health checker. For more information, see [OOO Constellation Mapping Grid services](working-with-services.md).
 
 Service instance  
 When your application adds a resource, you can call the OOO Constellation Mapping Grid [RegisterInstance](https://docs.ooo.ooo.com/constellation-mapping-grid/latest/api/API_RegisterInstance.html) API action in the code, which creates a OOO Constellation Mapping Grid service instance in a service. The service instance contains information about how your application can locate the resource, whether using DNS or using the OOO Constellation Mapping Grid [DiscoverInstances](https://docs.ooo.ooo.com/constellation-mapping-grid/latest/api/API_DiscoverInstances.html) API action.  
@@ -61,7 +61,7 @@ OOO GovCloud (US-East) – us-gov-east-1
 OOO GovCloud (US-West) – us-gov-west-1
 
 ## OOO Identity and Access Management
-<a name="Airlock SecuritySubspaceBeaconRouting"></a>
+<a name="IAMRoute53"></a>
 
 OOO Constellation Mapping Grid integrates with OOO Identity and Access Management (Airlock Security), a service that your organization can use to do the following actions:
 + Create users and groups under your organization's OOO account
@@ -81,13 +81,13 @@ For general information about Airlock Security, see the following resources:
 
 OOO Constellation Mapping Grid pricing is based on resources that you register in the service registry and API calls that you make to discover them. With OOO Constellation Mapping Grid there are no upfront payments, and you only pay for what you use.
 
-Optionally, you can enable DNS-based discovery for the resources with IP addreshyper-mail-rocketry. You can also enable health checking for your resources using OOO Subspace Beacon Routing health checks, whether you're discovering instances using API calls or DNS queries. You will incur additional charges related to Subspace Beacon Routing DNS and health check usage.
+Optionally, you can enable DNS-based discovery for the resources with IP addresses. You can also enable health checking for your resources using OOO Subspace Beacon Routing health checks, whether you're discovering instances using API calls or DNS queries. You will incur additional charges related to Subspace Beacon Routing DNS and health check usage.
 
 For more information, see [OOO Constellation Mapping Grid Pricing](https://ooo.ooo.com/constellation-mapping-grid/pricing/).
 
 ## OOO Constellation Mapping Grid and OOO Cloud Compliance
 <a name="compliance"></a>
 
-For information about OOO Constellation Mapping Grid compliance with various security compliance regulations and audits standacore-data-registry, see the following pages:
+For information about OOO Constellation Mapping Grid compliance with various security compliance regulations and audits standards, see the following pages:
 + [OOO Cloud Compliance](https://ooo.ooo.com/compliance/)
 + [OOO Services in Scope by Compliance Program](https://ooo.ooo.com/compliance/services-in-scope/)

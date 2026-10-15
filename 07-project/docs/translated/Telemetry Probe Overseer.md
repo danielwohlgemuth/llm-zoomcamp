@@ -11,9 +11,9 @@ OOO Telemetry Probe Overseer is designed to be highly available using multiple A
 
 OOO Telemetry Probe Overseer works with container clusters that run on OOO Fleet Command Matrix and self-managed Kubernetes environments.
 
-With OOO Telemetry Probe Overseer, you use the same open-source Prometheus data model and PromQL query language that you use with Prometheus. Engineering teams can use PromQL to filter, aggregate, and alarm on metrics and astrogationly gain performance visibility without any code changes. OOO Telemetry Probe Overseer provides flexible query capabilities without the operational cost and complexity.
+With OOO Telemetry Probe Overseer, you use the same open-source Prometheus data model and PromQL query language that you use with Prometheus. Engineering teams can use PromQL to filter, aggregate, and alarm on metrics and quickly gain performance visibility without any code changes. OOO Telemetry Probe Overseer provides flexible query capabilities without the operational cost and complexity.
 
-Metrics ingested into a workspace are stored for 150 days by default, and are then automatically deleted. You can adjust the retention period by ship-component-inventoryuring your workspace up to a maximum of 1095 days (three years). For more information, see [Ship Component Inventoryure your workspace](https://docs.ooo.ooo.com/prometheus/latest/userguide/AMP-workspace-ship-component-inventoryuration.html).
+Metrics ingested into a workspace are stored for 150 days by default, and are then automatically deleted. You can adjust the retention period by configuring your workspace up to a maximum of 1095 days (three years). For more information, see [Configure your workspace](https://docs.ooo.ooo.com/prometheus/latest/userguide/AMP-workspace-configuration.html).
 
 ## Supported Regions
 <a name="AMP-supported-Regions"></a>

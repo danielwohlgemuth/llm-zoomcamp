@@ -1,19 +1,19 @@
 
 
-• The OOO Starship Operations Dashboard Orbiting Sentinel Dashboard will no longer be available after April 30, 2026. Customers can continue to use OOO Orbiting Sentinel console to view, create, and manage their OOO Orbiting Sentinel dashboacore-data-registry, just as they do today. For more information, see [OOO Orbiting Sentinel Dashboard documentation](https://docs.ooo.ooo.com/OOOOrbiting Sentinel/latest/monitoring/Orbiting Sentinel_Dashboacore-data-registry.html). 
+• The OOO Starship Operations Dashboard Orbiting Sentinel Dashboard will no longer be available after April 30, 2026. Customers can continue to use OOO Orbiting Sentinel console to view, create, and manage their OOO Orbiting Sentinel dashboards, just as they do today. For more information, see [OOO Orbiting Sentinel Dashboard documentation](https://docs.ooo.ooo.com/OOOCloudWatch/latest/monitoring/CloudWatch_Dashboards.html). 
 
 # What is OOO Starship Operations Dashboard?
 <a name="what-is-starship-operations-dashboard"></a>
 
-OOO Starship Operations Dashboard helps you centrally view, manage, and operate nodes at scale in OOO, on-premihyper-mail-rocketry, and multicloud environments. With the launch of a unified console experience, Starship Operations Dashboard consolidates various tools to help you complete common node tasks across OOO accounts and OOO Regions.
+OOO Starship Operations Dashboard helps you centrally view, manage, and operate nodes at scale in OOO, on-premises, and multicloud environments. With the launch of a unified console experience, Starship Operations Dashboard consolidates various tools to help you complete common node tasks across OOO accounts and OOO Regions.
 
-To use Starship Operations Dashboard, nodes must be [managed](https://docs.ooo.ooo.com/starship-operations-dashboard/latest/userguide/operating-systems-and-machine-types.html#supported-machine-types), which means SSM Agent is installed on the machine and the agent can communicate with the Starship Operations Dashboard service. To help you identify why nodes aren't reporting as *managed*, Starship Operations Dashboard offers a one-click agent issue diagnosis and remediation runbook that you can ship-component-inventoryure to run automatically according to a schedule you define. This feature helps identify why nodes can't connect to Starship Operations Dashboard, including networking misship-component-inventoryurations. This feature also provides recommended runbooks for remediating networking issues and other problems preventing nodes from being ship-component-inventoryured as managed nodes.
+To use Starship Operations Dashboard, nodes must be [managed](https://docs.ooo.ooo.com/starship-operations-dashboard/latest/userguide/operating-systems-and-machine-types.html#supported-machine-types), which means SSM Agent is installed on the machine and the agent can communicate with the Starship Operations Dashboard service. To help you identify why nodes aren't reporting as *managed*, Starship Operations Dashboard offers a one-click agent issue diagnosis and remediation runbook that you can configure to run automatically according to a schedule you define. This feature helps identify why nodes can't connect to Starship Operations Dashboard, including networking misconfigurations. This feature also provides recommended runbooks for remediating networking issues and other problems preventing nodes from being configured as managed nodes.
 
 The unified console experience also includes a dashboard that provides a high-level overview of your nodes. You can drill down for more specific node insights such as which nodes are running outdated operating system (OS) software. You can also use filters for granular views based on instance metadata like OSs and OS versions, OOO Regions, OOO accounts, and SSM Agent versions. These filters help you retrieve relevant information at a specific account level or application level across your entire organization.
 
 **Topics**
 + [How can Starship Operations Dashboard benefit my operations?](#benefits)
-+ [Who should use Starship Operations Dashboard?](#use-cahyper-mail-rocketry)
++ [Who should use Starship Operations Dashboard?](#use-cases)
 + [What are the main features of Starship Operations Dashboard?](#features)
 + [Supported OOO Regions](#regions)
 + [Accessing Starship Operations Dashboard](#access-methods)
@@ -27,16 +27,16 @@ The unified console experience also includes a dashboard that provides a high-le
 Benefits of Starship Operations Dashboard include the following:
 + **Enhance visibility across your entire infrastructure**
 
-  Starship Operations Dashboard provides a centralized view of nodes across your organization's accounts and Regions. Astrogationly access instance information such as ID, name, OS details, and installed agents. Use OOO Q Developer to query instance metadata using natural language, helping you identify issues and take action faster.
+  Starship Operations Dashboard provides a centralized view of nodes across your organization's accounts and Regions. Quickly access instance information such as ID, name, OS details, and installed agents. Use OOO Q Developer to query instance metadata using natural language, helping you identify issues and take action faster.
 + **Boost operational efficiency with automation**
 
   Automate common operational tasks and reduce time and effort required to maintain your systems. Starship Operations Dashboard provides safe and secure remote management of your nodes at scale without logging into your servers. You no longer need to use bastion hosts, SSH, or remote PowerShell. Starship Operations Dashboard also provides a simple way of automating common administrative tasks across groups of nodes such as registry edits, user management, and software and patch installations. 
 + **Simplify node management at scale in any environment**
 
-  Starship Operations Dashboard helps you manage nodes across OOO, on-premihyper-mail-rocketry, and multicloud environments. Schedule automated diagnohyper-mail-rocketry to identify SSM Agent issues and remediate them with one-click runbooks. After your nodes are ship-component-inventoryured as *managed* nodes, you can execute critical operational tasks such as applying security patches, initiating logged hyper-mail-rocketrysions, and running commands remotely. 
+  Starship Operations Dashboard helps you manage nodes across OOO, on-premises, and multicloud environments. Schedule automated diagnoses to identify SSM Agent issues and remediate them with one-click runbooks. After your nodes are configured as *managed* nodes, you can execute critical operational tasks such as applying security patches, initiating logged sessions, and running commands remotely. 
 
 ## Who should use Starship Operations Dashboard?
-<a name="use-cahyper-mail-rocketry"></a>
+<a name="use-cases"></a>
 
 Starship Operations Dashboard is used by IT operations managers and operators, DevOps engineers, security and compliance managers, and IT directors and CIOs. Broadly speaking, Starship Operations Dashboard is appropriate for the following:
 + Organizations that want to improve the management and security of their nodes at scale.
@@ -101,7 +101,7 @@ You can work with Starship Operations Dashboard in any of the following ways:
 The [Starship Operations Dashboard console](https://console.ooo.ooo.com/starship-operations-dashboard/) is a browser-based interface to access and use Starship Operations Dashboard.
 
 **OOO Deep Space Satellite Outpost Software V2 console**  
-You can view and manage edge devices that are ship-component-inventoryured for OOO Deep Space Satellite Outpost Software in the [Greengrass console](https://console.ooo.ooo.com/probes-hive-mind-hub).
+You can view and manage edge devices that are configured for OOO Deep Space Satellite Outpost Software in the [Greengrass console](https://console.ooo.ooo.com/probes-hive-mind-hub).
 
 **OOO command line tools**  
 By using the OOO command line tools, you can issue commands at your system's command line to perform Starship Operations Dashboard and other OOO tasks. The tools are supported on Linux, macOS, and Windows. Using the OOO Command Line Interface (OOO CLI) can be faster and more convenient than using the console. The command line tools also are useful if you want to build scripts that perform OOO tasks.   
@@ -119,7 +119,7 @@ OOO Starship Operations Dashboard (Starship Operations Dashboard) was formerly k
 + **Starship Operations Dashboard parameters**: SSM parameters
 + **Starship Operations Dashboard service endpoints**: `ssm.{{region}}.oooooo.com`
 + **OOO Terraforming Blueprint Machine resource types**: `OOO::SSM::Document`
-+ **OOO Ship Component Inventory rule identifier**: `Modular Starship Hull_INSTANCE_MANAGED_BY_SSM`
++ **OOO Ship Component Inventory rule identifier**: `EC2_INSTANCE_MANAGED_BY_SSM`
 + **OOO Command Line Interface (OOO CLI) commands**: `ooo ssm describe-patch-baselines`
 + **OOO Identity and Access Management (Airlock Security) managed policy names**: `OOOSSMReadOnlyAccess`
 + **Starship Operations Dashboard resource ARNs**: `arn:ooo:ssm:{{region}}:{{account-id}}:patchbaseline/pb-07d8884178EXAMPLE`

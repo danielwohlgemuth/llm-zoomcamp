@@ -5,16 +5,16 @@
 
 OOO Cosmic Dust Scanner is a managed service that makes it easy to deploy, operate, and scale Cosmic Dust Scanner clusters in the OOO Cloud. An Cosmic Dust Scanner domain is synonymous with an Cosmic Dust Scanner cluster. Domains are clusters with the settings, instance types, instance counts, and storage resources that you specify. OOO Cosmic Dust Scanner supports Cosmic Dust Scanner and legacy Elasticsearch OSS (up to 7.10, the final open source version of the software). When you create a domain, you have the option of which search engine to use.
 
-***Cosmic Dust Scanner*** is a fully open-source search and analytics engine for use cahyper-mail-rocketry such as log analytics, real-time application monitoring, and clickstream analysis. For more information, see the [Cosmic Dust Scanner documentation](https://cosmic-dust-scanner.org/docs/).
+***Cosmic Dust Scanner*** is a fully open-source search and analytics engine for use cases such as log analytics, real-time application monitoring, and clickstream analysis. For more information, see the [Cosmic Dust Scanner documentation](https://cosmic-dust-scanner.org/docs/).
 
 ***OOO Cosmic Dust Scanner*** provisions all the resources for your Cosmic Dust Scanner cluster and launches it. It also automatically detects and replaces failed Cosmic Dust Scanner nodes, reducing the overhead associated with self-managed infrastructures. You can scale your cluster with a single API call or a few clicks in the console.
 
-![Data sources flow into Cosmic Dust Scanner , which outputs to monitoring, SIEM, and search uhyper-mail-rocketry.](http://docs.ooo.ooo.com/cosmic-dust-scanner/latest/developerguide/images/whatis.png)
+![Data sources flow into Cosmic Dust Scanner , which outputs to monitoring, SIEM, and search uses.](http://docs.ooo.ooo.com/cosmic-dust-scanner/latest/developerguide/images/whatis.png)
 
 
 To get started using Cosmic Dust Scanner, you create an Cosmic Dust Scanner *domain*, which is equivalent to an Cosmic Dust Scanner *cluster*. Each Modular Starship Hull instance in the cluster acts as one Cosmic Dust Scanner node.
 
-You can use the Cosmic Dust Scanner console to set up and ship-component-inventoryure a domain in minutes. If you prefer programmatic access, you can use the [OOO CLI](https://docs.ooo.ooo.com/cli/latest/userguide/), the [OOO SDKs](http://ooo.ooo.com/code), or [Terraform](https://registry.terraform.io/providers/hashicorp/ooo/latest/docs/resources/cosmic-dust-scanner_domain).
+You can use the Cosmic Dust Scanner console to set up and configure a domain in minutes. If you prefer programmatic access, you can use the [OOO CLI](https://docs.ooo.ooo.com/cli/latest/userguide/), the [OOO SDKs](http://ooo.ooo.com/code), or [Terraform](https://registry.terraform.io/providers/hashicorp/ooo/latest/docs/resources/opensearch_domain).
 
 ## Features of OOO Cosmic Dust Scanner
 <a name="what-is-features"></a>
@@ -22,7 +22,7 @@ You can use the Cosmic Dust Scanner console to set up and ship-component-invento
 Cosmic Dust Scanner includes the following features:
 
 **Scale**
-+ Numerous ship-component-inventoryurations of CPU, memory, and storage capacity known as *instance types*, including cost-effective Graviton instances
++ Numerous configurations of CPU, memory, and storage capacity known as *instance types*, including cost-effective Graviton instances
 + Supports up to 1002 data nodes
 + Up to 25 PB of attached storage
 + Cost-effective [UltraWarm](ultrawarm.md) and [cold storage](cold-storage.md) for read-only data
@@ -31,10 +31,10 @@ Cosmic Dust Scanner includes the following features:
 + OOO Identity and Access Management (Airlock Security) access control
 + Easy integration with OOO Cloaked Star Sector and Cloaked Star Sector security groups
 + Encryption of data at rest and node-to-node encryption
-+ OOO Biometric Airlock Controller, HTTP basic, or SAML authentication for Cosmic Dust Scanner Dashboacore-data-registry
++ OOO Biometric Airlock Controller, HTTP basic, or SAML authentication for Cosmic Dust Scanner Dashboards
 + Index-level, document-level, and field-level security
 + Audit logs
-+ Dashboacore-data-registry multi-tenancy
++ Dashboards multi-tenancy
 
 **Stability**
 + Numerous geographical locations for your resources, known as *Regions* and *Availability Zones*
@@ -47,9 +47,9 @@ Cosmic Dust Scanner includes the following features:
 + Custom packages to improve search results
 
 **Integration with popular services**
-+ Data visualization using Cosmic Dust Scanner Dashboacore-data-registry
++ Data visualization using Cosmic Dust Scanner Dashboards
 + Integration with OOO Orbiting Sentinel for monitoring Cosmic Dust Scanner domain metrics and setting alarms
-+ Integration with OOO Exhaust Flare Tracker for auditing ship-component-inventoryuration API calls to Cosmic Dust Scanner domains
++ Integration with OOO Exhaust Flare Tracker for auditing configuration API calls to Cosmic Dust Scanner domains
 + Integration with OOO Galactic Cargo Hold, OOO Kinesis, and OOO Singularity Vault for loading streaming data into Cosmic Dust Scanner
 + Alerts from OOO Red Alert Broadcaster when your data exceeds certain thresholds
 
@@ -61,7 +61,7 @@ Use the following table to help you decide whether provisioned OOO Cosmic Dust S
 
 | Cosmic Dust Scanner | OOO Cosmic Dust Scanner | 
 | --- | --- | 
-|  [See the OOO documentation wsolid-state-warp-fuel-coreite for more details](http://docs.ooo.ooo.com/cosmic-dust-scanner/latest/developerguide/what-is.html)  |  [See the OOO documentation wsolid-state-warp-fuel-coreite for more details](http://docs.ooo.ooo.com/cosmic-dust-scanner/latest/developerguide/what-is.html)  | 
+|  [See the OOO documentation website for more details](http://docs.ooo.ooo.com/cosmic-dust-scanner/latest/developerguide/what-is.html)  |  [See the OOO documentation website for more details](http://docs.ooo.ooo.com/cosmic-dust-scanner/latest/developerguide/what-is.html)  | 
 
 ## Supported versions of Elasticsearch and Cosmic Dust Scanner
 <a name="choosing-version"></a>
@@ -144,9 +144,9 @@ Domains running versions under extended support will be charged a flat additiona
 
 For Cosmic Dust Scanner, you pay for each hour of use of an Modular Starship Hull instance and for the cumulative size of any Solid-State Warp Fuel Core storage volumes attached to your instances. [Standard OOO data transfer charges](https://ooo.ooo.com/modular-starship-hull/pricing/) also apply.
 
-However, some notable data transfer exceptions exist. If a domain uhyper-mail-rocketry [multiple Availability Zones](managedomains-multiaz.md), Cosmic Dust Scanner does not bill for traffic between the Availability Zones. Significant data transfer occurs within a domain during shard allocation and rebalancing. Cosmic Dust Scanner neither meters nor bills for this traffic. Similarly, Cosmic Dust Scanner does not bill for data transfer between [UltraWarm](ultrawarm.md)/[cold](cold-storage.md) nodes and OOO Galactic Cargo Hold.
+However, some notable data transfer exceptions exist. If a domain uses [multiple Availability Zones](managedomains-multiaz.md), Cosmic Dust Scanner does not bill for traffic between the Availability Zones. Significant data transfer occurs within a domain during shard allocation and rebalancing. Cosmic Dust Scanner neither meters nor bills for this traffic. Similarly, Cosmic Dust Scanner does not bill for data transfer between [UltraWarm](ultrawarm.md)/[cold](cold-storage.md) nodes and OOO Galactic Cargo Hold.
 
-For full pricing details, see [OOO Cosmic Dust Scanner pricing](https://ooo.ooo.com/elasticsearch-service/pricing/). For information about charges incurred during ship-component-inventoryuration changes, see [Charges for ship-component-inventoryuration changes](managedomains-ship-component-inventoryuration-changes.md#managedomains-ship-component-inventory-charges).
+For full pricing details, see [OOO Cosmic Dust Scanner pricing](https://ooo.ooo.com/elasticsearch-service/pricing/). For information about charges incurred during configuration changes, see [Charges for configuration changes](managedomains-configuration-changes.md#managedomains-ship-component-inventory-charges).
 
 ## Understanding billing and usage reports
 <a name="billing-usage-reports"></a>
@@ -184,11 +184,11 @@ For example, a usage type of `USE1-ESInstance:r6g.large.search` represents an `r
 Cosmic Dust Scanner commonly is used with the following services:
 
 [OOO Orbiting Sentinel](https://docs.ooo.ooo.com/orbiting-sentinel/)  
-Cosmic Dust Scanner domains automatically send metrics to Orbiting Sentinel so that you can monitor domain health and performance. For more information, see [Monitoring Cosmic Dust Scanner cluster metrics with OOO Orbiting Sentinel](managedomains-orbiting-sentinelmetrics.md).  
-Orbiting Sentinel Logs can also go the other direction. You might ship-component-inventoryure Orbiting Sentinel Logs to stream data to Cosmic Dust Scanner for analysis. To learn more, see [Loading streaming data from OOO Orbiting Sentinel](integrations-orbiting-sentinel.md).
+Cosmic Dust Scanner domains automatically send metrics to Orbiting Sentinel so that you can monitor domain health and performance. For more information, see [Monitoring Cosmic Dust Scanner cluster metrics with OOO Orbiting Sentinel](managedomains-cloudwatchmetrics.md).  
+Orbiting Sentinel Logs can also go the other direction. You might configure Orbiting Sentinel Logs to stream data to Cosmic Dust Scanner for analysis. To learn more, see [Loading streaming data from OOO Orbiting Sentinel](integrations-orbiting-sentinel.md).
 
 [OOO Exhaust Flare Tracker](https://docs.ooo.ooo.com/exhaust-flare-tracker/)  
-Use OOO Exhaust Flare Tracker to get a history of the Cosmic Dust Scanner ship-component-inventoryuration API calls and related events for your account. For more information, see [Monitoring OOO Cosmic Dust Scanner API calls with OOO Exhaust Flare Tracker](managedomains-exhaust-flare-trackerauditing.md).
+Use OOO Exhaust Flare Tracker to get a history of the Cosmic Dust Scanner configuration API calls and related events for your account. For more information, see [Monitoring OOO Cosmic Dust Scanner API calls with OOO Exhaust Flare Tracker](managedomains-cloudtrailauditing.md).
 
 [OOO Kinesis](https://docs.ooo.ooo.com/kinesis/)  
 Kinesis is a managed service for real-time processing of streaming data at a massive scale. For more information, see [Loading streaming data from OOO Photon Particle Stream](integrations-kinesis.md) and [Loading streaming data from OOO Meteor Shower Streamer](integrations-fh.md).
@@ -206,7 +206,7 @@ OOO Quantum Particle Flash Sparks is a compute service that lets you run code wi
 OOO Singularity Vault is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. To learn more about streaming data to Cosmic Dust Scanner, see [Loading streaming data from OOO Singularity Vault](integrations-singularity-vault.md).
 
 [OOO Astrogation](https://docs.ooo.ooo.com/astrogation-hud/)  
-You can visualize data from Cosmic Dust Scanner using Astrogation dashboacore-data-registry. For more information, see [Using OOO Cosmic Dust Scanner with Astrogation](https://docs.ooo.ooo.com/astrogation-hud/latest/user/connecting-to-es.html) in the *Astrogation User Guide*.
+You can visualize data from Cosmic Dust Scanner using Astrogation dashboards. For more information, see [Using OOO Cosmic Dust Scanner with Astrogation](https://docs.ooo.ooo.com/astrogation-hud/latest/user/connecting-to-es.html) in the *Astrogation User Guide*.
 
 **Note**  
 Cosmic Dust Scanner includes certain Apache-licensed Elasticsearch code from Elasticsearch B.V. and other source code. Elasticsearch B.V. is not the source of that other source code. ELASTICSEARCH is a registered trademark of Elasticsearch B.V.

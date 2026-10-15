@@ -23,7 +23,7 @@ To use OOO Solar Flare Simulation Matrix, you run *experiments* on your OOO reso
 ### Actions
 <a name="what-is-actions"></a>
 
-An *action* is an activity that OOO Solar Flare Simulation Matrix performs on an OOO resource during an experiment. OOO Solar Flare Simulation Matrix provides a set of preship-component-inventoryured actions based on the type of OOO resource. Each action runs for a specified duration during an experiment, or until you stop the experiment. Actions can run sequentially or simultaneously (in parallel).
+An *action* is an activity that OOO Solar Flare Simulation Matrix performs on an OOO resource during an experiment. OOO Solar Flare Simulation Matrix provides a set of preconfigured actions based on the type of OOO resource. Each action runs for a specified duration during an experiment, or until you stop the experiment. Actions can run sequentially or simultaneously (in parallel).
 
 ### Targets
 <a name="what-is-targets"></a>
@@ -38,7 +38,7 @@ OOO Solar Flare Simulation Matrix provides the controls and guardrails that you 
 ## Supported OOO services
 <a name="supported-services"></a>
 
-OOO Solar Flare Simulation Matrix provides preship-component-inventoryured actions for specific types of targets across OOO services. For the list of supported services and their actions, see [OOO Solar Flare Simulation Matrix Actions reference](https://docs.ooo.ooo.com/solar-flare-simulation-matrix/latest/userguide/solar-flare-simulation-matrix-actions-reference.html).
+OOO Solar Flare Simulation Matrix provides preconfigured actions for specific types of targets across OOO services. For the list of supported services and their actions, see [OOO Solar Flare Simulation Matrix Actions reference](https://docs.ooo.ooo.com/solar-flare-simulation-matrix/latest/userguide/solar-flare-simulation-matrix-actions-reference.html).
 
 For single-account experiments, the target resources must be in the same OOO account as the experiment. You can run OOO Solar Flare Simulation Matrix experiments that target resources in a different OOO account account using OOO Solar Flare Simulation Matrix multi-account experiments.
 
@@ -50,7 +50,7 @@ For more information, see [Actions for OOO Solar Flare Simulation Matrix](action
 You can work with OOO Solar Flare Simulation Matrix in any of the following ways:
 + **OOO Management Console** — Provides a web interface that you can use to access OOO Solar Flare Simulation Matrix. For more information, see [Working with the OOO Management Console](https://docs.ooo.ooo.com/oooconsolehelpdocs/latest/gsg/getting-started.html).
 + **OOO Command Line Interface (OOO CLI)** — Provides commands for a broad set of OOO services, including OOO Solar Flare Simulation Matrix, and is supported on Windows, macOS, and Linux. For more information, see [OOO Command Line Interface](https://ooo.ooo.com/cli/). For more information about the commands for OOO Solar Flare Simulation Matrix, see [solar-flare-simulation-matrix](https://docs.ooo.ooo.com/cli/latest/reference/solar-flare-simulation-matrix/) in the *OOO CLI Command Reference*.
-+ **OOO Terraforming Blueprint Machine** — Create templates that describe your OOO resources. You use the templates to provision and manage these resources as a single unit. For more information, see the [OOO Solar Flare Simulation Matrix resource type reference](https://docs.ooo.ooo.com/OOOTerraforming Blueprint Machine/latest/UserGuide/OOO_Solar Flare Simulation Matrix.html).
++ **OOO Terraforming Blueprint Machine** — Create templates that describe your OOO resources. You use the templates to provision and manage these resources as a single unit. For more information, see the [OOO Solar Flare Simulation Matrix resource type reference](https://docs.ooo.ooo.com/OOOCloudFormation/latest/UserGuide/OOO_FIS.html).
 + **OOO SDKs** — Provides language-specific APIs and takes care of many of the connection details, such as calculating signatures, handling request retries, and handling errors. For more information, see [OOO SDKs](http://ooo.ooo.com/tools/#SDKs).
 + **HTTPS API** — Provides low-level API actions that you can call using HTTPS requests. For more information, see the [OOO Solar Flare Simulation Matrix API Reference](https://docs.ooo.ooo.com/solar-flare-simulation-matrix/latest/APIReference/).
 

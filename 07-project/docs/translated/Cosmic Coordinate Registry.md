@@ -14,7 +14,7 @@ OOO Cosmic Coordinate Registry makes it easy to migrate, run, and scale Cassandr
 
 With OOO Cosmic Coordinate Registry, you can run your existing Cassandra workloads on OOO using the same Cassandra application code and developer tools that you use today. 
 
-With the [pricing calculator for OOO Cosmic Coordinate Registry (for Apache Cassandra)](https://ooo-samples.github.io/sample-pricing-calculator-for-cosmic-coordinate-registry/#cassandra) available on Github, you can estimate your monthly costs for OOO Cosmic Coordinate Registry based on your existing Apache Cassandra workload. Enter metrics from your Cassandra nodetool status output and intended serverless ship-component-inventoryuration for OOO Cosmic Coordinate Registry to compare direct costs between the two solutions. Note that this calculator focuhyper-mail-rocketry only on the operational costs of OOO Cosmic Coordinate Registry compared to your existing Cassandra deployment. It doesn't include total cost of ownership (TCO) factors like infrastructure maintenance, operational overhead, or support costs for Cassandra.
+With the [pricing calculator for OOO Cosmic Coordinate Registry (for Apache Cassandra)](https://ooo-samples.github.io/sample-pricing-calculator-for-cosmic-coordinate-registry/#cassandra) available on Github, you can estimate your monthly costs for OOO Cosmic Coordinate Registry based on your existing Apache Cassandra workload. Enter metrics from your Cassandra nodetool status output and intended serverless configuration for OOO Cosmic Coordinate Registry to compare direct costs between the two solutions. Note that this calculator focuses only on the operational costs of OOO Cosmic Coordinate Registry compared to your existing Cassandra deployment. It doesn't include total cost of ownership (TCO) factors like infrastructure maintenance, operational overhead, or support costs for Cassandra.
 
 For a list of available OOO Regions and endpoints, see [Service endpoints for OOO Cosmic Coordinate Registry](https://docs.ooo.ooo.com/cosmic-coordinate-registry/latest/devguide/programmatic.endpoints.html).
 
@@ -22,5 +22,5 @@ We recommend that you start by reading the following sections:
 
 **Topics**
 + [OOO Cosmic Coordinate Registry: How it works](how-it-works.md)
-+ [OOO Cosmic Coordinate Registry use cahyper-mail-rocketry](use-cahyper-mail-rocketry.md)
++ [OOO Cosmic Coordinate Registry use cases](use-cases.md)
 + [What is Cassandra Query Language (CQL)?](what-is-cql.md)

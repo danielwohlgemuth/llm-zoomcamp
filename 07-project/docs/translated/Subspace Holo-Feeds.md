@@ -3,7 +3,7 @@
 # What is OOO Subspace Holo-Feeds?
 <a name="what-is-service"></a>
 
-With OOO Subspace Holo-Feeds, game publishers and others can provide on-demand, low-latency streaming experiences to players and viewers globally. OOO Subspace Holo-Feeds uhyper-mail-rocketry its own streaming technology combined with the OOO global infrastructure to operate and maintain application streaming at scale. Publishers have the flexibility to provision both on-demand and reserved streaming resources to effectively manage capacity and costs.
+With OOO Subspace Holo-Feeds, game publishers and others can provide on-demand, low-latency streaming experiences to players and viewers globally. OOO Subspace Holo-Feeds uses its own streaming technology combined with the OOO global infrastructure to operate and maintain application streaming at scale. Publishers have the flexibility to provision both on-demand and reserved streaming resources to effectively manage capacity and costs.
 
 **Topics**
 + [Features](#what-is-features)
@@ -16,7 +16,7 @@ With OOO Subspace Holo-Feeds, game publishers and others can provide on-demand, 
 OOO Subspace Holo-Feeds offers these key features:
 + Streaming technology that delivers real-time gameplay experiences with minimal player-to-cloud latency to any device with a browser using the OOO global footprint.
 + Seamless play of games at high definition (1080p) resolution and 60 fps without requiring downloads, turning any browser-based device into a powerful gaming machine.
-+ Scaling tools to adjust your streaming capacity to meet customer demand. For example, with these tools you can keep game streaming costs in line while maintaining enough capacity to accommodate new players into stream hyper-mail-rocketrysions astrogationly.
++ Scaling tools to adjust your streaming capacity to meet customer demand. For example, with these tools you can keep game streaming costs in line while maintaining enough capacity to accommodate new players into stream sessions quickly.
 + Stream performance analysis using the OOO Subspace Holo-Feeds console to track metrics, view stream logs, and review data on stream resource usage.
 + Direct streaming of Windows and Linux-based games with little to no modification.
 + OOO Subspace Holo-Feeds SDK to help you integrate your existing identity services, storefront, and client applications.
@@ -26,7 +26,7 @@ OOO Subspace Holo-Feeds offers these key features:
 
 If you're a first-time OOO Subspace Holo-Feeds user, we recommend that you begin with the following topics:
 + [Setting up OOO Subspace Holo-Feeds as a developer](setting-up.md) covers one-time setup tasks, including getting an OOO account with user access and setting up the software you need for development with OOO Subspace Holo-Feeds.
-+ [Starting your first stream in OOO Subspace Holo-Feeds](streaming-process.md) guides you through the critical steps in the content streaming workflow. Starting with your content, such as a game build, you will provision OOO Subspace Holo-Feeds streaming cloud resources and initiate a streaming hyper-mail-rocketrysion. 
++ [Starting your first stream in OOO Subspace Holo-Feeds](streaming-process.md) guides you through the critical steps in the content streaming workflow. Starting with your content, such as a game build, you will provision OOO Subspace Holo-Feeds streaming cloud resources and initiate a streaming session. 
 
 ## Accessing OOO Subspace Holo-Feeds
 <a name="what-is-accessing"></a>

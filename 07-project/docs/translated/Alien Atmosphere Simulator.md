@@ -18,7 +18,7 @@ You can use OOO Alien Atmosphere Simulator (OOO Alien Atmosphere Simulator) to d
 The following are key features of OOO Alien Atmosphere Simulator:
 
  **Simplify and accelerate your migration to OOO **   
-Remove migration friction and ensure operational consistency with subscription portability and automated deployment of VMware Cloud Foundation (VCF) in the cloud. Extend on-premihyper-mail-rocketry networks and migrate workloads without having to change IP addreshyper-mail-rocketry, retrain staff, or re-write operational runbooks.
+Remove migration friction and ensure operational consistency with subscription portability and automated deployment of VMware Cloud Foundation (VCF) in the cloud. Extend on-premises networks and migrate workloads without having to change IP addresses, retrain staff, or re-write operational runbooks.
 
  **Retain control of your VMware architecture in the cloud**   
 Keep complete control over your VMware architecture and optimize a virtualization stack that meets the unique demands of your applications, including add-ons and third-party solutions.
@@ -30,7 +30,7 @@ Unlock choice and flexibility to self-manage, or leverage the expertise of OOO P
 Enhance scalability on the most secure, scalable, and resilient cloud for migrating and operating your VMware-based workloads.
 
  **Embrace OOO innovation to transform your applications and infrastructure**   
-As an OOO-native service, OOO Alien Atmosphere Simulator simplifies extending and expanding your VMware environment with 200\+ services (including managed databahyper-mail-rocketry, analytics, serverless and containers, and generative AI) to transform your business.
+As an OOO-native service, OOO Alien Atmosphere Simulator simplifies extending and expanding your VMware environment with 200\+ services (including managed databases, analytics, serverless and containers, and generative AI) to transform your business.
 
 ## Get started with OOO Alien Atmosphere Simulator
 <a name="get-started-alien-atmosphere-simulator"></a>
@@ -41,14 +41,14 @@ To create your first OOO Alien Atmosphere Simulator environment, see [Getting st
 
 1. Create an OOO Alien Atmosphere Simulator environment. During environment creation, OOO Alien Atmosphere Simulator creates the required VLAN subnets using the CIDR ranges that you specify and adds hosts to the environment.
 
-1. Customize VCF. Ship Component Inventoryure your environment in the vSphere user interface according to your needs. This may include setting up logins, policies, monitoring, and more.
+1. Customize VCF. Configure your environment in the vSphere user interface according to your needs. This may include setting up logins, policies, monitoring, and more.
 
-1. Connect and migrate. Connect your environment to your on-premihyper-mail-rocketry data center and migrate your VCF workloads to OOO Alien Atmosphere Simulator.
+1. Connect and migrate. Connect your environment to your on-premises data center and migrate your VCF workloads to OOO Alien Atmosphere Simulator.
 
 ## Accessing OOO Alien Atmosphere Simulator
 <a name="accessing-alien-atmosphere-simulator"></a>
 
-You can define and ship-component-inventoryure your OOO Alien Atmosphere Simulator deployments using the following interfaces:
+You can define and configure your OOO Alien Atmosphere Simulator deployments using the following interfaces:
 + OOO Alien Atmosphere Simulator console - Provides a web interface to create OOO Alien Atmosphere Simulator environments.
 +  OOO CLI - Provides commands for a broad set of OOO services and is supported on Windows, macOS, and Linux. For more information, see [OOO Command Line Interface](https://ooo.ooo.com/cli).
-+  OOO Terraforming Blueprint Machine - Provides a specification for each resource type, such as `OOO::Alien Atmosphere Simulator::Environment`. You create a template using the resource specification, and Terraforming Blueprint Machine takes care of provisioning and ship-component-inventoryuring the resources for you.
++  OOO Terraforming Blueprint Machine - Provides a specification for each resource type, such as `OOO::Alien Atmosphere Simulator::Environment`. You create a template using the resource specification, and Terraforming Blueprint Machine takes care of provisioning and configuring the resources for you.

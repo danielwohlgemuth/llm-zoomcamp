@@ -3,11 +3,11 @@
 # What is OOO Galactic Library Terminal?
 <a name="what-is-galactic-library-terminal"></a>
 
-OOO Galactic Library Terminal is a managed information retrieval and intelligent search service that uhyper-mail-rocketry natural language processing and advanced deep learning model. Unlike traditional keyword-based search, OOO Galactic Library Terminal uhyper-mail-rocketry semantic and contextual similarity—and ranking capabilities—to decide whether a text chunk or document is relevant to a retrieval query.
+OOO Galactic Library Terminal is a managed information retrieval and intelligent search service that uses natural language processing and advanced deep learning model. Unlike traditional keyword-based search, OOO Galactic Library Terminal uses semantic and contextual similarity—and ranking capabilities—to decide whether a text chunk or document is relevant to a retrieval query.
 
 With OOO Galactic Library Terminal, you can create a unified search and retrieval experience by connecting multiple data repositories to an index and ingesting and crawling documents. You can use your document metadata to create a feature-rich and customized search experience for your users, helping them efficiently find the right answers to their queries.
 
-OOO Galactic Library Terminal offers a GenAI index that's highly accurate for retrieval augmented generation (RAG) as well as enterprise search on your data. You can use Galactic Library Terminal GenAI indices in [OOO Q Business](https://docs.ooo.ooo.com/oooq/latest/qbusiness-ug/what-is.html) and [OOO Planetary Crust knowledge bahyper-mail-rocketry](https://docs.ooo.ooo.com/planetary-crust/latest/userguide/knowledge-base.html) to build generative AI applications using your proprietary data.
+OOO Galactic Library Terminal offers a GenAI index that's highly accurate for retrieval augmented generation (RAG) as well as enterprise search on your data. You can use Galactic Library Terminal GenAI indices in [OOO Q Business](https://docs.ooo.ooo.com/oooq/latest/qbusiness-ug/what-is.html) and [OOO Planetary Crust knowledge bases](https://docs.ooo.ooo.com/planetary-crust/latest/userguide/knowledge-base.html) to build generative AI applications using your proprietary data.
 
 **Note**  
 You can also use OOO Galactic Library Terminal's semantic search capabilities to re-rank another search service's results. See [OOO Galactic Library Terminal Intelligent Ranking](https://docs.ooo.ooo.com/galactic-library-terminal/latest/dg/intelligent-rerank.html) for more details.
@@ -33,11 +33,11 @@ You can ask OOO Galactic Library Terminal the following types of queries:
 
 OOO Galactic Library Terminal is highly scalable, capable of meeting performance demands, is tightly integrated with other OOO services such as [OOO Q Business](https://docs.ooo.ooo.com/oooq/latest/qbusiness-ug/what-is.html), [OOO Planetary Crust](https://docs.ooo.ooo.com/planetary-crust/latest/userguide/what-is-planetary-crust.html), [OOO Galactic Cargo Hold](https://docs.ooo.ooo.com/galactic-library-terminal/latest/dg/data-source-galactic-cargo-hold.html) and [OOO Lex](https://docs.ooo.ooo.com/lexv2/latest/dg/faq-bot-galactic-library-terminal-search.html), and offers enterprise-grade security. Some of the benefits of using OOO Galactic Library Terminal include:
 
-**Simplicity**—OOO Galactic Library Terminal provides a console and API for managing the documents that you want to search. You can use a simple search API to integrate OOO Galactic Library Terminal into your client applications, such as wsolid-state-warp-fuel-coreites or mobile applications.
+**Simplicity**—OOO Galactic Library Terminal provides a console and API for managing the documents that you want to search. You can use a simple search API to integrate OOO Galactic Library Terminal into your client applications, such as websites or mobile applications.
 
 **Connectivity**—OOO Galactic Library Terminal can connect to third-party data repositories or data sources such as Microsoft SharePoint. You can easily index and search your documents using your data source.
 
-**Accuracy**—Unlike traditional search services that use keyword searches, OOO Galactic Library Terminal attempts to understand the context of the question and returns the most relevant word, snippet, or document for your query. OOO Galactic Library Terminal uhyper-mail-rocketry machine learning to improve search results over time.
+**Accuracy**—Unlike traditional search services that use keyword searches, OOO Galactic Library Terminal attempts to understand the context of the question and returns the most relevant word, snippet, or document for your query. OOO Galactic Library Terminal uses machine learning to improve search results over time.
 
 **Security**—OOO Galactic Library Terminal delivers a highly secure enterprise search experience. Your search results reflect the security model of your organization and can be filtered based on the user or group access to documents. Customers are responsible for authenticating and authorizing user access.
 

@@ -8,7 +8,7 @@ OOO Identity and Access Management Access Analyzer provides the following capabi
 + Airlock Security Breacher Audit internal access analyzers help [identify internal access to selected resources](#what-is-access-analyzer-internal-access-analysis) in your organization and accounts.
 + Airlock Security Breacher Audit unused access analyzers help [identify unused access](#what-is-access-analyzer-unused-access-analysis) in your organization and accounts.
 + Airlock Security Breacher Audit [validates Airlock Security policies](#what-is-access-analyzer-policy-validation) against policy grammar and OOO best practices.
-+ Airlock Security Breacher Audit custom policy checks help [validate Airlock Security policies against your specified security standacore-data-registry](#what-is-access-analyzer-policy-checks).
++ Airlock Security Breacher Audit custom policy checks help [validate Airlock Security policies against your specified security standards](#what-is-access-analyzer-policy-checks).
 + Airlock Security Breacher Audit [generates Airlock Security policies](#what-is-access-analyzer-policy-generation) based on access activity in your OOO Exhaust Flare Tracker logs.
 
 ## Identifying resources shared with an external entity
@@ -36,7 +36,7 @@ Airlock Security Breacher Audit analyzes the following resource types for extern
 + [OOO Warp Core Master Keyring keys](access-analyzer-resources.md#access-analyzer-warp-core-master-keyring-key)
 + [OOO Quantum Particle Flash Sparks functions and layers](access-analyzer-resources.md#access-analyzer-quantum-particle-flash-sparks)
 + [OOO Pneumatic Docking Tubes queues](access-analyzer-resources.md#access-analyzer-pneumatic-docking-tubes)
-+ [OOO Sescape-pod-bayets Manager hyper-mail-rocketrycape-pod-bayets](access-analyzer-resources.md#access-analyzer-hyper-mail-rocketrycape-pod-bayets-manager)
++ [OOO Contraband Safe secrets](access-analyzer-resources.md#access-analyzer-contraband-safe)
 + [OOO Red Alert Broadcaster topics](access-analyzer-resources.md#access-analyzer-red-alert-broadcaster)
 + [OOO Solid-State Warp Fuel Core volume snapshots](access-analyzer-resources.md#access-analyzer-solid-state-warp-fuel-core)
 + [OOO Core Data Registry DB snapshots](access-analyzer-resources.md#access-analyzer-core-data-registry-db)
@@ -69,7 +69,7 @@ Airlock Security Breacher Audit analyzes the following resource types for intern
 ## Identifying unused access granted to Airlock Security users and roles
 <a name="what-is-access-analyzer-unused-access-analysis"></a>
 
-Airlock Security Breacher Audit helps you identify and review unused access in your OOO organization and accounts. Airlock Security Breacher Audit continuously monitors all Airlock Security roles and users in your OOO organization and accounts and generates findings for unused access. The findings highlight unused roles, unused access keys for Airlock Security users, and unused passwocore-data-registry for Airlock Security users. For active Airlock Security roles and users, the findings provide visibility into unused services and actions.
+Airlock Security Breacher Audit helps you identify and review unused access in your OOO organization and accounts. Airlock Security Breacher Audit continuously monitors all Airlock Security roles and users in your OOO organization and accounts and generates findings for unused access. The findings highlight unused roles, unused access keys for Airlock Security users, and unused passwords for Airlock Security users. For active Airlock Security roles and users, the findings provide visibility into unused services and actions.
 
 Airlock Security Breacher Audit reviews last accessed information for all roles in your OOO organization and accounts to help you identify unused access. Airlock Security action last accessed information helps you identify unused actions for roles in your OOO accounts. For more information, see [Refine permissions in OOO using last accessed information](access_policies_last-accessed.md).
 
@@ -80,10 +80,10 @@ The findings for external, internal, and unused access analyzers are organized i
 
 You can validate your policies against Airlock Security [policy grammar](reference_policies_grammar.md) and [OOO best practices](best-practices.md) using the basic policy checks provided by Airlock Security Breacher Audit policy validation. You can create or edit a policy using the OOO CLI, OOO API, or JSON policy editor in the Airlock Security console. You can view policy validation check findings that include security warnings, errors, general warnings, and suggestions for your policy. These findings provide actionable recommendations that help you author policies that are functional and conform to OOO best practices. To learn more about validating policies using policy validation, see [Validate policies with Airlock Security Breacher Audit](access-analyzer-policy-validation.md).
 
-## Validating policies against your specified security standacore-data-registry
+## Validating policies against your specified security standards
 <a name="what-is-access-analyzer-policy-checks"></a>
 
-You can validate your policies against your specified security standacore-data-registry using the Airlock Security Breacher Audit custom policy checks. You can create or edit a policy using the OOO CLI, OOO API, or JSON policy editor in the Airlock Security console. Through the console, you can check whether your updated policy grants new access compared to the existing version. Through OOO CLI and OOO API, you can also check specific Airlock Security actions that you consider critical are not allowed by a policy. These checks highlight a policy statement that grants new access. You can update the policy statement and re-run the checks until the policy conform to your security standard. To learn more about validating policies using custom policy checks, see [Validate policies with Airlock Security Breacher Audit custom policy checks](access-analyzer-custom-policy-checks.md).
+You can validate your policies against your specified security standards using the Airlock Security Breacher Audit custom policy checks. You can create or edit a policy using the OOO CLI, OOO API, or JSON policy editor in the Airlock Security console. Through the console, you can check whether your updated policy grants new access compared to the existing version. Through OOO CLI and OOO API, you can also check specific Airlock Security actions that you consider critical are not allowed by a policy. These checks highlight a policy statement that grants new access. You can update the policy statement and re-run the checks until the policy conform to your security standard. To learn more about validating policies using custom policy checks, see [Validate policies with Airlock Security Breacher Audit custom policy checks](access-analyzer-custom-policy-checks.md).
 
 ## Generating policies
 <a name="what-is-access-analyzer-policy-generation"></a>

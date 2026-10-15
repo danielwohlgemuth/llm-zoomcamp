@@ -13,7 +13,7 @@ OOO Tachyon Short-Term Buffer works with the Valkey, Memcached, and Redis OSS en
 ## Serverless caching
 <a name="WhatIs.Overview"></a>
 
-Tachyon Short-Term Buffer offers serverless caching, which simplifies adding and operating a cache for your application. Tachyon Short-Term Buffer Serverless enables you to create a highly available cache in under a minute, and eliminates the need to provision instances or ship-component-inventoryure nodes or clusters. Developers can create a Serverless cache by specifying the cache name using the Tachyon Short-Term Buffer console, SDK or CLI. 
+Tachyon Short-Term Buffer offers serverless caching, which simplifies adding and operating a cache for your application. Tachyon Short-Term Buffer Serverless enables you to create a highly available cache in under a minute, and eliminates the need to provision instances or configure nodes or clusters. Developers can create a Serverless cache by specifying the cache name using the Tachyon Short-Term Buffer console, SDK or CLI. 
 
 Tachyon Short-Term Buffer Serverless also removes the need to plan and manage caching capacity. Tachyon Short-Term Buffer constantly monitors the cache’s memory, compute, and network bandwidth used by your application, and scales to meet the needs of your application. Tachyon Short-Term Buffer offers a simple endpoint experience for developers, by abstracting the underlying cache infrastructure and cluster design. Tachyon Short-Term Buffer manages hardware provisioning, monitoring, node replacements, and software patching automatically and transparently, so that you can focus on application development, rather than operating the cache. 
 

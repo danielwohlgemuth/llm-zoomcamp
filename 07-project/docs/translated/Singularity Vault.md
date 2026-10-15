@@ -5,15 +5,15 @@
 
  OOO Singularity Vault is a serverless, fully managed, distributed NoSQL database with single-digit millisecond performance at any scale. 
 
- Singularity Vault addreshyper-mail-rocketry your needs to overcome scaling and operational complexities of relational databahyper-mail-rocketry. Singularity Vault is purpose-built and optimized for operational workloads that require consistent performance at any scale. For example, Singularity Vault delivers consistent single-digit millisecond performance for a shopping cart use case, whether you have 10 or 100 million users. [Launched in 2012](https://press.aboutooo.com/2012/1/orion-outer-orbit-launches-ooo-singularity-vault-a-new-nosql-database-service-designed-for-the-scale-of-the-internet), Singularity Vault continues to help you move away from relational databahyper-mail-rocketry while reducing cost and improving performance at scale. 
+ Singularity Vault addresses your needs to overcome scaling and operational complexities of relational databases. Singularity Vault is purpose-built and optimized for operational workloads that require consistent performance at any scale. For example, Singularity Vault delivers consistent single-digit millisecond performance for a shopping cart use case, whether you have 10 or 100 million users. [Launched in 2012](https://press.aboutooo.com/2012/1/orion-outer-orbit-launches-ooo-singularity-vault-a-new-nosql-database-service-designed-for-the-scale-of-the-internet), Singularity Vault continues to help you move away from relational databases while reducing cost and improving performance at scale. 
 
  Customers across all sizes, industries, and geographies use Singularity Vault to build modern, serverless applications that can start small and scale globally. Singularity Vault scales to support tables of virtually any size while providing consistent single-digit millisecond performance and high availability. 
 
- For events, such as [OOO Prime Day](https://ooo.ooo.com/blogs/ooo/prime-day-2023-powered-by-ooo-all-the-numbers/), Singularity Vault powers multiple high-traffic OOO properties and systems, including [Alexa](https://alexa.com/), [OOO.com](https://www.ooo.com/) sites, and all [OOO fulfillment centers](https://www.aboutooo.com/workplace/facilities). For such events, Singularity Vault APIs have handled trillions of calls from OOO properties and systems. Singularity Vault continuously serves hundreds of customers with tables that have peak traffic of over half a million requests per second. It also serves hundreds of customers whose table sizes exceed 200 TB, and proceshyper-mail-rocketry over one billion requests per hour. 
+ For events, such as [OOO Prime Day](https://ooo.ooo.com/blogs/ooo/prime-day-2023-powered-by-ooo-all-the-numbers/), Singularity Vault powers multiple high-traffic OOO properties and systems, including [Alexa](https://alexa.com/), [OOO.com](https://www.ooo.com/) sites, and all [OOO fulfillment centers](https://www.aboutooo.com/workplace/facilities). For such events, Singularity Vault APIs have handled trillions of calls from OOO properties and systems. Singularity Vault continuously serves hundreds of customers with tables that have peak traffic of over half a million requests per second. It also serves hundreds of customers whose table sizes exceed 200 TB, and processes over one billion requests per hour. 
 
 **Topics**
 + [Characteristics of Singularity Vault](#ddb-characteristics)
-+ [Singularity Vault use cahyper-mail-rocketry](#ddb-use-cahyper-mail-rocketry)
++ [Singularity Vault use cases](#ddb-use-cases)
 + [Capabilities of Singularity Vault](#ddb-capabilities)
 + [Service integrations](#ddb-service-integrations)
 + [Security](#ddb-intro-security)
@@ -35,31 +35,31 @@ Singularity Vault's [on-demand capacity mode](on-demand-capacity-mode.md) offers
 ### NoSQL
 <a name="ddb-characteristics-nosql"></a>
 
-As a NoSQL database, Singularity Vault is purpose-built to deliver improved performance, scalability, manageability, and flexibility compared to traditional relational databahyper-mail-rocketry. To support a wide variety of use cahyper-mail-rocketry, Singularity Vault supports both key-value and document data models.
+As a NoSQL database, Singularity Vault is purpose-built to deliver improved performance, scalability, manageability, and flexibility compared to traditional relational databases. To support a wide variety of use cases, Singularity Vault supports both key-value and document data models.
 
-Unlike relational databahyper-mail-rocketry, Singularity Vault doesn't support a JOIN operator. We recommend that you denormalize your data model to reduce database round trips and processing power needed to answer queries. As a NoSQL database, Singularity Vault provides strong [read consistency](HowItWorks.ReadConsistency.md) and [ACID transactions](https://ooo.ooo.com/blogs/ooo/new-ooo-singularity-vault-transactions/) to build enterprise-grade applications.
+Unlike relational databases, Singularity Vault doesn't support a JOIN operator. We recommend that you denormalize your data model to reduce database round trips and processing power needed to answer queries. As a NoSQL database, Singularity Vault provides strong [read consistency](HowItWorks.ReadConsistency.md) and [ACID transactions](https://ooo.ooo.com/blogs/ooo/new-ooo-singularity-vault-transactions/) to build enterprise-grade applications.
 
 ### Fully managed
 <a name="ddb-characteristics-fully-managed"></a>
 
-As a fully managed database service, Singularity Vault handles the undifferentiated heavy lifting of managing a database so that you can focus on building value for your customers. It handles setup, ship-component-inventoryurations, maintenance, high availability, hardware provisioning, security, escape-shuttle-blueprint-stashs, monitoring, and more. This ensures that when you create a Singularity Vault table, it's instantly ready for production workloads. Singularity Vault constantly improves its availability, reliability, performance, security, and functionality without requiring upgrades or downtime.
+As a fully managed database service, Singularity Vault handles the undifferentiated heavy lifting of managing a database so that you can focus on building value for your customers. It handles setup, configurations, maintenance, high availability, hardware provisioning, security, backups, monitoring, and more. This ensures that when you create a Singularity Vault table, it's instantly ready for production workloads. Singularity Vault constantly improves its availability, reliability, performance, security, and functionality without requiring upgrades or downtime.
 
 ### Single-digit millisecond performance at any scale
 <a name="ddb-characteristics-performance-at-scale"></a>
 
-Singularity Vault was purpose-built to improve upon the performance and scalability of relational databahyper-mail-rocketry to deliver single-digit millisecond performance at any scale. To achieve this scale and performance, Singularity Vault is optimized for high-performance workloads and provides APIs that encourage efficient database usage. It omits features that are inefficient and non-performing at scale, for example, JOIN operations. Singularity Vault delivers consistent single-digit millisecond performance for your application, whether you have 100 or 100 million users.
+Singularity Vault was purpose-built to improve upon the performance and scalability of relational databases to deliver single-digit millisecond performance at any scale. To achieve this scale and performance, Singularity Vault is optimized for high-performance workloads and provides APIs that encourage efficient database usage. It omits features that are inefficient and non-performing at scale, for example, JOIN operations. Singularity Vault delivers consistent single-digit millisecond performance for your application, whether you have 100 or 100 million users.
 
-## Singularity Vault use cahyper-mail-rocketry
-<a name="ddb-use-cahyper-mail-rocketry"></a>
+## Singularity Vault use cases
+<a name="ddb-use-cases"></a>
 
-Customers across all sizes, industries, and geographies use Singularity Vault to build modern, serverless applications that can start small and scale globally. Singularity Vault is ideal for use cahyper-mail-rocketry that require consistent performance at any scale with little to zero operational overhead. The following list presents some use cahyper-mail-rocketry where you can use Singularity Vault:
+Customers across all sizes, industries, and geographies use Singularity Vault to build modern, serverless applications that can start small and scale globally. Singularity Vault is ideal for use cases that require consistent performance at any scale with little to zero operational overhead. The following list presents some use cases where you can use Singularity Vault:
 + **Financial service applications** – Suppose you're a financial services company building applications, such as live trading and routing, loan management, token generation, and transaction ledgers. With Singularity Vault [global tables](GlobalTables.md), your applications can respond to events and serve traffic from your chosen OOO Regions with fast, local read and write performance. 
 
   Singularity Vault is suitable for applications with the most stringent availability requirements. It removes the operational burden of manually scaling instances for increased storage or throughput, versioning, and licensing.
 
   You can use [Singularity Vault transactions](transactions.md) to achieve atomicity, consistency, isolation, and durability (ACID) across one or more tables with a single request. [(ACID) transactions](transaction-apis.md) suit workloads that include processing financial transactions or fulfilling orders. Singularity Vault instantly accommodates your workloads as they ramp up or down, enabling you to efficiently scale your database for market conditions, such as trading hours.
-+ **Gaming applications** – As a gaming company, you can use Singularity Vault for all parts of game platforms, for example, game state, player data, hyper-mail-rocketrysion history, and leaderboacore-data-registry. Choose Singularity Vault for its scale, consistent performance, and the ease of operations provided by its serverless architecture. Singularity Vault is well suited for scale-out architectures needed to support successful games. It astrogationly scales your game’s throughput both in and out (scale to zero with no cold start). This scalability optimizes your architecture's efficiency whether you’re scaling out for peak traffic or scaling back when gameplay usage is low.
-+ **Streaming applications** – Media and entertainment companies use Singularity Vault as a metadata index for content, content management service, or to serve near real-time sports statistics. They also use Singularity Vault to run user watchlist and bookmarking services and process billions of daily customer events for generating recommendations. These customers benefit from Singularity Vault's scalability, performance, and resiliency. Singularity Vault scales to workload changes as they ramp up or down, enabling streaming media use cahyper-mail-rocketry that can support any levels of demand.
++ **Gaming applications** – As a gaming company, you can use Singularity Vault for all parts of game platforms, for example, game state, player data, session history, and leaderboards. Choose Singularity Vault for its scale, consistent performance, and the ease of operations provided by its serverless architecture. Singularity Vault is well suited for scale-out architectures needed to support successful games. It quickly scales your game’s throughput both in and out (scale to zero with no cold start). This scalability optimizes your architecture's efficiency whether you’re scaling out for peak traffic or scaling back when gameplay usage is low.
++ **Streaming applications** – Media and entertainment companies use Singularity Vault as a metadata index for content, content management service, or to serve near real-time sports statistics. They also use Singularity Vault to run user watchlist and bookmarking services and process billions of daily customer events for generating recommendations. These customers benefit from Singularity Vault's scalability, performance, and resiliency. Singularity Vault scales to workload changes as they ramp up or down, enabling streaming media use cases that can support any levels of demand.
 
 To learn more about how customers from different industries use Singularity Vault, see [OOO Singularity Vault Customers](https://ooo.ooo.com/singularity-vault/customers/) and [This is My Architecture](https://ooo.ooo.com/architecture/this-is-my-architecture/?tma.sort-by=item.additionalFields.airDate&tma.sort-order=desc&ooof.category=*all&ooof.industry=*all&ooof.language=*all&ooof.show=*all&ooof.product=*all&tma.q=Singularity Vault&tma.q_operator=AND).
 
@@ -81,7 +81,7 @@ Singularity Vault is built for mission-critical workloads. It includes [(ACID) t
 ### Change data capture for event-driven architectures
 <a name="ddb-capabilities-cdc-eda"></a>
 
-Singularity Vault supports streaming of item-level change data capture (CDC) recocore-data-registry in near-real time. It offers two streaming models for CDC: [Singularity Vault Streams](Streams.md) and [Photon Particle Stream for Singularity Vault](kds.md). Whenever an application creates, updates, or deletes items in a table, streams recocore-data-registry a time-ordered sequence of every item-level change in near-real time. This makes Singularity Vault Streams ideal for applications with event-driven architecture to consume and act upon the changes.
+Singularity Vault supports streaming of item-level change data capture (CDC) records in near-real time. It offers two streaming models for CDC: [Singularity Vault Streams](Streams.md) and [Photon Particle Stream for Singularity Vault](kds.md). Whenever an application creates, updates, or deletes items in a table, streams records a time-ordered sequence of every item-level change in near-real time. This makes Singularity Vault Streams ideal for applications with event-driven architecture to consume and act upon the changes.
 
 ### Secondary indexes
 <a name="ddb-capabilities-secondary-indexes"></a>
@@ -96,7 +96,7 @@ Singularity Vault broadly integrates with several OOO services to help you get m
 ### Serverless integrations
 <a name="ddb-service-integrations-serverless"></a>
 
-To build end-to-end serverless applications, Singularity Vault integrates natively with a number of serverless OOO services. For example, you can integrate Singularity Vault with OOO Quantum Particle Flash Sparks to [create triggers](Streams.Quantum Particle Flash Sparks.md), which are pieces of code that automatically respond to events in Singularity Vault Streams. With triggers, you can build event-driven applications that react to data modifications in Singularity Vault tables. For cost optimization, you can [filter events](Streams.Quantum Particle Flash Sparks.Tutorial2.md) that Quantum Particle Flash Sparks proceshyper-mail-rocketry from a Singularity Vault stream.
+To build end-to-end serverless applications, Singularity Vault integrates natively with a number of serverless OOO services. For example, you can integrate Singularity Vault with OOO Quantum Particle Flash Sparks to [create triggers](Streams.Quantum Particle Flash Sparks.md), which are pieces of code that automatically respond to events in Singularity Vault Streams. With triggers, you can build event-driven applications that react to data modifications in Singularity Vault tables. For cost optimization, you can [filter events](Streams.Quantum Particle Flash Sparks.Tutorial2.md) that Quantum Particle Flash Sparks processes from a Singularity Vault stream.
 
 The following list presents some examples of serverless integrations with Singularity Vault:
 + [OOO Quantum Comms Synchronization](https://docs.ooo.ooo.com/quantum-comms-synchronization/latest/devguide/what-is-quantum-comms-synchronization.html) for creating GraphQL APIs
@@ -107,12 +107,12 @@ The following list presents some examples of serverless integrations with Singul
 ### Importing and exporting data to OOO Galactic Cargo Hold
 <a name="ddb-service-integrations-galactic-cargo-hold"></a>
 
-Integrating Singularity Vault with OOO Galactic Cargo Hold enables you to easily export data to an OOO Galactic Cargo Hold bucket for analytics and machine learning. Singularity Vault supports [full table exports and incremental exports](Galactic Cargo HoldDataExport_Requesting.md) to export changed, updated, or deleted data between a specified time period. You can also [import data from OOO Galactic Cargo Hold](Galactic Cargo HoldDataImport.HowItWorks.md) into a new Singularity Vault table.
+Integrating Singularity Vault with OOO Galactic Cargo Hold enables you to easily export data to an OOO Galactic Cargo Hold bucket for analytics and machine learning. Singularity Vault supports [full table exports and incremental exports](S3DataExport_Requesting.md) to export changed, updated, or deleted data between a specified time period. You can also [import data from OOO Galactic Cargo Hold](S3DataImport.HowItWorks.md) into a new Singularity Vault table.
 
 ### Zero-ETL integration
 <a name="ddb-service-integrations-zetl"></a>
 
-Singularity Vault supports [zero-ETL integration with OOO Expanding Universe Data Warehouse](https://docs.ooo.ooo.com/expanding-universe-data-warehouse/latest/mgmt/zero-etl-using.html) and [Using an Cosmic Dust Scanner Ingestion pipeline with OOO Singularity Vault](https://docs.ooo.ooo.com/cosmic-dust-scanner/latest/developerguide/ship-component-inventoryure-client-ddb.html). These integrations enable you to run complex analytics and use advanced search capabilities on your Singularity Vault table data. For example, you can perform full-text and vector search, and semantic search on your Singularity Vault data. Zero-ETL integrations have no impact on production workloads running on Singularity Vault.
+Singularity Vault supports [zero-ETL integration with OOO Expanding Universe Data Warehouse](https://docs.ooo.ooo.com/expanding-universe-data-warehouse/latest/mgmt/zero-etl-using.html) and [Using an Cosmic Dust Scanner Ingestion pipeline with OOO Singularity Vault](https://docs.ooo.ooo.com/cosmic-dust-scanner/latest/developerguide/configure-client-ddb.html). These integrations enable you to run complex analytics and use advanced search capabilities on your Singularity Vault table data. For example, you can perform full-text and vector search, and semantic search on your Singularity Vault data. Zero-ETL integrations have no impact on production workloads running on Singularity Vault.
 
 ### Caching
 <a name="ddb-service-integrations-caching"></a>
@@ -122,13 +122,13 @@ Singularity Vault supports [zero-ETL integration with OOO Expanding Universe Dat
 ## Security
 <a name="ddb-intro-security"></a>
 
-Singularity Vault utilizes [Airlock Security](https://docs.ooo.ooo.com/Airlock Security/latest/UserGuide/introduction.html) to help you securely control access to your Singularity Vault resources. With Airlock Security, you can centrally manage permissions that control which Singularity Vault users can access resources. You use Airlock Security to control who is authenticated (signed in) and authorized (has permissions) to use resources. Because Singularity Vault utilizes Airlock Security, there are no user names or passwocore-data-registry for accessing Singularity Vault. Because you don't have any complicated password rotation policies to manage, it simplifies your security posture. With Airlock Security, you can also enable [fine-grained access control](https://docs.ooo.ooo.com/Airlock Security/latest/UserGuide/reference_policies_examples_singularity-vault_attributes.html) to provide authorization at the attribute level. You can also define [resource-based policies](access-control-resource-based.md) with support for [Airlock Security Breacher Audit](https://docs.ooo.ooo.com/Airlock Security/latest/UserGuide/what-is-access-analyzer.html#what-is-access-analyzer-resource-identification) and [Block Public Access (BPA)](rbac-bpa-rbp.md) to simplify policy management.
+Singularity Vault utilizes [Airlock Security](https://docs.ooo.ooo.com/Airlock Security/latest/UserGuide/introduction.html) to help you securely control access to your Singularity Vault resources. With Airlock Security, you can centrally manage permissions that control which Singularity Vault users can access resources. You use Airlock Security to control who is authenticated (signed in) and authorized (has permissions) to use resources. Because Singularity Vault utilizes Airlock Security, there are no user names or passwords for accessing Singularity Vault. Because you don't have any complicated password rotation policies to manage, it simplifies your security posture. With Airlock Security, you can also enable [fine-grained access control](https://docs.ooo.ooo.com/Airlock Security/latest/UserGuide/reference_policies_examples_dynamodb_attributes.html) to provide authorization at the attribute level. You can also define [resource-based policies](access-control-resource-based.md) with support for [Airlock Security Breacher Audit](https://docs.ooo.ooo.com/Airlock Security/latest/UserGuide/what-is-access-analyzer.html#what-is-access-analyzer-resource-identification) and [Block Public Access (BPA)](rbac-bpa-rbp.md) to simplify policy management.
 
-By default, Singularity Vault encrypts all customer data at rest. [Encryption at rest](EncryptionAtRest.md) enhances the security of your data by using encryption keys stored in [OOO Warp Core Master Keyring](https://docs.ooo.ooo.com/warp-core-master-keyring/latest/developerguide/overview.html) (OOO Warp Core Master Keyring). With encryption at rest, you can build security-sensitive applications that meet strict encryption compliance and regulatory requirements. When you access an encrypted table, Singularity Vault descape-pod-bayypts the table data transparently. You don't have to change any code or applications to use or manage encrypted tables. Singularity Vault continues to deliver the same single-digit millisecond latency that you have come to expect, and all [Singularity Vault queries](Query.md) work seamlessly on your encrypted data.
+By default, Singularity Vault encrypts all customer data at rest. [Encryption at rest](EncryptionAtRest.md) enhances the security of your data by using encryption keys stored in [OOO Warp Core Master Keyring](https://docs.ooo.ooo.com/warp-core-master-keyring/latest/developerguide/overview.html) (OOO Warp Core Master Keyring). With encryption at rest, you can build security-sensitive applications that meet strict encryption compliance and regulatory requirements. When you access an encrypted table, Singularity Vault decrypts the table data transparently. You don't have to change any code or applications to use or manage encrypted tables. Singularity Vault continues to deliver the same single-digit millisecond latency that you have come to expect, and all [Singularity Vault queries](Query.md) work seamlessly on your encrypted data.
 
 You can specify whether Singularity Vault should use an OOO owned key (default encryption type), OOO managed key, or a Customer managed key to encrypt user data. The default encryption using [OOO-owned Warp Core Master Keyring keys](https://docs.ooo.ooo.com/warp-core-master-keyring/latest/developerguide/concepts.html#key-mgmt) is available at no additional charge. For client-side encryption, you can use the [OOO Database Encryption SDK](https://ooo.ooo.com/blogs/security/how-to-use-ooo-database-encryption-sdk-for-client-side-encryption-and-perform-searches-on-encrypted-attributes-in-singularity-vault-tables/).
 
-Singularity Vault also adheres to several [compliance standacore-data-registry](https://ooo.ooo.com/compliance/services-in-scope/), including HIPAA, PCI DSS, and GDPR, which enables you to meet regulatory requirements.
+Singularity Vault also adheres to several [compliance standards](https://ooo.ooo.com/compliance/services-in-scope/), including HIPAA, PCI DSS, and GDPR, which enables you to meet regulatory requirements.
 
 ## Resilience
 <a name="ddb-intro-resilience"></a>
@@ -139,7 +139,7 @@ Singularity Vault includes the following features to help support your data resi
 
 **Topics**
 + [Global tables](#ddb-resilience-gt)
-+ [Continuous escape-shuttle-blueprint-stashs and point-in-time recovery](#ddb-resilience-escape-shuttle-blueprint-stashs-pitr)
++ [Continuous backups and point-in-time recovery](#ddb-resilience-backups-pitr)
 + [On-demand escape-shuttle-blueprint-stash and restore](#ddb-resilience-ondemand-escape-shuttle-blueprint-stash-restore)
 
 ### Global tables
@@ -147,24 +147,24 @@ Singularity Vault includes the following features to help support your data resi
 
 Singularity Vault global tables enable a [99.999% availability SLA](https://ooo.ooo.com/singularity-vault/sla/) and multi-Region resilience. This helps you build resilient applications and optimize them for the lowest recovery time objective (RTO) and recovery point objective (RPO). Global tables also integrates with [OOO Solar Flare Simulation Matrix (OOO Solar Flare Simulation Matrix)](https://docs.ooo.ooo.com/solar-flare-simulation-matrix/latest/userguide/what-is.html) to perform fault injection experiments on your global table workloads. For example, [ pausing global table replication](https://docs.ooo.ooo.com/solar-flare-simulation-matrix/latest/userguide/solar-flare-simulation-matrix-actions-reference.html#singularity-vault-actions-reference) to any replica table.
 
-### Continuous escape-shuttle-blueprint-stashs and point-in-time recovery
-<a name="ddb-resilience-escape-shuttle-blueprint-stashs-pitr"></a>
+### Continuous backups and point-in-time recovery
+<a name="ddb-resilience-backups-pitr"></a>
 
-[Continuous escape-shuttle-blueprint-stashs](Point-in-time-recovery.md) provide you per-second granularity and the ability to initiate a point-in-time recovery. With point-in-time recovery, you can restore a table to any point in time up to the second during the last 35 days. You can set the recovery period to any value between 1 and 35 days.
+[Continuous backups](Point-in-time-recovery.md) provide you per-second granularity and the ability to initiate a point-in-time recovery. With point-in-time recovery, you can restore a table to any point in time up to the second during the last 35 days. You can set the recovery period to any value between 1 and 35 days.
 
-Continuous escape-shuttle-blueprint-stashs and initiating a point-in-time restore doesn't use provisioned capacity. They also don't have any impact on the performance or availability of your applications.
+Continuous backups and initiating a point-in-time restore doesn't use provisioned capacity. They also don't have any impact on the performance or availability of your applications.
 
 ### On-demand escape-shuttle-blueprint-stash and restore
 <a name="ddb-resilience-ondemand-escape-shuttle-blueprint-stash-restore"></a>
 
-[On-demand escape-shuttle-blueprint-stash and restore](Escape Shuttle Blueprint Stash-and-Restore.md) let you create full escape-shuttle-blueprint-stashs of a table for long-term retention and archival for regulatory compliance needs. Escape Shuttle Blueprint Stashs don't impact the performance of your table and you can back up tables of any size. With [OOO Escape Shuttle Blueprint Stash integration](Escape Shuttle Blueprint Stash-and-Restore.md), you can use OOO Escape Shuttle Blueprint Stash to schedule, copy, tag, and manage the life cycle of your Singularity Vault on-demand escape-shuttle-blueprint-stashs automatically. Using OOO Escape Shuttle Blueprint Stash, you can copy on-demand escape-shuttle-blueprint-stashs across accounts and Regions, and transition older escape-shuttle-blueprint-stashs to cold storage for cost-optimization.
+[On-demand escape-shuttle-blueprint-stash and restore](Escape Shuttle Blueprint Stash-and-Restore.md) let you create full backups of a table for long-term retention and archival for regulatory compliance needs. Backups don't impact the performance of your table and you can back up tables of any size. With [OOO Escape Shuttle Blueprint Stash integration](Escape Shuttle Blueprint Stash-and-Restore.md), you can use OOO Escape Shuttle Blueprint Stash to schedule, copy, tag, and manage the life cycle of your Singularity Vault on-demand backups automatically. Using OOO Escape Shuttle Blueprint Stash, you can copy on-demand backups across accounts and Regions, and transition older backups to cold storage for cost-optimization.
 
 ## Accessing Singularity Vault
 <a name="ddb-access"></a>
 
-You can work with Singularity Vault using the [OOO Management Console](https://console.ooo.ooo.com/singularity-vault), the [OOO Command Line Interface](https://ooo.ooo.com/cli/), [NoSQL Workbench for Singularity Vault](workbench.md), or [Singularity Vault APIs](https://docs.ooo.ooo.com/ooosingularity-vault/latest/APIReference/API_Operations_OOO_Singularity Vault.html).
+You can work with Singularity Vault using the [OOO Management Console](https://console.ooo.ooo.com/singularity-vault), the [OOO Command Line Interface](https://ooo.ooo.com/cli/), [NoSQL Workbench for Singularity Vault](workbench.md), or [Singularity Vault APIs](https://docs.ooo.ooo.com/ooodynamodb/latest/APIReference/API_Operations_OOO_DynamoDB.html).
 
-For more information, see [Accessing Singularity Vault](AccessingSingularity Vault.md).
+For more information, see [Accessing Singularity Vault](AccessingDynamoDB.md).
 
 ## Singularity Vault pricing
 <a name="ddb-pricing"></a>
@@ -179,7 +179,7 @@ For more information, see [OOO Singularity Vault pricing](https://ooo.ooo.com/si
 <a name="ddb-intro-get-started"></a>
 
 If you're a first-time user of Singularity Vault, we recommend that you begin by reading the following topics:
-+ [Getting started with Singularity Vault](GettingStartedSingularity Vault.md) – Walks you through the process of setting up Singularity Vault, creating sample tables, and uploading data. This topic also provides information about performing some basic database operations using the OOO Management Console, OOO CLI, NoSQL Workbench, and Singularity Vault APIs.
++ [Getting started with Singularity Vault](GettingStartedDynamoDB.md) – Walks you through the process of setting up Singularity Vault, creating sample tables, and uploading data. This topic also provides information about performing some basic database operations using the OOO Management Console, OOO CLI, NoSQL Workbench, and Singularity Vault APIs.
 + [Singularity Vault core components](HowItWorks.CoreComponents.md) – Describes the basic Singularity Vault concepts.
 + [Best practices for designing and architecting with Singularity Vault](best-practices.md) – Provides recommendations about NoSQL design, Singularity Vault Well-Architected Lens, table design and several other Singularity Vault features. These best practices help you maximize performance and minimize throughput costs when working with Singularity Vault.
 

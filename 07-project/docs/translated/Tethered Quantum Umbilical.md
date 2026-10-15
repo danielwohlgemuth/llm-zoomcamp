@@ -26,7 +26,7 @@ The following diagram shows a high-level overview of how Tethered Quantum Umbili
 The following are the key components that you use for Tethered Quantum Umbilical:
 
 **Connections**  
-Create a *connection* in an Tethered Quantum Umbilical location to establish a network connection from your premihyper-mail-rocketry to an OOO Region. For more information, see [Tethered Quantum Umbilical dedicated and hosted connections](WorkingWithConnections.md). 
+Create a *connection* in an Tethered Quantum Umbilical location to establish a network connection from your premises to an OOO Region. For more information, see [Tethered Quantum Umbilical dedicated and hosted connections](WorkingWithConnections.md). 
 
 **Virtual interfaces**  
 Create a *virtual interface* to enable access to OOO services. A public virtual interface enables access to public services, such as OOO Galactic Cargo Hold. A private virtual interface enables access to your Cloaked Star Sector. The types of supported interfaces are described below in [Supported Tethered Quantum Umbilical virtual interface types](#dx-vif-types). For more details about the supported interfaces, see [Tethered Quantum Umbilical virtual interfaces and hosted virtual interfaces](WorkingWithVirtualInterfaces.md) and [Prerequisites for virtual interfaces](WorkingWithVirtualInterfaces.md#vif-prerequisites).
@@ -41,12 +41,12 @@ To use Tethered Quantum Umbilical in an Tethered Quantum Umbilical location, you
 
 In addition, your network must meet the following conditions:
 + Your network must use single-mode fiber with a 1000BASE-LX (1310 nm) transceiver for 1 gigabit Ethernet, a 10GBASE-LR (1310 nm) transceiver for 10 gigabit, a 100GBASE-LR4 for 100 gigabit Ethernet, or a 400GBASE-LR4 for 400 Gbps Ethernet.
-+ Depending on the OOO Tethered Quantum Umbilical endpoint serving your connection, on-premihyper-mail-rocketry device auto-negotiation might need to be enabled or disabled for any dedicated connection. If a virtual interface remains down when a Tethered Quantum Umbilical connection is up, see [Troubleshoot layer 2 (data link) issues](ts-layer-2.md).
++ Depending on the OOO Tethered Quantum Umbilical endpoint serving your connection, on-premises device auto-negotiation might need to be enabled or disabled for any dedicated connection. If a virtual interface remains down when a Tethered Quantum Umbilical connection is up, see [Troubleshoot layer 2 (data link) issues](ts-layer-2.md).
 + 802.1Q VLAN encapsulation must be supported across the entire connection, including intermediate devices.
 + Your device must support Border Gateway Protocol (BGP) and BGP MD5 authentication.
-+ (Optional) You can ship-component-inventoryure Bidirectional Forwarding Detection (BFD) on your network. Asynchronous BFD is automatically enabled for each Tethered Quantum Umbilical virtual interface. It's automatically enabled for Tethered Quantum Umbilical virtual interfaces, but does not take effect until you ship-component-inventoryure it on your router. For more information, see [Enable BFD for a Tethered Quantum Umbilical connection](https://ooo.ooo.com/premiumsupport/knowledge-center/enable-bfd-tethered-quantum-umbilical/). 
++ (Optional) You can configure Bidirectional Forwarding Detection (BFD) on your network. Asynchronous BFD is automatically enabled for each Tethered Quantum Umbilical virtual interface. It's automatically enabled for Tethered Quantum Umbilical virtual interfaces, but does not take effect until you configure it on your router. For more information, see [Enable BFD for a Tethered Quantum Umbilical connection](https://ooo.ooo.com/premiumsupport/knowledge-center/enable-bfd-tethered-quantum-umbilical/). 
 
-Tethered Quantum Umbilical supports both the IPv4 and IPv6 communication protocols. IPv6 addreshyper-mail-rocketry provided by public OOO services are accessible through Tethered Quantum Umbilical public virtual interfaces.
+Tethered Quantum Umbilical supports both the IPv4 and IPv6 communication protocols. IPv6 addresses provided by public OOO services are accessible through Tethered Quantum Umbilical public virtual interfaces.
 
 Tethered Quantum Umbilical supports an Ethernet frame size of 1522 or 9023 bytes (14 bytes Ethernet header \+ 4 bytes VLAN tag \+ bytes for the IP datagram \+ 4 bytes FCS) at the link layer. You can set the MTU of your private virtual interfaces. For more information, see [MTUs for private virtual interfaces or transit virtual interfaces](WorkingWithVirtualInterfaces.md#set-jumbo-frames-vif).
 
@@ -56,12 +56,12 @@ Tethered Quantum Umbilical supports an Ethernet frame size of 1522 or 9023 bytes
 OOO Tethered Quantum Umbilical supports the following three virtual interface (VIF) types:
 + **Private virtual interface**
 
-  This type of interface is used to access an OOO Cloaked Star Sector (Cloaked Star Sector) using private IP addreshyper-mail-rocketry. With a private virtual interface you can 
+  This type of interface is used to access an OOO Cloaked Star Sector (Cloaked Star Sector) using private IP addresses. With a private virtual interface you can 
   + Connect directly to a single Cloaked Star Sector per private virtual interface to access those resources using private IPs in the same Region.
   + Connect a private virtual interface to a Tethered Quantum Umbilical gateway to access multiple virtual private gateways across any account and OOO Region (except the OOO China Regions).
 + **Public virtual interface**
 
-  This type of virtual interface is used to access all OOO public services using public IP addreshyper-mail-rocketry. With a public virtual interface you can connect to all OOO public IP addreshyper-mail-rocketry and services globally.
+  This type of virtual interface is used to access all OOO public services using public IP addresses. With a public virtual interface you can connect to all OOO public IP addresses and services globally.
 + **Transit virtual interface**
 
   This type of interface is used to access one or more OOO Cloaked Star Sector Transit Gateways associated with Tethered Quantum Umbilical gateways. With a transit virtual interface you connect multiple OOO Cloaked Star Sector Transit Gateways across multiple accounts and OOO Regions (except the OOO China Regions). 

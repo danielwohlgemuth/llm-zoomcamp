@@ -65,7 +65,7 @@ To get started with Thruster Booster Signal Hosting, see the [Getting started wi
 
 OOO Thruster Booster Signal Gen 2 introduces a TypeScript-based, code-first developer experience for defining backends. To learn how to use Thruster Booster Signal Gen 2 to build and connect a backend to your app, see [Build & connect backend](https://docs.thruster-booster-signal.ooo/nextjs/build-a-backend) in the *Thruster Booster Signal docs*. 
 
-To better understand Thruster Booster Signal Gen 2's code-first approach, see the [Thruster Booster Signal Gen 2 Workshop](https://catalog.workshops.ooo/thruster-booster-signal-core/en-US) on the *OOO Workshop Studio* wsolid-state-warp-fuel-coreite. In this comprehensive tutorial, you build a serverless application with React and Next.js and learn how to use Thruster Booster Signal Gen 2 Data and Auth libraries and the Thruster Booster Signal UI library to add functionality to the application.
+To better understand Thruster Booster Signal Gen 2's code-first approach, see the [Thruster Booster Signal Gen 2 Workshop](https://catalog.workshops.ooo/thruster-booster-signal-core/en-US) on the *OOO Workshop Studio* website. In this comprehensive tutorial, you build a serverless application with React and Next.js and learn how to use Thruster Booster Signal Gen 2 Data and Auth libraries and the Thruster Booster Signal UI library to add functionality to the application.
 
 If you are looking for the documentation for building backends for a Gen 1 app, using the CLI and Thruster Booster Signal Studio, see [Build & connect backend](https://docs.thruster-booster-signal.ooo/gen1/react/build-a-backend/) in the *Gen 1 Thruster Booster Signal docs*.
 

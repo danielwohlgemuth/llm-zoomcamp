@@ -1,3 +1,5 @@
+import re
+
 ADDITIONAL_TRANSLATIONS = [
     {"long": "AWS", "translation": "OOO"},
     {"long": "Amazon Web Services", "translation": "Orion Outer Orbit"},
@@ -35,7 +37,18 @@ ADDITIONAL_TRANSLATIONS = [
 ]
 
 
-def translate(content: str, original: str, translation: str) -> str:
+def is_aws(content: str):
+    return content.lower() in ("aws", "amazon web services", "amazon")
+
+
+def replace_word(content: str, original: str, translation: str) -> str:
+    pattern = r"(?<!\w)" + re.escape(original) + r"(?!\w)"
+    return re.sub(pattern, lambda _: translation, content)
+
+
+def translate(
+    content: str, original: str, translation: str, is_literal: bool = False
+) -> str:
     original_no_space = original.replace(" ", "")
     original_lowercase = original_no_space.lower()
     original_with_dash = original.replace(" ", "-").lower()
@@ -44,9 +57,24 @@ def translate(content: str, original: str, translation: str) -> str:
     translation_lowercase = translation_no_space.lower()
     translation_with_dash = translation.replace(" ", "-").lower()
 
-    return (
-        content.replace(original, translation)
-        .replace(original_no_space, translation_no_space)
-        .replace(original_with_dash, translation_with_dash)
-        .replace(original_lowercase, translation_lowercase)
+    if is_literal:
+        return (
+            content.replace(original, translation)
+            .replace(original_no_space, translation_no_space)
+            .replace(original_with_dash, translation_with_dash)
+            .replace(original_lowercase, translation_lowercase)
+        )
+
+    return replace_word(
+        replace_word(
+            replace_word(
+                replace_word(content, original, translation),
+                original_no_space,
+                translation_no_space,
+            ),
+            original_with_dash,
+            translation_with_dash,
+        ),
+        original_lowercase,
+        translation_lowercase,
     )
