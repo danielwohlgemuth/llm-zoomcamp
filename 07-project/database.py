@@ -1,10 +1,11 @@
 import os
+from contextlib import contextmanager
 from decimal import Decimal
 from enum import Enum
 
-import psycopg2
 from dotenv import load_dotenv
 from pgvector.psycopg2 import register_vector
+from psycopg2.pool import ThreadedConnectionPool
 
 from embedder import Embedder
 
@@ -18,7 +19,7 @@ RRF_K = 60
 # uniq_{table}_{column}
 # fk_{table}_{column}_{ref_table}
 # chk_{table}_{column}
-# trg_{table}_{timing: [b]efore/[a]fter [i]nsert/[u]pdate/[d]elete}_{purpose}
+# tr_{table}_{timing: [b]efore/[a]fter [i]nsert/[u]pdate/[d]elete}_{purpose}
 # fn_{table}_{timing: [b]efore/[a]fter [i]nsert/[u]pdate/[d]elete}_{purpose}
 
 
@@ -28,28 +29,50 @@ class MessageStatus(Enum):
     Failed = "Failed"
 
 
-class BaseConnection:
-    def __init__(self):
-        self.connection = psycopg2.connect(
+class Database:
+    def __init__(self, minconn=1, maxconn=10):
+        self._pool = ThreadedConnectionPool(
+            minconn=minconn,
+            maxconn=maxconn,
             dbname=os.environ["POSTGRES_DB"],
             user=os.environ["POSTGRES_USER"],
             password=os.environ["POSTGRES_PASSWORD"],
             host=os.environ.get("POSTGRES_HOST", "localhost"),
             port=os.environ.get("POSTGRES_PORT", "5432"),
         )
-        self.connection.autocommit = True
+
+    @contextmanager
+    def connection(self):
+        conn = self._pool.getconn()
+        try:
+            yield conn
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+        finally:
+            self._pool.putconn(conn, close=True)
+
+    def close(self):
+        self._pool.closeall()
 
 
 class Migration:
-    def run():
-        DocumentMigration().run()
-        DescriptionMigration().run()
-        ConversationMigration().run()
-        MessageMigration().run()
-        ModelMigration().run()
+    def __init__(self, db: Database):
+        self.db = db
+
+    def run(self):
+        DocumentMigration(self.db).run()
+        DescriptionMigration(self.db).run()
+        ConversationMigration(self.db).run()
+        MessageMigration(self.db).run()
+        ModelMigration(self.db).run()
 
 
-class DocumentMigration(BaseConnection):
+class DocumentMigration:
+    def __init__(self, db: Database):
+        self.db = db
+
     def run(self):
         migrations = [
             """
@@ -66,31 +89,31 @@ class DocumentMigration(BaseConnection):
             "CREATE UNIQUE INDEX IF NOT EXISTS uniq_document_file_name_chunk_size_chunk_index ON document (file_name, chunk_size, chunk_index) NULLS NOT DISTINCT",
         ]
 
-        with self.connection.cursor() as cursor:
-            cursor.execute("CREATE EXTENSION IF NOT EXISTS vector")
-            register_vector(cursor)
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute("CREATE EXTENSION IF NOT EXISTS vector")
+            register_vector(cur)
 
             for migration in migrations:
-                cursor.execute(migration)
+                cur.execute(migration)
 
 
-class Document(BaseConnection):
-    def __init__(self):
-        super().__init__()
-        self.model = Embedder()
+class Document:
+    def __init__(self, db: Database, embedder: Embedder):
+        self.db = db
+        self.embedder = embedder
 
     def insert(
         self, file_name: str, chunk_size: int, chunk_index: int, content: str
     ) -> None:
-        embedding = self.model.encode(content)
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        embedding = self.embedder.encode(content)
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "INSERT INTO document (file_name, chunk_size, chunk_index, content, embedding) VALUES (%s, %s, %s, %s, %s)",
                 (file_name, chunk_size, chunk_index, content, embedding.tolist()),
             )
 
     def search(self, query: str) -> list[str]:
-        embedding = self.model.encode(query)
+        embedding = self.embedder.encode(query)
         sql = """
         WITH semantic_search AS (
             SELECT id, RANK () OVER (ORDER BY embedding <=> %(embedding)s::vector) AS rank
@@ -125,35 +148,37 @@ class Document(BaseConnection):
         LIMIT 5
         """
 
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 sql, {"embedding": embedding.tolist(), "query": query, "k": RRF_K}
             )
 
             return [
-                {"file_name": row[0], "content": row[1], "score": row[2]}
-                for row in cursor
+                {"file_name": row[0], "content": row[1], "score": row[2]} for row in cur
             ]
 
     def get_all(self):
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "SELECT file_name FROM document WHERE chunk_size = 0 ORDER BY file_name"
             )
 
-            return [{"file_name": row[0]} for row in cursor]
+            return [{"file_name": row[0]} for row in cur]
 
     def get_by_file_name(self, file_name):
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "SELECT file_name, content FROM document WHERE chunk_size = 0 AND file_name = %s",
                 (file_name,),
             )
 
-            return [{"file_name": row[0], "content": row[1]} for row in cursor]
+            return [{"file_name": row[0], "content": row[1]} for row in cur]
 
 
-class DescriptionMigration(BaseConnection):
+class DescriptionMigration:
+    def __init__(self, db: Database):
+        self.db = db
+
     def run(self):
         migrations = [
             """
@@ -166,40 +191,46 @@ class DescriptionMigration(BaseConnection):
             "CREATE UNIQUE INDEX IF NOT EXISTS uniq_description_name ON description (name)",
         ]
 
-        with self.connection.cursor() as cursor:
+        with self.db.connection() as conn, conn.cursor() as cur:
             for migration in migrations:
-                cursor.execute(migration)
+                cur.execute(migration)
 
 
-class Description(BaseConnection):
+class Description:
+    def __init__(self, db: Database):
+        self.db = db
+
     def insert(self, name: str, description: str) -> None:
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "INSERT INTO description (name, content) VALUES (%s, %s)",
                 (name, description),
             )
 
     def list(self, name: str | None = None) -> list[str]:
-        with self.connection.cursor() as cursor:
+        with self.db.connection() as conn, conn.cursor() as cur:
             if name:
-                cursor.execute(
+                cur.execute(
                     "SELECT name, content FROM description WHERE name ILIKE %s ORDER BY name",
                     ("%" + name + "%",),
                 )
             else:
-                cursor.execute("SELECT name, content FROM description ORDER BY name")
-            return [{"name": row[0], "content": row[1]} for row in cursor]
+                cur.execute("SELECT name, content FROM description ORDER BY name")
+            return [{"name": row[0], "content": row[1]} for row in cur]
 
     def search(self, name: str) -> str | None:
-        with self.connection.cursor() as cursor:
-            cursor.execute("SELECT content FROM description WHERE name = %s", (name,))
-            if cursor.rowcount:
-                return cursor.fetchone()[0]
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute("SELECT content FROM description WHERE name = %s", (name,))
+            if cur.rowcount:
+                return cur.fetchone()[0]
             else:
                 return None
 
 
-class ConversationMigration(BaseConnection):
+class ConversationMigration:
+    def __init__(self, db: Database):
+        self.db = db
+
     def run(self):
         migrations = [
             'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"',
@@ -213,29 +244,35 @@ class ConversationMigration(BaseConnection):
             "ALTER TABLE conversation ADD COLUMN IF NOT EXISTS updated_at timestamptz DEFAULT now()",
         ]
 
-        with self.connection.cursor() as cursor:
+        with self.db.connection() as conn, conn.cursor() as cur:
             for migration in migrations:
-                cursor.execute(migration)
+                cur.execute(migration)
 
 
-class Conversation(BaseConnection):
+class Conversation:
+    def __init__(self, db: Database):
+        self.db = db
+
     def insert(self, description: str) -> str:
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "INSERT INTO conversation (description) VALUES (%s) RETURNING id",
                 (description,),
             )
-            return cursor.fetchone()[0]
+            return cur.fetchone()[0]
 
     def get_all(self) -> list[dict]:
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "SELECT id, description FROM conversation ORDER BY updated_at DESC"
             )
-            return [{"id": row[0], "description": row[1]} for row in cursor]
+            return [{"id": row[0], "description": row[1]} for row in cur]
 
 
-class MessageMigration(BaseConnection):
+class MessageMigration:
+    def __init__(self, db: Database):
+        self.db = db
+
     def run(self):
         migrations = [
             'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"',
@@ -296,7 +333,7 @@ class MessageMigration(BaseConnection):
             """
             CREATE TRIGGER tr_message_ai_au_touch_conversation
             AFTER INSERT OR UPDATE ON message
-            FOR EACH ROW EXECUTE FUNCTION touch_conversation()
+            FOR EACH ROW EXECUTE FUNCTION fn_message_ai_au_touch_conversation()
             """,
             """
             DO $$
@@ -311,27 +348,30 @@ class MessageMigration(BaseConnection):
             """,
         ]
 
-        with self.connection.cursor() as cursor:
+        with self.db.connection() as conn, conn.cursor() as cur:
             for migration in migrations:
-                cursor.execute(migration)
+                cur.execute(migration)
 
 
-class Message(BaseConnection):
+class Message:
+    def __init__(self, db: Database):
+        self.db = db
+
     def add(self, conversation_id: str, model: str, messages: str) -> str:
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "INSERT INTO message (conversation_id, model, request_messages, status) "
                 "VALUES (%s, %s, %s, 'In Progress') "
                 "RETURNING id",
                 (conversation_id, model, messages),
             )
-            return cursor.fetchone()[0]
+            return cur.fetchone()[0]
 
     def update(
         self, id: str, message: str, status: str, input_tokens: int, output_tokens: int
-    ) -> str:
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+    ) -> None:
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "UPDATE message "
                 "SET response = (%s), status = (%s), input_tokens = (%s), output_tokens = (%s) "
                 "WHERE id = (%s)",
@@ -339,16 +379,19 @@ class Message(BaseConnection):
             )
 
     def get_by_conversation(self, conversation_id: str) -> list[dict]:
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "SELECT request_messages, response FROM message "
                 "WHERE conversation_id = %s ORDER BY created_at",
                 (conversation_id,),
             )
-            return [{"request": row[0], "response": row[1]} for row in cursor]
+            return [{"request": row[0], "response": row[1]} for row in cur]
 
 
-class ModelMigration(BaseConnection):
+class ModelMigration:
+    def __init__(self, db: Database):
+        self.db = db
+
     def run(self):
         migrations = [
             """
@@ -361,23 +404,26 @@ class ModelMigration(BaseConnection):
             "CREATE UNIQUE INDEX IF NOT EXISTS uniq_model_name ON model (name)",
         ]
 
-        with self.connection.cursor() as cursor:
+        with self.db.connection() as conn, conn.cursor() as cur:
             for migration in migrations:
-                cursor.execute(migration)
+                cur.execute(migration)
 
 
-class Model(BaseConnection):
+class Model:
+    def __init__(self, db: Database):
+        self.db = db
+
     def insert(self, name: str, price_per_million_tokens: Decimal) -> str:
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "INSERT INTO model (name, price_per_million_tokens) VALUES (%s, %s) RETURNING id",
                 (name, price_per_million_tokens),
             )
-            return cursor[0]
+            return cur.fetchone()[0]
 
     def get_price(self, id: str) -> Decimal:
-        with self.connection.cursor() as cursor:
-            cursor.execute(
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
                 "SELECT price_per_million_tokens FROM model WHERE id = (%s)", (id,)
             )
-            return cursor[0]
+            return cur.fetchone()[0]
