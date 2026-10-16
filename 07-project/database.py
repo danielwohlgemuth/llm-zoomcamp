@@ -3,9 +3,11 @@ from contextlib import contextmanager
 from decimal import Decimal
 from enum import Enum
 
+import psycopg
 from dotenv import load_dotenv
-from pgvector.psycopg2 import register_vector
-from psycopg2.pool import ThreadedConnectionPool
+from pgvector.psycopg import register_vector
+from psycopg.conninfo import make_conninfo
+from psycopg_pool import ConnectionPool
 
 from embedder import Embedder
 
@@ -30,31 +32,38 @@ class MessageStatus(Enum):
 
 
 class Database:
-    def __init__(self, minconn=1, maxconn=10):
-        self._pool = ThreadedConnectionPool(
-            minconn=minconn,
-            maxconn=maxconn,
+    def __init__(self, min_size=1, max_size=10):
+        conninfo = make_conninfo(
             dbname=os.environ["POSTGRES_DB"],
             user=os.environ["POSTGRES_USER"],
             password=os.environ["POSTGRES_PASSWORD"],
             host=os.environ.get("POSTGRES_HOST", "localhost"),
             port=os.environ.get("POSTGRES_PORT", "5432"),
         )
+        with psycopg.connect(conninfo, autocommit=True) as conn:
+            conn.execute("CREATE EXTENSION IF NOT EXISTS vector")
+
+        self._pool = ConnectionPool(
+            conninfo=make_conninfo(
+                dbname=os.environ["POSTGRES_DB"],
+                user=os.environ["POSTGRES_USER"],
+                password=os.environ["POSTGRES_PASSWORD"],
+                host=os.environ.get("POSTGRES_HOST", "localhost"),
+                port=os.environ.get("POSTGRES_PORT", "5432"),
+            ),
+            min_size=min_size,
+            max_size=max_size,
+            configure=register_vector,
+            open=True,
+        )
 
     @contextmanager
     def connection(self):
-        conn = self._pool.getconn()
-        try:
+        with self._pool.connection() as conn:
             yield conn
-            conn.commit()
-        except Exception:
-            conn.rollback()
-            raise
-        finally:
-            self._pool.putconn(conn, close=True)
 
     def close(self):
-        self._pool.closeall()
+        self._pool.close()
 
 
 class Migration:
@@ -90,9 +99,6 @@ class DocumentMigration:
         ]
 
         with self.db.connection() as conn, conn.cursor() as cur:
-            cur.execute("CREATE EXTENSION IF NOT EXISTS vector")
-            register_vector(cur)
-
             for migration in migrations:
                 cur.execute(migration)
 
@@ -259,14 +265,14 @@ class Conversation:
                 "INSERT INTO conversation (description) VALUES (%s) RETURNING id",
                 (description,),
             )
-            return cur.fetchone()[0]
+            return str(cur.fetchone()[0])
 
     def get_all(self) -> list[dict]:
         with self.db.connection() as conn, conn.cursor() as cur:
             cur.execute(
                 "SELECT id, description FROM conversation ORDER BY updated_at DESC"
             )
-            return [{"id": row[0], "description": row[1]} for row in cur]
+            return [{"id": str(row[0]), "description": row[1]} for row in cur]
 
 
 class MessageMigration:
@@ -365,7 +371,7 @@ class Message:
                 "RETURNING id",
                 (conversation_id, model, messages),
             )
-            return cur.fetchone()[0]
+            return str(cur.fetchone()[0])
 
     def update(
         self, id: str, message: str, status: str, input_tokens: int, output_tokens: int
