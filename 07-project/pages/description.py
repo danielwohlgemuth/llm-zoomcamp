@@ -1,6 +1,6 @@
 import gradio as gr
 
-from database import Database, Description
+from database import Database, Description as DescriptionTable
 
 css = """
 .card-row {
@@ -36,7 +36,7 @@ css = """
 """
 
 
-class DescriptionPage:
+class Description:
     def __init__(self, db: Database):
         self.db = db
 
@@ -53,7 +53,7 @@ class DescriptionPage:
 
     def render(self):
         with gr.Blocks() as app:
-            desc = Description(self.db)
+            desc = DescriptionTable(self.db)
             descriptions = desc.list()
 
             search_box = gr.Textbox(label="Search", placeholder="Type to filter")
