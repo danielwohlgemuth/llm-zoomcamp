@@ -1,6 +1,6 @@
 import json
 
-from utils import ADDITIONAL_TRANSLATIONS, is_aws, translate
+from scripts.translation_utils import ADDITIONAL_TRANSLATIONS, is_aws, translate
 
 with open("aws-descriptions.json") as file:
     aws_descriptions = json.loads("".join(file.readlines()))

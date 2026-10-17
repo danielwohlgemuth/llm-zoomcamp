@@ -1,7 +1,7 @@
 import json
 import os
 
-from utils import ADDITIONAL_TRANSLATIONS, is_aws, translate
+from scripts.translation_utils import ADDITIONAL_TRANSLATIONS, is_aws, translate
 
 docs_folder = "docs"
 docs_original_folder = "original"
