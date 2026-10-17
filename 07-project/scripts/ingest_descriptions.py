@@ -8,7 +8,7 @@ from libs.database import Description
 def main():
     database = Description()
 
-    with open("aws-descriptions-translations.json", "r") as file:
+    with open("catalog/aws-descriptions-translations.json", "r") as file:
         aws_descriptions = json.loads(file.read())
 
     for item in tqdm(aws_descriptions):

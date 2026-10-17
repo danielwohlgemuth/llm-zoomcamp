@@ -15,7 +15,7 @@ SERVICES_TO_SKIP = [
 ]
 
 
-with open("aws-intro-urls.json") as aws_intro_urls_file:
+with open("catalog/aws-intro-urls.json") as aws_intro_urls_file:
     aws_intro_urls = json.loads("".join(aws_intro_urls_file.readlines()))
 
 docs_folder = "docs"

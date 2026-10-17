@@ -2,10 +2,10 @@ import json
 
 from scripts.translation_utils import ADDITIONAL_TRANSLATIONS, is_aws, translate
 
-with open("aws-descriptions.json") as file:
+with open("catalog/aws-descriptions.json") as file:
     aws_descriptions = json.loads("".join(file.readlines()))
 
-with open("aws-translations.json") as file:
+with open("catalog/aws-translations.json") as file:
     aws_translations = json.loads("".join(file.readlines()))
 
 aws_translations_map = {item["long"]: item["translation"] for item in aws_translations}
@@ -41,5 +41,5 @@ for aws_description in aws_descriptions:
 
     aws_descriptions_translations.append(aws_descriptions_translation)
 
-with open("aws-descriptions-translations.json", "w") as file:
+with open("catalog/aws-descriptions-translations.json", "w") as file:
     file.write(json.dumps(aws_descriptions_translations, indent=4))

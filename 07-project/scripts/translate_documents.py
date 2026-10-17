@@ -10,7 +10,7 @@ os.makedirs(os.path.join(docs_folder, docs_original_folder), exist_ok=True)
 docs_translated_folder = "translated"
 os.makedirs(os.path.join(docs_folder, docs_translated_folder), exist_ok=True)
 
-with open("aws-translations.json") as file:
+with open("catalog/aws-translations.json") as file:
     aws_translations = json.loads("".join(file.readlines()))
 
 for item in aws_translations:
