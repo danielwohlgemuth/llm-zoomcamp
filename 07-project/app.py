@@ -1,16 +1,20 @@
 import gradio as gr
 
-import chat_page
-import description_page
-import docs_page
-from database import Migration
+from chat_page import Chat
+from database import Database, Migration
+from description_page import DescriptionPage
+from docs_page import Docs
+from embedder import Embedder
+
+db = Database()
+embedder = Embedder()
 
 with gr.Blocks(title="Chat", analytics_enabled=False) as app:
-    chat_page.app.render()
+    Chat(db, embedder).render()
 with app.route("Services"):
-    description_page.app.render()
+    DescriptionPage(db).render()
 with app.route("Docs"):
-    docs_page.app.render()
+    Docs(db, embedder).render()
 
 css = """
 .conversation {
@@ -23,6 +27,6 @@ css = """
 }
 """
 
-Migration.run()
+Migration(db).run()
 
 app.launch(css=css)
