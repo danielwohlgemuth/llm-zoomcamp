@@ -1,10 +1,10 @@
 import gradio as gr
 
+from libs.database import Database, Migration
+from libs.embedder import Embedder
 from pages.chat import Chat
-from database import Database, Migration
 from pages.description import Description
 from pages.docs import Docs
-from embedder import Embedder
 
 db = Database()
 embedder = Embedder()

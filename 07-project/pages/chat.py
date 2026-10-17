@@ -8,8 +8,9 @@ from anthropic.types import (CitationsConfigParam, DocumentBlockParam,
                              MessageParam, PlainTextSourceParam,
                              TextBlockParam)
 
-from database import Conversation, Database, Document, Message, MessageStatus
-from embedder import Embedder
+from libs.database import (Conversation, Database, Document, Message,
+                           MessageStatus)
+from libs.embedder import Embedder
 
 MODEL = "claude-haiku-5-5"
 PROMPT = """

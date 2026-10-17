@@ -1,6 +1,7 @@
 import gradio as gr
 
-from database import Database, Description as DescriptionTable
+from libs.database import Database
+from libs.database import Description as DescriptionTable
 
 css = """
 .card-row {

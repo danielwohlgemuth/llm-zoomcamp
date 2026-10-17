@@ -2,8 +2,8 @@ from urllib.parse import quote
 
 import gradio as gr
 
-from database import Database, Document
-from embedder import Embedder
+from libs.database import Database, Document
+from libs.embedder import Embedder
 
 
 class Docs:

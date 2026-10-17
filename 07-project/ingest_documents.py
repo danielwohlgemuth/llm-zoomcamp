@@ -4,7 +4,7 @@ from pathlib import Path
 from langchain_text_splitters import MarkdownTextSplitter
 from tqdm.auto import tqdm
 
-from database import Document
+from libs.database import Document
 
 CHUNK_SIZE = 1024
 CHUNK_OVERLAP = 0

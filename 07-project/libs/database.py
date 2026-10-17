@@ -9,7 +9,7 @@ from pgvector.psycopg import register_vector
 from psycopg.conninfo import make_conninfo
 from psycopg_pool import ConnectionPool
 
-from embedder import Embedder
+from libs.embedder import Embedder
 
 load_dotenv()
 
