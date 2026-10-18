@@ -7,6 +7,7 @@ import psycopg
 from dotenv import load_dotenv
 from pgvector.psycopg import register_vector
 from psycopg.conninfo import make_conninfo
+from psycopg.types.json import Jsonb
 from psycopg_pool import ConnectionPool
 
 from libs.embedder import Embedder
@@ -14,7 +15,15 @@ from libs.embedder import Embedder
 load_dotenv()
 
 
-RRF_K = 60
+RECIPROCAL_RANK_FUSION_K = 60
+SYSTEM_PROMPT = """You are a knowlegde support agent for an IaaS provider called Orion Outer Orbit (OOO).
+Respond to the users question based on the provided documents.
+If the documents don't answer the users question, say that you don't know.
+"""
+DEFAULT_MODEL = "claude-haiku-5-5"
+DOCUMENT_CHUNK_SIZE = 1024
+CONVERSATION_LIMIT = {"max_tokens": 10_000, "max_cost": "0.1", "max_turns": 10}
+
 
 # Index and constraint naming conventions
 # idx_{table}_{column}
@@ -76,6 +85,7 @@ class Migration:
         ConversationMigration(self.db).run()
         MessageMigration(self.db).run()
         ModelMigration(self.db).run()
+        SettingMigration(self.db).run()
 
 
 class DocumentMigration:
@@ -107,6 +117,7 @@ class Document:
     def __init__(self, db: Database, embedder: Embedder):
         self.db = db
         self.embedder = embedder
+        self.setting = Setting(db)
 
     def insert(
         self, file_name: str, chunk_size: int, chunk_index: int, content: str
@@ -124,7 +135,7 @@ class Document:
         WITH semantic_search AS (
             SELECT id, RANK () OVER (ORDER BY embedding <=> %(embedding)s::vector) AS rank
             FROM document
-            WHERE chunk_size = 1024
+            WHERE chunk_size = %(chunk_size)s
             ORDER BY embedding <=> %(embedding)s::vector
             LIMIT 20
         ),
@@ -132,15 +143,15 @@ class Document:
             SELECT id, RANK () OVER (ORDER BY ts_rank_cd(to_tsvector('english', content), query) DESC)
             FROM document, plainto_tsquery('english', %(query)s) query
             WHERE to_tsvector('english', content) @@ query
-            AND chunk_size = 1024
+            AND chunk_size = %(chunk_size)s
             ORDER BY ts_rank_cd(to_tsvector('english', content), query) DESC
             LIMIT 20
         ),
         combined AS (
             SELECT
                 COALESCE(semantic_search.id, keyword_search.id) AS id,
-                COALESCE(1.0 / (%(k)s + semantic_search.rank), 0.0) +
-                COALESCE(1.0 / (%(k)s + keyword_search.rank), 0.0) AS score
+                COALESCE(1.0 / (%(rrf_k)s + semantic_search.rank), 0.0) +
+                COALESCE(1.0 / (%(rrf_k)s + keyword_search.rank), 0.0) AS score
             FROM semantic_search
             FULL OUTER JOIN keyword_search ON semantic_search.id = keyword_search.id
         )
@@ -156,7 +167,13 @@ class Document:
 
         with self.db.connection() as conn, conn.cursor() as cur:
             cur.execute(
-                sql, {"embedding": embedding.tolist(), "query": query, "k": RRF_K}
+                sql,
+                {
+                    "embedding": embedding.tolist(),
+                    "query": query,
+                    "rrf_k": self.setting("reciprocal_rank_fusion_k"),
+                    "chunk_size": self.setting("document_chunk_size"),
+                },
             )
 
             return [
@@ -433,3 +450,59 @@ class Model:
                 "SELECT price_per_million_tokens FROM model WHERE id = (%s)", (id,)
             )
             return cur.fetchone()[0]
+
+
+class SettingMigration:
+    def __init__(self, db: Database):
+        self.db = db
+
+    def run(self):
+        migrations = [
+            """
+            CREATE TABLE IF NOT EXISTS setting (
+                name text NOT NULL,
+                value jsonb
+            )
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS uniq_setting_name ON setting (name)",
+        ]
+
+        with self.db.connection() as conn, conn.cursor() as cur:
+            for migration in migrations:
+                cur.execute(migration)
+
+            SYSTEM_PROMPT = (
+                "You are a knowlegde support agent for an IaaS provider called Orion Outer Orbit (OOO). "
+                "Respond to the users question based on the provided documents. "
+                "If the documents don't answer the users question, say that you don't know."
+            )
+            settings = [
+                ("default_model", DEFAULT_MODEL),
+                ("system_prompt", SYSTEM_PROMPT),
+                ("reciprocal_rank_fusion_k", RECIPROCAL_RANK_FUSION_K),
+                ("document_chunk_size", DOCUMENT_CHUNK_SIZE),
+                ("conversation_limit", CONVERSATION_LIMIT),
+            ]
+            cur.executemany(
+                """
+                INSERT INTO setting (name, value) VALUES (%s, %s)
+                ON CONFLICT (name) DO UPDATE SET value = EXCLUDED.value
+                """,
+                [(name, Jsonb(value)) for name, value in settings],
+            )
+
+
+class Setting:
+    def __init__(self, db: Database):
+        self.db = db
+        self.cache = {}
+
+    def get(self, name: str):
+        if name in self.cache:
+            return self.cache[name]
+
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute("SELECT value FROM setting WHERE name = %s", (name,))
+            value = cur.fetchone()[0]
+            self.cache[name] = value
+            return value

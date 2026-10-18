@@ -47,9 +47,10 @@ https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search/r
 - Create user interface for queries
 - ~~Return file name in document search result~~
 - Implement tool calling
-- Store settings: default model, RRF_K, chunk size, prompt
+- ~~Store settings: default model, RRF_K, chunk size, prompt~~
 - ~~Implement dependency injection to reuse database connections~~
 - Support the retry, undo, and clear chat features using soft deletes
+- Add conversation limit based on turns, context size, and cost
 
 ## Architectural Decisions
 
