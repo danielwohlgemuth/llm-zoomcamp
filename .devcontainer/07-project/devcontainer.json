@@ -2,7 +2,7 @@
     "name": "07-project",
     "image": "mcr.microsoft.com/devcontainers/base:bookworm",
     "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}/07-project",
-    "postCreateCommand": "cd ${containerWorkspaceFolder} && uv sync",
+    "postCreateCommand": "cd ${containerWorkspaceFolder} && uv sync && git config --global --add safe.directory ${containerWorkspaceFolder}",
     "customizations": {
         "vscode": {
             "extensions": [
