@@ -15,7 +15,7 @@ translate_documents: setup
 translate_descriptions: setup
 	uv run -m scripts.translate_descriptions.py
 
-fmt: black isort
+fmt: isort black
 
 black: setup
 	uv run black .
