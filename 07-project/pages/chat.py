@@ -16,6 +16,7 @@ from libs.database import (
     Conversation,
     Database,
     Document,
+    ExampleQuestion,
     Message,
     MessageStatus,
     Setting,
@@ -125,7 +126,7 @@ class Chat:
         message_db = Message(self.db)
         message_id = message_db.add(
             conversation_id=conversation_id,
-            model=self.setting.get("model"),
+            model=self.setting.get("default_model"),
             messages=json.dumps(message_params),
         )
 
@@ -134,7 +135,7 @@ class Chat:
         response = client.messages.create(
             max_tokens=1024,
             messages=message_params,
-            model=self.setting.get("model"),
+            model=self.setting.get("default_model"),
             system=self.setting.get("system_prompt"),
         )
 
@@ -197,6 +198,10 @@ class Chat:
                         fn=self.handler,
                         additional_inputs=[conversation_id_state, conversations_state],
                         additional_outputs=[conversation_id_state, conversations_state],
+                        examples=[
+                            [{"text": question}]
+                            for question in ExampleQuestion(self.db).get_questions()
+                        ],
                         analytics_enabled=False,
                     )
 

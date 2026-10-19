@@ -86,6 +86,7 @@ class Migration:
         MessageMigration(self.db).run()
         ModelMigration(self.db).run()
         SettingMigration(self.db).run()
+        ExampleQuestionMigration(self.db).run()
 
 
 class DocumentMigration:
@@ -171,8 +172,8 @@ class Document:
                 {
                     "embedding": embedding.tolist(),
                     "query": query,
-                    "rrf_k": self.setting("reciprocal_rank_fusion_k"),
-                    "chunk_size": self.setting("document_chunk_size"),
+                    "rrf_k": self.setting.get("reciprocal_rank_fusion_k"),
+                    "chunk_size": self.setting.get("document_chunk_size"),
                 },
             )
 
@@ -503,6 +504,59 @@ class Setting:
 
         with self.db.connection() as conn, conn.cursor() as cur:
             cur.execute("SELECT value FROM setting WHERE name = %s", (name,))
-            value = cur.fetchone()[0]
-            self.cache[name] = value
-            return value
+            if cur.rowcount:
+                value = cur.fetchone()[0]
+                self.cache[name] = value
+                return value
+            else:
+                return None
+
+
+class ExampleQuestionMigration:
+    def __init__(self, db: Database):
+        self.db = db
+
+    def run(self):
+        with self.db.connection() as conn, conn.cursor() as cur:
+            migrations = [
+                """
+                CREATE TABLE IF NOT EXISTS example_question (
+                    id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
+                    question text NOT NULL
+                )
+                """,
+                "CREATE UNIQUE INDEX IF NOT EXISTS uniq_example_question_question ON example_question (question)",
+            ]
+
+            for migration in migrations:
+                cur.execute(migration)
+
+            questions = [
+                "What kinds of use cases can I use Galactic Cargo Hold for?",
+                "What determines the hardware available to a Modular Starship Hull instance when I launch it?",
+                "How long can Quantum Particle Flash Sparks MicroVMs retain state?",
+                "What kind of database is Singularity Vault, and what performance does it deliver?",
+                "What message delivery guarantees do standard queues and FIFO queues in Pneumatic Docking Tubes offer?",
+                "What kinds of endpoints can subscribe to a Red Alert Broadcaster topic?",
+                "What happens when content isn't cached at the edge location closest to the user?",
+                "What three main functions does Subspace Beacon Routing perform?",
+                "What does Orbiting Sentinel monitor, and which tools does it offer for observability?",
+            ]
+
+            cur.executemany(
+                "INSERT INTO example_question (question) VALUES (%s) ON CONFLICT DO NOTHING",
+                [(question,) for question in questions],
+            )
+
+
+class ExampleQuestion:
+    def __init__(self, db: Database):
+        self.db = db
+
+    def get_questions(self, top_n: int = 3):
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
+                "SELECT question FROM example_question ORDER BY RANDOM() LIMIT %s",
+                (top_n,),
+            )
+            return [row[0] for row in cur]
