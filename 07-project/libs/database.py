@@ -247,8 +247,7 @@ class Description:
             cur.execute("SELECT content FROM description WHERE name = %s", (name,))
             if cur.rowcount:
                 return cur.fetchone()[0]
-            else:
-                return None
+            return None
 
 
 class ConversationMigration:
@@ -426,11 +425,34 @@ class ModelMigration:
             )
             """,
             "CREATE UNIQUE INDEX IF NOT EXISTS uniq_model_name ON model (name)",
+            "ALTER TABLE model DROP COLUMN IF EXISTS price_per_million_tokens",
+            "ALTER TABLE model ADD COLUMN IF NOT EXISTS input_price_per_million_tokens numeric",
+            "ALTER TABLE model ADD COLUMN IF NOT EXISTS output_price_per_million_tokens numeric",
         ]
 
         with self.db.connection() as conn, conn.cursor() as cur:
             for migration in migrations:
                 cur.execute(migration)
+
+            models = [
+                {
+                    "name": "claude-haiku-5-5",
+                    "input_price_per_million_tokens": "0.1",
+                    "output_price_per_million_tokens": "0.5",
+                }
+            ]
+
+            cur.executemany(
+                "INSERT INTO model (name, input_price_per_million_tokens, output_price_per_million_tokens) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING",
+                [
+                    (
+                        model["name"],
+                        model["input_price_per_million_tokens"],
+                        model["output_price_per_million_tokens"],
+                    )
+                    for model in models
+                ],
+            )
 
 
 class Model:
@@ -445,12 +467,19 @@ class Model:
             )
             return cur.fetchone()[0]
 
-    def get_price(self, id: str) -> Decimal:
+    def get_price(self, name: str) -> dict | None:
         with self.db.connection() as conn, conn.cursor() as cur:
             cur.execute(
-                "SELECT price_per_million_tokens FROM model WHERE id = (%s)", (id,)
+                "SELECT input_price_per_million_tokens, output_price_per_million_tokens FROM model WHERE name = (%s)",
+                (name,),
             )
-            return cur.fetchone()[0]
+            if cur.rowcount:
+                model = cur.fetchone()
+                return {
+                    "input_price_per_million_tokens": model[0],
+                    "output_price_per_million_tokens": model[1],
+                }
+            return None
 
 
 class SettingMigration:
@@ -508,8 +537,7 @@ class Setting:
                 value = cur.fetchone()[0]
                 self.cache[name] = value
                 return value
-            else:
-                return None
+            return None
 
 
 class ExampleQuestionMigration:
