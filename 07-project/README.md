@@ -43,7 +43,7 @@ https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search/r
 - ~~Store prompt, response, and cost~~
 - Create an evaluation dataset
 - Store evaluations
-- Create Graphana dashboard
+- ~~Create Graphana dashboard~~
 - Create user interface for queries
 - ~~Return file name in document search result~~
 - Implement tool calling
