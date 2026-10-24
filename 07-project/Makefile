@@ -29,6 +29,9 @@ notebook:
 ingest_documents:
 	uv run -m scripts.ingest_documents
 
+ingest_document_chunks:
+	uv run -m scripts.ingest_document_chunks
+
 ingest_descriptions:
 	uv run -m scripts.ingest_descriptions
 
