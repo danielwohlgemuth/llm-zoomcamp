@@ -4,7 +4,8 @@ from pathlib import Path
 from langchain_text_splitters import MarkdownTextSplitter
 from tqdm.auto import tqdm
 
-from libs.database import Document
+from libs.database import Database, Document
+from libs.embedder import Embedder
 
 CHUNK_SIZE = 1024
 CHUNK_OVERLAP = 0
@@ -19,14 +20,16 @@ def ingest_document(
     file_path = Path(services_path, file_name)
     with open(file_path, "r") as file:
         content = file.read()
-        document.insert(file_name, 0, 0, content)
+        # document.insert(file_name, 0, 0, content)
         content_chunks = text_splitter.split_text(content)
         for index, content_chunk in enumerate(content_chunks):
             document.insert(file_name, text_splitter._chunk_size, index, content_chunk)
 
 
 def main():
-    document = Document()
+    db = Database()
+    embedder = Embedder()
+    document = Document(db, embedder)
     text_splitter = MarkdownTextSplitter(
         chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP
     )

@@ -4,16 +4,16 @@ setup:
 	uv sync
 
 download_documents: setup
-	uv run -m scripts.download_documents.py
+	uv run -m scripts.download_documents
 
 download_model: setup
-	uv run -m scripts.download_model.py
+	uv run -m scripts.download_model
 
 translate_documents: setup
-	uv run -m scripts.translate_documents.py
+	uv run -m scripts.translate_documents
 
 translate_descriptions: setup
-	uv run -m scripts.translate_descriptions.py
+	uv run -m scripts.translate_descriptions
 
 fmt: isort black
 
@@ -27,10 +27,10 @@ notebook:
 	uv run jupyter notebook
 
 ingest_documents:
-	uv run -m scripts.ingest_documents.py
+	uv run -m scripts.ingest_documents
 
 ingest_descriptions:
-	uv run -m scripts.ingest_descriptions.py
+	uv run -m scripts.ingest_descriptions
 
 start_docker:
 	docker compose up -d
