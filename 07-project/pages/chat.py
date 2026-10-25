@@ -79,6 +79,7 @@ class Chat:
     def process_assistant_messages(self, content: list[str]):
         long_message = ""
         citations = []
+        messages = []
 
         for message in content:
             if message.get("type", "") == "text":
@@ -94,22 +95,26 @@ class Chat:
                         )
                         long_message += f" [{len(citations)}] "
 
-        messages = [
-            {
-                "type": "text",
-                "text": long_message,
-            },
-            {
-                "type": "citation",
-                "metadata": {"title": "Sources", "status": "done"},
-                "content": "\n\n".join(
-                    [
-                        f"[{index+1}] {citation["text"]}\n\n[{citation["title"]}](/docs?file_name={quote(citation["title"], safe="")})"
-                        for index, citation in enumerate(citations)
-                    ]
-                ),
-            },
-        ]
+        if long_message:
+            messages.append(
+                {
+                    "type": "text",
+                    "text": long_message,
+                },
+            )
+        if len(citations) > 0:
+            messages.append(
+                {
+                    "type": "citation",
+                    "metadata": {"title": "Sources", "status": "done"},
+                    "content": "\n\n".join(
+                        [
+                            f"[{index+1}] {citation["text"]}\n\n[{citation["title"]}](/docs?file_name={quote(citation["title"], safe="")})"
+                            for index, citation in enumerate(citations)
+                        ]
+                    ),
+                }
+            )
         return messages
 
     def handler(self, message: str, history, conversation_id: str, conversations):
