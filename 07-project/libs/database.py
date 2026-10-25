@@ -17,12 +17,18 @@ load_dotenv()
 
 RECIPROCAL_RANK_FUSION_K = 60
 SYSTEM_PROMPT = """You are a knowlegde support agent for an IaaS provider called Orion Outer Orbit (OOO).
-Respond to the users question based on the provided documents.
+Respond to the users question based on the documents from the knowledge base.
+Use the available tool to search for relevant documents.
 If the documents don't answer the users question, say that you don't know.
 """
 DEFAULT_MODEL = "claude-haiku-5-5"
 DOCUMENT_CHUNK_SIZE = 1024
-CONVERSATION_LIMIT = {"max_tokens": 10_000, "max_cost": "0.1", "max_turns": 10}
+CONVERSATION_LIMIT = {
+    "max_tokens": 10_000,
+    "max_cost": "0.1",
+    "max_turns": 10,
+    "max_tool_iterations": 5,
+}
 
 
 # Index and constraint naming conventions
@@ -401,7 +407,7 @@ class Message:
                 (message, status, input_tokens, output_tokens, id),
             )
 
-    def get_by_conversation(self, conversation_id: str) -> list[dict]:
+    def get_all_by_conversation(self, conversation_id: str) -> list[dict]:
         with self.db.connection() as conn, conn.cursor() as cur:
             cur.execute(
                 "SELECT request_messages, response FROM message "
@@ -409,6 +415,21 @@ class Message:
                 (conversation_id,),
             )
             return [{"request": row[0], "response": row[1]} for row in cur]
+
+    def get_usage_by_conversation(self, conversation_id: str) -> dict:
+        with self.db.connection() as conn, conn.cursor() as cur:
+            cur.execute(
+                "SELECT "
+                "   COALESCE(SUM(m.input_tokens * mo.input_price_per_million_tokens / 1000000 + m.output_tokens * mo.output_price_per_million_tokens / 1000000), 0), "
+                "   COUNT(*), "
+                "   COALESCE(SUM(m.input_tokens + m.output_tokens), 0) "
+                "FROM message AS m "
+                "   JOIN model AS mo ON (mo.name = m.model)"
+                "WHERE m.conversation_id = %s",
+                (conversation_id,),
+            )
+            row = cur.fetchone()
+            return {"cost": row[0], "turns": row[1], "tokens": row[2]}
 
 
 class ModelMigration:
@@ -459,11 +480,16 @@ class Model:
     def __init__(self, db: Database):
         self.db = db
 
-    def insert(self, name: str, price_per_million_tokens: Decimal) -> str:
+    def insert(
+        self,
+        name: str,
+        input_price_per_million_tokens: Decimal,
+        output_price_per_million_tokens: Decimal,
+    ) -> str:
         with self.db.connection() as conn, conn.cursor() as cur:
             cur.execute(
-                "INSERT INTO model (name, price_per_million_tokens) VALUES (%s, %s) RETURNING id",
-                (name, price_per_million_tokens),
+                "INSERT INTO model (name, input_price_per_million_tokens, output_price_per_million_tokens) VALUES (%s, %s, %s) RETURNING id",
+                (name, input_price_per_million_tokens, output_price_per_million_tokens),
             )
             return cur.fetchone()[0]
 
@@ -501,11 +527,6 @@ class SettingMigration:
             for migration in migrations:
                 cur.execute(migration)
 
-            SYSTEM_PROMPT = (
-                "You are a knowlegde support agent for an IaaS provider called Orion Outer Orbit (OOO). "
-                "Respond to the users question based on the provided documents. "
-                "If the documents don't answer the users question, say that you don't know."
-            )
             settings = [
                 ("default_model", DEFAULT_MODEL),
                 ("system_prompt", SYSTEM_PROMPT),
