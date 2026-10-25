@@ -24,7 +24,8 @@ If the documents don't answer the users question, say that you don't know.
 DEFAULT_MODEL = "claude-haiku-5-5"
 DOCUMENT_CHUNK_SIZE = 1024
 CONVERSATION_LIMIT = {
-    "max_tokens": 10_000,
+    "max_input_tokens": 20_000,
+    "max_output_tokens": 4_000,
     "max_cost": "0.1",
     "max_turns": 10,
     "max_tool_iterations": 5,
@@ -422,14 +423,15 @@ class Message:
                 "SELECT "
                 "   COALESCE(SUM(m.input_tokens * mo.input_price_per_million_tokens / 1000000 + m.output_tokens * mo.output_price_per_million_tokens / 1000000), 0), "
                 "   COUNT(*), "
-                "   COALESCE(SUM(m.input_tokens + m.output_tokens), 0) "
+                "   COALESCE(SUM(m.input_tokens), 0), "
+                "   COALESCE(SUM(m.output_tokens), 0) "
                 "FROM message AS m "
                 "   JOIN model AS mo ON (mo.name = m.model)"
                 "WHERE m.conversation_id = %s",
                 (conversation_id,),
             )
             row = cur.fetchone()
-            return {"cost": row[0], "turns": row[1], "tokens": row[2]}
+            return {"cost": row[0], "turns": row[1], "input_tokens": row[2], "output_tokens": row[3]}
 
 
 class ModelMigration:

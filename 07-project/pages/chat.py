@@ -1,3 +1,4 @@
+from enum import Enum
 import json
 import os
 from decimal import Decimal
@@ -29,6 +30,12 @@ from libs.embedder import Embedder
 
 MAX_TOKENS = 2048
 
+
+class ErrorCode(Enum):
+    E1 = "Conversation input token limit reached"
+    E2 = "Conversation output token limit reached"
+    E3 = "Conversation cost limit reached"
+    E4 = "Conversation turn limit reached"
 
 class Chat:
     def __init__(self, db: Database, embedder: Embedder):
@@ -131,7 +138,7 @@ class Chat:
             truncated_message = message if len(message) <= 50 else message[:47] + "..."
             conversation_id = conversation.insert(truncated_message)
             conversations = conversation.get_all()
-            conversation_usage = {"cost": 0, "turns": 0, "tokens": 0}
+            conversation_usage = {"cost": 0, "turns": 0, "input_tokens": 0, "output_tokens": 0}
         else:
             _, messages, raw_messages = self.load_conversation(conversation_id)
             conversation_usage = message_db.get_usage_by_conversation(conversation_id)
@@ -148,14 +155,17 @@ class Chat:
         tool_iterations = 0
 
         while True:
-            if conversation_usage["tokens"] >= conversation_limit["max_tokens"]:
-                messages.append({"role": "assistant", "content": "Limit reached"})
+            if conversation_usage["input_tokens"] >= conversation_limit["max_input_tokens"]:
+                messages.append({"role": "assistant", "content": "Chat limit reached. E1"})
+                break
+            if conversation_usage["output_tokens"] >= conversation_limit["max_output_tokens"]:
+                messages.append({"role": "assistant", "content": "Chat limit reached. E2"})
                 break
             if conversation_usage["cost"] >= Decimal(conversation_limit["max_cost"]):
-                messages.append({"role": "assistant", "content": "Limit reached"})
+                messages.append({"role": "assistant", "content": "Chat limit reached. E3"})
                 break
             if conversation_usage["turns"] >= conversation_limit["max_turns"]:
-                messages.append({"role": "assistant", "content": "Limit reached"})
+                messages.append({"role": "assistant", "content": "Chat limit reached. E4"})
                 break
 
             message_id = message_db.add(
@@ -298,9 +308,8 @@ class Chat:
                 else:
                     break
 
-                conversation_usage["tokens"] += (
-                    response.usage.input_tokens + response.usage.output_tokens
-                )
+                conversation_usage["input_tokens"] += response.usage.input_tokens
+                conversation_usage["output_tokens"] += response.usage.output_tokens
                 conversation_usage["cost"] += (
                     model_price["input_price_per_million_tokens"]
                     / 1_000_000

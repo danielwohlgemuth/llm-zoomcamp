@@ -60,3 +60,4 @@ https://github.com/pgvector/pgvector-python/blob/master/examples/hybrid_search/r
   Compared to Streamlit, just from looking through the documentation of Gradio's [chat](https://gradio.app/main/docs/gradio/chatbot) component, it offers more features and configuration options than Steamlit's [chat](https://docs.streamlit.io/develop/api-reference/chat/st.chat_message) component.
 - The ID column of database rows will have UUIDv4 values so that if the IDs are exposed to clients, they don't reveal details such as total rows or new rows per time frame based on the sequence.
 - Grant Grafana read-only access to the database to apply the principle of least privilege.
+- Introduce different limits for input and output tokens as they are priced differently. Currently, [Anthropic prices](https://platform.claude.com/docs/en/about-claude/pricing) input tokens as 5 times cheaper than output tokens.
