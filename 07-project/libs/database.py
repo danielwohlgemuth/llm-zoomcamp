@@ -16,6 +16,7 @@ load_dotenv()
 
 
 RECIPROCAL_RANK_FUSION_K = 60
+COSINE_DISTANCE = 0.7
 SYSTEM_PROMPT = """You are a knowlegde support agent for an IaaS provider called Orion Outer Orbit (OOO).
 Respond to the users question based on the documents from the knowledge base.
 Use the available tool to search for relevant documents.
@@ -144,6 +145,7 @@ class Document:
             SELECT id, RANK () OVER (ORDER BY embedding <=> %(embedding)s::vector) AS rank
             FROM document
             WHERE chunk_size = %(chunk_size)s
+            AND embedding <=> %(embedding)s::vector < %(cosine_distance)s
             ORDER BY embedding <=> %(embedding)s::vector
             LIMIT 20
         ),
@@ -170,7 +172,7 @@ class Document:
         FROM combined
         JOIN document ON document.id = combined.id
         ORDER BY combined.score DESC
-        LIMIT 5
+        LIMIT 3
         """
 
         with self.db.connection() as conn, conn.cursor() as cur:
@@ -181,6 +183,7 @@ class Document:
                     "query": query,
                     "rrf_k": self.setting.get("reciprocal_rank_fusion_k"),
                     "chunk_size": self.setting.get("document_chunk_size"),
+                    "cosine_distance": self.setting.get("cosine_distance"),
                 },
             )
 
@@ -533,6 +536,7 @@ class SettingMigration:
                 ("default_model", DEFAULT_MODEL),
                 ("system_prompt", SYSTEM_PROMPT),
                 ("reciprocal_rank_fusion_k", RECIPROCAL_RANK_FUSION_K),
+                ("cosine_distance", COSINE_DISTANCE),
                 ("document_chunk_size", DOCUMENT_CHUNK_SIZE),
                 ("conversation_limit", CONVERSATION_LIMIT),
             ]
