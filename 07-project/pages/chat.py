@@ -132,15 +132,15 @@ class Chat:
         conversation_limit = self.setting.get("conversation_limit")
 
         message_params = []
+        messages = []
         if not conversation_id:
             raw_messages = []
-            messages = []
             truncated_message = message if len(message) <= 50 else message[:47] + "..."
             conversation_id = conversation.insert(truncated_message)
             conversations = conversation.get_all()
             conversation_usage = {"cost": 0, "turns": 0, "input_tokens": 0, "output_tokens": 0}
         else:
-            _, messages, raw_messages = self.load_conversation(conversation_id)
+            _, _, raw_messages = self.load_conversation(conversation_id)
             conversation_usage = message_db.get_usage_by_conversation(conversation_id)
 
         message_param_content = []
