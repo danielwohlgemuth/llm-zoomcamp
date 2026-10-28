@@ -338,6 +338,10 @@ class Chat:
 
         return messages, conversation_id, conversations
 
+    def refresh_examples(self):
+        questions = ExampleQuestion(self.db).get_questions()
+        return gr.Chatbot(examples=[{"text": question} for question in questions])
+
     def render(self):
         with gr.Blocks() as app:
             conversation_id_state = gr.State(value=None)
@@ -389,3 +393,6 @@ class Chat:
                     lambda: (None, []),
                     outputs=[conversation_id_state, chat_interface.chatbot_value],
                 )
+
+            app.load(self.refresh_examples, outputs=chat_interface.chatbot)
+
