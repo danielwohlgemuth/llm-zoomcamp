@@ -123,10 +123,10 @@ class DocumentMigration:
 
 
 class Document:
-    def __init__(self, db: Database, embedder: Embedder):
+    def __init__(self, db: Database, embedder: Embedder, setting: Setting):
         self.db = db
         self.embedder = embedder
-        self.setting = Setting(db)
+        self.setting = setting
 
     def insert(
         self, file_name: str, chunk_size: int, chunk_index: int, content: str
@@ -434,7 +434,12 @@ class Message:
                 (conversation_id,),
             )
             row = cur.fetchone()
-            return {"cost": row[0], "turns": row[1], "input_tokens": row[2], "output_tokens": row[3]}
+            return {
+                "cost": row[0],
+                "turns": row[1],
+                "input_tokens": row[2],
+                "output_tokens": row[3],
+            }
 
 
 class ModelMigration:

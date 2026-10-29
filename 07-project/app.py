@@ -1,6 +1,9 @@
-import gradio as gr
+import os
 
-from libs.database import Database, Migration
+import gradio as gr
+from anthropic import Anthropic
+
+from libs.database import Database, Migration, Setting
 from libs.embedder import Embedder
 from pages.chat import Chat
 from pages.description import Description
@@ -8,13 +11,16 @@ from pages.docs import Docs
 
 db = Database()
 embedder = Embedder()
+setting = Setting(db)
+client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
+
 
 with gr.Blocks(title="Chat", analytics_enabled=False) as app:
-    Chat(db, embedder).render()
+    Chat(db, embedder, setting, client).render()
 with app.route("Services"):
     Description(db).render()
 with app.route("Docs"):
-    Docs(db, embedder).render()
+    Docs(db, embedder, setting).render()
 
 css = """
 .conversation {

@@ -41,6 +41,8 @@ class Description:
     def __init__(self, db: Database):
         self.db = db
 
+        self.description = DescriptionTable(db)
+
     def filter_descriptions(self, search: str, descriptions: list[dict]) -> list[dict]:
         if search:
             return [
@@ -54,8 +56,7 @@ class Description:
 
     def render(self):
         with gr.Blocks() as app:
-            desc = DescriptionTable(self.db)
-            descriptions = desc.list()
+            descriptions = self.description.list()
 
             search_box = gr.Textbox(label="Search", placeholder="Type to filter")
 

@@ -54,16 +54,24 @@ class ErrorCode(Enum):
 
 
 class Chat:
-    def __init__(self, db: Database, embedder: Embedder):
+    def __init__(
+        self, db: Database, embedder: Embedder, setting: Setting, client: Anthropic
+    ):
         self.db = db
         self.embedder = embedder
-        self.setting = Setting(db)
+        self.setting = setting
+        self.client = client
+
+        self.conversation = Conversation(db)
+        self.document = Document(db, embedder, setting)
+        self.example_questions = ExampleQuestion(db)
+        self.message = Message(db)
+        self.model = Model(db)
 
     def load_conversation(self, conversation_id: str):
         history = []
         raw_history = []
-        message = Message(self.db)
-        for row in message.get_all_by_conversation(conversation_id):
+        for row in self.message.get_all_by_conversation(conversation_id):
             for request_message in row["request"]:
                 raw_history.append(
                     {
@@ -140,11 +148,8 @@ class Chat:
             )
         return messages
 
-    def handler(self, message: str, history, conversation_id: str, conversations):
-        conversation = Conversation(self.db)
-        message_db = Message(self.db)
-        model = Model(self.db)
-        model_price = model.get_price(self.setting.get("default_model"))
+    def handler(self, message: str, _, conversation_id: str, conversations):
+        model_price = self.model.get_price(self.setting.get("default_model"))
         conversation_limit = self.setting.get("conversation_limit")
 
         message_params = []
@@ -152,8 +157,8 @@ class Chat:
         if not conversation_id:
             raw_messages = []
             truncated_message = message if len(message) <= 50 else message[:47] + "..."
-            conversation_id = conversation.insert(truncated_message)
-            conversations = conversation.get_all()
+            conversation_id = self.conversation.insert(truncated_message)
+            conversations = self.conversation.get_all()
             conversation_usage = {
                 "cost": 0,
                 "turns": 0,
@@ -162,7 +167,7 @@ class Chat:
             }
         else:
             _, _, raw_messages = self.load_conversation(conversation_id)
-            conversation_usage = message_db.get_usage_by_conversation(conversation_id)
+            conversation_usage = self.message.get_usage_by_conversation(conversation_id)
 
         message_param_content = []
         message_param_content.append(TextBlockParam(type="text", text=message))
@@ -203,17 +208,15 @@ class Chat:
                 )
                 break
 
-            message_id = message_db.add(
+            message_id = self.message.add(
                 conversation_id=conversation_id,
                 model=self.setting.get("default_model"),
                 messages=json.dumps(message_params),
             )
 
             try:
-
                 # Send request
-                client = Anthropic(api_key=os.environ.get("ANTHROPIC_API_KEY"))
-                response = client.messages.create(
+                response = self.client.messages.create(
                     max_tokens=MAX_TOKENS,
                     messages=raw_messages + message_params,
                     thinking=ThinkingConfigAdaptiveParam(
@@ -234,7 +237,7 @@ class Chat:
                 messages.extend(
                     self.process_assistant_messages(response_obj["content"])
                 )
-                message_db.update(
+                self.message.update(
                     id=message_id,
                     message=response_json,
                     status=MessageStatus.Completed.value,
@@ -245,7 +248,6 @@ class Chat:
                 # Handle tool call
                 if response.stop_reason == "tool_use":
                     tool_iterations += 1
-                    document = Document(self.db, self.embedder)
 
                     message_param_content = []
                     for content_block in response.content:
@@ -264,7 +266,7 @@ class Chat:
                                 )
                             elif content_block.name == "search_documents":
                                 try:
-                                    search_results = document.search(
+                                    search_results = self.document.search(
                                         content_block.input["text"]
                                     )
                                     search_result_blocks = []
@@ -353,21 +355,19 @@ class Chat:
                 break
 
         if len(conversations) > 1 and conversation_id != conversations[0]["id"]:
-            conversation = Conversation(self.db)
-            conversations = conversation.get_all()
+            conversations = self.conversation.get_all()
 
         return messages, conversation_id, conversations
 
     def refresh_examples(self):
-        questions = ExampleQuestion(self.db).get_questions()
+        questions = self.example_questions.get_questions()
         return gr.Chatbot(examples=[{"text": question} for question in questions])
 
     def render(self):
         with gr.Blocks() as app:
             conversation_id_state = gr.State(value=None)
 
-            conversation = Conversation(self.db)
-            conversations_state = gr.State(value=conversation.get_all())
+            conversations_state = gr.State(value=self.conversation.get_all())
 
             with gr.Row():
                 with gr.Column(scale=1):
@@ -404,7 +404,7 @@ class Chat:
                         additional_outputs=[conversation_id_state, conversations_state],
                         examples=[
                             [{"text": question}]
-                            for question in ExampleQuestion(self.db).get_questions()
+                            for question in self.example_questions.get_questions()
                         ],
                         analytics_enabled=False,
                     )
