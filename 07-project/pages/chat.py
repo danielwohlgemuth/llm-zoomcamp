@@ -1,7 +1,7 @@
-from enum import Enum
 import json
 import os
 from decimal import Decimal
+from enum import Enum
 from urllib.parse import quote
 
 import gradio as gr
@@ -30,12 +30,28 @@ from libs.embedder import Embedder
 
 MAX_TOKENS = 2048
 
+SEARCH_DOCUMENTS_TOOL = ToolParam(
+    name="search_documents",
+    description="Execute a search against the document knowledge base. Returns a list of rows as JSON objects.",
+    input_schema={
+        "type": "object",
+        "properties": {
+            "text": {
+                "type": "string",
+                "description": "Search query",
+            }
+        },
+        "required": ["text"],
+    },
+)
+
 
 class ErrorCode(Enum):
     E1 = "Conversation input token limit reached"
     E2 = "Conversation output token limit reached"
     E3 = "Conversation cost limit reached"
     E4 = "Conversation turn limit reached"
+
 
 class Chat:
     def __init__(self, db: Database, embedder: Embedder):
@@ -138,7 +154,12 @@ class Chat:
             truncated_message = message if len(message) <= 50 else message[:47] + "..."
             conversation_id = conversation.insert(truncated_message)
             conversations = conversation.get_all()
-            conversation_usage = {"cost": 0, "turns": 0, "input_tokens": 0, "output_tokens": 0}
+            conversation_usage = {
+                "cost": 0,
+                "turns": 0,
+                "input_tokens": 0,
+                "output_tokens": 0,
+            }
         else:
             _, _, raw_messages = self.load_conversation(conversation_id)
             conversation_usage = message_db.get_usage_by_conversation(conversation_id)
@@ -155,17 +176,31 @@ class Chat:
         tool_iterations = 0
 
         while True:
-            if conversation_usage["input_tokens"] >= conversation_limit["max_input_tokens"]:
-                messages.append({"role": "assistant", "content": "Chat limit reached. E1"})
+            if (
+                conversation_usage["input_tokens"]
+                >= conversation_limit["max_input_tokens"]
+            ):
+                messages.append(
+                    {"role": "assistant", "content": "Chat limit reached. E1"}
+                )
                 break
-            if conversation_usage["output_tokens"] >= conversation_limit["max_output_tokens"]:
-                messages.append({"role": "assistant", "content": "Chat limit reached. E2"})
+            if (
+                conversation_usage["output_tokens"]
+                >= conversation_limit["max_output_tokens"]
+            ):
+                messages.append(
+                    {"role": "assistant", "content": "Chat limit reached. E2"}
+                )
                 break
             if conversation_usage["cost"] >= Decimal(conversation_limit["max_cost"]):
-                messages.append({"role": "assistant", "content": "Chat limit reached. E3"})
+                messages.append(
+                    {"role": "assistant", "content": "Chat limit reached. E3"}
+                )
                 break
             if conversation_usage["turns"] >= conversation_limit["max_turns"]:
-                messages.append({"role": "assistant", "content": "Chat limit reached. E4"})
+                messages.append(
+                    {"role": "assistant", "content": "Chat limit reached. E4"}
+                )
                 break
 
             message_id = message_db.add(
@@ -186,22 +221,7 @@ class Chat:
                     ),
                     model=self.setting.get("default_model"),
                     system=self.setting.get("system_prompt"),
-                    tools=[
-                        ToolParam(
-                            name="search_documents",
-                            description="Execute a search against the document knowledge base. Returns a list of rows as JSON objects.",
-                            input_schema={
-                                "type": "object",
-                                "properties": {
-                                    "text": {
-                                        "type": "string",
-                                        "description": "Search query",
-                                    }
-                                },
-                                "required": ["text"],
-                            },
-                        )
-                    ],
+                    tools=[SEARCH_DOCUMENTS_TOOL],
                 )
                 raw_messages.extend(message_params)
                 raw_messages.append(
@@ -395,4 +415,3 @@ class Chat:
                 )
 
             app.load(self.refresh_examples, outputs=chat_interface.chatbot)
-
