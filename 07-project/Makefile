@@ -17,28 +17,28 @@ translate_descriptions: setup
 
 fmt: isort black
 
-black: setup
+black:
 	uv run black .
 
-isort: setup
+isort:
 	uv run isort .
 
 notebook:
 	uv run jupyter notebook
 
-ingest_documents:
+ingest_documents: setup
 	uv run -m scripts.ingest_documents
 
-ingest_document_chunks:
+ingest_document_chunks: setup
 	uv run -m scripts.ingest_document_chunks
 
-ingest_descriptions:
+ingest_descriptions: setup
 	uv run -m scripts.ingest_descriptions
 
 start_docker:
 	docker compose up -d
 
-start_gradio:
+start_gradio: setup
 	gradio app.py
 
 connect_db:
