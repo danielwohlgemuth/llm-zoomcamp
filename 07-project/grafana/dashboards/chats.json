@@ -5,7 +5,7 @@
     "name": "vign876",
     "namespace": "default",
     "uid": "33d5d7e5-fac4-468c-bc1c-2f3e3c6d2821",
-    "resourceVersion": "1792630739426989",
+    "resourceVersion": "1792630829462993",
     "generation": 1,
     "creationTimestamp": "2026-10-22T00:58:59Z",
     "labels": {
@@ -15,9 +15,9 @@
       "grafana.app/createdBy": "access-policy:service",
       "grafana.app/managedBy": "classic-file-provisioning",
       "grafana.app/managerId": "default",
-      "grafana.app/sourceChecksum": "c785885ce081c09a75eded4e41e2d8eb",
+      "grafana.app/sourceChecksum": "63615d9dfd8a215f0dd83fef360f3d81",
       "grafana.app/sourcePath": "/var/lib/grafana/dashboards/chats.json",
-      "grafana.app/sourceTimestamp": "1792629667000",
+      "grafana.app/sourceTimestamp": "1792630828000",
       "grafana.app/folder": ""
     }
   },
@@ -393,7 +393,7 @@
                         "editorMode": "code",
                         "format": "table",
                         "rawQuery": true,
-                        "rawSql": "SELECT\n  created_at,\n  input_tokens * input_price_per_million_tokens / 1000000 as \"Input Price\",\n  output_tokens * output_price_per_million_tokens / 1000000 AS \"Output Price\"\nFROM\n  message\n  JOIN model AS m ON (m.name = model)\nWHERE $__timeFilter(created_at)",
+                        "rawSql": "SELECT\n  $__timeGroupAlias(created_at, '$__interval'),\n  SUM(input_tokens * input_price_per_million_tokens / 1000000) as \"Input Price\",\n  SUM(output_tokens * output_price_per_million_tokens / 1000000) AS \"Output Price\"\nFROM\n  message\n  JOIN model AS m ON (m.name = model)\nWHERE $__timeFilter(created_at)\nGROUP BY 1\nORDER BY 1",
                         "sql": {
                           "columns": [
                             {
@@ -425,9 +425,9 @@
           "description": "",
           "id": 3,
           "links": [],
-          "title": "Cost per message ($)",
+          "title": "Cost over time ($)",
           "vizConfig": {
-            "group": "barchart",
+            "group": "timeseries",
             "kind": "VizConfig",
             "spec": {
               "fieldConfig": {
@@ -441,16 +441,29 @@
                     "axisColorMode": "text",
                     "axisLabel": "",
                     "axisPlacement": "auto",
-                    "fillOpacity": 80,
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "line",
+                    "fillOpacity": 0,
                     "gradientMode": "none",
                     "hideFrom": {
                       "legend": false,
                       "tooltip": false,
                       "viz": false
                     },
+                    "insertNulls": 3600000,
+                    "lineInterpolation": "linear",
                     "lineWidth": 1,
+                    "pointSize": 5,
                     "scaleDistribution": {
                       "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
                     },
                     "thresholdsStyle": {
                       "mode": "off"
@@ -473,26 +486,21 @@
                 "overrides": []
               },
               "options": {
-                "barRadius": 0,
-                "barWidth": 0.97,
-                "fullHighlight": false,
-                "groupWidth": 0.7,
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
+                },
                 "legend": {
                   "calcs": [],
                   "displayMode": "list",
                   "placement": "bottom",
                   "showLegend": true
                 },
-                "orientation": "auto",
-                "showValue": "never",
-                "stacking": "normal",
                 "tooltip": {
                   "hideZeros": false,
                   "mode": "single",
                   "sort": "none"
-                },
-                "xTickLabelRotation": 30,
-                "xTickLabelSpacing": 0
+                }
               }
             },
             "version": "13.0.11"
@@ -553,7 +561,7 @@
           "description": "",
           "id": 4,
           "links": [],
-          "title": "Total cost of messages($)",
+          "title": "Total cost of messages ($)",
           "vizConfig": {
             "group": "stat",
             "kind": "VizConfig",
