@@ -11,13 +11,11 @@ If the documents don't answer the users question, say that you don't know.
 """
 DEFAULT_MODEL = "claude-haiku-5-5"
 DOCUMENT_CHUNK_SIZE = 1024
-CONVERSATION_LIMIT = {
-    "max_input_tokens": 20_000,
-    "max_output_tokens": 4_000,
-    "max_cost": "0.1",
-    "max_turns": 10,
-    "max_tool_iterations": 5,
-}
+CONVERSATION_MAX_INPUT_TOKENS = 20_000
+CONVERSATION_MAX_OUTPUT_TOKENS = 4_000
+CONVERSATION_MAX_COST = "0.1"
+CONVERSATION_MAX_TURNS = 10
+CONVERSATION_MAX_TOOL_ITERATIONS = 5
 
 # Migrations
 DOCUMENT_MIGRATIONS = [
@@ -168,7 +166,11 @@ SETTINGS = [
     ("reciprocal_rank_fusion_k", RECIPROCAL_RANK_FUSION_K),
     ("cosine_distance", COSINE_DISTANCE),
     ("document_chunk_size", DOCUMENT_CHUNK_SIZE),
-    ("conversation_limit", CONVERSATION_LIMIT),
+    ("conversation_max_input_tokens", CONVERSATION_MAX_INPUT_TOKENS),
+    ("conversation_max_output_tokens", CONVERSATION_MAX_OUTPUT_TOKENS),
+    ("conversation_max_cost", CONVERSATION_MAX_COST),
+    ("conversation_max_turns", CONVERSATION_MAX_TURNS),
+    ("conversation_max_tool_iterations", CONVERSATION_MAX_TOOL_ITERATIONS),
 ]
 EXAMPLE_QUESTION_MIGRATION = [
     """

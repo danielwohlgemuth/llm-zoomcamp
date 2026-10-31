@@ -162,18 +162,17 @@ class Chat:
         usage["turns"] += 1
 
     def check_limits(self, usage: dict, limits: dict) -> str:
-        if usage["input_tokens"] >= limits["max_input_tokens"]:
+        if usage["input_tokens"] >= self.setting.get("conversation_max_input_tokens"):
             return "Chat limit reached. E1"
-        if usage["output_tokens"] >= limits["max_output_tokens"]:
+        if usage["output_tokens"] >= self.setting.get("conversation_max_output_tokens"):
             return "Chat limit reached. E2"
-        if usage["cost"] >= Decimal(limits["max_cost"]):
+        if usage["cost"] >= Decimal(self.setting.get("conversation_max_cost")):
             return "Chat limit reached. E3"
-        if usage["turns"] >= limits["max_turns"]:
+        if usage["turns"] >= self.setting.get("conversation_max_turns"):
             return "Chat limit reached. E4"
         return None
 
     def handler(self, message: str, _, conversation_id: str, conversations):
-        conversation_limit = self.setting.get("conversation_limit")
 
         message_params = []
         messages = []
@@ -204,9 +203,7 @@ class Chat:
         tool_iterations = 0
 
         while True:
-            check_limits_result = self.check_limits(
-                conversation_usage, conversation_limit
-            )
+            check_limits_result = self.check_limits(conversation_usage)
             if check_limits_result:
                 messages.append({"role": "assistant", "content": check_limits_result})
                 break
@@ -255,9 +252,8 @@ class Chat:
                     message_param_content = []
                     for content_block in response.content:
                         if content_block.type == "tool_use":
-                            if (
-                                tool_iterations
-                                > conversation_limit["max_tool_iterations"]
+                            if tool_iterations > self.setting.get(
+                                "conversation_max_tool_iterations"
                             ):
                                 message_param_content.append(
                                     ToolResultBlockParam(
