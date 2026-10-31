@@ -66,25 +66,12 @@ class Chat:
 
     def load_conversation(self, conversation_id: str):
         history = []
-        raw_history = []
         for row in self.message.get_all_by_conversation(conversation_id):
             for request_message in row["request"]:
-                raw_history.append(
-                    {
-                        "role": request_message["role"],
-                        "content": request_message.get("content", []),
-                    }
-                )
                 for content in request_message.get("content", []):
                     if content.get("type", "") == "text":
                         history.append({"role": "user", "content": content["text"]})
             if row["response"]:
-                raw_history.append(
-                    {
-                        "role": row["response"]["role"],
-                        "content": row["response"]["content"],
-                    }
-                )
                 for response_message in self.process_assistant_messages(
                     row["response"]["content"]
                 ):
@@ -101,7 +88,27 @@ class Chat:
                             }
                         )
 
-        return conversation_id, history, raw_history
+        return conversation_id, history
+
+    def load_raw_conversation(self, conversation_id: str):
+        history = []
+        for row in self.message.get_all_by_conversation(conversation_id):
+            for request_message in row["request"]:
+                history.append(
+                    {
+                        "role": request_message["role"],
+                        "content": request_message.get("content", []),
+                    }
+                )
+            if row["response"]:
+                history.append(
+                    {
+                        "role": row["response"]["role"],
+                        "content": row["response"]["content"],
+                    }
+                )
+
+        return history
 
     def process_assistant_messages(self, content: list[dict]):
         long_message = ""
@@ -182,7 +189,7 @@ class Chat:
                 "output_tokens": 0,
             }
         else:
-            _, _, raw_messages = self.load_conversation(conversation_id)
+            raw_messages = self.load_raw_conversation(conversation_id)
             conversation_usage = self.message.get_usage_by_conversation(conversation_id)
 
         message_param_content = []
@@ -378,9 +385,7 @@ class Chat:
                                 ),
                             )
                             button.click(
-                                fn=lambda cid=detail["id"]: self.load_conversation(cid)[
-                                    :2
-                                ],
+                                fn=lambda cid=detail["id"]: self.load_conversation(cid),
                                 outputs=[
                                     conversation_id_state,
                                     chat_interface.chatbot_value,
