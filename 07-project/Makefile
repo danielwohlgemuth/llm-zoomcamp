@@ -38,7 +38,10 @@ ingest_descriptions: setup
 start_docker:
 	docker compose up -d
 
-start_gradio: setup
+run_migrations: setup
+	uv run -m libs.database.migrations
+
+start_gradio: setup run_migrations
 	gradio app.py
 
 connect_db:

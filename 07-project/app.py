@@ -3,7 +3,8 @@ import os
 import gradio as gr
 from anthropic import Anthropic
 
-from libs.database import Database, Migration, Setting
+from libs.database.connection import Database
+from libs.database.repositories.setting import Setting
 from libs.embedder import Embedder
 from pages.chat import Chat
 from pages.description import Description
@@ -32,7 +33,5 @@ css = """
     font-weight: 500;
 }
 """
-
-Migration(db).run()
 
 app.launch(css=css)

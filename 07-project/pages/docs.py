@@ -2,7 +2,9 @@ from urllib.parse import quote
 
 import gradio as gr
 
-from libs.database import Database, Document, Setting
+from libs.database.connection import Database
+from libs.database.repositories.document import Document
+from libs.database.repositories.setting import Setting
 from libs.embedder import Embedder
 
 
