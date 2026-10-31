@@ -151,14 +151,12 @@ class Chat:
             )
         return messages
 
-    def update_usage(self, usage: dict, input_tokens, output_tokens):
-        model_price = self.model.get_price(self.setting.get("default_model"))
+    def update_usage(
+        self, usage: dict, model: str, input_tokens: int, output_tokens: int
+    ):
         usage["input_tokens"] += input_tokens
         usage["output_tokens"] += output_tokens
-        usage["cost"] += (
-            model_price["input_price_per_million_tokens"] / 1_000_000 * input_tokens
-            + model_price["output_price_per_million_tokens"] / 1_000_000 * output_tokens
-        )
+        usage["cost"] += self.model.get_message_cost(model, input_tokens, output_tokens)
         usage["turns"] += 1
 
     def check_limits(self, usage: dict, limits: dict) -> str:
@@ -176,20 +174,14 @@ class Chat:
 
         message_params = []
         messages = []
+        conversation_usage = self.model.get_usage_by_conversation(conversation_id)
         if not conversation_id:
             raw_messages = []
             truncated_message = message if len(message) <= 50 else message[:47] + "..."
             conversation_id = self.conversation.insert(truncated_message)
             conversations = self.conversation.get_all()
-            conversation_usage = {
-                "cost": 0,
-                "turns": 0,
-                "input_tokens": 0,
-                "output_tokens": 0,
-            }
         else:
             raw_messages = self.load_raw_conversation(conversation_id)
-            conversation_usage = self.message.get_usage_by_conversation(conversation_id)
 
         message_param_content = []
         message_param_content.append(TextBlockParam(type="text", text=message))
@@ -248,22 +240,22 @@ class Chat:
                 # Handle tool call
                 if response.stop_reason == "tool_use":
                     tool_iterations += 1
+                    if tool_iterations > self.setting.get(
+                        "conversation_max_tool_iterations"
+                    ):
+                        message_param_content.append(
+                            ToolResultBlockParam(
+                                tool_use_id=content_block.id,
+                                type="tool_result",
+                                is_error=True,
+                                content="Max tool iterations exceeded. Please provide an answer based on previous results.",
+                            )
+                        )
 
                     message_param_content = []
                     for content_block in response.content:
                         if content_block.type == "tool_use":
-                            if tool_iterations > self.setting.get(
-                                "conversation_max_tool_iterations"
-                            ):
-                                message_param_content.append(
-                                    ToolResultBlockParam(
-                                        tool_use_id=content_block.id,
-                                        type="tool_result",
-                                        is_error=True,
-                                        content="Max tool iterations exceeded. Please provide an answer based on previous results.",
-                                    )
-                                )
-                            elif content_block.name == "search_documents":
+                            if content_block.name == "search_documents":
                                 try:
                                     search_results = self.document.search(
                                         content_block.input["text"]
@@ -331,6 +323,7 @@ class Chat:
 
                 self.update_usage(
                     conversation_usage,
+                    response.model,
                     response.usage.input_tokens,
                     response.usage.output_tokens,
                 )
