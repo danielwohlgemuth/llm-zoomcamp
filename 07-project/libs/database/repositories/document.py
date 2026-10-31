@@ -19,7 +19,7 @@ class Document:
                 (file_name, chunk_size, chunk_index, content, embedding.tolist()),
             )
 
-    def search(self, query: str) -> list[str]:
+    def search(self, query: str) -> list[dict]:
         embedding = self.embedder.encode(query)
         sql = """
         WITH semantic_search AS (

@@ -103,7 +103,7 @@ class Chat:
 
         return conversation_id, history, raw_history
 
-    def process_assistant_messages(self, content: list[str]):
+    def process_assistant_messages(self, content: list[dict]):
         long_message = ""
         citations = []
         messages = []
