@@ -6,7 +6,6 @@ from libs.database.connection import Database
 from pages.description import Description
 
 
-
 def main():
     db = Database()
     description = Description(db)

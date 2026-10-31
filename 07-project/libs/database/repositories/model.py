@@ -6,6 +6,7 @@ from libs.database.connection import Database
 class Model:
     def __init__(self, db: Database):
         self.db = db
+        self.cache = {}
 
     def insert(
         self,
@@ -21,6 +22,9 @@ class Model:
             return cur.fetchone()[0]
 
     def get_price(self, name: str) -> dict | None:
+        if name in self.cache:
+            self.cache[name]
+
         with self.db.connection() as conn, conn.cursor() as cur:
             cur.execute(
                 "SELECT input_price_per_million_tokens, output_price_per_million_tokens FROM model WHERE name = (%s)",
@@ -28,8 +32,10 @@ class Model:
             )
             if cur.rowcount:
                 model = cur.fetchone()
-                return {
+                value = {
                     "input_price_per_million_tokens": model[0],
                     "output_price_per_million_tokens": model[1],
                 }
+                self.cache[name] = value
+                return value
             return None

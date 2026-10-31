@@ -144,8 +144,17 @@ class Chat:
             )
         return messages
 
-    def handler(self, message: str, _, conversation_id: str, conversations):
+    def update_usage(self, usage: dict, input_tokens, output_tokens):
         model_price = self.model.get_price(self.setting.get("default_model"))
+        usage["input_tokens"] += input_tokens
+        usage["output_tokens"] += output_tokens
+        usage["cost"] += (
+            model_price["input_price_per_million_tokens"] / 1_000_000 * input_tokens
+            + model_price["output_price_per_million_tokens"] / 1_000_000 * output_tokens
+        )
+        usage["turns"] += 1
+
+    def handler(self, message: str, _, conversation_id: str, conversations):
         conversation_limit = self.setting.get("conversation_limit")
 
         message_params = []
@@ -326,17 +335,11 @@ class Chat:
                 else:
                     break
 
-                conversation_usage["input_tokens"] += response.usage.input_tokens
-                conversation_usage["output_tokens"] += response.usage.output_tokens
-                conversation_usage["cost"] += (
-                    model_price["input_price_per_million_tokens"]
-                    / 1_000_000
-                    * response.usage.input_tokens
-                    + model_price["output_price_per_million_tokens"]
-                    / 1_000_000
-                    * response.usage.output_tokens
+                self.update_usage(
+                    conversation_usage,
+                    response.usage.input_tokens,
+                    response.usage.output_tokens,
                 )
-                conversation_usage["turns"] += 1
             except Exception as error:
                 error_message = {
                     "role": "assistant",
