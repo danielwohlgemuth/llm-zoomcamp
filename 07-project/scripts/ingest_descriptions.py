@@ -2,7 +2,9 @@ import json
 
 from tqdm.auto import tqdm
 
-from libs.database import Database, Description
+from libs.database.connection import Database
+from pages.description import Description
+
 
 
 def main():

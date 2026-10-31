@@ -4,10 +4,11 @@ from pathlib import Path
 from langchain_text_splitters import MarkdownTextSplitter
 from tqdm.auto import tqdm
 
-from libs.database import Database, Document
+from libs.database.connection import Database
+from libs.database.migrations import DOCUMENT_CHUNK_SIZE
+from libs.database.repositories.document import Document
 from libs.embedder import Embedder
 
-CHUNK_SIZE = 1024
 CHUNK_OVERLAP = 0
 
 
@@ -30,7 +31,7 @@ def main():
     embedder = Embedder()
     document = Document(db, embedder)
     text_splitter = MarkdownTextSplitter(
-        chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP
+        chunk_size=DOCUMENT_CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP
     )
 
     services_path = Path("docs/translated")

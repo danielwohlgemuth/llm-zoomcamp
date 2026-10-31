@@ -3,7 +3,8 @@ from pathlib import Path
 
 from tqdm.auto import tqdm
 
-from libs.database import Database, Document
+from libs.database.connection import Database
+from libs.database.repositories.document import Document
 from libs.embedder import Embedder
 
 
