@@ -159,7 +159,7 @@ class Chat:
         usage["cost"] += self.model.get_message_cost(model, input_tokens, output_tokens)
         usage["turns"] += 1
 
-    def check_limits(self, usage: dict, limits: dict) -> str:
+    def check_limits(self, usage: dict) -> str:
         if usage["input_tokens"] >= self.setting.get("conversation_max_input_tokens"):
             return "Chat limit reached. E1"
         if usage["output_tokens"] >= self.setting.get("conversation_max_output_tokens"):
@@ -169,6 +169,77 @@ class Chat:
         if usage["turns"] >= self.setting.get("conversation_max_turns"):
             return "Chat limit reached. E4"
         return None
+
+    def tool_result(self, tool_use_id, content, is_error=False):
+        return ToolResultBlockParam(
+            type="tool_result",
+            tool_use_id=tool_use_id,
+            content=content,
+            is_error=is_error,
+        )
+
+    def run_tool(self, content: list, tool_iterations: int) -> list:
+        message_param_content = []
+
+        for content_block in content:
+            if content_block.type == "tool_use":
+                if tool_iterations > self.setting.get(
+                    "conversation_max_tool_iterations"
+                ):
+                    message_param_content.append(
+                        self.tool_result(
+                            content_block.id,
+                            "Max tool iterations exceeded. Please provide an answer based on previous results.",
+                            True,
+                        )
+                    )
+
+                if content_block.name == "search_documents":
+                    try:
+                        search_results = self.document.search(
+                            content_block.input["text"]
+                        )
+                        search_result_blocks = []
+                        for search_result in search_results:
+                            search_result_blocks.append(
+                                SearchResultBlockParam(
+                                    type="search_result",
+                                    title=search_result["file_name"],
+                                    source=search_result["file_name"],
+                                    content=[
+                                        TextBlockParam(
+                                            type="text",
+                                            text=search_result["content"],
+                                        )
+                                    ],
+                                    citations=CitationsConfigParam(enabled=True),
+                                ),
+                            )
+                        if len(search_results) > 0:
+                            message_param_content.append(
+                                self.tool_result(content_block.id, search_result_blocks)
+                            )
+                        else:
+                            message_param_content.append(
+                                self.tool_result(content_block.id, "No search results")
+                            )
+                    except Exception as error:
+                        message_param_content.append(
+                            self.tool_result(
+                                content_block.id,
+                                f"Error while searching documents: {error}",
+                                True,
+                            )
+                        )
+                else:
+                    message_param_content.append(
+                        self.tool_result(
+                            content_block.id,
+                            f"Unknown tool name: {content_block.name}",
+                            True,
+                        )
+                    )
+        return message_param_content
 
     def handler(self, message: str, _, conversation_id: str, conversations):
 
@@ -240,84 +311,17 @@ class Chat:
                 # Handle tool call
                 if response.stop_reason == "tool_use":
                     tool_iterations += 1
-                    if tool_iterations > self.setting.get(
-                        "conversation_max_tool_iterations"
-                    ):
-                        message_param_content.append(
-                            ToolResultBlockParam(
-                                tool_use_id=content_block.id,
-                                type="tool_result",
-                                is_error=True,
-                                content="Max tool iterations exceeded. Please provide an answer based on previous results.",
-                            )
-                        )
 
-                    message_param_content = []
-                    for content_block in response.content:
-                        if content_block.type == "tool_use":
-                            if content_block.name == "search_documents":
-                                try:
-                                    search_results = self.document.search(
-                                        content_block.input["text"]
-                                    )
-                                    search_result_blocks = []
-                                    for search_result in search_results:
-                                        search_result_blocks.append(
-                                            SearchResultBlockParam(
-                                                type="search_result",
-                                                title=search_result["file_name"],
-                                                source=search_result["file_name"],
-                                                content=[
-                                                    TextBlockParam(
-                                                        type="text",
-                                                        text=search_result["content"],
-                                                    )
-                                                ],
-                                                citations=CitationsConfigParam(
-                                                    enabled=True
-                                                ),
-                                            ),
-                                        )
-                                    if len(search_results) > 0:
-                                        message_param_content.append(
-                                            ToolResultBlockParam(
-                                                tool_use_id=content_block.id,
-                                                type="tool_result",
-                                                content=search_result_blocks,
-                                            )
-                                        )
-                                    else:
-                                        message_param_content.append(
-                                            ToolResultBlockParam(
-                                                tool_use_id=content_block.id,
-                                                type="tool_result",
-                                                content="No search results",
-                                            )
-                                        )
-                                except Exception as error:
-                                    message_param_content.append(
-                                        ToolResultBlockParam(
-                                            tool_use_id=content_block.id,
-                                            type="tool_result",
-                                            is_error=True,
-                                            content=f"Error while searching documents: {error}",
-                                        )
-                                    )
-                            else:
-                                message_param_content.append(
-                                    ToolResultBlockParam(
-                                        tool_use_id=content_block.id,
-                                        type="tool_result",
-                                        is_error=True,
-                                        content=f"Unknown tool name: {content_block.name}",
-                                    )
-                                )
-                    message_params = [
-                        MessageParam(
-                            content=message_param_content,
-                            role="user",
-                        )
-                    ]
+                    message_param_content = self.run_tool(response.content, tool_iterations)
+                    if message_param_content:
+                        message_params = [
+                            MessageParam(
+                                content=message_param_content,
+                                role="user",
+                            )
+                        ]
+                    else:
+                        break
                 else:
                     break
 
