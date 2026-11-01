@@ -159,7 +159,7 @@ class Chat:
         usage["cost"] += self.model.get_message_cost(model, input_tokens, output_tokens)
         usage["turns"] += 1
 
-    def check_limits(self, usage: dict) -> str:
+    def check_limits(self, usage: dict) -> str | None:
         if usage["input_tokens"] >= self.setting.get("conversation_max_input_tokens"):
             return "Chat limit reached. E1"
         if usage["output_tokens"] >= self.setting.get("conversation_max_output_tokens"):
@@ -194,7 +194,7 @@ class Chat:
                         )
                     )
 
-                if content_block.name == "search_documents":
+                elif content_block.name == "search_documents":
                     try:
                         search_results = self.document.search(
                             content_block.input["text"]

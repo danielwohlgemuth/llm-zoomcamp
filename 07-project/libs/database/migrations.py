@@ -32,7 +32,7 @@ DOCUMENT_MIGRATIONS = [
     "CREATE INDEX IF NOT EXISTS idx_document_content ON document USING GIN (to_tsvector('english', content))",
     "CREATE UNIQUE INDEX IF NOT EXISTS uniq_document_file_name_chunk_size_chunk_index ON document (file_name, chunk_size, chunk_index) NULLS NOT DISTINCT",
 ]
-DESCRIPTION_MIGRATION = [
+DESCRIPTION_MIGRATIONS = [
     """
     CREATE TABLE IF NOT EXISTS description (
         id bigserial PRIMARY KEY,
@@ -42,7 +42,7 @@ DESCRIPTION_MIGRATION = [
     """,
     "CREATE UNIQUE INDEX IF NOT EXISTS uniq_description_name ON description (name)",
 ]
-CONVERSATION_MIGRATION = [
+CONVERSATION_MIGRATIONS = [
     'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"',
     """
     CREATE TABLE IF NOT EXISTS conversation (
@@ -53,7 +53,7 @@ CONVERSATION_MIGRATION = [
     "ALTER TABLE conversation ADD COLUMN IF NOT EXISTS created_at timestamptz DEFAULT now()",
     "ALTER TABLE conversation ADD COLUMN IF NOT EXISTS updated_at timestamptz DEFAULT now()",
 ]
-MESSAGE_MIGRATION = [
+MESSAGE_MIGRATIONS = [
     'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"',
     """
     CREATE TABLE IF NOT EXISTS message (
@@ -126,7 +126,7 @@ MESSAGE_MIGRATION = [
     END $$;
     """,
 ]
-MODEL_MIGRATION = [
+MODEL_MIGRATIONS = [
     """
     CREATE TABLE IF NOT EXISTS model (
         id bigserial PRIMARY KEY,
@@ -147,7 +147,7 @@ MODEL_PRICINGS = [
         "output_price_per_million_tokens": "0.5",
     }
 ]
-SETTING_MIGRATION = [
+SETTING_MIGRATIONS = [
     """
     CREATE TABLE IF NOT EXISTS setting (
         name text NOT NULL,
@@ -172,7 +172,7 @@ SETTINGS = [
     ("conversation_max_turns", CONVERSATION_MAX_TURNS),
     ("conversation_max_tool_iterations", CONVERSATION_MAX_TOOL_ITERATIONS),
 ]
-EXAMPLE_QUESTION_MIGRATION = [
+EXAMPLE_QUESTION_MIGRATIONS = [
     """
     CREATE TABLE IF NOT EXISTS example_question (
         id uuid DEFAULT uuid_generate_v4() PRIMARY KEY,
@@ -212,10 +212,10 @@ class Migration:
 
     def run(self):
         self.execute(DOCUMENT_MIGRATIONS)
-        self.execute(DESCRIPTION_MIGRATION)
-        self.execute(CONVERSATION_MIGRATION)
-        self.execute(MESSAGE_MIGRATION)
-        self.execute(MODEL_MIGRATION)
+        self.execute(DESCRIPTION_MIGRATIONS)
+        self.execute(CONVERSATION_MIGRATIONS)
+        self.execute(MESSAGE_MIGRATIONS)
+        self.execute(MODEL_MIGRATIONS)
         self.execute_many(
             MODEL_PRICINGS_STATEMENT,
             [
@@ -227,11 +227,11 @@ class Migration:
                 for model in MODEL_PRICINGS
             ],
         )
-        self.execute(SETTING_MIGRATION)
+        self.execute(SETTING_MIGRATIONS)
         self.execute_many(
             SETTINGS_STATEMENT, [(name, Jsonb(value)) for name, value in SETTINGS]
         )
-        self.execute(EXAMPLE_QUESTION_MIGRATION)
+        self.execute(EXAMPLE_QUESTION_MIGRATIONS)
         self.execute_many(
             EXAMPLE_QUESTIONS_STATEMENT, [(question,) for question in EXAMPLE_QUESTIONS]
         )

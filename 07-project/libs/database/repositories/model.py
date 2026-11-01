@@ -23,7 +23,7 @@ class Model:
 
     def get_price(self, name: str) -> dict:
         if name in self.cache:
-            self.cache[name]
+            return self.cache[name]
 
         with self.db.connection() as conn, conn.cursor() as cur:
             cur.execute(

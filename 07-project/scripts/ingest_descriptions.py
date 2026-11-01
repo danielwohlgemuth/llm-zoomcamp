@@ -3,7 +3,7 @@ import json
 from tqdm.auto import tqdm
 
 from libs.database.connection import Database
-from pages.description import Description
+from libs.database.repositories.description import Description
 
 
 def main():

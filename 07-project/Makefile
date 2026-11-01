@@ -1,4 +1,4 @@
-.PHONY: setup download_documents download_model translate_documents translate_descriptions fmt black isort notebook ingest_documents ingest_descriptions start_docker
+.PHONY: setup download_documents download_model translate_documents translate_descriptions fmt black isort notebook ingest_documents ingest_document_chunks ingest_descriptions start_docker run_migrations start_gradio connect_db
 
 setup:
 	uv sync

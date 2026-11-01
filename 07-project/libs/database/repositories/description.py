@@ -12,7 +12,7 @@ class Description:
                 (name, description),
             )
 
-    def list(self, name: str | None = None) -> list[str]:
+    def list(self, name: str | None = None) -> list[dict]:
         with self.db.connection() as conn, conn.cursor() as cur:
             if name:
                 cur.execute(
