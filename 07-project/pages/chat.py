@@ -156,7 +156,7 @@ class Chat:
     ):
         usage["input_tokens"] += input_tokens
         usage["output_tokens"] += output_tokens
-        usage["cost"] += self.model.get_message_cost(model, input_tokens, output_tokens)
+        usage["cost"] += self.model.get_cost(model, input_tokens, output_tokens)
         usage["turns"] += 1
 
     def check_limits(self, usage: dict) -> str | None:
@@ -245,7 +245,7 @@ class Chat:
 
         message_params = []
         messages = []
-        conversation_usage = self.model.get_usage_by_conversation(conversation_id)
+        conversation_usage = self.message.get_usage_by_conversation(conversation_id)
         if not conversation_id:
             raw_messages = []
             truncated_message = message if len(message) <= 50 else message[:47] + "..."
@@ -304,15 +304,23 @@ class Chat:
                     id=message_id,
                     message=response_json,
                     status=MessageStatus.Completed.value,
-                    input_tokens=response_obj["usage"]["input_tokens"],
-                    output_tokens=response_obj["usage"]["output_tokens"],
+                    input_tokens=response.usage.input_tokens,
+                    output_tokens=response.usage.output_tokens,
+                    input_cost=self.model.get_cost(
+                        response.model, response.usage.input_tokens, 0
+                    ),
+                    output_cost=self.model.get_cost(
+                        response.model, 0, response.usage.output_tokens
+                    ),
                 )
 
                 # Handle tool call
                 if response.stop_reason == "tool_use":
                     tool_iterations += 1
 
-                    message_param_content = self.run_tool(response.content, tool_iterations)
+                    message_param_content = self.run_tool(
+                        response.content, tool_iterations
+                    )
                     if message_param_content:
                         message_params = [
                             MessageParam(

@@ -11,7 +11,9 @@ class Setting:
             return self.cache[name]
 
         with self.db.connection() as conn, conn.cursor() as cur:
-            cur.execute("SELECT value FROM setting WHERE name = %s AND is_active", (name,))
+            cur.execute(
+                "SELECT value FROM setting WHERE name = %s AND is_active", (name,)
+            )
             if cur.rowcount:
                 value = cur.fetchone()[0]
                 self.cache[name] = value

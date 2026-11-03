@@ -41,36 +41,7 @@ class Model:
 
             raise ValueError(f"Price for model {name} does not exist.")
 
-    def get_usage_by_conversation(self, conversation_id: str) -> dict:
-        if not conversation_id:
-            return {
-                "cost": 0,
-                "turns": 0,
-                "input_tokens": 0,
-                "output_tokens": 0,
-            }
-
-        with self.db.connection() as conn, conn.cursor() as cur:
-            cur.execute(
-                "SELECT "
-                "   COALESCE(SUM(m.input_tokens * mo.input_price_per_million_tokens / 1000000 + m.output_tokens * mo.output_price_per_million_tokens / 1000000), 0), "
-                "   COUNT(*), "
-                "   COALESCE(SUM(m.input_tokens), 0), "
-                "   COALESCE(SUM(m.output_tokens), 0) "
-                "FROM message AS m "
-                "   JOIN model AS mo ON (mo.name = m.model)"
-                "WHERE m.conversation_id = %s",
-                (conversation_id,),
-            )
-            row = cur.fetchone()
-            return {
-                "cost": row[0],
-                "turns": row[1],
-                "input_tokens": row[2],
-                "output_tokens": row[3],
-            }
-
-    def get_message_cost(self, model: str, input_tokens: int, output_tokens: int):
+    def get_cost(self, model: str, input_tokens: int, output_tokens: int):
         price = self.get_price(model)
         return (
             input_tokens * price["input_price_per_million_tokens"] / 1_000_000

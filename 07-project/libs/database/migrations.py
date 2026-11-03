@@ -4,7 +4,7 @@ from libs.database.connection import Database
 
 RECIPROCAL_RANK_FUSION_K = 60
 COSINE_DISTANCE = 0.7
-SYSTEM_PROMPT = """You are a knowlegde support agent for an IaaS provider called Orion Outer Orbit (OOO).
+SYSTEM_PROMPT = """You are a knowledge support agent for an IaaS provider called Orion Outer Orbit (OOO).
 Respond to the users question based on the documents from the knowledge base.
 Use the available tool to search for relevant documents.
 If the documents don't answer the users question, say that you don't know.
@@ -125,6 +125,8 @@ MESSAGE_MIGRATIONS = [
         END IF;
     END $$;
     """,
+    "ALTER TABLE message ADD COLUMN IF NOT EXISTS input_cost numeric",
+    "ALTER TABLE message ADD COLUMN IF NOT EXISTS output_cost numeric",
 ]
 MODEL_MIGRATIONS = [
     """
@@ -139,7 +141,11 @@ MODEL_MIGRATIONS = [
     "ALTER TABLE model ADD COLUMN IF NOT EXISTS input_price_per_million_tokens numeric",
     "ALTER TABLE model ADD COLUMN IF NOT EXISTS output_price_per_million_tokens numeric",
 ]
-MODEL_PRICINGS_STATEMENT = "INSERT INTO model (name, input_price_per_million_tokens, output_price_per_million_tokens) VALUES (%s, %s, %s) ON CONFLICT DO NOTHING"
+MODEL_PRICINGS_STATEMENT = """
+INSERT INTO model (name, input_price_per_million_tokens, output_price_per_million_tokens)
+VALUES (%s, %s, %s)
+ON CONFLICT DO NOTHING
+"""
 MODEL_PRICINGS = [
     {
         "name": "claude-haiku-5-5",
@@ -210,6 +216,14 @@ EXAMPLE_QUESTIONS = [
     "What three main functions does Subspace Beacon Routing perform?",
     "What does Orbiting Sentinel monitor, and which tools does it offer for observability?",
 ]
+DATA_MIGRATIONS = ["""
+    UPDATE message m
+    SET input_cost = COALESCE(m.input_cost, m.input_tokens * mo.input_price_per_million_tokens / 1000000),
+        output_cost = COALESCE(m.output_cost, m.output_tokens * mo.output_price_per_million_tokens / 1000000)
+    FROM model mo
+    WHERE mo.name = m.model
+        AND (m.input_cost IS NULL OR m.output_cost IS NULL)
+    """]
 
 
 class Migration:
@@ -244,15 +258,18 @@ class Migration:
         )
         self.execute(SETTING_MIGRATIONS)
         self.execute_many(
-            SETTINGS_UPDATE_STATEMENT, [{"name": name, "value": Jsonb(value)} for name, value in SETTINGS]
+            SETTINGS_UPDATE_STATEMENT,
+            [{"name": name, "value": Jsonb(value)} for name, value in SETTINGS],
         )
         self.execute_many(
-            SETTINGS_INSERT_STATEMENT, [{"name": name, "value": Jsonb(value)} for name, value in SETTINGS]
+            SETTINGS_INSERT_STATEMENT,
+            [{"name": name, "value": Jsonb(value)} for name, value in SETTINGS],
         )
         self.execute(EXAMPLE_QUESTION_MIGRATIONS)
         self.execute_many(
             EXAMPLE_QUESTIONS_STATEMENT, [(question,) for question in EXAMPLE_QUESTIONS]
         )
+        self.execute(DATA_MIGRATIONS)
 
 
 if __name__ == "__main__":
