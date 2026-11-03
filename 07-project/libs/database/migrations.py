@@ -154,11 +154,26 @@ SETTING_MIGRATIONS = [
         value jsonb
     )
     """,
-    "CREATE UNIQUE INDEX IF NOT EXISTS uniq_setting_name ON setting (name)",
+    # "CREATE UNIQUE INDEX IF NOT EXISTS uniq_setting_name ON setting (name)",
+    "ALTER TABLE setting ADD COLUMN IF NOT EXISTS version int NOT NULL DEFAULT 1",
+    "ALTER TABLE setting ADD COLUMN IF NOT EXISTS is_active boolean NOT NULL DEFAULT true",
+    "DROP INDEX IF EXISTS uniq_setting_name",
+    "CREATE UNIQUE INDEX IF NOT EXISTS uniq_setting_name_version ON setting (name, version)",
+    "CREATE UNIQUE INDEX IF NOT EXISTS uniq_setting_name_active ON setting (name) WHERE is_active",
 ]
-SETTINGS_STATEMENT = """
-INSERT INTO setting (name, value) VALUES (%s, %s)
-ON CONFLICT (name) DO UPDATE SET value = EXCLUDED.value
+SETTINGS_UPDATE_STATEMENT = """
+UPDATE setting SET is_active = false
+WHERE name = %(name)s AND is_active AND value IS DISTINCT FROM %(value)s
+"""
+SETTINGS_INSERT_STATEMENT = """
+INSERT INTO setting (name, value, version, is_active)
+SELECT %(name)s, %(value)s,
+    COALESCE((SELECT max(version) FROM setting WHERE name = %(name)s), 0) + 1,
+    true
+WHERE NOT EXISTS (
+    SELECT 1 FROM setting
+    WHERE name = %(name)s AND is_active AND value = %(value)s
+)
 """
 SETTINGS = [
     ("default_model", DEFAULT_MODEL),
@@ -229,7 +244,10 @@ class Migration:
         )
         self.execute(SETTING_MIGRATIONS)
         self.execute_many(
-            SETTINGS_STATEMENT, [(name, Jsonb(value)) for name, value in SETTINGS]
+            SETTINGS_UPDATE_STATEMENT, [{"name": name, "value": Jsonb(value)} for name, value in SETTINGS]
+        )
+        self.execute_many(
+            SETTINGS_INSERT_STATEMENT, [{"name": name, "value": Jsonb(value)} for name, value in SETTINGS]
         )
         self.execute(EXAMPLE_QUESTION_MIGRATIONS)
         self.execute_many(
