@@ -5,8 +5,8 @@
     "name": "viv2hgr",
     "namespace": "default",
     "uid": "0d09ab68-d31a-4e47-baef-d0aa162ba5ab",
-    "resourceVersion": "1793839870975980",
-    "generation": 7,
+    "resourceVersion": "1793925870176987",
+    "generation": 12,
     "creationTimestamp": "2026-11-03T00:35:19Z",
     "labels": {
       "grafana.app/deprecatedInternalID": "713322513342464"
@@ -15,11 +15,11 @@
       "grafana.app/createdBy": "user:ag1y5pssk2cjkc",
       "grafana.app/managedBy": "classic-file-provisioning",
       "grafana.app/managerId": "default",
-      "grafana.app/sourceChecksum": "bd6db12c61071ee5c004cc2fb6887a64",
+      "grafana.app/sourceChecksum": "ad58185cf29aea236c5c56bc50985df4",
       "grafana.app/sourcePath": "/var/lib/grafana/dashboards/aws-services-search.json",
-      "grafana.app/sourceTimestamp": "1793839848000",
+      "grafana.app/sourceTimestamp": "1793925866000",
       "grafana.app/updatedBy": "access-policy:service",
-      "grafana.app/updatedTimestamp": "2026-11-05T00:51:10Z",
+      "grafana.app/updatedTimestamp": "2026-11-06T00:44:30Z",
       "grafana.app/folder": ""
     }
   },
@@ -54,8 +54,50 @@
           "data": {
             "kind": "QueryGroup",
             "spec": {
-              "queries": [],
-              "queryOptions": {},
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "cg1ucqa2lj8qoc"
+                      },
+                      "group": "datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "dataset": "megabase",
+                        "editorMode": "code",
+                        "format": "time_series",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  $__timeGroupAlias(created_at, '$__interval'),\n  status AS metric,\n  count(*) AS count\nFROM\n  message\nWHERE\n  $__timeFilter(created_at)\nGROUP BY\n  1,\n  2\nORDER BY\n  1",
+                        "sql": {
+                          "columns": [
+                            {
+                              "parameters": [],
+                              "type": "function"
+                            }
+                          ],
+                          "groupBy": [
+                            {
+                              "property": {
+                                "type": "string"
+                              },
+                              "type": "groupBy"
+                            }
+                          ],
+                          "limit": 50
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
+              "queryOptions": {
+                "maxDataPoints": 20
+              },
               "transformations": []
             }
           },
@@ -64,21 +106,80 @@
           "links": [],
           "title": "Messages over time",
           "vizConfig": {
-            "group": "text",
+            "group": "timeseries",
             "kind": "VizConfig",
             "spec": {
               "fieldConfig": {
-                "defaults": {},
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "bars",
+                    "fillOpacity": 100,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "normal"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
                 "overrides": []
               },
               "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
                 },
-                "content": "Messages over time (time series, by status): count(*) grouped with $__timeGroupAlias(created_at, 1h) and status. This shows traffic peaks and the share of Failed or stuck In Progress messages.\nMessages over time (time series, by status): count(*) grouped with $__timeGroupAlias(created_at, 1h) and status. This shows traffic peaks and the share of Failed or stuck In Progress messages.\n",
-                "mode": "markdown"
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
               }
             },
             "version": "13.0.11"
@@ -424,31 +525,130 @@
           "data": {
             "kind": "QueryGroup",
             "spec": {
-              "queries": [],
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "cg1ucqa2lj8qoc"
+                      },
+                      "group": "datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "dataset": "megabase",
+                        "editorMode": "code",
+                        "format": "table",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  $__timeGroupAlias(created_at, '1d'),\n  count(*)\nFROM\n  conversation\nWHERE\n  $__timeFilter(created_at)\nGROUP BY\n  1\nORDER BY\n  1",
+                        "sql": {
+                          "columns": [
+                            {
+                              "parameters": [],
+                              "type": "function"
+                            }
+                          ],
+                          "groupBy": [
+                            {
+                              "property": {
+                                "type": "string"
+                              },
+                              "type": "groupBy"
+                            }
+                          ],
+                          "limit": 50
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
               "queryOptions": {},
               "transformations": []
             }
           },
-          "description": "",
+          "description": "\n",
           "id": 2,
           "links": [],
           "title": "New conversations per day",
           "vizConfig": {
-            "group": "text",
+            "group": "timeseries",
             "kind": "VizConfig",
             "spec": {
               "fieldConfig": {
-                "defaults": {},
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "axisBorderShow": false,
+                    "axisCenteredZero": false,
+                    "axisColorMode": "text",
+                    "axisLabel": "",
+                    "axisPlacement": "auto",
+                    "barAlignment": 0,
+                    "barWidthFactor": 0.6,
+                    "drawStyle": "bars",
+                    "fillOpacity": 100,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "insertNulls": false,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 1,
+                    "pointSize": 5,
+                    "scaleDistribution": {
+                      "type": "linear"
+                    },
+                    "showPoints": "auto",
+                    "showValues": false,
+                    "spanNulls": false,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    },
+                    "thresholdsStyle": {
+                      "mode": "off"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
                 "overrides": []
               },
               "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
                 },
-                "content": "New conversations per day (bars): count(*) on conversation.created_at. This tracks adoption.\n",
-                "mode": "markdown"
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": false
+                },
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
               }
             },
             "version": "13.0.11"
@@ -461,7 +661,47 @@
           "data": {
             "kind": "QueryGroup",
             "spec": {
-              "queries": [],
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "cg1ucqa2lj8qoc"
+                      },
+                      "group": "datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "dataset": "megabase",
+                        "editorMode": "code",
+                        "format": "table",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  conversation_id,\n  count(*)\nFROM\n  message\nWHERE\n  $__timeFilter(created_at)\nGROUP BY\n  conversation_id\nORDER BY\n  1",
+                        "sql": {
+                          "columns": [
+                            {
+                              "parameters": [],
+                              "type": "function"
+                            }
+                          ],
+                          "groupBy": [
+                            {
+                              "property": {
+                                "type": "string"
+                              },
+                              "type": "groupBy"
+                            }
+                          ],
+                          "limit": 50
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
               "queryOptions": {},
               "transformations": []
             }
@@ -469,23 +709,59 @@
           "description": "",
           "id": 3,
           "links": [],
-          "title": "Turns per conversation",
+          "title": "Turns per conversation (limit ${conversation_max_turns})",
           "vizConfig": {
-            "group": "text",
+            "group": "histogram",
             "kind": "VizConfig",
             "spec": {
               "fieldConfig": {
-                "defaults": {},
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "fillOpacity": 100,
+                    "gradientMode": "none",
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "lineWidth": 1,
+                    "stacking": {
+                      "group": "A",
+                      "mode": "none"
+                    }
+                  },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      {
+                        "color": "green",
+                        "value": 0
+                      },
+                      {
+                        "color": "red",
+                        "value": 80
+                      }
+                    ]
+                  }
+                },
                 "overrides": []
               },
               "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
+                "combine": false,
+                "legend": {
+                  "calcs": [],
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": false
                 },
-                "content": "Turns per conversation (histogram): count(*) of messages grouped by conversation_id. This shows whether people ask one question and leave or keep going. Compare it to conversation_max_turns (10) to see how often the cap is near.\n",
-                "mode": "markdown"
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
               }
             },
             "version": "13.0.11"
@@ -535,31 +811,121 @@
           "data": {
             "kind": "QueryGroup",
             "spec": {
-              "queries": [],
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "cg1ucqa2lj8qoc"
+                      },
+                      "group": "datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "dataset": "megabase",
+                        "editorMode": "code",
+                        "format": "table",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  h.hour::text,\n  d.dow::text,\n  count(m.created_at) AS messages\nFROM generate_series(0, 23) AS h(hour)\nCROSS JOIN generate_series(1, 7) AS d(dow)\nLEFT JOIN message m\n  ON extract(hour FROM m.created_at) = h.hour\n AND extract(isodow FROM m.created_at) = d.dow\nGROUP BY 1, 2\nORDER BY 1, 2\n",
+                        "sql": {
+                          "columns": [
+                            {
+                              "parameters": [],
+                              "type": "function"
+                            }
+                          ],
+                          "groupBy": [
+                            {
+                              "property": {
+                                "type": "string"
+                              },
+                              "type": "groupBy"
+                            }
+                          ],
+                          "limit": 50
+                        }
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
               "queryOptions": {},
               "transformations": []
             }
           },
-          "description": "",
+          "description": "Usage heatmap (hour of day vs weekday): extract(hour from created_at) and extract(dow from created_at). This shows when load peaks.",
           "id": 5,
           "links": [],
           "title": "Usage heatmap",
           "vizConfig": {
-            "group": "text",
+            "group": "heatmap",
             "kind": "VizConfig",
             "spec": {
               "fieldConfig": {
-                "defaults": {},
+                "defaults": {
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    },
+                    "scaleDistribution": {
+                      "type": "linear"
+                    }
+                  }
+                },
                 "overrides": []
               },
               "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
+                "annotations": {
+                  "clustering": -1,
+                  "multiLane": false
                 },
-                "content": "Usage heatmap (hour of day vs weekday): extract(hour from created_at) and extract(dow from created_at). This shows when load peaks.\n",
-                "mode": "markdown"
+                "calculate": false,
+                "calculation": {
+                  "xBuckets": {
+                    "mode": "size",
+                    "value": ""
+                  },
+                  "yBuckets": {
+                    "mode": "size",
+                    "value": ""
+                  }
+                },
+                "cellGap": 1,
+                "color": {
+                  "exponent": 0.5,
+                  "fill": "dark-orange",
+                  "mode": "scheme",
+                  "reverse": false,
+                  "scale": "exponential",
+                  "scheme": "Oranges",
+                  "steps": 64
+                },
+                "exemplars": {
+                  "color": "rgba(255,0,255,0.7)"
+                },
+                "filterValues": {
+                  "le": 1e-9
+                },
+                "legend": {
+                  "show": true
+                },
+                "rowsFrame": {
+                  "layout": "auto"
+                },
+                "tooltip": {
+                  "mode": "single",
+                  "showColorScale": false,
+                  "yHistogram": false
+                },
+                "yAxis": {
+                  "axisPlacement": "left",
+                  "reverse": false
+                }
               }
             },
             "version": "13.0.11"
@@ -572,7 +938,83 @@
           "data": {
             "kind": "QueryGroup",
             "spec": {
-              "queries": [],
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "hidden": false,
+                    "query": {
+                      "datasource": {
+                        "name": "cg1ucqa2lj8qoc"
+                      },
+                      "group": "datasource",
+                      "kind": "DataQuery",
+                      "spec": {
+                        "dataset": "megabase",
+                        "editorMode": "code",
+                        "format": "table",
+                        "rawQuery": true,
+                        "rawSql": "SELECT\n  model,\n  COUNT(*)\nFROM\n  message\nWHERE\n  $__timeFilter(created_at)\nGROUP BY\n  1\nORDER BY\n  2",
+                        "sql": {
+                          "columns": [
+                            {
+                              "name": "COUNT",
+                              "parameters": [
+                                {
+                                  "name": "id",
+                                  "type": "functionParameter"
+                                }
+                              ],
+                              "type": "function"
+                            }
+                          ],
+                          "groupBy": [
+                            {
+                              "property": {
+                                "name": "model",
+                                "type": "string"
+                              },
+                              "type": "groupBy"
+                            }
+                          ],
+                          "limit": 50,
+                          "whereJsonTree": {
+                            "children1": [
+                              {
+                                "id": "989ba9b9-cdef-4012-b456-71a1ae4d1eed",
+                                "properties": {
+                                  "field": "created_at",
+                                  "fieldSrc": "field",
+                                  "operator": "equal",
+                                  "value": [
+                                    "2026-11-05 21:40:57"
+                                  ],
+                                  "valueError": [
+                                    null
+                                  ],
+                                  "valueSrc": [
+                                    "value"
+                                  ],
+                                  "valueType": [
+                                    "datetime"
+                                  ]
+                                },
+                                "type": "rule"
+                              }
+                            ],
+                            "id": "b88a9aa9-0123-4456-b89a-b1a1ae0612e9",
+                            "type": "group"
+                          },
+                          "whereString": "created_at = '2026-11-05 21:40:57.000'"
+                        },
+                        "table": "message"
+                      },
+                      "version": "v0"
+                    },
+                    "refId": "A"
+                  }
+                }
+              ],
               "queryOptions": {},
               "transformations": []
             }
@@ -582,21 +1024,45 @@
           "links": [],
           "title": "Messages by model",
           "vizConfig": {
-            "group": "text",
+            "group": "piechart",
             "kind": "VizConfig",
             "spec": {
               "fieldConfig": {
-                "defaults": {},
+                "defaults": {
+                  "color": {
+                    "mode": "palette-classic"
+                  },
+                  "custom": {
+                    "hideFrom": {
+                      "legend": false,
+                      "tooltip": false,
+                      "viz": false
+                    }
+                  }
+                },
                 "overrides": []
               },
               "options": {
-                "code": {
-                  "language": "plaintext",
-                  "showLineNumbers": false,
-                  "showMiniMap": false
+                "displayLabels": [],
+                "legend": {
+                  "displayMode": "list",
+                  "placement": "bottom",
+                  "showLegend": true
                 },
-                "content": "Messages by model (stacked time series or pie): count(*) by message.model. It becomes useful once you add a second model.\n",
-                "mode": "markdown"
+                "pieType": "pie",
+                "reduceOptions": {
+                  "calcs": [
+                    "lastNotNull"
+                  ],
+                  "fields": "",
+                  "values": true
+                },
+                "sort": "desc",
+                "tooltip": {
+                  "hideZeros": false,
+                  "mode": "single",
+                  "sort": "none"
+                }
               }
             },
             "version": "13.0.11"
@@ -1352,6 +1818,67 @@
       "to": "now"
     },
     "title": "AWS Services Search",
-    "variables": []
+    "variables": [
+      {
+        "kind": "QueryVariable",
+        "spec": {
+          "allowCustomValue": true,
+          "current": {
+            "text": "10",
+            "value": "10"
+          },
+          "definition": "SELECT\n  (\n    value #>> '{}')::int\n    FROM\n      setting\n    WHERE\n      name = 'conversation_max_turns'\n      AND is_active",
+          "hide": "hideVariable",
+          "includeAll": false,
+          "label": "",
+          "multi": false,
+          "name": "conversation_max_turns",
+          "options": [],
+          "query": {
+            "datasource": {
+              "name": "cg1ucqa2lj8qoc"
+            },
+            "group": "grafana-postgresql-datasource",
+            "kind": "DataQuery",
+            "spec": {
+              "dataset": "megabase",
+              "editorMode": "code",
+              "format": "table",
+              "meta": {
+                "textField": "int4",
+                "valueField": "int4"
+              },
+              "query": "SELECT\n  (\n    value #>> '{}')::int\n    FROM\n      setting\n    WHERE\n      name = 'conversation_max_turns'\n      AND is_active",
+              "rawQuery": true,
+              "rawSql": "SELECT\n  (\n    value #>> '{}')::int\n    FROM\n      setting\n    WHERE\n      name = 'conversation_max_turns'\n      AND is_active",
+              "refId": "SQLVariableQueryEditor-VariableQuery",
+              "sql": {
+                "columns": [
+                  {
+                    "parameters": [],
+                    "type": "function"
+                  }
+                ],
+                "groupBy": [
+                  {
+                    "property": {
+                      "type": "string"
+                    },
+                    "type": "groupBy"
+                  }
+                ],
+                "limit": 50
+              }
+            },
+            "version": "v0"
+          },
+          "refresh": "onDashboardLoad",
+          "regex": "",
+          "regexApplyTo": "value",
+          "skipUrlSync": false,
+          "sort": "disabled"
+        }
+      }
+    ]
   }
 }
